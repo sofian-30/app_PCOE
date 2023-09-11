@@ -21,7 +21,8 @@ n_app = 1 # numéro de l'appli
 
 
 # Charger le tableau Excel
-df = pd.read_excel(r"/mnt/c/CA_2023.xlsx", sheet_name='Maintenance SAP BusinessObjects')
+# df = pd.read_excel(r"/mnt/c/CA_2023.xlsx", sheet_name='Maintenance SAP BusinessObjects')
+df = pd.read_excel(r"C:\Users\SofianOUASS\Desktop\PCoE\Suivi CA licences et maintenance 2023.xlsx", sheet_name='Maintenance SAP BusinessObjects')
 
 ##liste des noms de colonne: Informations contrats clients=
 # ['Client', 'ERP Number \nRéf SAP', 'Date anniversaire', 'Code projet Boond', 'Resp\nCommercial', 'Type de contrat']
@@ -192,7 +193,7 @@ dbc.Row([
                             ], width={"size": 6}),
                             dbc.Col([
                                 dbc.Label("Mois d'imputation", width=6),
-                                dcc.DatePickerSingle(id='input-mois-imputation', display_format='MM', placeholder='Sélectionnez une date'),
+                                dcc.Input(id='input-mois-imputation', type='text', placeholder='Sélectionnez une date'),
                             ], width={"size": 6}),
                             dbc.Col([
                                 dbc.Label("Type de support SAP", width=6),],width={"size": 3}),
@@ -299,7 +300,7 @@ dbc.Row([
                             ], width={"size": 6}),
                             dbc.Col([
                                 dbc.Label("Facture créée", width=6),
-                                dcc.Input(id='input-facture-creee', type='text', placeholder='Entrez la Facture créée'),
+                                dcc.DatePickerSingle(id='input-facture-creee', display_format='DD/MM/YYYY', placeholder='Entrez la Facture créée'),
                             ], width={"size": 6}),
                             dbc.Col([
                                 dbc.Label("Commande faite SAP", width=6),
