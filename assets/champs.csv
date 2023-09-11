@@ -1,0 +1,16 @@
+﻿ID_CHAMPS;ID_FORMULAIRE;CATEGORIE;LABEL;POSITION;ID_LISTE
+c1;form1;section;Fonction;1;
+c2;form1;saisie;Précisez votre fonction;2;
+c3;form1;saisie;Le cas échéant, précisez le contact du coordonnateur et de son employeur;3;
+c4;form1;section;PRESENTATION SYNTHETIQUE DE VOTRE CITE DE L'EMPLOI;4;
+c5;form1;liste_deroulante;Précisez le périmètre de votre CdE;5;l1
+c6;form1;section;Acteurs de la Cité de l'Emploi;6;
+c7;form1;checkbox_vert;Qui sont les acteurs qui pilotent votre Cde ?;7;cbv1
+c1;form2;section;Profession;1;
+c2;form2;radiobutton;Etes vous salarié;2;rdb1
+c3;form2;date;Depuis quand ;3;
+c4;form2;section;RECENSER ET FEDERER : VOS RESULTATS;4;
+c5;form2;liste_deroulante;Dans quel secteur;5;l2
+c6;form2;saisie;Saisisez votre profession exacte;6;
+c7;form2;checkbox_hor;Indiquez le nombre de référents dûment désignés par les structures partenaires au sein de votre COPIL;7;cbh1
+c8;form2;tableau;Test tableau;8;

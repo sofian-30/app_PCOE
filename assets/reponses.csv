@@ -1,0 +1,6 @@
+﻿ID_CHAMPS;ID_USER;LABEL;POSITION;ID_LISTE
+c1;user1;section;Fonction;1;
+c2;user1;saisie;Précisez votre fonction;2;
+c3;user1;saisie;Le cas échéant, précisez le contact du coordonnateur et de son employeur;3;
+c4;user1;section;PRESENTATION SYNTHETIQUE DE VOTRE CITE DE L'EMPLOI;4;
+c5;user1;liste_deroulante;Précisez le périmètre de votre CdE;5;l1

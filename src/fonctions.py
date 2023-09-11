@@ -1,0 +1,1 @@
+# Fichier dans lequel on stocke toutes les fonctions que l'on souhaite utiliser (afin d'éviter des répétitions et rendre l'application plus maintenable).

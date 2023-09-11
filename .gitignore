@@ -1,0 +1,11 @@
+env/
+env2/
+utils_sql_test.py
+__pycache__
+__pycache__/
+app1/__pycache__/
+app2/__pycache__/
+app3/__pycache__/
+app1/env/
+app2/env/
+app3/env/

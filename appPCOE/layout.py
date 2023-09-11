@@ -3,9 +3,25 @@ import dash
 import dash_bootstrap_components as dbc
 from dash import dcc, html, dash_table
 from dash.dependencies import Input, Output
+from dash import dcc,html
+from app import app
+import pandas as pd
+import plotly.graph_objs as go
+from datetime import date
+from colors import *
+
+
+######################################################################################
+#                                       Data                                         #
+######################################################################################
+
+## Chargement fichier csv : pour gérer infos principales des différentes applis
+list_app = pd.read_csv("assets/list_app.csv", header=0, sep=';')
+n_app = 1 # numéro de l'appli
+
 
 # Charger le tableau Excel
-df = pd.read_excel(r"C:\Users\SofianOUASS\Desktop\PCoE\Suivi CA licences et maintenance 2023.xlsx", sheet_name='Maintenance SAP BusinessObjects')
+df = pd.read_excel(r"/mnt/c/CA_2023.xlsx", sheet_name='Maintenance SAP BusinessObjects')
 
 ##liste des noms de colonne: Informations contrats clients=
 # ['Client', 'ERP Number \nRéf SAP', 'Date anniversaire', 'Code projet Boond', 'Resp\nCommercial', 'Type de contrat']
@@ -20,16 +36,25 @@ df = pd.read_excel(r"C:\Users\SofianOUASS\Desktop\PCoE\Suivi CA licences et main
 #               'janvier.1', 'février.1', 'mars.1', 'avril.1', 'mai.1', 'juin.1', 'juillet.1', 'aout.1', 'septembre.1', 'octobre.1',
 #                 'novembre.1', 'décembre.1']
 
-# Initialiser l'application Dash
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
-
 # Ajout d'un composant dcc.Store pour stocker les données de la ligne sélectionnée
 stockage_ligne = dcc.Store(id='o1_store_row')
 
 
 # Mise en page de l'application
-app.layout = dbc.Container([
+layout_PCOE = html.Div([
+    
     dbc.Row([
+        dbc.Col([   
+            dbc.Navbar([
+                    dbc.Col([dcc.Link(dbc.Button(html.Img(src=app.get_asset_url("accueil.png"),style={"height":"30px"}), id="bouton_accueil", style={'border':'2px solid white','margin-left':'-1vw'},color='white'), href = '/'),
+                        html.Img(src=app.get_asset_url("logo_seenovate.png"), height="30px",style={'margin-left':'1vw'})],xs=2,sm=2,md=2,lg=2,xl=2),
+                    dbc.Col([html.Div(dbc.NavbarBrand(list_app["name"].loc[list_app["ind"]==n_app].iloc[0], id="titre",className="text-white"),style={"textAlign":"center"})
+                    ],xs=9,sm=9,md=9,lg=9,xl=9,align="center"),
+                    dbc.Col([html.Div(html.Img(src=app.get_asset_url("user.png"), height="30px"))])
+            ],color="dark")
+        ],xs=12,sm=12,md=12,lg=12,xl=12)
+    ]),
+     dbc.Row([
         dbc.Col([
             dbc.Navbar([
                 dbc.Row([
@@ -148,10 +173,7 @@ dbc.Row([
                                 dbc.Label("Achat SAP Maintenance ou GBS ou NEED4VIZ", width=6),
                                 dcc.Input(id='input-Achat-SAP-Maintenance-GBS-NEED4VIZ', type='text', placeholder='Entrez le Achat SAP Maintenance ou GBS ou NEED4VIZ'),
                             ], width={"size": 6}),
-<<<<<<< HEAD
                         ]),dbc.Row([
-=======
->>>>>>> 3dd3832e5824a251eb740edc6866c7f1872c3aae
                             dbc.Col([
                                 dbc.Label("Marge maintenance", width=6),
                                 dcc.Input(id='input-Marge-maintenance', type='text', placeholder='Entrez la Marge maintenance'),
@@ -173,12 +195,8 @@ dbc.Row([
                                 dcc.DatePickerSingle(id='input-mois-imputation', display_format='MM', placeholder='Sélectionnez une date'),
                             ], width={"size": 6}),
                             dbc.Col([
-<<<<<<< HEAD
                                 dbc.Label("Type de support SAP", width=6),],width={"size": 3}),
                                 dbc.Col([
-=======
-                                dbc.Label("Type de support SAP", width=6),
->>>>>>> 3dd3832e5824a251eb740edc6866c7f1872c3aae
                                 dcc.Dropdown(
                                     id='input-type-support-sap',
                                     options=[
@@ -188,11 +206,7 @@ dbc.Row([
                                     ],
                                     placeholder='Sélectionnez le Type de support SAP',
                                 ),
-<<<<<<< HEAD
                             ], width={"size": 3}),
-=======
-                            ], width={"size": 6}),
->>>>>>> 3dd3832e5824a251eb740edc6866c7f1872c3aae
                             dbc.Col([
                                 dbc.Label("Parc/Techno", width=6),
                                 dcc.Input(id='input-Parc-Techno', type='text', placeholder='Entrez le Parc/Techno'),
@@ -206,7 +220,6 @@ dbc.Row([
                                 dcc.DatePickerSingle(id='input-Date-de-facture', display_format='DD/MM/YYYY', placeholder='Sélectionnez une date'),
                             ], width={"size": 6}),
                             dbc.Col([
-<<<<<<< HEAD
                                 dbc.Label("Parc de licences", width=6),
                                 dcc.Input(
                                     id='input-parc-licences',
@@ -215,8 +228,6 @@ dbc.Row([
                                 ),
                             ], width={"size": 6}),
                             dbc.Col([
-=======
->>>>>>> 3dd3832e5824a251eb740edc6866c7f1872c3aae
                                 dbc.Label("Coeff évolution prix achat", width=6),
                                 dcc.Input(
                                     id='input-coeff-evolution-prix-achat',
@@ -443,149 +454,8 @@ dbc.Row([
             ]),
         ],
         id="o1_modal",
-<<<<<<< HEAD
         size="xl",
-=======
-        size="lg",
->>>>>>> 3dd3832e5824a251eb740edc6866c7f1872c3aae
         is_open=False,
     ),
     stockage_ligne
 ])
-
-# Callback pour afficher la fenêtre modale lors du clic sur le bouton "Modifier une saisie"
-@app.callback(
-    Output("o1_modal", "is_open"),
-    Input("o1_btn_modif_ech", "n_clicks"),
-    prevent_initial_call=True,
-)
-def toggle_modal(n):
-    if n:
-        return True
-    return False
-
-# Callback pour stocker les données de la ligne sélectionnée dans le dcc.Store
-@app.callback(
-    Output('o1_store_row', 'data'),
-    Input('o1_data_table', 'selected_rows'),
-    prevent_initial_call=True,
-)
-def store_selected_row(selected_rows):
-    if selected_rows:
-        selected_row_data = df.iloc[selected_rows[0]].to_dict()
-        return selected_row_data
-    else:
-        return {}
-
-## Callback pour mettre à jour la valeur du dropdown "Type de support SAP" en fonction de "Editeur"('Type de contrat'??!!)
-# @app.callback(
-#     Output('input-type-support-sap', 'value'),
-#     Input('o1_store_row', 'data'),
-#     prevent_initial_call=True,
-# )
-# def update_support_sap_dropdown(selected_row_data):
-#     editeur = selected_row_data.get('Type de contrat', '')
-#     if editeur.startswith('SAP'): 
-#         return 'Enterprise'
-#     else:
-#         return ''
-
-
-# Callback pour remplir les champs de la card avec les données de la ligne sélectionnée
-@app.callback(
-    Output('input-client', 'value'),
-    Output('input-erp-number', 'value'),
-    Output('input-date-anniversaire', 'date'),
-    Output('input-code-projet', 'value'),
-    Output('input-resp-commercial', 'value'),
-    Output('input-editeur', 'value'),
-<<<<<<< HEAD
-    
-=======
-    Output('input-relance-client', 'date'),
->>>>>>> 3dd3832e5824a251eb740edc6866c7f1872c3aae
-
-    Output('input-CA-maintenance-facture', 'value'),
-    Output('input-Achat-SAP-Maintenance-GBS-NEED4VIZ', 'value'),
-    Output('input-Marge-maintenance', 'value'),
-    Output('input-Marge-pourcentage', 'value'),
-    Output('input-Montant-vente-annuel-N+1', 'value'),
-    Output('input-Montant-annuel-Achat-N+1', 'value'),
-<<<<<<< HEAD
-    Output('input-Date-de-facture', 'date'),
-    Output('input-Proposition-SAP-reçue', 'value'),
-    Output('input-relance-client', 'date'),
-    Output('input-Proposition-Seenovate-creee', 'value'),
-    Output('input-Proposition-Seenovate-envoyee', 'date'),
-    Output('input-Proposition-signee-par-le-client', 'date'),
-    Output('input-attente-Cde-client', 'value'),
-    Output('input-facture-creee', 'value'),
-    Output('input-commande-faite-sap', 'value'),
-    Output('input-facture-sap-recue', 'value'),
-    Output('input-remarques', 'value'),
-    Output('input-Parc-Techno', 'value'),
-    Output("input-Numero-de-facture", "value"),
-=======
-    
->>>>>>> 3dd3832e5824a251eb740edc6866c7f1872c3aae
-    # Output('input-coeff-evolution-prix-achat', 'value'),
-    # Output('input-coeff-marge', 'value'),
-
-    Input('o1_store_row', 'data'),
-    prevent_initial_call=True,
-)
-def update_card_fields(selected_row_data):
-    client = selected_row_data.get('Client', '')
-    erp_number = selected_row_data.get('ERP Number \nRéf SAP', '')
-    date_anniversaire = selected_row_data.get('Date anniversaire', '')
-    code_projet_boond = selected_row_data.get('Code projet Boond', '') # ACA doit le mettre sur excel pour faire le lien!!!
-    resp_commercial = selected_row_data.get('Resp\nCommercial', '')
-    editeur = selected_row_data.get('Type de contrat', '')  # Editeur à Cf.avec ACA pour faire le lien, je ne vois pas où il est dans xls!
-<<<<<<< HEAD
-    
-=======
-    relance_client_date = selected_row_data.get('Relance client**', None)
->>>>>>> 3dd3832e5824a251eb740edc6866c7f1872c3aae
-
-    CA_maintenance_facture = selected_row_data.get('CA maintenance facturé', '')
-    Achat_SAP_Maintenance_GBS_NEED4VIZ = selected_row_data.get('Achat SAP Maintenance ou GBS ou NEED4VIZ', '')
-    Marge_maintenance = selected_row_data.get('Marge maintenance ', '')
-    marge_pourcentage = selected_row_data.get('Marge %', '')
-    montant_vente_annuel = selected_row_data.get('Montant vente annuel N+1', '')
-    montant_annuel_achat = selected_row_data.get('Montant annuel Achat N+1', '')
-<<<<<<< HEAD
-    date_facture = selected_row_data.get('Date de facture', None)
-    proposition_sap_recue = selected_row_data.get('Proposition SAP reçue', ' ')
-    relance_client = selected_row_data.get('Relance client**', None)
-    proposition_seenovate_creee = selected_row_data.get('Proposition Seenovate créée', '')
-    proposition_seenovate_envoyee = selected_row_data.get('Proposition Seenovate envoyée', None)
-    proposition_signee_par_le_client = selected_row_data.get('Proposition signée par le client', None)
-    attente_Cde_client = selected_row_data.get('Attente N° Cde client avant facturation', '')
-    facture_creee = selected_row_data.get('Facture créée', '')
-    commande_faite_sap = selected_row_data.get('Commande faite SAP', '')
-    facture_sap_recue = selected_row_data.get('Facture SAP reçue', '')
-    remarques = selected_row_data.get('Remarques', '')
-    Parc_Techno = selected_row_data.get('Parc/Techno', '')
-    Numero_de_facture = selected_row_data.get('Numero de facture', '')
-    # coeff_evolution_prix_achat = selected_row_data.get('Coeff évolution prix achat', 0.00)
-    # coeff_marge = selected_row_data.get('Coeff marge', 0.00)
-    print(selected_row_data)
-    
-        
-    return (client, erp_number, date_anniversaire, code_projet_boond,
-             resp_commercial, editeur,CA_maintenance_facture,
-               Achat_SAP_Maintenance_GBS_NEED4VIZ,Marge_maintenance,marge_pourcentage,
-                 montant_vente_annuel, montant_annuel_achat,date_facture,proposition_sap_recue,
-                 relance_client,proposition_seenovate_creee,proposition_seenovate_envoyee,
-                proposition_signee_par_le_client,attente_Cde_client,facture_creee,commande_faite_sap,
-                facture_sap_recue,remarques,Parc_Techno,Numero_de_facture
-    )
-=======
-    # coeff_evolution_prix_achat = selected_row_data.get('Coeff évolution prix achat', 0.00)
-    # coeff_marge = selected_row_data.get('Coeff marge', 0.00)
-        
-    return client, erp_number, date_anniversaire, code_projet_boond, resp_commercial, editeur, relance_client_date,CA_maintenance_facture, Achat_SAP_Maintenance_GBS_NEED4VIZ,Marge_maintenance,marge_pourcentage, montant_vente_annuel, montant_annuel_achat
-
->>>>>>> 3dd3832e5824a251eb740edc6866c7f1872c3aae
-if __name__ == '__main__':
-    app.run_server(debug=True)
