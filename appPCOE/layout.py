@@ -42,6 +42,7 @@ stockage_ligne = dcc.Store(id='o1_store_row')
 stockage_mis_a_jour = dcc.Store(id='o1_store_updated_data')  # Ajout de ce composant
 
 
+
 # Mise en page de l'application
 layout_PCOE = html.Div([
     
@@ -74,7 +75,9 @@ layout_PCOE = html.Div([
             ], color="#AAAD95"),
         ], xs=12, sm=12, md=12, lg=12, xl=12),
     ], justify='end'),
-
+    
+# Ajoutez un dcc.Store pour stocker les données du tableau
+    dcc.Store(id='data-store', data=[]),
 
     # ... Le reste de votre mise en page ...
 
