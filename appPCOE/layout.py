@@ -39,6 +39,7 @@ df = pd.read_excel(r"C:\Users\SofianOUASS\Desktop\PCoE\Suivi CA licences et main
 
 # Ajout d'un composant dcc.Store pour stocker les données de la ligne sélectionnée
 stockage_ligne = dcc.Store(id='o1_store_row')
+stockage_mis_a_jour = dcc.Store(id='o1_store_updated_data')  # Ajout de ce composant
 
 
 # Mise en page de l'application
@@ -450,13 +451,13 @@ dbc.Row([
                 ]),
             ]),
             dbc.ModalFooter([
-                dbc.Button("Valider", id="o1_btn_submit_validate", type="submit", outline=True, color="success"),
-                dbc.Button("Enregistrer", id="o1_btn_submit_save", type="submit", outline=True, color="warning"),
+                dbc.Button("Valider", id="o1_btn_submit_validate", className="me-1", color="success"),
+                dbc.Button("Enregistrer", id="o1_btn_submit_save", className="me-1", n_clicks=0, color="warning"),
             ]),
         ],
         id="o1_modal",
         size="xl",
         is_open=False,
     ),
-    stockage_ligne
+    stockage_ligne, stockage_mis_a_jour 
 ])
