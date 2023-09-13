@@ -76,10 +76,87 @@ layout_PCOE = html.Div([
         ], xs=12, sm=12, md=12, lg=12, xl=12),
     ], justify='end'),
     
+    
 # Ajoutez un dcc.Store pour stocker les données du tableau
     dcc.Store(id='data-store', data=[]),
 
     # ... Le reste de votre mise en page ...
+
+
+    # Intégration des 3 boutons de la mise en page (check infos..)
+    dbc.Container([
+        dbc.Row([
+            dbc.Col([
+                dbc.CardGroup([
+                    dbc.Card(
+                        dbc.CardBody(
+                            [
+                                html.H4('Check infos', style={'color': '#191970'}),
+                                dbc.Row([
+                                    dbc.Col([
+                                        html.Div(
+                                            dcc.Dropdown(
+                                                id='o1_tannerie',
+                                                options=[
+                                                    {'label': 'Non réalisé', 'value': 'non-realise'},
+                                                    {'label': 'OK', 'value': 'ok'},
+                                                    {'label': 'KO', 'value': 'ko'},
+                                                ],
+                                                multi=True,    
+                                            ), style={'fontSize': '20px','font-weight': 'bold','text-align':'center'}),
+                                    ],width=10),
+                                    dbc.Col([    
+                                        dbc.Spinner(html.Div(id="o1_spinner_tannerie")),
+                                    ],width=2)
+                                ],className="mb-2")
+                            ]
+                        )
+                    ),
+                ],className="mt-4 shadow"),
+            ],xs=4,sm=4,md=4,lg=4,xl=4,align="start"), 
+            dbc.Col([
+                dbc.CardGroup([
+                    dbc.Card(
+                        dbc.CardBody(
+                            [
+                                html.H4('Nombre de lignes validées', style={'color': '#191970'}),
+                                html.Div(html.H2(id='o1_nb_lignes_validees'), style={'fontSize': '20px','font-weight': 'bold','text-align':'center'}),
+                            ]
+                        )
+                    ),
+                    dbc.Card(
+                        html.Div(className="fa fa-check-square", style={'color':'white','text-align': 'center','font-size': 30,'margin': 'auto'}),
+                        className="bg-success",
+                        style={"maxWidth": 75},
+                    ),
+                
+                ],className="mt-4 shadow"),
+            ],xs=4,sm=4,md=4,lg=4,xl=4,align="start"),  
+            dbc.Col([    
+                dbc.CardGroup([
+                    dbc.Card(
+                        dbc.CardBody(
+                            [
+                                html.H4('Nombre de lignes non validées', style={'color': '#191970'}),
+                                html.Div(html.H2(id='o1_nb_lignes_non_validees'), style={'fontSize': '20px','font-weight': 'bold','text-align':'center'}),
+                            ]
+                        )
+                    ),
+                    dbc.Card(
+                        html.Div(className="fa fa-floppy-o", style={'color':'white','text-align': 'center','font-size': 30,'margin': 'auto'}),
+                    
+                        className="bg-warning",
+                        style={"maxWidth": 75},
+                    ),
+                
+                ],className="mt-4 shadow"),
+            ],xs=4,sm=4,md=4,lg=4,xl=4,align="start"),  
+        ]),
+    ], fluid=True),
+    
+    # Le reste de votre mise en page...
+    
+
 
 # # Mise en page de l'application
 # app.layout = dbc.Container([
@@ -141,11 +218,11 @@ dbc.Row([
                         dbc.Row([
                             dbc.Col([
                                 dbc.Label("Client", width=6),
-                                dcc.Input(id='input-client', type='text', placeholder='Entrez le Client'),
+                                dbc.Label(id='input-client')
                             ], width={"size": 6}),
                             dbc.Col([
                                 dbc.Label("ERP Number", width=6),
-                                dcc.Input(id='input-erp-number', type='text', placeholder='Entrez l\'ERP Number'),
+                                dbc.Label(id='input-erp-number')
                             ], width={"size": 6}),
                             dbc.Col([
                                 dbc.Label("Date anniversaire", width=6),
@@ -153,15 +230,15 @@ dbc.Row([
                             ], width={"size": 6}),
                             dbc.Col([
                                 dbc.Label("Code projet Boond", width=6),
-                                dcc.Input(id='input-code-projet', type='text', placeholder='Entrez le Code projet Boond'),
+                                dbc.Label(id='input-code-projet') #En attente de Boond
                             ], width={"size": 6}),
                             dbc.Col([
                                 dbc.Label("Resp. Commercial", width=6),
-                                dcc.Input(id='input-resp-commercial', type='text', placeholder='Entrez le Resp. Commercial'),
+                                dbc.Label(id='input-resp-commercial')
                             ], width={"size": 6}),
                             dbc.Col([
                                 dbc.Label("Editeur", width=6),
-                                dcc.Input(id='input-editeur', type='text', placeholder='Entrez l\'Editeur'),#possibilité de faire dropdown cf. excel specs App PCoE
+                                dbc.Label(id='input-editeur'),#possibilité de faire dropdown cf. excel specs App PCoE
                             ], width={"size": 6}),
                         ]),
                     ])
