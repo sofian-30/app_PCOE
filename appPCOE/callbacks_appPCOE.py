@@ -3,7 +3,8 @@ from dash.dependencies import Input, Output, State
 import pandas as pd
 from dash.exceptions import PreventUpdate
 import dash
-from dash import ctx
+from dash import ctx, html
+import datetime
 
 df = pd.read_excel(r"C:\Users\SofianOUASS\Desktop\PCoE\Suivi CA licences et maintenance 2023.xlsx", sheet_name='Maintenance SAP BusinessObjects')
 
@@ -42,7 +43,7 @@ def update_type_support_sap(selected_row_data):
 @app.callback(
     Output('input-client', 'children'),
     Output('input-erp-number', 'children'),
-    Output('input-date-anniversaire', 'date'),
+    Output('input-date-anniversaire', 'children'),#"date"
     Output('input-code-projet', 'children'),
     Output('input-resp-commercial', 'children'),
     Output('input-editeur', 'children'),
@@ -136,7 +137,7 @@ def update_modal_open_state(n_btn_modif_ech, n_btn_submit_validate):
     State('o1_data_table', 'selected_rows'),
     State("input-client", "value"),
     State("input-erp-number", "value"),
-    State("input-date-anniversaire", "date"),
+    State("input-date-anniversaire", "value"), #"date"
     State("input-code-projet", "value"),
     State("input-resp-commercial", "value"),
     State("input-editeur", "value"),
@@ -165,6 +166,8 @@ def update_modal_open_state(n_btn_modif_ech, n_btn_submit_validate):
     # State('data-store', 'data'),
     prevent_initial_call=True,
 )
+
+
 def update_table_data(n_btn_submit_validate, selected_row_number, client, erp_number, 
                      date_anniversaire, code_projet_boond, resp_commercial, editeur,
                      CA_maintenance_facture, Achat_SAP_Maintenance_GBS_NEED4VIZ, 
@@ -243,7 +246,23 @@ def update_table_data(n_btn_submit_validate, selected_row_number, client, erp_nu
 
         return data_main_table
 
-       
+# #transformer le format de la date d'anniversaire      
+# from datetime import datetime
+
+# # La date d'anniversaire au format initial
+# date_anniversaire_str = '2023-12-31T00:00:00'
+
+# # Convertir la chaîne de caractères en objet datetime
+# date_obj = datetime.strptime(date_anniversaire_str, '%Y-%m-%dT%H:%M:%S')
+
+# # Formater la date au format 'DD/MM'
+# date_formatee = date_obj.strftime('%d/%m')
+
+# # Afficher la date au format souhaité
+# print(date_formatee)
+
+
+
 
 
 

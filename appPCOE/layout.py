@@ -9,7 +9,8 @@ import pandas as pd
 import plotly.graph_objs as go
 from datetime import date
 from colors import *
-
+# Import functions
+# from index import get_auth
 
 ######################################################################################
 #                                       Data                                         #
@@ -23,6 +24,34 @@ n_app = 1 # numéro de l'appli
 # Charger le tableau Excel
 # df = pd.read_excel(r"/mnt/c/CA_2023.xlsx", sheet_name='Maintenance SAP BusinessObjects')
 df = pd.read_excel(r"C:\Users\SofianOUASS\Desktop\PCoE\Suivi CA licences et maintenance 2023.xlsx", sheet_name='Maintenance SAP BusinessObjects')
+
+
+# # Ajout des 4 nouvelles colonnes
+# new_columns = ['Alerte renouvellement', 'Alerte validation devis', 'Nouveau prix d\'achat', 'Nouveau prix de vente']
+# for col in new_columns:
+#     df.insert(df.columns.get_loc('Achat SAP Maintenance ou GBS ou NEED4VIZ') + 1, col, None)  # Insérer après la colonne 'Achat SAP Maintenance ou GBS ou NEED4VIZ'
+
+# Ajout des 4 nouvelles colonnes après 'Achat SAP Maintenance ou GBS ou NEED4VIZ'
+new_columns = []
+for col in df.columns:
+    new_columns.append({'name': col, 'id': col, 'type': 'text'})
+    if col == 'Achat SAP Maintenance ou GBS ou NEED4VIZ':
+        new_columns.append({'name': 'Alerte renouvellement', 'id': 'Alerte renouvellement', 'type': 'text'})
+        new_columns.append({'name': 'Alerte validation devis', 'id': 'Alerte validation devis', 'type': 'text'})
+        new_columns.append({'name': 'Nouveau prix d\'achat', 'id': 'Nouveau prix d\'achat', 'type': 'text'})
+        new_columns.append({'name': 'Nouveau prix de vente', 'id': 'Nouveau prix de vente', 'type': 'text'})
+
+
+#############################################################################################################
+#                                          Appel API                                                        #
+#############################################################################################################
+
+
+
+#############################################################################################################
+#                                                                                                           #
+#############################################################################################################
+
 
 ##liste des noms de colonne: Informations contrats clients=
 # ['Client', 'ERP Number \nRéf SAP', 'Date anniversaire', 'Code projet Boond', 'Resp\nCommercial', 'Type de contrat']
@@ -57,24 +86,7 @@ layout_PCOE = html.Div([
             ],color="dark")
         ],xs=12,sm=12,md=12,lg=12,xl=12)
     ]),
-     dbc.Row([
-        dbc.Col([
-            dbc.Navbar([
-                dbc.Row([
-                    dbc.Col([], xs=2, sm=2, md=2, lg=2, xl=2),  # Colonne vide à gauche
-                    dbc.Col([
-                        html.Div(
-                            "Tableau de bord de l'application PCoE",
-                            id="titre",
-                            className="text-white mx-auto",  # Ajouter la classe mx-auto pour centrer le texte horizontalement
-                            style={"font-size": "15px", "text-align": "center"},
-                        ),
-                    ], xs=8, sm=8, md=8, lg=8, xl=8, align="center"),
-                    dbc.Col([], xs=2, sm=2, md=2, lg=2, xl=2),  # Colonne vide à droite
-                ]),
-            ], color="#AAAD95"),
-        ], xs=12, sm=12, md=12, lg=12, xl=12),
-    ], justify='end'),
+     
     
     
 # Ajoutez un dcc.Store pour stocker les données du tableau
@@ -165,40 +177,34 @@ layout_PCOE = html.Div([
 #     html.Div([
 #         html.Img(src='logo.png', style={'width': '200px', 'height': '50px'})
 #     ], style={'text-align': 'center'}),
-    dash_table.DataTable(
-        columns=[
-            {
-                'name': col,
-                'id': col,
-                'type': 'text'  # Remplacez 'text' par le type de données correct si nécessaire
-            }
-            for col in df.columns
-        ],
-        data=df.to_dict('records'),  # Convertir le DataFrame en dictionnaire de records
-        id='o1_data_table',
-        style_table={'height': '60vh',
-                     'overflowX': 'auto',
-                     'overflowY': 'auto',
-                     'margin-left': '20px',
-                     'margin-top': '20px',
-                     'margin-right': '20px'},
-        style_cell={'font_family': 'calibri',
-                    'height': 'auto',
-                    'textAlign': 'center',
-                    'minWidth': 50,
-                    'maxWidth': 150},
-        style_data={'font-family': 'Bahnschrift Light'},
-        style_data_conditional=[{
-            "if": {"state": "selected"},
-            "backgroundColor": "rgba(0, 116, 217, .03)",
-            "border": "1px solid black",
-        }],
-        sort_action='native',
-        sort_mode='single',
-        filter_action='native',
-        row_selectable='single',
-        export_format="xlsx"
-    ),
+# Création de la DataTable avec les nouvelles colonnes
+dash_table.DataTable(
+    columns=new_columns,
+    data=df.to_dict('records'),
+    id='o1_data_table',
+    style_table={'height': '60vh',
+                 'overflowX': 'auto',
+                 'overflowY': 'auto',
+                 'margin-left': '20px',
+                 'margin-top': '20px',
+                 'margin-right': '20px'},
+    style_cell={'font_family': 'calibri',
+                'height': 'auto',
+                'textAlign': 'center',
+                'minWidth': 50,
+                'maxWidth': 150},
+    style_data={'font-family': 'Bahnschrift Light'},
+    style_data_conditional=[{
+        "if": {"state": "selected"},
+        "backgroundColor": "rgba(0, 116, 217, .03)",
+        "border": "1px solid black",
+    }],
+    sort_action='native',
+    sort_mode='single',
+    filter_action='native',
+    row_selectable='single',
+    export_format="xlsx"
+),
     
     # Bouton "Modifier une saisie"
 dbc.Row([
@@ -226,7 +232,7 @@ dbc.Row([
                             ], width={"size": 6}),
                             dbc.Col([
                                 dbc.Label("Date anniversaire", width=6),
-                                dcc.DatePickerSingle(id='input-date-anniversaire',display_format='DD/MM', placeholder='Sélectionnez une date'),
+                                dbc.Label(id='input-date-anniversaire')  # Utilisation de dbc.Label pour afficher la date
                             ], width={"size": 6}),
                             dbc.Col([
                                 dbc.Label("Code projet Boond", width=6),
@@ -249,28 +255,28 @@ dbc.Row([
                         dbc.Row([
                             dbc.Col([
                                 dbc.Label("CA maintenance facturé", width=6),
-                                dcc.Input(id='input-CA-maintenance-facture', type='text', placeholder='Entrez le CA maintenance facturé'),
-                            ], width={"size": 6}),
+                                dcc.Input(id='input-CA-maintenance-facture', type='number', placeholder='Entrez le CA maintenance facturé'),
+                            ], width={"size": 6}), #step='0.01' arrondi à 2 chiffre après la virgule
                             dbc.Col([
                                 dbc.Label("Achat SAP Maintenance ou GBS ou NEED4VIZ", width=6),
-                                dcc.Input(id='input-Achat-SAP-Maintenance-GBS-NEED4VIZ', type='text', placeholder='Entrez le Achat SAP Maintenance ou GBS ou NEED4VIZ'),
+                                dcc.Input(id='input-Achat-SAP-Maintenance-GBS-NEED4VIZ', type='number', placeholder='Entrez le Achat SAP Maintenance ou GBS ou NEED4VIZ'),
                             ], width={"size": 6}),
                         ]),dbc.Row([
                             dbc.Col([
                                 dbc.Label("Marge maintenance", width=6),
-                                dcc.Input(id='input-Marge-maintenance', type='text', placeholder='Entrez la Marge maintenance'),
+                                dcc.Input(id='input-Marge-maintenance', type='number', placeholder='Entrez la Marge maintenance'),
                             ], width={"size": 6}),
                             dbc.Col([
                                 dbc.Label("Marge %", width=6),
-                                dcc.Input(id='input-Marge-pourcentage', type='text', placeholder='Entrez la Marge %'),
+                                dcc.Input(id='input-Marge-pourcentage', type='number', placeholder='Entrez la Marge %'),
                             ], width={"size": 6}),
                             dbc.Col([
                                 dbc.Label("Montant vente annuel N+1", width=6),
-                                dcc.Input(id='input-Montant-vente-annuel-N+1', type='text', placeholder='Entrez le Montant vente annuel N+1'),
+                                dcc.Input(id='input-Montant-vente-annuel-N+1', type='number', placeholder='Entrez le Montant vente annuel N+1'),
                             ], width={"size": 6}),
                             dbc.Col([
                                 dbc.Label("Montant annuel Achat N+1", width=6),
-                                dcc.Input(id='input-Montant-annuel-Achat-N+1', type='text', placeholder='Entrez le Montant annuel Achat N+1'),
+                                dcc.Input(id='input-Montant-annuel-Achat-N+1', type='number', placeholder='Entrez le Montant annuel Achat N+1'),
                             ], width={"size": 6}),
                             dbc.Col([
                                 dbc.Label("Mois d'imputation", width=6),
@@ -295,7 +301,7 @@ dbc.Row([
                             ], width={"size": 6}),
                             dbc.Col([
                                 dbc.Label("Numéro de facture", width=6),
-                                dcc.Input(id='input-Numero-de-facture', type='text', placeholder='Entrez le Numéro de facture'),
+                                dcc.Input(id='input-Numero-de-facture', type='number', placeholder='Entrez le Numéro de facture'),
                             ], width={"size": 6}),
                             dbc.Col([
                                 dbc.Label("Date de facture", width=6),
