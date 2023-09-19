@@ -9,6 +9,10 @@ import pandas as pd
 import plotly.graph_objs as go
 from datetime import date
 from colors import *
+# import dash_mantine_components as dmc
+import dash_mantine_components as dmc
+
+
 # Import functions
 # from index import get_auth
 
@@ -25,11 +29,6 @@ n_app = 1 # numéro de l'appli
 # df = pd.read_excel(r"/mnt/c/CA_2023.xlsx", sheet_name='Maintenance SAP BusinessObjects')
 df = pd.read_excel(r"C:\Users\SofianOUASS\Desktop\PCoE\Suivi CA licences et maintenance 2023.xlsx", sheet_name='Maintenance SAP BusinessObjects')
 
-
-# # Ajout des 4 nouvelles colonnes
-# new_columns = ['Alerte renouvellement', 'Alerte validation devis', 'Nouveau prix d\'achat', 'Nouveau prix de vente']
-# for col in new_columns:
-#     df.insert(df.columns.get_loc('Achat SAP Maintenance ou GBS ou NEED4VIZ') + 1, col, None)  # Insérer après la colonne 'Achat SAP Maintenance ou GBS ou NEED4VIZ'
 
 # Ajout des 4 nouvelles colonnes après 'Achat SAP Maintenance ou GBS ou NEED4VIZ'
 new_columns = []
@@ -70,6 +69,388 @@ for col in df.columns:
 stockage_ligne = dcc.Store(id='o1_store_row')
 stockage_mis_a_jour = dcc.Store(id='o1_store_updated_data')  # Ajout de ce composant
 
+modal_pop_up= dbc.Modal(
+         [
+            dbc.ModalHeader(dbc.ModalTitle("Modifier la saisie")),
+            dbc.ModalBody([
+                dbc.Card([
+                    dbc.CardHeader("Informations générales"),
+                    dbc.CardBody([
+                        dbc.Row([
+                            dbc.Col([
+                                dbc.Label("Client", width=6),
+                                dbc.Label(id='input-client')
+                            ], width={"size": 6}),
+                            dbc.Col([
+                                dbc.Label("ERP Number", width=6),
+                                dbc.Label(id='input-erp-number')
+                            ], width={"size": 6}),
+                            dbc.Col([
+                                dbc.Label("Date anniversaire", width=6),
+                                dbc.Label(id='input-date-anniversaire')  # Utilisation de dbc.Label pour afficher la date
+                            ], width={"size": 6}),
+                            dbc.Col([
+                                dbc.Label("Code projet Boond", width=6),
+                                dbc.Label(id='input-code-projet') # En attente de Boond
+                            ], width={"size": 6}),
+                            dbc.Col([
+                                dbc.Label("Resp. Commercial", width=6),
+                                dbc.Label(id='input-resp-commercial')
+                            ], width={"size": 6}),
+                            dbc.Col([
+                                dbc.Label("Editeur", width=6),
+                                dbc.Label(id='input-editeur') # possibilité de faire dropdown cf. excel specs App PCoE
+                            ], width={"size": 6}),
+                        ]),
+                    ])
+                ]),
+                # Créez un Accordion pour chaque section
+                dmc.Accordion(
+    children=[
+        dmc.AccordionItem(
+            [
+                dmc.AccordionControl("Status"),
+                dmc.AccordionPanel(
+                                    [
+                                        # Contenu de la section 'Status'
+                                        dbc.Row([
+                                            dbc.Col([
+                                                dbc.Label("Accord de principe", width=6),
+                                                dcc.Dropdown(
+                                                    id='input-accord-de-principe',
+                                                    options=[
+                                                        {'label': 'Oui', 'value': 'Oui'},
+                                                        {'label': 'Non', 'value': 'Non'},
+                                                    ],
+                                                    placeholder='Sélectionnez une option',
+                                                ),
+                                            ], width={"size": 6}),
+                                            dbc.Col([
+                                                dbc.Label("Signature client", width=6),
+                                                dcc.Dropdown(
+                                                    id='input-signature-client',
+                                                    options=[
+                                                        {'label': 'Oui', 'value': 'Oui'},
+                                                        {'label': 'Non', 'value': 'Non'},
+                                                    ],
+                                                    placeholder='Sélectionnez une option',
+                                                ),
+                                            ], width={"size": 6}),
+                                        ]),
+                                        dbc.Row([
+                                            dbc.Col([
+                                                dbc.Label("Achat éditeur", width=6),
+                                                dcc.Dropdown(
+                                                    id='input-achat-editeur',
+                                                    options=[
+                                                        {'label': 'Oui', 'value': 'Oui'},
+                                                        {'label': 'Non', 'value': 'Non'},
+                                                    ],
+                                                    placeholder='Sélectionnez une option',
+                                                ),
+                                            ], width={"size": 6}),
+                                            dbc.Col([
+                                                dbc.Label("Paiement SAP", width=6),
+                                                dcc.Dropdown(
+                                                    id='input-paiement-sap',
+                                                    options=[
+                                                        {'label': 'Oui', 'value': 'Oui'},
+                                                        {'label': 'Non', 'value': 'Non'},
+                                                    ],
+                                                    placeholder='Sélectionnez une option',
+                                                ),
+                                            ], width={"size": 6}),
+                                            # Ajoutez d'autres éléments de contenu ici
+                                        ]),
+                                    ]
+                                ),
+                            ],
+                            value="Status",
+                        ),
+                        dmc.Accordion(
+                            children=[
+                                dmc.AccordionItem(
+                                    [
+                                        dmc.AccordionControl("Conditions financières"),
+                                        dmc.AccordionPanel(
+                                    [
+                                        # Contenu de la section 'Conditions financières'
+                                        dbc.Row([
+                                            dbc.Col([
+                                                dbc.Label('Nouveau prix d\'achat', width=6),
+                                                dcc.Input(id='Nouveau prix d\'achat', type='number', placeholder='Entrez le NV prix d\'achat'),
+                                            ], width={"size": 6}),
+                                            dbc.Col([
+                                                dbc.Label('Nouveau prix de vente', width=6),
+                                                dcc.Input(id='Nouveau prix de vente', type='number', placeholder='Entrez le NV prix de vente '),
+                                            ], width={"size": 6}),
+                                            dbc.Col([
+                                                dbc.Label("Marge maintenance", width=6),
+                                                dcc.Input(id='input-Marge-maintenance', type='number', placeholder='Entrez la Marge maintenance'),
+                                            ], width={"size": 6}),
+                                            dbc.Col([
+                                                dbc.Label("Marge %", width=6),
+                                                dcc.Input(id='input-Marge-pourcentage', type='number', placeholder='Entrez la Marge %'),
+                                            ], width={"size": 6}),
+                                            dbc.Col([
+                                                dbc.Label("Montant vente annuel N+1", width=6),
+                                                dcc.Input(id='input-Montant-vente-annuel-N+1', type='number', placeholder='Entrez le Montant vente annuel N+1'),
+                                            ], width={"size": 6}),
+                                            dbc.Col([
+                                                dbc.Label("Montant annuel Achat N+1", width=6),
+                                                dcc.Input(id='input-Montant-annuel-Achat-N+1', type='number', placeholder='Entrez le Montant annuel Achat N+1'),
+                                            ], width={"size": 6}),
+                                            dbc.Col([
+                                                dbc.Label("Mois d'imputation", width=6),
+                                                dcc.Input(id='input-mois-imputation', type='text', placeholder='Sélectionnez une date'),
+                                            ], width={"size": 6}),
+                                            # Ajoutez d'autres éléments de contenu ici
+                                        ]),
+                                    ]
+                                ),
+                            ],
+                            value="Conditions financières",
+                        ),
+                        dmc.Accordion(
+                            children=[
+                                dmc.AccordionItem(
+                                    [
+                                        dmc.AccordionControl("Informations contractuelles"),
+                                        dmc.AccordionPanel(
+                                    [
+                                        # Contenu de la section 'Informations contractuelles'
+                                        dbc.Row([
+                                            dbc.Col([
+                                                dbc.Label('CA maintenance facturé', width=6),
+                                                dcc.Input(id='input-CA-maintenance-facture', type='number', placeholder='Entrez le CA maintenance facturé'),
+                                            ], width={"size": 6}), # step='0.01' arrondi à 2 chiffre après la virgule
+                                            dbc.Col([
+                                                dbc.Label('Achat SAP Maintenance ou GBS ou NEED4VIZ', width=6),
+                                                dcc.Input(id='input-Achat-SAP-Maintenance-GBS-NEED4VIZ', type='number', placeholder='Entrez le Achat SAP Maintenance ou GBS ou NEED4VIZ'),
+                                            ], width={"size": 6}),
+                                            dbc.Col([
+                                                dbc.Label("Type de support SAP", width=6)],
+                                                width={"size": 3}),
+                                            dbc.Col([
+                                                dcc.Dropdown(
+                                                    id='input-type-support-sap',
+                                                    options=[
+                                                        {'label': 'Enterprise', 'value': 'Enterprise'},
+                                                        {'label': 'Standard', 'value': 'Standard'},
+                                                        {'label': '', 'value': ''},
+                                                    ],
+                                                    placeholder='Sélectionnez le Type de support SAP',
+                                                ),
+                                            ], width={"size": 3}),
+                                            dbc.Col([
+                                                dbc.Label("Parc/Techno", width=6),
+                                                dcc.Input(id='input-Parc-Techno', type='text', placeholder='Entrez le Parc/Techno'),
+                                            ], width={"size": 6}),
+                                            dbc.Col([
+                                                dbc.Label("Numéro de facture", width=6),
+                                                dcc.Input(id='input-Numero-de-facture', type='number', placeholder='Entrez le Numéro de facture'),
+                                            ], width={"size": 6}),
+                                            dbc.Col([
+                                                dbc.Label("Date de facture", width=6),
+                                                dcc.DatePickerSingle(id='input-Date-de-facture', display_format='DD/MM/YYYY', placeholder='Sélectionnez une date'),
+                                            ], width={"size": 6}),
+                                            dbc.Col([
+                                                dbc.Label("Parc de licences", width=6),
+                                                dcc.Input(
+                                                    id='input-parc-licences',
+                                                    type='text',
+                                                    placeholder='Entrez le nom et la quantité du parc de licences (ex. Licence A: 10)',
+                                                ),
+                                            ], width={"size": 6}),
+                                            dbc.Col([
+                                                dbc.Label("Coeff évolution prix achat", width=6),
+                                                dcc.Input(
+                                                    id='input-coeff-evolution-prix-achat',
+                                                    type='number',
+                                                    placeholder='Entrez le Coeff évolution prix achat',
+                                                    step=0.01,  # 2 chiffres après la virgule
+                                                ),
+                                            ], width={"size": 6}),
+                                            dbc.Col([
+                                                dbc.Label("Coeff marge", width=6),
+                                                dcc.Input(
+                                                    id='input-coeff-marge',
+                                                    type='number',
+                                                    placeholder='Entrez le Coeff marge',
+                                                    step=0.01,  # 2 chiffres après la virgule
+                                                ),
+                                            ], width={"size": 6}),
+                                            dbc.Col([
+                                                dbc.Label("Proposition SAP reçue", width=6),
+                                                dcc.Dropdown(
+                                                    id='input-Proposition-SAP-reçue',
+                                                    options=[
+                                                        {'label': 'OK', 'value': 'OK'},
+                                                        {'label': ' ', 'value': ' '}
+                                                    ],
+                                                    placeholder='Sélectionnez une option',
+                                                    value='',  # Vous pouvez définir une valeur par défaut si nécessaire
+                                                ),
+                                            ], width={"size": 6}),
+                                            dbc.Col([
+                                                dbc.Label("Relance client**", width=6),
+                                                dcc.DatePickerSingle(
+                                                    id='input-relance-client',
+                                                    display_format='DD/MM/YYYY',  # Format jour, mois et année
+                                                    placeholder='Sélectionnez une date de relance',
+                                                ),
+                                            ], width={"size": 6}),
+                                            dbc.Col([
+                                                dbc.Label("Proposition Seenovate créée", width=6),
+                                                dcc.Dropdown(
+                                                    id='input-Proposition-Seenovate-creee',
+                                                    options=[
+                                                        {'label': 'OK', 'value': 'OK'},
+                                                        {'label': ' ', 'value': ' '}
+                                                    ],
+                                                    placeholder='Sélectionnez une option',
+                                                    value='',  # Vous pouvez définir une valeur par défaut si nécessaire
+                                                ),
+                                            ], width={"size": 6}),
+                                            dbc.Col([
+                                                dbc.Label("Proposition Seenovate envoyée", width=6),
+                                                dcc.DatePickerSingle(
+                                                    id='input-Proposition-Seenovate-envoyee',
+                                                    display_format='DD/MM/YYYY',  # Format jour, mois et année
+                                                    placeholder='Sélectionnez une date',
+                                                ),
+                                            ], width={"size": 6}),
+                                            dbc.Col([
+                                                dbc.Label("Proposition signée par le client", width=6),
+                                                dcc.DatePickerSingle(
+                                                    id='input-Proposition-signee-par-le-client',
+                                                    display_format='DD/MM/YYYY',  # Format jour, mois et année
+                                                    placeholder='Sélectionnez une date',
+                                                ),
+                                            ], width={"size": 6}),
+                                            dbc.Col([
+                                                dbc.Label("Attente N° Cde client avant facturation", width=6),
+                                                dcc.Input(id='input-attente-Cde-client', type='text', placeholder='Entrez le N° Cde client avant facturation'),
+                                            ], width={"size": 6}),
+                                            dbc.Col([
+                                                dbc.Label("Facture créée", width=6),
+                                                dcc.DatePickerSingle(id='input-facture-creee', display_format='DD/MM/YYYY', placeholder='Entrez la Facture créée'),
+                                            ], width={"size": 6}),
+                                            dbc.Col([
+                                                dbc.Label("Commande faite SAP", width=6),
+                                                dcc.Input(id='input-commande-faite-sap', type='text', placeholder='Entrez la Commande faite SAP'),
+                                            ], width={"size": 6}),
+                                            dbc.Col([
+                                                dbc.Label("Facture SAP reçue", width=6),
+                                                dcc.Input(id='input-facture-sap-recue', type='text', placeholder='Entrez la Facture SAP reçue'),
+                                            ], width={"size": 6}),
+                                            dbc.Col([
+                                                dbc.Label("Remarques", width=6),
+                                                dcc.Input(id='input-remarques', type='text', placeholder='Entrez les Remarques'),
+                                            ], width={"size": 6}),
+                                            dbc.Col([
+                                                dbc.Label("Conditions contractuelles et facturation", width=6),
+                                                dcc.Input(id='input-conditions-contractuelles', type='text', placeholder='Entrez les conditions contractuelles et facturation'),
+                                            ], width={"size": 6}),
+                                            dbc.Col([
+                                                dbc.Label("Devis", width=6),
+                                                dcc.Dropdown(
+                                                    id='input-devis',
+                                                    options=[
+                                                        {'label': 'Oui', 'value': 'Oui'},
+                                                        {'label': 'Non', 'value': 'Non'},
+                                                    ],
+                                                    placeholder='Sélectionnez une option',
+                                                ),
+                                            ], width={"size": 6}),
+                                            dbc.Col([
+                                                dbc.Label("Renouvelé", width=6),
+                                                dcc.Dropdown(
+                                                    id='input-renouvele',
+                                                    options=[
+                                                        {'label': 'Oui', 'value': 'Oui'},
+                                                        {'label': 'Non', 'value': 'Non'},
+                                                    ],
+                                                    placeholder='Sélectionnez une option',
+                                                ),
+                                            ], width={"size": 6}),
+                                            dbc.Col([
+                                                dbc.Label("Traitement comptable", width=6),
+                                                dcc.Dropdown(
+                                                    id='input-traitement-comptable',
+                                                    options=[
+                                                        {'label': 'Oui', 'value': 'Oui'},
+                                                        {'label': 'Non', 'value': 'Non'},
+                                                    ],
+                                                    placeholder='Sélectionnez une option',
+                                                ),
+                                            ], width={"size": 6}),
+                                            dbc.Col([
+                                                dbc.Label("Demande de résiliation", width=6),
+                                                dcc.Dropdown(
+                                                    id='input-demande-resiliation',
+                                                    options=[
+                                                        {'label': 'Oui', 'value': 'Oui'},
+                                                        {'label': 'Non', 'value': 'Non'},
+                                                    ],
+                                                    placeholder='Sélectionnez une option',
+                                                ),
+                                            ], width={"size": 6}),
+                                            dbc.Col([
+                                                dbc.Label("Communication éditeur", width=6),
+                                                dcc.Dropdown(
+                                                    id='input-communication-editeur',
+                                                    options=[
+                                                        {'label': 'Oui', 'value': 'Oui'},
+                                                        {'label': 'Non', 'value': 'Non'},
+                                                    ],
+                                                    placeholder='Sélectionnez une option',
+                                                ),
+                                            ], width={"size": 6}),
+                                            dbc.Col([
+                                                dbc.Label("Résilié", width=6),
+                                                dcc.Dropdown(
+                                                    id='input-resilie',
+                                                    options=[
+                                                        {'label': 'Oui', 'value': 'Oui'},
+                                                        {'label': 'Non', 'value': 'Non'},
+                                                    ],
+                                                    placeholder='Sélectionnez une option',
+                                                ),
+                                            ], width={"size": 6}),
+                                            dbc.Col([
+                                                dbc.Label("Converti ou Extension", width=6),
+                                                dcc.Dropdown(
+                                                    id='input-converti-extension',
+                                                    options=[
+                                                        {'label': ' ', 'value': ' '},
+                                                        {'label': 'Converti', 'value': 'Converti'},
+                                                        {'label': 'Extension', 'value': 'Extension'},
+                                                    ],
+                                                    placeholder='Sélectionnez une option',
+                                                ),
+                                            ], width={"size": 6}),
+                                            # Ajoutez d'autres éléments de contenu ici
+                                        ]),
+                                    ]
+                                ),
+                            ],
+                            value="Informations contractuelles",
+                        ),
+                    ],
+                ),
+            ])])]),
+            dbc.ModalFooter([
+                dbc.Button("Valider", id="o1_btn_submit_validate", className="me-1", color="success"),
+                dbc.Button("Enregistrer", id="o1_btn_submit_save", className="me-1", n_clicks=0, color="warning"),
+            ]),
+        ],
+        id="o1_modal",
+        size="xl",
+        is_open=False,
+    )
+
+    # Ajoutez d'autres éléments de votre mise en page ici
 
 
 # Mise en page de l'application
@@ -169,15 +550,7 @@ layout_PCOE = html.Div([
     # Le reste de votre mise en page...
     
 
-
-# # Mise en page de l'application
-# app.layout = dbc.Container([
-#     html.H1("Tableau de bord de l'application PCoE"),
-#     # En-tête avec logo
-#     html.Div([
-#         html.Img(src='logo.png', style={'width': '200px', 'height': '50px'})
-#     ], style={'text-align': 'center'}),
-# Création de la DataTable avec les nouvelles colonnes
+# Création de la DataTable + ajout nouvelles colonnes
 dash_table.DataTable(
     columns=new_columns,
     data=df.to_dict('records'),
@@ -213,337 +586,6 @@ dbc.Row([
     ], width={"size": 6, "offset": 3})  # Offset de 3 pour centrer le bouton
 ], className="pb-3"),
 
-    # Fenêtre modale pour la modification de saisie
-    dbc.Modal(
-        [
-            dbc.ModalHeader(dbc.ModalTitle("Modifier la saisie")),
-            dbc.ModalBody([
-                dbc.Card([
-                    dbc.CardHeader("Informations contrats clients"),
-                    dbc.CardBody([
-                        dbc.Row([
-                            dbc.Col([
-                                dbc.Label("Client", width=6),
-                                dbc.Label(id='input-client')
-                            ], width={"size": 6}),
-                            dbc.Col([
-                                dbc.Label("ERP Number", width=6),
-                                dbc.Label(id='input-erp-number')
-                            ], width={"size": 6}),
-                            dbc.Col([
-                                dbc.Label("Date anniversaire", width=6),
-                                dbc.Label(id='input-date-anniversaire')  # Utilisation de dbc.Label pour afficher la date
-                            ], width={"size": 6}),
-                            dbc.Col([
-                                dbc.Label("Code projet Boond", width=6),
-                                dbc.Label(id='input-code-projet') #En attente de Boond
-                            ], width={"size": 6}),
-                            dbc.Col([
-                                dbc.Label("Resp. Commercial", width=6),
-                                dbc.Label(id='input-resp-commercial')
-                            ], width={"size": 6}),
-                            dbc.Col([
-                                dbc.Label("Editeur", width=6),
-                                dbc.Label(id='input-editeur'),#possibilité de faire dropdown cf. excel specs App PCoE
-                            ], width={"size": 6}),
-                        ]),
-                    ])
-                ]),
-                dbc.Card([
-                    dbc.CardHeader("Autres informations"),
-                    dbc.CardBody([
-                        dbc.Row([
-                            dbc.Col([
-                                dbc.Label("CA maintenance facturé", width=6),
-                                dcc.Input(id='input-CA-maintenance-facture', type='number', placeholder='Entrez le CA maintenance facturé'),
-                            ], width={"size": 6}), #step='0.01' arrondi à 2 chiffre après la virgule
-                            dbc.Col([
-                                dbc.Label("Achat SAP Maintenance ou GBS ou NEED4VIZ", width=6),
-                                dcc.Input(id='input-Achat-SAP-Maintenance-GBS-NEED4VIZ', type='number', placeholder='Entrez le Achat SAP Maintenance ou GBS ou NEED4VIZ'),
-                            ], width={"size": 6}),
-                        ]),dbc.Row([
-                            dbc.Col([
-                                dbc.Label("Marge maintenance", width=6),
-                                dcc.Input(id='input-Marge-maintenance', type='number', placeholder='Entrez la Marge maintenance'),
-                            ], width={"size": 6}),
-                            dbc.Col([
-                                dbc.Label("Marge %", width=6),
-                                dcc.Input(id='input-Marge-pourcentage', type='number', placeholder='Entrez la Marge %'),
-                            ], width={"size": 6}),
-                            dbc.Col([
-                                dbc.Label("Montant vente annuel N+1", width=6),
-                                dcc.Input(id='input-Montant-vente-annuel-N+1', type='number', placeholder='Entrez le Montant vente annuel N+1'),
-                            ], width={"size": 6}),
-                            dbc.Col([
-                                dbc.Label("Montant annuel Achat N+1", width=6),
-                                dcc.Input(id='input-Montant-annuel-Achat-N+1', type='number', placeholder='Entrez le Montant annuel Achat N+1'),
-                            ], width={"size": 6}),
-                            dbc.Col([
-                                dbc.Label("Mois d'imputation", width=6),
-                                dcc.Input(id='input-mois-imputation', type='text', placeholder='Sélectionnez une date'),
-                            ], width={"size": 6}),
-                            dbc.Col([
-                                dbc.Label("Type de support SAP", width=6),],width={"size": 3}),
-                                dbc.Col([
-                                dcc.Dropdown(
-                                    id='input-type-support-sap',
-                                    options=[
-                                        {'label': 'Enterprise', 'value': 'Enterprise'},
-                                        {'label': 'Standard', 'value': 'Standard'},
-                                        {'label': '', 'value': ''},
-                                    ],
-                                    placeholder='Sélectionnez le Type de support SAP',
-                                ),
-                            ], width={"size": 3}),
-                            dbc.Col([
-                                dbc.Label("Parc/Techno", width=6),
-                                dcc.Input(id='input-Parc-Techno', type='text', placeholder='Entrez le Parc/Techno'),
-                            ], width={"size": 6}),
-                            dbc.Col([
-                                dbc.Label("Numéro de facture", width=6),
-                                dcc.Input(id='input-Numero-de-facture', type='number', placeholder='Entrez le Numéro de facture'),
-                            ], width={"size": 6}),
-                            dbc.Col([
-                                dbc.Label("Date de facture", width=6),
-                                dcc.DatePickerSingle(id='input-Date-de-facture', display_format='DD/MM/YYYY', placeholder='Sélectionnez une date'),
-                            ], width={"size": 6}),
-                            dbc.Col([
-                                dbc.Label("Parc de licences", width=6),
-                                dcc.Input(
-                                    id='input-parc-licences',
-                                    type='text',
-                                    placeholder='Entrez le nom et la quantité du parc de licences (ex. Licence A: 10)',
-                                ),
-                            ], width={"size": 6}),
-                            dbc.Col([
-                                dbc.Label("Coeff évolution prix achat", width=6),
-                                dcc.Input(
-                                    id='input-coeff-evolution-prix-achat',
-                                    type='number',
-                                    placeholder='Entrez le Coeff évolution prix achat',
-                                    step=0.01,  # 2 chiffres après la virgule
-                                ),
-                            ], width={"size": 6}),
-                            dbc.Col([
-                                dbc.Label("Coeff marge", width=6),
-                                dcc.Input(
-                                    id='input-coeff-marge',
-                                    type='number',
-                                    placeholder='Entrez le Coeff marge',
-                                    step=0.01,  # 2 chiffres après la virgule
-                                ),
-                            ], width={"size": 6}),
-                            dbc.Col([
-                                dbc.Label("Proposition SAP reçue", width=6),
-                                dcc.Dropdown(
-                                    id='input-Proposition-SAP-reçue',
-                                    options=[
-                                        {'label': 'OK', 'value': 'OK'},
-                                        {'label': ' ', 'value': ' '}
-                                    ],
-                                    placeholder='Sélectionnez une option',
-                                    value='',  # Vous pouvez définir une valeur par défaut si nécessaire
-                                ),
-                            ], width={"size": 6}),
-                            dbc.Col([
-                                dbc.Label("Relance client**", width=6),
-                                dcc.DatePickerSingle(
-                                    id='input-relance-client',
-                                    display_format='DD/MM/YYYY',  # Format jour, mois et année
-                                    placeholder='Sélectionnez une date de relance',
-                                ),
-                            ], width={"size": 6}),
-                            dbc.Col([
-                                dbc.Label("Proposition Seenovate créée", width=6),
-                                dcc.Dropdown(
-                                    id='input-Proposition-Seenovate-creee',
-                                    options=[
-                                        {'label': 'OK', 'value': 'OK'},
-                                        {'label': ' ', 'value': ' '}
-                                    ],
-                                    placeholder='Sélectionnez une option',
-                                    value='',  # Vous pouvez définir une valeur par défaut si nécessaire
-                                ),
-                            ], width={"size": 6}),
-                            dbc.Col([
-                                dbc.Label("Proposition Seenovate envoyée", width=6),
-                                dcc.DatePickerSingle(
-                                    id='input-Proposition-Seenovate-envoyee',
-                                    display_format='DD/MM/YYYY',  # Format jour, mois et année
-                                    placeholder='Sélectionnez une date',
-                                ),
-                            ], width={"size": 6}),
-                            dbc.Col([
-                                dbc.Label("Proposition signée par le client", width=6),
-                                dcc.DatePickerSingle(
-                                    id='input-Proposition-signee-par-le-client',
-                                    display_format='DD/MM/YYYY',  # Format jour, mois et année
-                                    placeholder='Sélectionnez une date',
-                                ),
-                            ], width={"size": 6}),
-                            dbc.Col([
-                                dbc.Label("Attente N° Cde client avant facturation", width=6),
-                                dcc.Input(id='input-attente-Cde-client', type='text', placeholder='Entrez le N° Cde client avant facturation'),
-                            ], width={"size": 6}),
-                            dbc.Col([
-                                dbc.Label("Facture créée", width=6),
-                                dcc.DatePickerSingle(id='input-facture-creee', display_format='DD/MM/YYYY', placeholder='Entrez la Facture créée'),
-                            ], width={"size": 6}),
-                            dbc.Col([
-                                dbc.Label("Commande faite SAP", width=6),
-                                dcc.Input(id='input-commande-faite-sap', type='text', placeholder='Entrez la Commande faite SAP'),
-                            ], width={"size": 6}),
-                            dbc.Col([
-                                dbc.Label("Facture SAP reçue", width=6),
-                                dcc.Input(id='input-facture-sap-recue', type='text', placeholder='Entrez la Facture SAP reçue'),
-                            ], width={"size": 6}),
-                            dbc.Col([
-                                dbc.Label("Remarques", width=6),
-                                dcc.Input(id='input-remarques', type='text', placeholder='Entrez les Remarques'),
-                            ], width={"size": 6}),
-                            dbc.Col([
-                                dbc.Label("Conditions contractuelles et facturation", width=6),
-                                dcc.Input(id='input-conditions-contractuelles', type='text', placeholder='Entrez les conditions contractuelles et facturation'),
-                            ], width={"size": 6}),
-                            dbc.Col([
-                                dbc.Label("Devis", width=6),
-                                dcc.Dropdown(
-                                    id='input-devis',
-                                    options=[
-                                        {'label': 'Oui', 'value': 'Oui'},
-                                        {'label': 'Non', 'value': 'Non'},
-                                    ],
-                                    placeholder='Sélectionnez une option',
-                                ),
-                            ], width={"size": 6}),
-                            dbc.Col([
-                                dbc.Label("Accord de principe", width=6),
-                                dcc.Dropdown(
-                                    id='input-accord-de-principe',
-                                    options=[
-                                        {'label': 'Oui', 'value': 'Oui'},
-                                        {'label': 'Non', 'value': 'Non'},
-                                    ],
-                                    placeholder='Sélectionnez une option',
-                                ),
-                            ], width={"size": 6}),
-                            dbc.Col([
-                                dbc.Label("Signature client", width=6),
-                                dcc.Dropdown(
-                                    id='input-signature-client',
-                                    options=[
-                                        {'label': 'Oui', 'value': 'Oui'},
-                                        {'label': 'Non', 'value': 'Non'},
-                                    ],
-                                    placeholder='Sélectionnez une option',
-                                ),
-                            ], width={"size": 6}),
-                            dbc.Col([
-                                dbc.Label("Achat éditeur", width=6),
-                                dcc.Dropdown(
-                                    id='input-achat-editeur',
-                                    options=[
-                                        {'label': 'Oui', 'value': 'Oui'},
-                                        {'label': 'Non', 'value': 'Non'},
-                                    ],
-                                    placeholder='Sélectionnez une option',
-                                ),
-                            ], width={"size": 6}),
-                            dbc.Col([
-                                dbc.Label("Renouvelé", width=6),
-                                dcc.Dropdown(
-                                    id='input-renouvele',
-                                    options=[
-                                        {'label': 'Oui', 'value': 'Oui'},
-                                        {'label': 'Non', 'value': 'Non'},
-                                    ],
-                                    placeholder='Sélectionnez une option',
-                                ),
-                            ], width={"size": 6}),
-                            dbc.Col([
-                                dbc.Label("Traitement comptable", width=6),
-                                dcc.Dropdown(
-                                    id='input-traitement-comptable',
-                                    options=[
-                                        {'label': 'Oui', 'value': 'Oui'},
-                                        {'label': 'Non', 'value': 'Non'},
-                                    ],
-                                    placeholder='Sélectionnez une option',
-                                ),
-                            ], width={"size": 6}),
-                            dbc.Col([
-                                dbc.Label("Paiement SAP", width=6),
-                                dcc.Dropdown(
-                                    id='input-paiement-sap',
-                                    options=[
-                                        {'label': 'Oui', 'value': 'Oui'},
-                                        {'label': 'Non', 'value': 'Non'},
-                                    ],
-                                    placeholder='Sélectionnez une option',
-                                ),
-                            ], width={"size": 6}),
-                            dbc.Col([
-                                dbc.Label("Demande de résiliation", width=6),
-                                dcc.Dropdown(
-                                    id='input-demande-resiliation',
-                                    options=[
-                                        {'label': 'Oui', 'value': 'Oui'},
-                                        {'label': 'Non', 'value': 'Non'},
-                                    ],
-                                    placeholder='Sélectionnez une option',
-                                ),
-                            ], width={"size": 6}),
-                            dbc.Col([
-                                dbc.Label("Communication éditeur", width=6),
-                                dcc.Dropdown(
-                                    id='input-communication-editeur',
-                                    options=[
-                                        {'label': 'Oui', 'value': 'Oui'},
-                                        {'label': 'Non', 'value': 'Non'},
-                                    ],
-                                    placeholder='Sélectionnez une option',
-                                ),
-                            ], width={"size": 6}),
-                            dbc.Col([
-                                dbc.Label("Résilié", width=6),
-                                dcc.Dropdown(
-                                    id='input-resilie',
-                                    options=[
-                                        {'label': 'Oui', 'value': 'Oui'},
-                                        {'label': 'Non', 'value': 'Non'},
-                                    ],
-                                    placeholder='Sélectionnez une option',
-                                ),
-                            ], width={"size": 6}),
-                            dbc.Col([
-                                dbc.Label("Converti ou Extension", width=6),
-                                dcc.Dropdown(
-                                    id='input-converti-extension',
-                                    options=[
-                                        {'label': ' ', 'value': ' '},
-                                        {'label': 'Converti', 'value': 'Converti'},
-                                        {'label': 'Extension', 'value': 'Extension'},
-                                    ],
-                                    placeholder='Sélectionnez une option',
-                                ),
-                            ], width={"size": 6}),
-
-                            # dbc.Col([
-                            #     dbc.Label("Champ 2", width=6),
-                            #     dcc.Input(id='input-champ-2', type='text', placeholder='Entrez le Champ 2'),
-                            # ], width={"size": 6}),
-                        ]),
-                    ])
-                ]),
-            ]),
-            dbc.ModalFooter([
-                dbc.Button("Valider", id="o1_btn_submit_validate", className="me-1", color="success"),
-                dbc.Button("Enregistrer", id="o1_btn_submit_save", className="me-1", n_clicks=0, color="warning"),
-            ]),
-        ],
-        id="o1_modal",
-        size="xl",
-        is_open=False,
-    ),
-    stockage_ligne, stockage_mis_a_jour 
+ modal_pop_up, stockage_ligne, stockage_mis_a_jour
+    
 ])
