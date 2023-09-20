@@ -44,6 +44,7 @@ def update_type_support_sap(selected_row_data):
     Output('input-check-infos', 'value'),   
     Output('input-accord-de-principe', 'value'),# Sortie pour afficher le texte
     Output('input-signature-client', 'value'),
+    Output('input-traitement-comptable', 'value'),
     Output('input-achat-editeur', 'value'),
     Output('input-paiement-sap', 'value'),
 
@@ -61,6 +62,7 @@ def update_Status_conditions_financieres(selected_row_data):
     check_infos = selected_row_data.get('Check Infos', '')
     accord_de_principe = selected_row_data.get('Accord de principe', '')
     signature_client= selected_row_data.get('Signature client', '')
+    traitement_comptable= selected_row_data('Traitement comptable', '')
     achat_editeur= selected_row_data.get('Achat éditeur', '')
     paiement_sap= selected_row_data.get('Paiement SAP', '')
 
@@ -73,7 +75,7 @@ def update_Status_conditions_financieres(selected_row_data):
     #mois_imputation = selected_row_data.get("Mois d'imputation", '')
 
     return  (check_infos,accord_de_principe,signature_client,achat_editeur,
-             paiement_sap,nv_prix_achat_value, nv_prix_vente_value)#, mois_imputation)
+             paiement_sap,nv_prix_achat_value, nv_prix_vente_value,traitement_comptable)#, mois_imputation)
 # def update_toggle_switch_color(value):
 #     if value == 'Oui':
 #         return "green"  # Si la valeur est "Oui", la couleur est verte
@@ -237,6 +239,7 @@ def update_modal_open_state(n_btn_modif_ech, n_btn_submit_validate):
     State('input-check-infos', 'value'),
     State('input-accord-de-principe', 'value'),# Sortie pour afficher le texte
     State('input-signature-client', 'value'),
+    State('input-traitement-comptable', 'value'),
     State('input-achat-editeur', 'value'),
     State('input-paiement-sap', 'value'),
     State('input-nv-prix-achat', 'value'),
@@ -262,7 +265,7 @@ def update_table_data(n_btn_submit_validate, selected_row_number, client, erp_nu
                      proposition_signee_par_le_client, attente_Cde_client, facture_creee, 
                      commande_faite_sap, facture_sap_recue, remarques, Parc_Techno, 
                      Numero_de_facture, data_main_table, Type_de_support_sap, check_infos,
-                     accord_de_principe,signature_client,achat_editeur,paiement_sap,nv_prix_achat_value,
+                     accord_de_principe,signature_client,achat_editeur,traitement_comptable,paiement_sap,nv_prix_achat_value,
                      nv_prix_vente_value, marge_maintenance_value,
                      marge_pourcentage_value, montant_vente_annuel_value, 
                      montant_annuel_achat_value, mois_imputation): 
@@ -303,6 +306,7 @@ def update_table_data(n_btn_submit_validate, selected_row_number, client, erp_nu
             "Accord de principe":accord_de_principe,
             "Signature client":signature_client,
             "Achat éditeur":achat_editeur,
+            'Traitement comptable': traitement_comptable,
             "Paiement SAP":paiement_sap,
 
             'Nouveau prix d\'achat': nv_prix_vente_value,
