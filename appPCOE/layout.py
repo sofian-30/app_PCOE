@@ -110,16 +110,25 @@ modal_pop_up= dbc.Modal(
     children=[
         dmc.AccordionItem(
             [
-                dmc.AccordionControl("Status"),
+                dmc.AccordionControl("Status et conditions financières"),
                 dmc.AccordionPanel(
-                                    [
+                                    [dbc.Card(
+                                        dbc.CardBody([
                                         # Contenu de la section 'Status'
+
+                             html.Label("Check Infos"),
+                             daq.ToggleSwitch(
+                                 id='input-check-infos',
+                                 color="green",  # Couleur du bouton ON
+                                 label=['Non', 'Oui'],  # Texte pour les positions OFF et ON
+                                 size=40,  # Taille du bouton
+                                 value=False  # Par défaut, OFF
+                             ),           
                                        
                              html.Label("Accord de principe"),
                              daq.ToggleSwitch(
                                  id='input-accord-de-principe',
                                  color="green",  # Couleur du bouton ON
-                                 label=['Non', 'Oui'],  # Texte pour les positions OFF et ON
                                  size=40,  # Taille du bouton
                                  value=False  # Par défaut, OFF
                              ),
@@ -150,23 +159,13 @@ modal_pop_up= dbc.Modal(
                                  size=40,
                                  value=False
                              ),
-                        
-                         # Ajoutez d'autres éléments de contenu ici
-                     ], id='status-content'  # Ajout ID à l'ensemble de contenu
-                 ),
-                 ],
-                value="Status",
-                        ),
-                        dmc.Accordion(
-                            children=[
-                                dmc.AccordionItem(
-                                    [
-                                        dmc.AccordionControl("Conditions financières"),
-                                        dmc.AccordionPanel(
-                                    [
-                                        # Contenu de la section 'Conditions financières'
-                                        dbc.Row([
+                                        ]),
+                                    ),
+                                    dbc.Card(
+                                        dbc.CardBody([
+                                    
                                             dbc.Col([
+                                                
                                                 dbc.Label('Nouveau prix d\'achat', width=6),
                                                 dcc.Input(id='input-nv-prix-achat' , type='number', placeholder='Entrez le NV prix d\'achat'),
                                                 html.Span('€', style={'margin-left': '5px'})  # Ajoutez le symbole "€" après la case d'entrée
@@ -201,10 +200,19 @@ modal_pop_up= dbc.Modal(
                                                 dcc.Input(id='input-mois-imputation', type='text', placeholder='Sélectionnez une date'),
                                             ], width={"size": 6}),
                                             # Ajoutez d'autres éléments de contenu ici
+                                       
                                         ]),
-                                    ], id='conditions-financieres-content'
-                                ),
-                            ],
+                                    ),
+                         # Ajoutez d'autres éléments de contenu ici
+                     ], id='status-content'  # Ajout ID à l'ensemble de contenu
+                 ),
+                 ],
+                value="Status",
+                        ),
+                        dmc.Accordion(
+                            children=[
+                                dmc.AccordionItem(
+                                    
                             value="Conditions financières",
                         ),
                         dmc.Accordion(
