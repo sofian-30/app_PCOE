@@ -1,34 +1,31 @@
 from app import app
 from dash.dependencies import Input, Output, State
 import pandas as pd
-from dash.exceptions import PreventUpdate
 import dash
-from dash import ctx, html
-import datetime
+from dash import ctx
 
-df = pd.read_excel(r"C:\Users\SofianOUASS\Desktop\PCoE\Suivi CA licences et maintenance 2023.xlsx", sheet_name='Maintenance SAP BusinessObjects')
-
+df = pd.read_excel("./data/Suivi CA licences et maintenance 2023.xlsx", sheet_name='Maintenance SAP BusinessObjects')
 
 
 # Callback pour stocker les données de la ligne sélectionnée dans le dcc.Store
 @app.callback(
     Output('o1_store_row', 'data'),
     Input('o1_data_table', 'selected_rows'),
-    Input('o1_data_table','data'),
+    Input('o1_data_table', 'data'),
     prevent_initial_call=True,
 )
-def store_selected_row(selected_rows,dict_data):
+def store_selected_row(selected_rows, dict_data):
     # print(selected_rows)
     # print(dict_data)
-    df=pd.DataFrame.from_dict(dict_data)
+    df = pd.DataFrame.from_dict(dict_data)
     if selected_rows:
         selected_row_data = df.iloc[selected_rows[0]].to_dict()
         return selected_row_data
     else:
         return {}
-    
-    
-#callback pour préremplir le type support sap du pop up
+
+
+# callback pour préremplir le type support sap du pop up
 @app.callback(
     Output('input-type-support-sap', 'value'),
     Input('o1_store_row', 'data'),
@@ -39,9 +36,9 @@ def update_type_support_sap(selected_row_data):
     return Type_de_support_sap
 
 
-#callback pour préremplir le 'Status' du pop up
+# callback pour préremplir le 'Status' du pop up
 @app.callback(
-    Output('output-accord-de-principe', 'value'),# Sortie pour afficher le texte
+    Output('output-accord-de-principe', 'value'),  # Sortie pour afficher le texte
     Output('output-signature-client', 'value'),
     Output('output-achat-editeur', 'value'),
     Output('output-paiement-sap', 'value'),
@@ -50,17 +47,19 @@ def update_type_support_sap(selected_row_data):
 )
 def update_Status(selected_row_data):
     accord_de_principe = selected_row_data.get('Accord de principe', '')
-    signature_client= selected_row_data.get('Signature client', '')
-    achat_editeur= selected_row_data.get('Achat éditeur', '')
-    paiement_sap= selected_row_data.get('Paiement SAP', '')
-    return  accord_de_principe,signature_client,achat_editeur,paiement_sap
+    signature_client = selected_row_data.get('Signature client', '')
+    achat_editeur = selected_row_data.get('Achat éditeur', '')
+    paiement_sap = selected_row_data.get('Paiement SAP', '')
+    return accord_de_principe, signature_client, achat_editeur, paiement_sap
+
+
 # def update_toggle_switch_color(value):
 #     if value == 'Oui':
 #         return "green"  # Si la valeur est "Oui", la couleur est verte
 #     else:
 #         return "default"  # Sinon, utilisez la couleur par défaut
 
-#callback pour préremplir le 'Conditions financières' du pop up
+# callback pour préremplir le 'Conditions financières' du pop up
 @app.callback(
     Output('output-nv-prix-achat', 'value'),
     Output('output-nv-prix-vente', 'value'),
@@ -82,18 +81,19 @@ def update_conditions_financieres(selected_row_data):
     mois_imputation_value = selected_row_data.get("Mois d'imputation", '')
 
     return (nv_prix_achat_value, nv_prix_vente_value, marge_maintenance_value,
-         marge_pourcentage_value, montant_vente_annuel_value, 
-         montant_annuel_achat_value, mois_imputation_value)
+            marge_pourcentage_value, montant_vente_annuel_value,
+            montant_annuel_achat_value, mois_imputation_value)
+
 
 # Callback pour remplir les champs de la card avec les données de la ligne sélectionnée
 @app.callback(
     Output('input-client', 'children'),
     Output('input-erp-number', 'children'),
-    Output('input-date-anniversaire', 'children'),#"date"
+    Output('input-date-anniversaire', 'children'),  # "date"
     Output('input-code-projet', 'children'),
     Output('input-resp-commercial', 'children'),
     Output('input-editeur', 'children'),
-    
+
     Output('input-CA-maintenance-facture', 'value'),
     Output('input-Achat-SAP-Maintenance-GBS-NEED4VIZ', 'value'),
     Output('input-Marge-maintenance', 'value'),
@@ -103,11 +103,11 @@ def update_conditions_financieres(selected_row_data):
     Output('input-Date-de-facture', 'date'),
     Output('input-Proposition-SAP-reçue', 'value'),
     Output('input-relance-client', 'date'),
-    Output('input-Proposition-Seenovate-creee', 'value'), 
+    Output('input-Proposition-Seenovate-creee', 'value'),
     Output('input-Proposition-Seenovate-envoyee', 'date'),
     Output('input-Proposition-signee-par-le-client', 'date'),
     Output('input-attente-Cde-client', 'value'),
-    Output('input-facture-creee', 'date'), #'value'
+    Output('input-facture-creee', 'date'),  # 'value'
     Output('input-commande-faite-sap', 'value'),
     Output('input-facture-sap-recue', 'value'),
     Output('input-remarques', 'value'),
@@ -122,12 +122,14 @@ def update_conditions_financieres(selected_row_data):
 )
 def update_card_fields(selected_row_data):
     client = selected_row_data.get('Client', '')
-    erp_number = selected_row_data.get('ERP_Number_Ref_SAP', '') #'ERP Number \nRéf SAP'
+    erp_number = selected_row_data.get('ERP_Number_Ref_SAP', '')  # 'ERP Number \nRéf SAP'
     date_anniversaire = selected_row_data.get('Date anniversaire', '')
-    code_projet_boond = selected_row_data.get('Code projet Boond', '') # ACA doit le mettre sur excel pour faire le lien!!!
+    code_projet_boond = selected_row_data.get('Code projet Boond',
+                                              '')  # ACA doit le mettre sur excel pour faire le lien!!!
     resp_commercial = selected_row_data.get('Resp\nCommercial', '')
-    editeur = selected_row_data.get('Type de contrat', '')  # Editeur à Cf.avec ACA pour faire le lien, je ne vois pas où il est dans xls!
-    
+    editeur = selected_row_data.get('Type de contrat',
+                                    '')  # Editeur à Cf.avec ACA pour faire le lien, je ne vois pas où il est dans xls!
+
     CA_maintenance_facture = selected_row_data.get('CA maintenance facturé', '')
     Achat_SAP_Maintenance_GBS_NEED4VIZ = selected_row_data.get('Achat SAP Maintenance ou GBS ou NEED4VIZ', '')
     Marge_maintenance = selected_row_data.get('Marge maintenance ', '')
@@ -150,22 +152,21 @@ def update_card_fields(selected_row_data):
     mois_imputation = selected_row_data.get("Mois d'imputation", "")
     # coeff_evolution_prix_achat = selected_row_data.get('Coeff évolution prix achat', 0.00)
     # coeff_marge = selected_row_data.get('Coeff marge', 0.00)
-    
-         
+
     return (client, erp_number, date_anniversaire, code_projet_boond,
-             resp_commercial, editeur,CA_maintenance_facture,
-               Achat_SAP_Maintenance_GBS_NEED4VIZ,Marge_maintenance,marge_pourcentage,
-                 montant_vente_annuel, montant_annuel_achat,date_facture,proposition_sap_recue,
-                 relance_client,proposition_seenovate_creee,proposition_seenovate_envoyee,
-                proposition_signee_par_le_client,attente_Cde_client,facture_creee,commande_faite_sap,
-                facture_sap_recue,remarques,Parc_Techno,Numero_de_facture,mois_imputation, #Type_de_support_sap
-    )
+            resp_commercial, editeur, CA_maintenance_facture,
+            Achat_SAP_Maintenance_GBS_NEED4VIZ, Marge_maintenance, marge_pourcentage,
+            montant_vente_annuel, montant_annuel_achat, date_facture, proposition_sap_recue,
+            relance_client, proposition_seenovate_creee, proposition_seenovate_envoyee,
+            proposition_signee_par_le_client, attente_Cde_client, facture_creee, commande_faite_sap,
+            facture_sap_recue, remarques, Parc_Techno, Numero_de_facture, mois_imputation,  # Type_de_support_sap
+            )
 
 
 # ...............................
 
 
-#callback pour ouvrir le pop-up et valider les données saisies ou modifiées
+# callback pour ouvrir le pop-up et valider les données saisies ou modifiées
 @app.callback(
     Output("o1_modal", "is_open"),  # Ouvrir le modal
     Input("o1_btn_modif_ech", "n_clicks"),
@@ -180,14 +181,14 @@ def update_modal_open_state(n_btn_modif_ech, n_btn_submit_validate):
     return dash.no_update
 
 
-#callback pour mettre à jour les données du tableau
+# callback pour mettre à jour les données du tableau
 @app.callback(
     Output("o1_data_table", "data"),  # Mettez à jour les données du tableau
     Input("o1_btn_submit_validate", "n_clicks"),
     State('o1_data_table', 'selected_rows'),
     State("input-client", "value"),
     State("input-erp-number", "value"),
-    State("input-date-anniversaire", "value"), #"date"
+    State("input-date-anniversaire", "value"),  # "date"
     State("input-code-projet", "value"),
     State("input-resp-commercial", "value"),
     State("input-editeur", "value"),
@@ -214,7 +215,7 @@ def update_modal_open_state(n_btn_modif_ech, n_btn_submit_validate):
     State("o1_data_table", "data"),
     State('input-type-support-sap', 'value'),
 
-    State('input-accord-de-principe', 'value'),# Sortie pour afficher le texte
+    State('input-accord-de-principe', 'value'),  # Sortie pour afficher le texte
     State('input-signature-client', 'value'),
     State('input-achat-editeur', 'value'),
     State('input-paiement-sap', 'value'),
@@ -223,17 +224,16 @@ def update_modal_open_state(n_btn_modif_ech, n_btn_submit_validate):
     # State('data-store', 'data'),
     prevent_initial_call=True,
 )
-
-
-def update_table_data(n_btn_submit_validate, selected_row_number, client, erp_number, 
-                     date_anniversaire, code_projet_boond, resp_commercial, editeur,
-                     CA_maintenance_facture, Achat_SAP_Maintenance_GBS_NEED4VIZ, 
-                     Marge_maintenance, marge_pourcentage, montant_vente_annuel, 
-                     montant_annuel_achat, date_facture, proposition_sap_recue, 
-                     relance_client, proposition_seenovate_creee, proposition_seenovate_envoyee,
-                     proposition_signee_par_le_client, attente_Cde_client, facture_creee, 
-                     commande_faite_sap, facture_sap_recue, remarques, Parc_Techno, 
-                     Numero_de_facture, mois_imputation, data_main_table, Type_de_support_sap,accord_de_principe,signature_client,achat_editeur,paiement_sap):
+def update_table_data(n_btn_submit_validate, selected_row_number, client, erp_number,
+                      date_anniversaire, code_projet_boond, resp_commercial, editeur,
+                      CA_maintenance_facture, Achat_SAP_Maintenance_GBS_NEED4VIZ,
+                      Marge_maintenance, marge_pourcentage, montant_vente_annuel,
+                      montant_annuel_achat, date_facture, proposition_sap_recue,
+                      relance_client, proposition_seenovate_creee, proposition_seenovate_envoyee,
+                      proposition_signee_par_le_client, attente_Cde_client, facture_creee,
+                      commande_faite_sap, facture_sap_recue, remarques, Parc_Techno,
+                      Numero_de_facture, mois_imputation, data_main_table, Type_de_support_sap, accord_de_principe,
+                      signature_client, achat_editeur, paiement_sap):
     if n_btn_submit_validate:
         # Validez les données ici (effectuez des vérifications si nécessaire)
 
@@ -267,18 +267,16 @@ def update_table_data(n_btn_submit_validate, selected_row_number, client, erp_nu
             "Mois d'imputation": mois_imputation,
             "Type de support SAP": Type_de_support_sap,
 
-            "Accord de principe":accord_de_principe,
-            "Signature client":signature_client,
-            "Achat éditeur":achat_editeur,
-            "Paiement SAP":paiement_sap
-            
+            "Accord de principe": accord_de_principe,
+            "Signature client": signature_client,
+            "Achat éditeur": achat_editeur,
+            "Paiement SAP": paiement_sap
+
         }
 
-        
         # Mettez à jour les données de la ligne sélectionnée dans data_main_table
         for key, value in updated_data.items():
             data_main_table[selected_row_number[0]][key] = value
-                
 
         return data_main_table
 
@@ -309,13 +307,3 @@ def update_table_data(n_btn_submit_validate, selected_row_number, client, erp_nu
 #         return "green"  # Si la valeur est "Oui", la couleur est verte
 #     else:
 #         return "default"  # Sinon, utilisez la couleur par défaut
-
-
-
-
-
-
-
-
-
-
