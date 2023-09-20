@@ -3,12 +3,29 @@ from dash.dependencies import Input, Output, State
 import pandas as pd
 from dash.exceptions import PreventUpdate
 import dash
-from dash import ctx, html
+from dash import ctx, html, dcc
 import datetime
+from appPCOE.src.generation_devis import remplir_devis
 
-df = pd.read_excel(r"C:\Users\SofianOUASS\Desktop\PCoE\Suivi CA licences et maintenance 2023.xlsx", sheet_name='Maintenance SAP BusinessObjects')
+df = pd.read_excel(r"/mnt/c/CA_2023.xlsx", sheet_name='Maintenance SAP BusinessObjects')
+#df = pd.read_excel(r"C:\Users\SofianOUASS\Desktop\PCoE\Suivi CA licences et maintenance 2023.xlsx", sheet_name='Maintenance SAP BusinessObjects')
 
 
+# Callback de génération de devis.
+@app.callback(
+    Output('download_devis', 'data'),
+    Input('o1_btn_gener_devis', 'n_clicks'),
+    State('o1_store_row','data'),
+    prevent_initial_call=True
+)
+def export_devis(n0,data_row):
+    
+    # A faire : finir de rentrer les autres informations.
+    # Faire une vérification avant l'envoi du devis
+    remplir_devis('acces_devis',data_row['Client'],'adresse','CP','ville','editeur','type_support',data_row['Date anniversaire'],'code_boond','conditions_facturation',
+                'conditions_paiement','condition_parc',data_row['Achat SAP Maintenance ou GBS ou NEED4VIZ'])
+
+    return dcc.send_file('appPCOE/impressions/devis/devis_finalise.docx')
 
 # Callback pour stocker les données de la ligne sélectionnée dans le dcc.Store
 @app.callback(
