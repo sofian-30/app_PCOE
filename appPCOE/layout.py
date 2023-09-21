@@ -9,7 +9,7 @@ import pandas as pd
 import plotly.graph_objs as go
 from datetime import datetime, timedelta
 from colors import *
-# import dash_mantine_components as dmc
+
 import dash_mantine_components as dmc
 import dash_daq as daq
 
@@ -29,14 +29,15 @@ n_app = 1 # numéro de l'appli
 # df = pd.read_excel(r"/mnt/c/CA_2023.xlsx", sheet_name='Maintenance SAP BusinessObjects',parse_dates=['Date anniversaire'], date_parser=pd.to_datetime)
 df = pd.read_excel(r"C:\Users\SofianOUASS\Desktop\PCoE\Suivi CA licences et maintenance 2023.xlsx", sheet_name='Maintenance SAP BusinessObjects')
 
-# On remplit la colonne renouvellement en fonction des critères donnés dans les SPECS
+# On remplit la colonne renouvellement et alerte validation devis en fonction des critères donnés dans les SPECS
 today=datetime.now()
 
 # Remplacez les valeurs NaN par une date par défaut (par exemple, 1er janvier 1900)
     
 df['Alerte renouvellement'] = (df['Date anniversaire'] - today).dt.days
+df['Alerte validation devis'] = (df['Date anniversaire'] - today).dt.days
 
-# Ajout des 4 nouvelles colonnes après 'Achat SAP Maintenance ou GBS ou NEED4VIZ'
+# Ajout des 4 nouvelles colonnes après colonne 'Date anniversaire'
 new_columns = []
 for col in df.columns:
     new_columns.append({'name': col, 'id': col, 'type': 'text'})
@@ -314,26 +315,7 @@ modal_pop_up= dbc.Modal(
                                                 ),
                                             ], width={"size": 2,"offset":-1}),
                                             ], className="mb-2"),
-                                        
-                                        dbc.Row([
-                                            dbc.Col([
-                                                dbc.Label("Date de Facture")],
-                                                width={"size": 2,"offset":1}),
-                                            dbc.Col([
-                                                dcc.DatePickerSingle(id='input-Date-de-facture', display_format='DD/MM/YYYY', placeholder='Sélectionnez une date'),
-                                            ], width={"size": 2,"offset":-1}),
-                                            dbc.Col([
-                                                dbc.Label("Parc de licence")],
-                                                width={"size": 2,"offset":1}),
-                                            dbc.Col([
-                                                dcc.Input(
-                                                    id='input-parc-licences',
-                                                    type='text',
-                                                    placeholder='Entrez le nom et la quantité du parc de licences (ex. Licence A: 10)',
-                                                ),
-                                            ], width={"size": 2,"offset":-1}),
-                                        ], className="mb-2"),
-                                        
+                                                                                                                        
                                         dbc.Row([
                                             dbc.Col([
                                                 dbc.Label("Condition de facturation")],
@@ -356,6 +338,67 @@ modal_pop_up= dbc.Modal(
                                                 ),
                                             ], width={"size": 2,"offset":-1}),
                                         ], className="mb-2"),
+
+                                        dbc.Row([
+                                            dbc.Col([
+                                                dbc.Label('Adresse')],
+                                                width={"size": 2,"offset":0}),
+                                            dbc.Col([                                              
+					                        dcc.Input(id='input-adresse-client', type='text',style={
+                                            'width': '200px',  # Largeur du champ de saisie
+                                            'height': '60px',  # Hauteur du champ de saisie
+                                            'border': '1px solid #ccc',  # Bordure du champ de saisie
+                                            'border-radius': '5px',  # Coins arrondis
+                                            'padding': '5px',  # Espacement intérieur
+                                        }, placeholder='adresse client'),
+                                        ], {"size": 2,"offset":-1}),
+                                            dbc.Col([
+                                                dbc.Label("Date de Facture")],
+                                                width={"size": 2,"offset":0}),
+                                            dbc.Col([
+                                                dcc.DatePickerSingle(id='input-Date-de-facture', display_format='DD/MM/YYYY', placeholder='Sélectionnez une date'),
+                                            ], width={"size": 2,"offset":-1}),
+                                         ], className="mb-2"),
+
+                                         dbc.Row([
+                                            dbc.Col([
+                                                dbc.Label("ville")],
+                                                width={"size": 2,"offset":0}),
+                                            dbc.Col([
+                                                dcc.Input(
+                                                    id='input-ville',
+                                                    type='text',
+                                                    placeholder='ville',
+                                                ),
+                                                ], width={"size": 2,"offset":-1}),
+                                            dbc.Col([
+                                                dbc.Label("CP")],
+                                                width={"size": 2,"offset":2}),
+                                            dbc.Col([
+                                                dcc.Input(
+                                                    id='input-cp',
+                                                    type='text',
+                                                    placeholder='Code postal',
+                                                ),
+                                            ], width={"size": 2,"offset":-1}),
+                                        ], className="mb-2"),
+
+                                        dbc.Row([dbc.Col([
+                                                dbc.Label("Parc de licence")],
+                                                width={"size": 2,"offset":0}),
+                                            dbc.Col([
+                                                dcc.Input(
+                                                    id='input-parc-licences',
+                                                    type='text',style={
+                                            'width': '300px',  # Largeur du champ de saisie
+                                            'height': '30px',  # Hauteur du champ de saisie
+                                            'border': '1px solid #ccc',  # Bordure du champ de saisie
+                                            'border-radius': '3px',  #'5px' Coins arrondis
+                                            'padding': '5px',  # Espacement intérieur
+                                        },
+                                                    placeholder='Entrez le nom et la quantité du parc de licences (ex. Licence A: 10)',
+                                                ),
+                                            ], width={"size": 2,"offset":-1}),])
                                     ]
                                 ),
                             ],
@@ -498,8 +541,13 @@ dash_table.DataTable(
         "if": {"state": "selected"},
         "backgroundColor": "rgba(0, 116, 217, .03)",
         "border": "1px solid black",
-    },
-                            
+    },#Alerte renouvellement(feux tricolores)
+    {'if':{
+            'filter_query':'{Alerte renouvellement}>120',
+            'column_id':'Alerte renouvellement'
+        },
+      'backgroundColor':'green'
+      },                         
     {'if':{
             'filter_query':'{Alerte renouvellement}<120',
             'column_id':'Alerte renouvellement'
@@ -511,7 +559,26 @@ dash_table.DataTable(
             'column_id':'Alerte renouvellement'
         },
       'backgroundColor':'red'
+      },#Alerte validation devis (feux tricolores)
+    {'if':{
+            'filter_query':'{Alerte validation devis}>240',
+            'column_id':'Alerte validation devis'
+        },
+      'backgroundColor':'green'
+      },                         
+    {'if':{
+            'filter_query':'{Alerte validation devis}<240',
+            'column_id':'Alerte validation devis'
+        },
+      'backgroundColor':'orange'
       },
+    {'if':{
+            'filter_query':'{Alerte validation devis}<90',
+            'column_id':'Alerte validation devis'
+        },
+      'backgroundColor':'red'
+      },
+
      ],
     sort_action='native',
     sort_mode='single',
