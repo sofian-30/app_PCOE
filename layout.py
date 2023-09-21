@@ -5,10 +5,11 @@ Created on Mon Feb 15 17:12:51 2021
 @author: SEENOVATE
 """
 
-from app import app
 import dash_bootstrap_components as dbc
-from dash import html, dcc
 import pandas as pd
+from dash import dcc, html
+
+from app import app
 
 # Chargement fichier csv : pour gérer infos principales des différentes applis
 list_app = pd.read_csv("assets/list_app.csv", header=0, sep=';')

@@ -5,10 +5,11 @@ Created on Mon Feb 15 17:10:03 2021
 @author: SEENOVATE
 """
 
+from dash.dependencies import Input, Output, State
+
 from app import app
 from appPCOE.layout import layout_PCOE
 from layout import home_page
-from dash.dependencies import Input, Output, State
 
 
 @app.callback(
