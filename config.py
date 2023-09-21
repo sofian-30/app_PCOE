@@ -34,5 +34,3 @@ LOGGING_CONFIG = get_config(config_filename, section='logging')
 lg.basicConfig(**LOGGING_CONFIG)
 logger = lg.getLogger()
 logger.addHandler(lg.StreamHandler())  # Write log also in stdout
-
-logger.info(f"Used config file is {config_filename}")

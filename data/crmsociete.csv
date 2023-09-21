@@ -1,0 +1,1260 @@
+,id_crmsociete,csoc_societe,csoc_intervention,csoc_type,csoc_metiers,csoc_web,csoc_tel,csoc_ville,csoc_pays,csoc_date,id_profil,id_societe,id_pole,id_action_previous,id_action_next,id_provenance,csoc_cp
+0,1084,VILLE DE PLAISIR,,2,Attention facturation CIRIL,,,PLAISIR,France,2023-09-20T06:25:35+0200,17,1,3,,,-1,78370
+1,1083,GROUPE EXO-TI C,,0,,,,WOERTH,France,2023-09-20T05:56:41+0200,17,1,3,,,-1,67360
+2,649,Réseau Canopé,Secteur public,1,caisse Epargne,https://www.reseau-canope.fr/,,Futuroscope,France,2020-12-17T15:35:15+0100,71,1,,,,12,86961
+3,1082,Carrier HVAC,,0,,,,Montluel,France,2023-09-19T08:44:34+0200,12,1,3,,,-1,
+4,186,HERMES CUIRS PRECIEUX,Autres,1,BPI,,,PARIS,France,2017-07-10T14:32:35+0200,12,1,,,,-1,75008
+5,449,UGC SA,,1,Caisse d'Epargne,,,Neuilly-sur-Seine,France,2019-10-23T17:39:39+0200,255,1,,,,-1,92200
+6,629,Mobilize FS ex-DIAC (Infidis),,1,,,,NOISY LE GRAND,France,2020-09-29T09:53:55+0200,255,1,,,,-1,93160
+7,506,VIVENDI SE,,1,CREDIT AGRICOLE,www.vivendi.com,,Paris,France,2020-06-12T14:28:49+0200,255,1,,,,11,75380
+8,1024,SIGIDURS (syndicat mixte de gestion incinération des déchets),,2,,,,SARCELLES,France,2023-06-22T06:06:41+0200,368,1,3,,,-1,95200
+9,912,OPH de Gennevilliers - Aareon Group,,0,Caisse d'epargne,,,Gennevilliers,France,2023-03-23T08:24:13+0100,60,1,,,,-1,92230
+10,897,Association Hospitalière de Bourgogne Franche-Comté (AHFC),,1,"Adresse facturation : 	RUE JUSTIN CLAUDE PERCHOT 70160 SAINT-REMY-EN-COMTE
+
+CREDIT AGRICOLE",www.ahbfc.fr,03284682584,ST-Rémy en Comté,France,2023-02-27T08:54:57+0100,60,1,,,,-1,70160
+11,691,WEBHELP France,,1,CREDIT AGRICOLE,,,Paris,France,2021-03-22T07:39:26+0100,255,1,,,,-1,75017
+12,497,VYNEX,Grande distribution,1,CAISSE D'EPARGNE,,03 24 26 50 00,THELONNE,France,2020-04-27T10:43:40+0200,368,1,,,,11,08350
+13,485,Mairie de Paris (SEMERU),,2,caisse Epargne,,01 56 72 77 00,,France,2020-02-28T14:27:10+0100,255,1,,,,1,
+14,317,V33,Industrie,1,"Ex AS
+CAISSE EPARGNE",,03 84 35 00 33,Domblans,France,2018-11-26T15:53:22+0100,60,1,,,,10,39210
+15,448,TRIMANE,,1,CREDIT AGRICOLE,,0172550055,Saint-Germain en Laye,France,2019-10-23T17:39:39+0200,255,1,,,,-1,78100
+16,90,SULLY,Conseil,7,caisse d'EPARGNE,,,SAINT-PRIEST Cedex,France,2016-01-10T10:18:30+0100,60,1,,,,-1,69791
+17,180,SOITEC,Industrie,1,crédit agricole,https://www.soitec.com/fr/,04 76 92 75 00,BERNIN,France,2017-06-19T09:27:11+0200,60,1,,,,-1,38190
+18,307,SECUTIX,Edition de logiciels,1,"Ex ASI
+
+credit agricole",,+41 21 613 21 11,CH - 1001 LAUSANNE,Suisse,2018-11-21T16:28:41+0100,368,1,,,,10,
+19,41,SECURITAS ALERT SERVICES,Infrastructure,1,CAISSE D'EPARGNE,,,CALUIRE CEDEX,France,2016-01-10T10:16:36+0100,255,1,,,,-1,69643
+20,513,CATENSYS FRANCE (ex SCHAEFFLER),Industrie,1,Caisse d'Epargne,,,Calais cedex,France,2020-06-18T11:58:59+0200,255,1,,,,11,F-62102
+21,616,AGAPES,Agroalimentaire,1,CREDIT AGRICOLE,,03 20 43 59 59,LEZENNES,France,2020-09-07T17:17:26+0200,60,1,,,,11,59260
+22,159,SANTEVET,Assurance,1,,www.santevet.com,04 78 17 38 00,LYON CEDEX 07,France,2017-04-20T09:01:31+0200,255,1,,,,-1,69366
+23,624,SANEF,,1,credit agricole,,01 41 90 59 00,Senlis,France,2020-09-10T11:46:17+0200,255,1,,,,11,60304
+24,39,ROUTIN,Agroalimentaire,1,caisse d'Epargne,,04 79 25 68 76,La Motte-Servolex Cedex 9,France,2016-01-10T10:16:36+0100,17,1,,,,-1,73094
+25,38,ROSTAING,Industrie,1,crédit agricole,,,VILLIEU,France,2016-01-10T10:16:36+0100,60,1,,,,-1,01800
+26,713,Region Grand Est,,0,"CREDIT AGRICOLE
+Attention 50% de la marge est à reverser à B&D pour la maintenance.",https://www.grandest.fr/fonctionnement-de-la-region/maisons-de-region/,03 88 15 68 67,Strasbourg,France,2021-07-16T07:51:01+0200,368,1,,,,1,67070
+27,437,RAKUTEN,Grande distribution,1,,https://fr.shopping.rakuten.com,09 70 75 64 60.,Paris 02,France,2019-10-23T17:39:39+0200,255,1,,,,-1,75002
+28,490,RUBIX FRANCE  (ex OREXAD BRAMMER),Grande distribution,1,,,,BONDUES Cedex,France,2020-03-12T11:09:26+0100,255,1,,,,11,59910
+29,611,GROUPE NOCIBE SAS,Grande distribution,1,,,,VILLENEUVE D'ASCQ,France,2020-09-07T16:54:49+0200,368,1,,,,11,59650
+30,383,NTT Cloud (ex Arkadin SAS),,1,Caisse d'Epargne,,01 44 65 25 00,Paris 17,France,2019-10-23T17:39:38+0200,17,1,,,,-1,75017
+31,303,ALBON Groupe Nextpool,Industrie,1,"Ex ASI
+
+caisse Epargne (attention paie encore sur BNP en 02/2023)",,,REYRIEUX,France,2018-11-20T17:49:15+0100,368,1,,,,-1,01600
+32,512,NEXITY,Immobilier,1,CREDIT AGRICOLE,www.nexity.fr,01 85 55 10 00,LA MADELEINE,France,2020-06-18T11:52:01+0200,60,1,,,,11,59562
+33,573,SUPERMARCHES MATCH France,,1,CREDIT AGRICOLE,,03 20 42 63 63,LA MADELEINE CEDEX,France,2020-09-04T19:36:21+0200,255,1,,,,11,59561
+34,46,MAISON LOUIS LATOUR,Agroalimentaire,1,caisse d'Epargne,,,BEAUNE,France,2016-01-10T10:16:36+0100,368,1,,,,-1,21200
+35,717,LOCA SERVICES (Bouve sas),,2,,,,LA BASSEE,France,2021-07-22T14:46:18+0200,255,1,,,,11,59480
+36,510,LE FURET DU NORD,Assurance,1,caisse d'Epargne,FURET.COM,03 20 22 73 17,TOURCOING,France,2020-06-18T11:47:41+0200,255,1,,,,11,59200
+37,271,L'AUXILIAIRE,Assurance,1,caisse d'Epargne Languedoc,,,LYON CEDEX 06,France,2018-09-20T14:58:10+0200,255,1,,,,-1,69413
+38,297,KLESIA,Assurance,1,"Ex ASI
+bpi",www.klesia.fr,01 71 39 15 15,PARIS,France,2018-11-20T15:08:40+0100,255,1,,,,10,75017
+39,605,KILOUTOU,Grande distribution,1,,,0359565400,VILLENEUVE D'ASCQ Cedex,France,2020-09-07T16:13:22+0200,255,1,,,,11,59664
+40,30,KERIA,Grande distribution,1,CREDIT AGRICOLE,,,ECHIROLLES,France,2016-01-10T10:16:36+0100,60,1,,,,-1,38130
+41,600,JULES (HAPPYCHIC SERVICES),,1,credit agricole,,,ROUBAIX CEDEC,France,2020-09-07T15:49:16+0200,60,1,,,,11,59060
+42,102,INTEFP (Institut National du Travail),Secteur public,1,caisse d'Epargne,,04 78 87 47 47,MARCY L'ETOILE,France,2016-01-14T11:56:38+0100,64,1,,,,12,69280
+43,637,HÔPITAL PRIVÉ GÉRIATRIQUE LES MAGNOLIAS (HPGM),Servies hospitaliers,1,CREDIT AGRICOLE DU LANGUEDOC,,,Ballainvilliers,France,2020-10-22T10:34:47+0200,368,1,,,,-1,91160
+44,601,HOLDER SA,,1,CAISSE EPARGNE,,0320426069,Marcq-en-Baroeul Cedex,France,2020-09-07T15:53:06+0200,368,1,,,,11,59704
+45,418,HMY GROUP,Services,1,BPI (à la place de Crédit agricole du Languedoc),,+33 3 86 53 49 00,Monéteau,France,2019-10-23T17:39:39+0200,368,1,,,,-1,89470
+46,76,GIP CPAGE,Edition de logiciels,1,"CREDIT AGRICOLE LANGUEDOC
+Factures sur chorus pro",,0380284600,DIJON Cedex,France,2016-01-10T10:18:30+0100,60,1,,,,-1,21065
+47,599,FINERGAL,,1,,,,MARCQ EN BAROEUL,France,2020-09-07T15:45:17+0200,368,1,,,,11,59700
+48,23,EPSM DE LA VALLEE DE L'ARVE,Secteur public,1,caisse d'Epargne,,,LA ROCHE SUR FORON Cedex,France,2016-01-10T10:16:36+0100,255,1,,,,-1,74805
+49,101,EPS VILLE EVRARD,Secteur public,1,,,,NEUILLY SUR MARNE,France,2016-01-10T10:18:30+0100,255,1,,,,-1,93332
+50,514,ENTORIA (Cipres Assurance),,1,,,,Levallois-Perret Cedex,France,2020-06-18T12:08:49+0200,255,1,,,,11,92308
+51,399,EDELIS,Immobilier,1,,,,BALMA Cedex,France,2019-10-23T17:39:38+0200,255,1,,,,5,33131
+52,634,DEPARTEMENT DE LA MARNE,,1,caisse d'Epargne,,03 26 69 39 24,CHALONS EN CHAMPAGNE CEDEX,France,2020-10-20T09:58:58+0200,368,1,,,,-1,51038
+53,285,DELTA SECURITY SOLUTIONS HOLDING,Surveillance,1,Ex ASI,,04 72 52 72 52,CHAMPAGNE AU MONT D'OR CEDEX,France,2018-11-14T15:21:01+0100,368,1,,,,10,69543
+54,19,DANFOSS,Industrie,1,CAISSE D'EPARGNE,,,TREVOUX,France,2016-01-10T10:16:35+0100,255,1,,,,-1,01603
+55,494,CONSEIL DEPARTEMENTAL DE HTE SAVOIE 74 (INETUM),Secteur public,2,CAISSE EPARGNE LANGUEDOC,,,,France,2020-04-16T09:53:40+0200,368,1,,,,-1,
+56,299,CNIEL - Maison du Lait,Agroalimentaire,1,"Ex ASI
+credit agricole",,01 49 70 71 11,Paris cedex 09,France,2018-11-20T15:42:17+0100,255,1,,,,10,75314
+57,217,CHU BESANCON,Servies hospitaliers,1,Credit Agricole,,03812154,BESANCON Cedex,France,2017-12-04T09:06:54+0100,60,1,,,,-1,25030
+58,185,CHS de Sevrey,Servies hospitaliers,1,,,03.85.92.82.94,Sevrey,France,2017-07-07T15:46:45+0200,255,1,,,,-1,71321
+59,589,CHAMPAGNE LOUIS ROEDERER,Agroalimentaire,1,"credit agricole
+ le client est plutôt très sympathique.
+Points d'attention : bilan 2022 (regarder les tickets saisis dont un sur octobre à mentionner en termes de satisfaction) + plan 2023 et réinsister sur la démo SAc qui n'a finalement jamais eu lieu",,03 88 76 73 00,REIMS,France,2020-09-07T14:50:25+0200,368,1,,,,11,51100
+60,236,CH WISSEMBOURG,Servies hospitaliers,1,caisse d'Epargne,www.ch-wissembourg.fr/,03 88 54 11 11,WISSEMBOURG,France,2018-04-03T11:36:20+0200,255,1,,,,-1,67166
+61,805,CH de Troyes (Hôpitaux Champagne Sud),Servies hospitaliers,1,CREDIT AGRICOLE,,,Troyes Cedex,France,2022-03-31T18:40:40+0200,60,1,,,,6,10003
+62,478,CH SAINT AMAND LES EAUX,Servies hospitaliers,1,"SYNERGY
+
+caisse Epargne",www.ch-saint-amand-les-eaux.fr,,Saint-Amand-les-Eaux,France,2020-02-13T16:55:02+0100,368,1,,,,11,59230
+63,70,CH PROVINS LEON BINET,Servies hospitaliers,1,credit agricole,,0164604040,PROVINS CEDEX,France,2016-01-10T10:18:30+0100,255,1,,,,-1,77488
+64,172,CH LE CATEAU CAMBRESIS,Servies hospitaliers,1,,,,Le Cateau,France,2017-05-29T09:37:44+0200,60,1,,,,11,59360
+65,14,CH DROME VIVARAIS (le Valmont),Servies hospitaliers,1,,www.ch-dromevivarais.fr/,04 75 75 60 60,MONTELEGER,France,2016-01-10T10:16:35+0100,368,1,,,,-1,26760
+66,349,CH Colmar,Servies hospitaliers,1,"Adhérent CPAGE
+
+
+crédit agricole",www.ch-colmar.fr/,03 89 12 40 00,Colmar,France,2019-03-05T18:11:41+0100,60,1,,,,2,68024
+67,118,CENTRE HOSPITALIER D'AUXERRE,Servies hospitaliers,1,,,03 86 48 48 48,Auxerre,France,2016-04-13T10:29:25+0200,60,1,,,,-1,89000
+68,588,CENTRE TECHNIQUE DES INDUSTRIES (CETIM),Industrie,1,CREDIT AGRICOLE,,03 44 67 30 00,SENLIS Cedex,France,2020-09-07T14:36:25+0200,255,1,,,,11,60304
+69,592,COFRAC - CERMIX,Services,1,CAISSE D'epargne,,03 21 32 37 37,DESVRES,France,2020-09-07T15:08:45+0200,368,1,,,,11,62240
+70,578,CERESIA (Acolyance),Agroalimentaire,1,"CAISSE EPARGNE
+Attention signataires autorisés Direction générale et SI seulement",,,REIMS CEDEX 2,France,2020-09-07T13:24:33+0200,368,1,,,,11,51684
+71,936,CONSEIL DEPARTEMENTAL DE SAVOIE (CD74),Secteur public,0,,https://lannuaire.service-public.fr/auvergne-rhone-alpes/savoie/8ec4a1c6-6012-480d-874c-0b285feb2041,04 79 96 73 73,Chambéry,France,2023-04-27T06:42:39+0200,368,1,,,,14,73018
+72,137,CAPEL,Agroalimentaire,1,caisse d'épargne,http://www.capel.fr,,CAHORS,France,2016-09-20T11:23:33+0200,368,1,,,,1,46000
+73,284,BERNARD SERVICES,Automobile,1,"Ex ASI
+
+caisse d'epargne",,,BOURG EN BRESSE,France,2018-11-14T14:19:35+0100,60,1,,,,10,01006
+74,857,ATOL LES OPTICIENS,,1,CREDIT AGRICOLE,www.opticiens-atol.com,,BEAUNE Cedex,France,2022-09-13T07:22:22+0200,60,1,,,,-1,21207
+75,7,GROUPE APRIL,Assurance,1,credit agricole,,04 72 36 18 98,LYON,France,2016-01-10T10:16:35+0100,60,1,,,,-1,69003
+76,313,ALLIANZ AFRICA,Assurance,1,Ex ASI,,,PARIS LA DEFENSE CEDEX,France,2018-11-26T15:04:23+0100,71,1,,,,10,92076
+77,377,Agence France Presse (AFP),Média,1,CREDIT AGRICOLE,https://www.afp.com/fr,01 40 41 46 46,Paris Cedex 02,France,2019-10-23T17:39:38+0200,255,1,,,,-1,75086
+78,259,AEGLE,Edition de logiciels,1,"éditeur comme mini Cpage, aupres des milieux hospitaliers (petits hopitaux). Contrat EOM avec SAP (PCOE direct SAP). Nous intervenons pour compléter leur offre BO auprès de leurs clients. ex introduit auprès de l'hôpital privé d'Antony. sujets stats mais sans suites.",,,CERGY,France,2018-06-28T14:32:08+0200,255,1,,,,-1,95800
+79,771,CHU Montpellier,Servies hospitaliers,1,CREDIT AGRICOLE,,04 67 33 67 33,Montpellier cedex 5,France,2022-02-25T09:40:19+0100,368,1,,,,-1,34295
+80,1077,IFM Electronics,,0,Crédit Agricole,,,Le Bourget du Lac cedex,France,2023-08-24T11:46:07+0200,12,1,3,,,2,73374
+81,223,ROYAL CANIN,Agroalimentaire,1,crédit agricole Languedoc,,04 66 73 03 00,AIMARGUES,France,2018-01-10T14:17:16+0100,12,1,,,,-1,30470
+82,1081,Normand'e.santé,,0,,https://www.normand-esante.fr/,02 50 53 70 00,SAINT MARTIN DU VIVIER,France,2023-09-06T12:06:06+0200,71,1,3,,,-1,76160
+83,722,SAINT-LÔ AGGLO,,1,rib Crédit Agricole Langedoc,http://www.saint-lo-agglo.fr/,,Saint-Lô,France,2021-09-02T10:45:44+0200,71,1,,,,-1,50008
+84,1080,Agence de services et de paiement (ASP),,0,,https://www.asp-public.fr/,,Limoges Cedex 1,France,2023-09-05T16:59:17+0200,71,1,3,,,-1,87040
+85,1057,PATRIMOINE SA LANGUEDOCIENNE,,2,Client facturé : BIAL'X,,,TOULOUSE,France,2023-07-31T14:34:46+0200,17,1,3,,,3,31077
+86,249,COUR DES COMPTES,Secteur public,1,,,,PARIS,France,2018-04-20T11:38:32+0200,17,1,,,,12,75001
+87,663,Direction du numérique Ministères Sociaux(DNUM),Secteur public,1,,,,Paris,France,2020-12-28T16:49:40+0100,64,1,,,,12,75739
+88,644,"Direction de la Recherche, des Études, de l'Évaluation et des Statistiques (DREES)",Secteur public,1,,,,PARIS,France,2020-12-10T12:13:28+0100,17,1,,,,12,75015
+89,921,Back Europ France,,2,Idea Informatique,,,PLOUGOUMELEN,France,2023-04-06T15:18:10+0200,368,1,,,,-1,56400
+90,194,HCL - HOSPICES CIVILS DE LYON,Secteur public,1,caisse d'Epargne,,,BRON,France,2017-08-21T17:14:10+0200,12,1,,,,-1,69500
+91,915,Groupe Actura - Réseau Etamines,,1,"Réseau Etamines, référencement des performances.
+CREDIT AGRICOLE",https://www.actura.fr/accueil/innovation-etamines,,Blois,France,2023-03-30T15:33:10+0200,368,1,20,,,-1,41000
+92,1076,VAR HABITAT,,2,Facturation via AAREON,https://www.varhabitat.com/,,LA VALETTE DU VAR,France,2023-08-21T21:27:38+0200,368,1,3,,,1,83160
+93,1079,GREEN ENERGY SERVICE,Environnement,0,,www.greenenergyservice.fr,,PARIS,France,2023-08-30T15:20:05+0200,17,1,3,,,-1,75017
+94,424,KEPLER CHEVREUX SA,,1,caisse d'Epargne,https://www.keplercheuvreux.com/fr/,,Paris Cedex 16,France,2019-10-23T17:39:39+0200,368,1,,,,-1,75784
+95,1005,ELFY,sport,0,,https://elfy.app/,,HELLEMMES LILLE,France,2023-05-30T17:15:53+0200,17,1,2,,,-1,59260
+96,1078,VILLE DE PONTAULT-COMBAULT,,1,,https://www.pontault-combault.fr/,,PONTAULT-COMBAULT,France,2023-08-28T06:48:46+0200,17,1,3,,,1,77340
+97,684,INSTITUT NATIONAL DU CANCER (INCA),Secteur public,1,,,01 41 10 50 00,BOULOGNE BILLANCOURT,France,2021-03-09T09:22:20+0100,64,1,,,,12,92513
+98,716,SEEGROUP,,1,,,0628526250,MONTPELLIER,France,2021-07-22T14:03:32+0200,17,1,,,,-1,34000
+99,522,PAVILLON PREVOYANCE,,1,credit agricole,,0810 810 033,,France,2020-07-01T07:18:38+0200,1291,1,,,,13,
+100,1075,Lapeyre,Autres,0,,https://www.lapeyre.fr/?esl-k=google-ads%7Cng%7Cc652735632676%7Cme%7Cklapeyre%7Cp%7Ct%7Cdc%7Ca143879,01 48 11 74 00,Aubervilliers,France,2023-08-03T16:22:29+0200,60,1,20,,,14,93300
+101,1074,SDIS 67,Défense,0,facturation via CIRIL,https://www.sis67.alsace/fr,,Villeurbanne,France,2023-08-03T16:09:18+0200,60,1,20,,,14,69100
+102,1073,SDIS 47,Défense,0,facturation via CIRIL,https://www.sdis47.fr,05 53 48 95 00,Villeurbanne,France,2023-08-03T16:00:19+0200,60,1,20,,,14,69100
+103,1072,SDIS 21,Défense,0,facturation via CIRIL,https://www.sdis21.org,,Villeurbanne,France,2023-08-03T15:54:22+0200,60,1,20,,,14,69100
+104,358,SDIS 84,Défense,2,facturation via CIRIL,https://www.sdis84.fr,04 90 81 18 18,Villeurbanne,France,2019-05-03T06:51:24+0200,17,1,,,,14,69100
+105,479,Groupe CIRIL,Secteur public,1,CREDIT AGRICOLE,https://www.ciril.net/fr/societe/a-propos.html,04 72 69 16 80,VILLEURBANNE,France,2020-02-18T10:57:49+0100,17,1,,,,6,69100
+106,1071,Savoye SASU,Autres,0,,https://www.savoye.com,03 80 54 40 00,Dijon,France,2023-08-03T14:13:36+0200,60,1,20,,,14,21000
+107,1068,OSB,Bâtiments,0,,http://osb-entreprise.com,,Papeete,France,2023-08-01T14:21:19+0200,60,1,20,,,14,98713
+108,1067,Etablissement Tordo Belgrano,Autres,0,,https://www.torbel.fr/content/10-notre-histoire,,Tourette-Levens,France,2023-08-01T14:11:35+0200,60,1,20,,,14,06690
+109,1066,Synergie,Autres,0,,https://www.synergie.fr,05 57 67 14 74,Orvault,France,2023-08-01T14:02:48+0200,60,1,20,,,14,44700
+110,148,SOMFY,Industrie,2,,https://www.somfy-group.com/fr-fr/,04 50 96 70 60,Cluses,France,2017-02-20T09:40:34+0100,17,1,,,,14,74300
+111,1065,Shiseido Europe SA,Autres,0,,https://www.shiseido.fr/fr/fr/?gclid=Cj0KCQjw2qKmBhCfARIsAFy8buJqECR4yb3eKLHRMWaEptB2VGEaBb1wjdidIBW,01 86 76 50 00,Paris,France,2023-08-01T11:27:25+0200,60,1,20,,,14,75008
+112,1064,SAS Verlingue,Assurance,0,,https://www.verlingue.fr/mentions-legales/,02 98 76 44 44,Quimper Cedex,France,2023-08-01T11:18:58+0200,60,1,20,,,14,29335
+113,1063,SAMSE HOLDING,Bâtiments,0,,https://www.groupe-samse.fr,01 77 49 24 5,Grenoble,France,2023-08-01T11:08:39+0200,60,1,20,,,14,38100
+114,1061,Absys Cyborg Paris Pour Pedrero,Autres,0,,https://www.absyscyborg.com/fr/societe/nos-agences/paris,01 47 36 51 75,Issy-les Moulineaux,France,2023-08-01T09:42:13+0200,60,1,20,,,14,92130
+115,1060,Ordre National Des Médecins,Secteur public,0,,https://www.conseil-national.medecin.fr,01 53 89 32 00,Paris Cedex 17,France,2023-08-01T09:33:23+0200,60,1,20,,,14,75855
+116,1059,Département du Rhône,Autres,0,,https://www.annuaire-administration.com/conseil-general/conseil-departemental-rhone-cg-69383-01.html,,Ain,France,2023-08-01T09:22:54+0200,60,1,20,,,14,
+117,125,KUEHNE NAGEL ROAD,Logistique,0,,https://fr.kuehne-nagel.com,04 74 62 79 79,Feusisberg,Suisse,2016-05-17T11:35:47+0200,17,1,,,,14,8834
+118,1056,ING Bank N.V.,Banque,0,,https://www.ing.com/Home.htm,01 57 22 54 00,MG Amsterdam,Pays_Bas,2023-07-31T14:24:41+0200,60,1,20,,,14,1102
+119,1055,Igesa,Autres,0,,https://www.igesa.fr/accueil,05 33 05 39 21,Bastia,France,2023-07-31T14:14:58+0200,60,1,20,,,14,20200
+120,1054,Homeserve,Oil & Gaz,0,,https://www.homeserve.fr,01 70 82 17 69,Lyon,France,2023-07-31T11:25:15+0200,60,1,20,,,14,69007
+121,1052,Groupe Editor,Autres,0,,https://groupe-editor.com,04 42 97 54 00,Aix-en-Provence,France,2023-07-31T10:01:07+0200,60,1,20,,,14,13852
+122,1049,Gaz Electricité de Grenoble,Oil & Gaz,0,,https://particuliers.geg.fr,04 76 84 20 00,Grenoble Cedex 09,France,2023-07-31T09:33:16+0200,60,1,20,,,14,38042
+123,1048,Fonciere Logement,Bâtiments,0,,https://www.foncierelogement.com,05 56 38 24 49,Paris Cedex 15,France,2023-07-31T09:23:06+0200,60,1,20,,,14,75749
+124,1047,Fipagest,Autres,0,,http://www.fipagest.com,03 26 47 15 53,Ceyzériat,France,2023-07-31T09:12:19+0200,60,1,20,,,14,01250
+125,339,GROUPE HERVE,Immobilier,1,Ex MCIROPOLE,www.groupeherve.com,02 47 68 20 00,JOUE LES TOURS,France,2018-12-17T12:29:53+0100,12,1,,,,14,37300
+126,144,ELLISPHERE,Banque,2,,https://www.ellisphere.com,04 72 85 10 00,LYON,France,2016-11-22T17:02:44+0100,17,1,,,,14,69009
+127,21,ECONOCOM,Conseil,7,,https://www.econocom.com/fr,,Courtaboeuf Cedex,France,2016-01-10T10:16:35+0100,12,1,,,,14,91948
+128,1044,CSP Lapeyre Industrie,Industrie,0,,https://www.lapeyre.fr/c/h/usines,01 48 11 74 00,Aubervilliers,France,2023-07-28T08:24:24+0200,60,1,20,,,14,93300
+129,1043,American Hospital Of Paris,Servies hospitaliers,0,,https://www.american-hospital.org,01 46 41 25 25,Neuilly-sur-Seine,France,2023-07-28T08:11:33+0200,60,1,20,,,14,92200
+130,364,UTC-HVAC (ex CIAT),Autres,2,,https://www.ciat.com/fr/fr/,04 72 56 95 00,,Etats_Unis,2019-06-18T15:10:01+0200,17,1,,,,14,
+131,1041,Cegema,Assurance,0,,"https://cegecour.cegema.com/MentionsLegales.wp#:~:text=Si%20un%20désaccord%20persiste%2C%20vous,%2C%",04 92 02 08 50,Villeneuve-Loubet Cedex,France,2023-07-27T14:44:44+0200,60,1,20,,,14,06272
+132,324,C.C.P.A.,Agroalimentaire,1,Ex ASI,www.groupe-ccpa.com,02 99 47 53 00,JANZE,France,2018-11-29T17:57:37+0100,71,1,,,,14,35150
+133,1040,Banque Edmond De Rothschild,Banque,0,,https://www.edmond-de-rothschild.com/fr/Pages/default.aspx,05 56 44 20 66,Monaco,France,2023-07-27T14:24:15+0200,60,1,20,,,14,98000
+134,1039,Azur Production,,0,,,,Onville,France,2023-07-27T14:14:50+0200,60,1,20,,,14,54890
+135,702,ACCESSITE,Autres,0,,https://accessite.eu,01 43 27 27 77,Marseille Cedex 02,France,2021-05-26T07:23:56+0200,17,1,,,,14,13304
+136,1036,Intrum Justicia GRC,Autres,0,,,,Stockholm,Suede,2023-07-27T13:39:49+0200,60,1,20,,,14,105 24
+137,1035,Groupe IES,Automobile,0,,,,Colmar,France,2023-07-27T13:27:17+0200,60,1,20,,,14,68000
+138,1034,Province Nord Cap Emploi,Autres,0,,https://www.cap-emploi.nc,,Kone,France,2023-07-27T11:38:43+0200,60,1,20,,,14,
+139,211,METROPOLE DE NANTES,Secteur public,1,,https://metropole.nantes.fr/contact,02 40 41 90 00,NANTES,France,2017-11-15T08:50:30+0100,17,1,,,,14,44200
+140,1032,La Provence,Autres,0,,https://www.laprovence.com,04 91 84 45 45,Marseille 15,France,2023-07-27T10:59:58+0200,60,1,20,,,14,13015
+141,1031,Porcher Industries,Chimie,0,,https://www.porcher-ind.com/fr,04 75 66 92 22,Chavanoz,France,2023-07-27T10:45:54+0200,60,1,20,,,14,38300
+142,1070,ISES,Autres,0,,,04 74 57 72 26,Vienne Cedex,France,2023-08-01T14:48:59+0200,60,1,20,,,14,38203
+143,1069,Yack,Environnement,0,,https://www.yack.fr/La-societe-YACK/L-entreprise,,Saint-Cyr-Sur-Mer,France,2023-08-01T14:33:54+0200,60,1,20,,,14,83270
+144,1062,SA HLM UNICIL,Immobilier,0,,https://www.unicil.fr,04 91 13 91 13,Marseille,France,2023-08-01T11:00:46+0200,60,1,20,,,14,13006
+145,1058,ODLM,Autres,0,,https://www.seaport-odlm.com/page.html?monoBloc=authentification,04 72 52 02 20,Dardilly,France,2023-08-01T09:14:47+0200,60,1,20,,,14,69570
+146,917,HEPPNER,,1,CREDIT AGRICOLE,,0141835363,ROSNY SOUS BOIS,France,2023-04-03T15:42:30+0200,78,1,,,,-1,93110
+147,547,Lyon Métropole Habitat,Immobilier,0,,https://www.lmhabitat.fr/home.html,04 78 71 61 00,Lyon,France,2020-07-15T17:28:24+0200,12,1,,,,14,69433
+148,884,KEOLIS BORDEAUX METROPOLE MOBILITES,Logistique,1,CREDIT AGRICOLE,https://www.keolis-bordeaux-metropole.com,05 57 57 88 00,BORDEAUX CEDEX,France,2023-01-03T15:11:55+0100,1291,1,,,,14,33082
+149,1053,Guilde des Lunetiers,Autres,0,,https://www.krys-group.com,01 30 88 19 19,Bazainville,France,2023-07-31T11:16:29+0200,60,1,20,,,14,78550
+150,328,TIPIAK SA,Agroalimentaire,1,"Ex ASI
+CAISSE D'EPARGNE 
+(attention paie encore sur BNP en 02/2023 et en 07/2023. 
+Mail envoyé à la compta pour modif.)",www.tipiak.fr,02 28 03 09 30,Saint Herblain,France,2018-12-05T16:55:58+0100,71,1,,,,10,44806
+151,1051,Grand Chambery,Autres,0,,https://www.grandchambery.fr,04 79 96 86 00,Chambéry,France,2023-07-31T09:51:46+0200,60,1,20,,,14,73026
+152,1050,GIE PS,Assurance,0,,https://www.asaf-afps.fr,04 89 88 36 36,Biot,France,2023-07-31T09:42:40+0200,60,1,20,,,14,06410
+153,1046,Edilians,Autres,0,,https://edilians.com,03 84 44 14 33,Dardilly,France,2023-07-28T08:53:52+0200,60,1,20,,,14,69570
+154,1045,Centre Hospitalier de Périgueux,Servies hospitaliers,0,,https://www.ch-perigueux.fr/patients-et-visiteurs-3.html,05 53 45 25 25,Périgueux,France,2023-07-28T08:33:59+0200,60,1,20,,,14,24000
+155,947,CNR,Energie,0,,https://www.cnr.tm.fr,04 72 00 69 69,Lyon,France,2023-04-30T14:56:18+0200,17,1,,,,14,69004
+156,1042,CH de Macon,Autres,0,,https://www.ch-macon.fr,03 85 20 30 40,Mâcon,France,2023-07-27T14:58:24+0200,60,1,20,,,14,71000
+157,1038,ATMB,Autres,0,,https://www.atmb.com,04 50 25 21 89,Bonneville,France,2023-07-27T14:06:31+0200,60,1,20,,,14,74130
+158,1037,Apicil Transverse,Autres,0,,https://mon.apicil.com,04 72 27 78 78,Caluire et Cuire,France,2023-07-27T13:57:29+0200,60,1,20,,,14,69300
+159,1033,Heytens France,Autres,0,,https://www.heytens.fr/?gclid=CjwKCAjwq4imBhBQEiwA9Nx1Bh-jI4u0iF_HWvDVpNVq6f4qUXpMthCwwNnLbGA85wk5-p,00 32 10 23 51 11,Lezennes,France,2023-07-27T11:21:03+0200,60,1,20,,,14,59260
+160,1030,Banque De Nouvelle Caledonie,Banque,0,,https://www.bnc.nc,,Noumea Cedex,Nouvelle_Caledonie,2023-07-27T10:29:55+0200,60,1,20,,,14,98800
+161,1029,XYRIC,Logistique,0,,https://www.xyric.com/contact-xyric,03 80 73 99 10,Quetigny,France,2023-07-27T09:52:11+0200,60,1,20,,,14,21800
+162,1003,DITP Direction interministérielle de la transformation publique,Secteur public,1,CAISSE EPARGNE,,,PARIS,France,2023-05-17T15:56:03+0200,64,1,,,,12,75007
+163,911,Centre Scientifique et Technique du Bâtiment (CSTB),,1,CREDIT AGRICOLE,,01 64 68 82 82,MARNE-LA-VALLEE CEDEX 02,France,2023-03-21T10:28:47+0100,368,1,,,,-1,77447
+164,531,KIABI (BUNSHA),,1,CAISSE D'EPARGNE,,03 20 81 45 00,HEM,France,2020-07-06T14:36:38+0200,60,1,,,,11,59510
+165,390,CARGLASS SERVICES,Automobile,1,CAISSE D'EPARGNE,https://www.carglass.fr/nos-services,09 77 40 19 27,Courbevoie Cedex,France,2019-10-23T17:39:38+0200,255,1,,,,-1,92411
+166,413,GIE AGRICA GESTION,Assurance,1,BPI,,01 71 21 00 01,Paris cedex 08,France,2019-10-23T17:39:38+0200,255,1,,,,-1,75382
+167,373,LOXAM,Services,1,"bpi france
+REGL A 60 J",https://www.loxam.fr,01 58 44 04 00,PARIS Cedex 16,France,2019-09-12T06:56:06+0200,17,1,,,,-1,75219
+168,745,MDS,,1,caisse Epargne,,,Dourdan,France,2021-12-17T15:34:31+0100,255,1,,,,6,91410
+169,425,LACOSTE OPERATIONS HQ,Industrie,1,caisse epargne,,03 25 71 72 20,Troyes,France,2019-10-23T17:39:39+0200,255,1,,,,-1,10000
+170,872,Conseil départemental du Vaucluse CD 84,,1,caisse Epargne,,04 90 87 63 56,Avignon,France,2022-10-26T15:12:27+0200,368,1,,,,-1,84909
+171,367,NEWORCH (ex ORCHESTRA),,1,"Orchestra prémaman, a subi une liquidation judiciaire, New Orch a racheté l'entité. Une échéance reste due à seenovate pour la prestation. Maintenance SPA BO, 4.2, migration en cours potentiellement en 4.3. Outils reporting Qlickview (next decision), BO, Genio et SSIS (microsoft) ETL. Cyber attaque subie avec perte de données. sujet complexe. Contact Franck qui a bon historique, Sebastien (promo JD) a rejoints l'équipe il y a un an. TMA depuis plusieurs années toujours renouvelée.  (1ere partie reliée à l'environnement BO, montée en compétence de l'équipe sur SAP et BI, choix des key users rapports qui vont utilisés des formations)  Marine ( congé mat jusque automne 2022) et Clement sont dans l'équipe de Sebastien sur la partie marketing/ data. sujet analyse prédictive. prestation Qlikview.
+
+CAISSE EPARGNE",,09 69 32 33 01,Saint Aunès,France,2019-06-27T17:05:07+0200,368,1,,,,-1,34130
+172,612,OKAIDI (ID GROUP),,1,CAISSE D'EPARGNE,,09 69 39 23 90,ROUBAIX,France,2020-09-07T16:59:06+0200,255,1,,,,11,59100
+173,622,VALFRANCE,,1,"Caisse d'Epargne
+Ex client. Contact Alain, DSI était frileux avant de transférer chez nous après Synergie. Maintenance PCOE BO, renouvelé par Baptiste. Grégory connait le compte et avait vendu des licences. Client encore assez proche de Synergie, travailler doucement en présentation.",,03 44 53 89 50,SENLIS Cedex,France,2020-09-07T17:47:35+0200,368,1,,,,11,60302
+174,594,DARGAUD (Pluriad),Média,1,CAISSE D'EPARGNE,,,PARIS CEDEX 19,France,2020-09-07T15:16:07+0200,255,1,,,,11,75166
+175,1025,BOUE GROUP 49,,2,"facturation IDEA informatique
+CREDIT AGRICOLE",,,SAUMUR,France,2023-06-22T09:31:28+0200,368,1,20,,,-1,49400
+176,626,CENTRE NATIONAL D'ENSEIGNEMENT A DISTANCE (CNED),Secteur public,1,,,,FUTUROSCOPE CHASSENEUIL CEDEX,France,2020-09-22T10:18:46+0200,71,1,,,,12,86963
+177,472,TRANSGOURMET INFORMATIQUE,Agroalimentaire,1,CAISSE EPARGNE,,01 46 76 61 61,VALENTON,France,2020-01-24T15:25:45+0100,12,1,,,,-1,94460
+178,920,Disgroup,,0,Idea informatique,,,SAINT-SAUVEUR-DES-LANDES,France,2023-04-06T15:16:32+0200,368,1,,,,-1,35133
+179,880,CHU Amiens Picardie,Servies hospitaliers,0,,www.chu-amiens.fr,,Amiens Cedex 1,France,2022-11-28T14:47:34+0100,17,1,,,,1,80054
+180,935,TOUT FAIRE SA,,1,,,,VERDUN Cedex,France,2023-04-25T13:19:11+0200,17,1,,,,-1,55105
+181,662,"Direction de l'animation de la recherche, des études et des statistiques (DARES)",Secteur public,0,,,01 44 38 32 15,Paris,France,2020-12-28T16:21:10+0100,64,1,,,,-1,75015
+182,576,ETABLISSEMENT FRANCAIS DU SANG (EFS),,1,caisse d'Epargne,,,DECINES,France,2020-09-07T11:09:44+0200,17,1,,,,12,69153
+183,320,BANDAI NAMCO EUROPE,Edition de logiciels,1,BPI,https://fr.bandainamcoent.eu,04 37 64 30 00,Lyon Cedex 09,France,2018-11-28T13:28:50+0100,60,1,,,,10,69258
+184,507,TOYOTA Financial Services France,,1,caisse d'epargne,https://www.toyota-financement.fr/index/conditions-generales,01 47 01 60 30,VAUCRESSON,France,2020-06-18T09:50:26+0200,255,1,,,,11,92420
+185,311,ISB FRANCE,Bâtiments,1,Ex ASI,https://www.groupe-isb.fr,02 99 85 54 83,BRUZ Cedex,France,2018-11-26T14:14:24+0100,71,1,,,,10,35172
+186,386,BFORBANK,Banque,1,caisse d'Epargne,https://www.bforbank.com/compte-bancaire/offre-compte-bancaire-bforbank.html?xtor=SEC-403813-GOO-%5B,,Paris La Defense Cedex,France,2019-10-23T17:39:38+0200,255,1,,,,-1,92927
+187,402,ESI Group,Edition de logiciels,1,"FACTURATION : compta.AP.esigroup@esi-group.com
+
+Caisse d'épargne",https://www.esi-group.com/fr,,RUNGIS,France,2019-10-23T17:39:38+0200,255,1,,,,-1,94528
+188,444,STET SA,,1,,https://www.stet.eu,01 55 23 55 00,Courbevoie,France,2019-10-23T17:39:39+0200,255,1,,,,-1,92932
+189,290,CORDON ELECTRONICS,Télécommunications,1,Ex ASI,https://www.cordongroup.com/fr/,02 96 85 55 ..,Taden,France,2018-11-16T17:32:21+0100,71,1,,,,10,22100
+190,378,AGEAS Services,,1,CAISSE D'EPARGNE,https://www.ageas.fr,01 73 60 70 80,Courbevoie,France,2019-10-23T17:39:38+0200,255,1,,,,-1,92400
+191,351,VYV3 IT,Assurance,1,,https://www.groupe-vyv.fr/accueil-vyv-3/,02 47 72 97 02,ANGERS,France,2019-03-25T17:00:38+0100,71,1,,,,-1,49100
+192,387,BPI FRANCE,Banque,1,CAISSE D'EPARGNE,https://www.bpifrance.fr,05 56 48 46 46,Maisons-Alfort,France,2019-10-23T17:39:38+0200,255,1,,,,-1,94700
+193,428,MUTEX,Assurance,1,crédit agricole,https://www.mutex.fr,01 46 00 30 30,CHATILLON Cedex,France,2019-10-23T17:39:39+0200,255,1,,,,-1,92327
+194,893,Idea Informatique,,0,"Pedab founi historiquement les 80 licences BO (OEM)
+Crédit Agricole",https://www.idea-informatique.fr/contact#contactForm,,Béziers,France,2023-02-09T14:45:01+0100,368,1,,,,-1,34500
+195,1028,NUMERICA,,1,,contact@numericabfc.com,03 81 31 26 80,MONTBELIARD,France,2023-06-29T09:53:57+0200,17,1,3,,,4,25200
+196,1027,IDLogistics,,0,,,,,France,2023-06-27T17:06:36+0200,368,1,20,,,-1,
+197,218,JOA GROUPE Holding,,1,,,,LYON CEDEX 06,France,2017-12-04T09:09:41+0100,17,1,,,,-1,69463
+198,1004,Proxiad,,1,CREDIT AGRICOLE,,,Saint-Herblain,France,2023-05-26T16:41:08+0200,71,1,3,,,-1,44800
+199,656,Direction générale de l'offre de soins (DGOS),Secteur public,1,CAISSE EPARGNE,,,Paris,France,2020-12-28T13:26:24+0100,64,1,,,,12,75007
+200,874,CEVA SANTE ANIMALE,Pharmacie,1,crédit agricole,,05 57 55 40 40,LIBOURNE,France,2022-10-28T11:40:20+0200,1291,1,,,,13,33500
+201,1000,SMATIS,,1,,,,,France,2023-05-15T14:41:56+0200,1291,1,,,,-1,
+202,1026,Pacifique Pêche,,0,,,,Montpellier,France,2023-06-22T16:08:15+0200,368,1,20,,,-1,
+203,908,CH LIBOURNE,,0,,,,,France,2023-03-17T17:02:39+0100,1291,1,,,,-1,
+204,999,Bolloré SE,,1,CREDIT AGRICOLE,,02 98 66 72 00,Quimper Cedex 9,France,2023-05-12T10:01:50+0200,71,1,,,,-1,29556
+205,1001,RATP,,1,CREDIT AGRICOLE,,,PARIS CEDEX 12,France,2023-05-15T16:29:26+0200,1291,1,,,,-1,75599
+206,1023,INRA Blois,,0,,,,,France,2023-06-21T15:40:21+0200,368,1,20,,,-1,
+207,811,"Direction générale des affaires maritimes, de la pêche et de l’aquaculture (DPMA)",Secteur public,1,,,,,France,2022-04-07T08:59:17+0200,64,1,,,,12,
+208,1022,Duck creek,,0,,,,,France,2023-06-20T14:56:57+0200,255,1,20,,,-1,
+209,499,RAMERY SAS,Bâtiments,1,CAISSE D'EPARGNE,,03 20 77 86 00,ERQUINGHEM-LYS,France,2020-04-27T10:45:56+0200,255,1,,,,11,59193
+210,900,CGI Finances (C.G.L),,2,"Client Synergy, demande de formation univers
+CREDIT AGRICOLE",,,MARCQ-EN-BAROEUL,France,2023-03-07T15:36:55+0100,368,1,,,,-1,59703
+211,266,Conseil Régional Bourgogne Franche Comté,Secteur public,0,CAISSE D'EPARGNE,www.bourgognefranchecomte.fr,,BESANCON,France,2018-09-06T14:15:18+0200,52,1,,,,-1,25031
+212,1021,DATA MAJOR,,7,,,,,France,2023-06-13T11:58:52+0200,12,1,3,,,-1,
+213,20,DÉPARTEMENT DES HAUTES ALPES (CG 05),Secteur public,1,CAISSE EPARGNE,www.cg05.fr,0492403815,GAP Cedex,France,2016-01-10T10:16:35+0100,368,1,,,,-1,05008
+214,902,MACIF Investissement,,1,CREDIT AGRICOLE,,,Bessines,France,2023-03-13T09:47:29+0100,71,1,,,,-1,79000
+215,484,ALLIANCE OPTIQUE (Groupe ALL),,1,CREDIT AGRICOLE,,03 28 36 28 36,MONS EN BAROEUL,France,2020-02-28T11:11:20+0100,255,1,,,,11,59370
+216,645,DGEFP (Ministère du travail),Secteur public,1,Caisse Epargne,,,,France,2020-12-14T09:10:44+0100,17,1,,,,12,
+217,151,INSERM Délégation ARA,,1,CREDIT AGRICOLE,,,,France,2017-02-23T15:10:20+0100,12,1,,,,-1,
+218,1020,BTP CFA,,0,,,,,France,2023-06-08T14:00:23+0200,12,1,3,,,-1,
+219,1019,AFD,,0,,www.afd.fr,,PARIS 12,France,2023-06-07T12:00:24+0200,17,1,3,,,-1,75598
+220,1018,RECTORAT DE BORDEAUX,,0,,,,,France,2023-06-07T11:49:23+0200,1291,1,20,,,-1,
+221,1002,CECOGEB,,1,,,,BORDEAUX,France,2023-05-17T13:43:21+0200,1291,1,,,,-1,33800
+222,116,GEODIS INTERSERVICES,Logistique,0,,https://geodis.com/fr/agency/geodis-headquarters,01 56 76 26 00,Levallois-Perret,France,2016-04-13T10:22:01+0200,17,1,,,,2,92110
+223,1017,Canon Bretagne,Autres,0,,https://www.canon-bretagne.fr,02 99 23 51 11,Liffré,France,2023-06-02T12:06:49+0200,17,1,20,,,2,35341
+224,1016,Veolia,Autres,0,,https://www.service.eau.veolia.fr/home.html,/,Paris,France,2023-06-02T12:02:31+0200,17,1,20,,,2,75008
+225,1015,Euronews,Autres,0,,https://fr.euronews.com,04 28 67 00 00,Lyon,France,2023-06-02T11:59:33+0200,17,1,20,,,2,69002
+226,1014,Naval Group,Autres,0,,https://www.naval-group.com/fr,01 40 59 50 00,Paris,France,2023-06-02T11:56:02+0200,17,1,20,,,2,75015
+227,1013,Suez,Autres,0,,https://www.toutsurmoneau.fr,09 77 40 84 08,Paris La Défense Cedex,France,2023-06-02T11:49:45+0200,17,1,20,,,2,92040
+228,1012,Dassault System,Autres,0,,https://www.3ds.com/fr/,01 61 62 61 62,Velizy Villacoublay,France,2023-06-02T11:45:33+0200,17,1,20,,,2,78140
+229,1011,Winamax,Autres,0,,https://www.winamax.fr,01 45 50 19 89,Paris,France,2023-06-02T11:43:08+0200,17,1,20,,,2,75007
+230,1010,Oceasoft,Surveillance,0,,https://dicksondata.com/fr-fr,04 99 13 67 30,Montpellier,France,2023-06-02T11:39:31+0200,17,1,20,,,2,34000
+231,1009,Cortus,Autres,0,,https://cortus.com,04 30 96 70 00,Maugio,France,2023-06-02T11:37:07+0200,17,1,20,,,2,34130
+232,1008,Arkema,Autres,0,,https://www.arkema.com/france/fr/,01 49 00 80 80,Colombes Cedex,France,2023-06-02T11:33:15+0200,17,1,20,,,2,92705
+233,1007,CEA Tech,Autres,0,,https://www.cea-tech.fr/cea-tech,04 38 78 07 51,Pessac,France,2023-06-02T11:30:38+0200,17,1,20,,,2,33600
+234,923,INSERM Délégation Est,,0,Crédit Agricole,,,,France,2023-04-12T10:09:40+0200,12,1,,,,-1,
+235,1006,Département 73,,0,,,,,France,2023-06-01T07:59:12+0200,17,1,3,,,-1,
+236,554,SEENOVATE,,1,,,0472074700,LYON,France,2020-07-27T18:06:29+0200,17,1,,,,-1,69002
+237,743,Fédération Francaise de Natation FFN,,1,Banque CEpargne,,,CLICHY,France,2021-12-15T06:29:20+0100,17,1,,,,-1,92583
+238,548,OAK CONSULTING WORLDWIDE,Services,1,"crédit Agricole
+Attention en grandes difficultés financières !
+Plus de prestation facturée",,,Nantes,France,2020-07-16T09:34:05+0200,71,1,,,,-1,44300
+239,821,Ville de Meaux,,2,credit agricole,,,,France,2022-04-12T16:16:51+0200,255,1,,,,-1,
+240,654,Direction générale des finances publiques (DGFIP),Secteur public,1,,,01 40 04 04 04,Paris Cedex 12,France,2020-12-28T12:00:03+0100,64,1,,,,12,75572
+241,450,Université Paris Descartes,Secteur public,1,CREDIT AGRICOLE,,,PARIS,France,2019-10-23T17:39:39+0200,255,1,,,,-1,75270
+242,410,Générale de Téléphone (GDT),Télécommunications,1,credit agricole,,,La Plaine Saint-Denis Cedex,France,2019-10-23T17:39:38+0200,255,1,,,,-1,93214
+243,701,KLEE CONSEIL & INTEGRATION,Edition de logiciels,2,crédit Agricole,,+33 (0)1 46 29 25 25,Le Plessis Robinson,France,2021-05-10T18:10:07+0200,60,1,,,,6,92350
+244,946,Christian Dior,Autres,0,,https://www.dior.com/fr_fr?loopcd=SEg%7Cc%7Cg%7Cchristian%20dior%7C544968307175%7Ce&gclid=CjwKCAjwo7,01 49 53 87 87,Paris,France,2023-04-30T14:50:49+0200,17,1,,,,2,75008
+245,929,C-DISCOUNT,Autres,0,,https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwjOrvy8z9H-AhXJjdUKHZxqC7gYABAAGgJ3cw&ae=,,Bordeaux,France,2023-04-24T14:19:30+0200,17,1,,,,2,33000
+246,944,Castel Freres,Autres,0,,https://www.castel-freres.com/fr/,01 45 12 42 00,Blanquefort,France,2023-04-30T14:34:58+0200,17,1,,,,2,33290
+247,943,Casino,Grande distribution,0,,https://www.supercasino.fr,08 91 65 31 73,Saint-Étienne,France,2023-04-30T14:24:49+0200,17,1,,,,2,42000
+248,942,Bouygues,Télécommunications,0,,https://www.bouyguestelecom.fr/?utm_medium=sea_c&utm_source=google&utm_campaign=bouygues-m-marquepur,01 41 09 80 53,Paris,France,2023-04-30T14:21:49+0200,17,1,,,,2,75016
+249,938,Bolloré,Transport,0,,https://www.bollore-logistics.com/fr/pays/france/,08 91 65 31 88,Puteaux,France,2023-04-27T08:45:34+0200,17,1,,,,-1,92800
+250,934,APRR,Transport,0,,https://voyage.aprr.fr,03 80 77 67 00,Saint-Apollinaire,France,2023-04-24T15:33:52+0200,17,1,,,,2,21850
+251,930,Adecco,Formation,0,,https://www.adecco.fr,04 72 82 58 58,Villeurbanne,France,2023-04-24T15:08:58+0200,17,1,,,,2,69100
+252,933,Aoste Group,Agroalimentaire,0,,https://www.groupeaoste.com,04 72 14 85 00,Saint-Priest,France,2023-04-24T15:29:54+0200,17,1,,,,2,69800
+253,932,Alvea,Oil & Gaz,0,,https://www.proxi-totalenergies.fr/particuliers/le-groupe-total/nos-filiales-de-distribution-regiona,05 56 00 58 58,Bordeaux,France,2023-04-24T15:25:49+0200,17,1,,,,2,33000
+254,931,Algeco,Autres,0,,https://www.algeco.fr/solutions/espace-modulaire?utm_term=algeco&utm_campaign=%5BSEARCH%5D+-+Brand&u,05 56 72 70 10,Charnay Les Macon,France,2023-04-24T15:17:38+0200,17,1,,,,2,71850
+255,998,Onet Services,Surveillance,0,,https://www.onet.fr/proprete-services/,04 91 12 02 12,Marseille,France,2023-05-08T10:56:53+0200,17,1,,,,2,13009
+256,997,Syngenta Group,Autres,0,,https://www.syngenta.fr,/,Guyancourt,France,2023-05-08T10:52:58+0200,17,1,,,,2,78286
+257,996,Dyneff,Autres,0,,https://www.dyneff.fr,04 67 12 35 70,Montpellier,France,2023-05-08T10:48:23+0200,17,1,,,,2,34000
+258,995,Chausson Matériaux,Autres,0,,https://www.chausson.fr,05 61 37 37 37,Saint-Alban,France,2023-05-08T10:45:45+0200,17,1,,,,2,31140
+259,842,Pernod Ricard,Autres,0,Utilise Sap Concur pour les notes de frais,https://www.pernod-ricard.com/en,01 41 00 41 00,Paris,France,2022-06-07T14:20:04+0200,368,1,,,,2,75008
+260,994,CMA CGM,Autres,0,,https://www.cma-cgm.fr,04 88 91 90 00,Marseille,France,2023-05-08T10:39:12+0200,17,1,,,,2,13002
+261,993,Altrad,Industrie,0,,https://www.altradplettacmefran.fr/fr/?gclid=Cj0KCQjwmN2iBhCrARIsAG_G2i7oLJqMrwqG4ftckAM0PTROeaSna4Q,04 67 33 99 33,Florensac,France,2023-05-07T13:25:44+0200,17,1,,,,2,34510
+262,992,Chronopost,Autres,0,,https://www.chronopost.fr/fr#/step-home,/,Paris,France,2023-05-07T13:21:38+0200,17,1,,,,2,75014
+263,991,Vente privée,Autres,0,,https://www.veepee.fr/gr/home/default,01 73 44 11 11,Saint-Denis,France,2023-05-07T13:15:41+0200,17,1,,,,2,93200
+264,990,Arcelormittal,Métallurgie/sidérurgie,0,,https://france.arcelormittal.com,/,/,Luxembourg,2023-05-07T13:11:02+0200,17,1,,,,2,l-1160
+265,989,Air France,Aéronautique,0,,https://wwws.airfrance.fr/?gclid=Cj0KCQjwmN2iBhCrARIsAG_G2i6bBd8MXuex_tsR6mjByqp8HoibRcjYAh9_EhMX8IB,01 41 56 78 00,Roissy CDG Cedex,France,2023-05-07T13:06:43+0200,17,1,,,,2,95747
+266,988,Renault SAS,Automobile,0,,https://www.renaultgroup.com,01 76 84 04 04,Boulogne-Billancourt,France,2023-05-07T13:01:16+0200,17,1,,,,2,92100
+267,987,PSA,Automobile,0,,https://societeamission.com/entreprises/psa-group/,01 40 66 55 11,Paris,France,2023-05-07T12:57:23+0200,17,1,,,,2,75116
+268,986,Vinci,Autres,0,,https://www.vinci.com,01 47 16 35 00,Rueil-Malmaison Cedex,France,2023-05-06T15:40:11+0200,17,1,,,,2,92851
+269,985,Valeo,Automobile,0,,https://www.valeo.com/fr/,01 40 55 20 20,Paris,France,2023-05-06T15:36:15+0200,17,1,,,,2,75017
+270,984,Ubisoft,Autres,0,,https://www.ubisoft.com/fr-fr/,01 48 18 50 00,Montreuil,France,2023-05-06T15:33:55+0200,17,1,,,,2,93100
+271,983,Touton,Autres,0,,https://touton.com,05 56 69 68 00,Bordeaux,France,2023-05-06T15:31:14+0200,17,1,,,,2,33000
+272,982,Thevebin Ducrot,Automobile,0,,https://www.thevenin-ducrot.fr,03 80 48 44 00,Chevigny-Saint-Sauveur,France,2023-05-06T15:27:29+0200,17,1,,,,2,21800
+273,981,Thales Avs,Aéronautique,0,,https://www.thalesgroup.com/fr/aeronautique,01 69 75 50 00,Mérignac,France,2023-05-06T15:22:46+0200,17,1,,,,2,33700
+274,980,TF1,Média,0,,https://www.tf1.fr,01 41 41 12 34,Boulogne-Billancourt,France,2023-05-06T15:16:29+0200,17,1,,,,2,92100
+275,979,Stedis,Autres,0,,https://www.stedis.com,04 76 51 57 93,Saint Martin d'Heres,France,2023-05-06T15:13:39+0200,17,1,,,,2,38403
+276,978,Spie,Energie,0,,https://www.spie.com/fr,01 34 22 58 00,Cergy,France,2023-05-06T15:09:28+0200,17,1,,,,2,95800
+277,977,Sodexo,Autres,0,,https://www.sodexo.fr,01 57 75 80 00,Issy-les-Moulineaux,France,2023-05-06T15:04:21+0200,17,1,,,,2,92130
+278,976,Sodiaal,Autres,0,,https://sodiaal.coop,01 58 40 50 60,Paris,France,2023-05-06T15:00:46+0200,17,1,,,,2,75014
+279,975,SNF,Autres,0,,https://www.snf.com/fr/,04 77 36 86 00,Andrézieux-Bouthéon Cedex,France,2023-05-06T14:56:44+0200,17,1,,,,2,42163
+280,974,Sanofi,Autres,0,,https://www.sanofi.fr/fr/,01 53 77 40 00,Gentilly Cedex,France,2023-05-06T14:52:21+0200,17,1,,,,2,94250
+281,973,Saint-Gobin,Bâtiments,0,,https://www.saint-gobain.com/fr,01 88 54 00 00,La Défense Cedex,France,2023-05-06T14:46:14+0200,17,1,,,,2,92096
+282,972,Safran Helicopter Engines,Autres,0,,https://www.safran-group.com/fr/societes/safran-helicopter-engines?gad=1&gclid=Cj0KCQjw9deiBhC1ARIsA,01 40 60 80 00,Bordes,France,2023-05-06T14:43:17+0200,17,1,,,,2,64510
+283,971,Rexel,Autres,0,,https://www.rexel.fr/frx/?gclid=Cj0KCQjw9deiBhC1ARIsAHLjR2C78AlGrGKKru-F-ZZLCTz_VJHrrR2atGI-Yf5X1crH,01 42 85 85 50,Paris,France,2023-05-06T14:38:39+0200,17,1,,,,2,75838
+284,970,Renault Trucks,Automobile,0,,https://www.renault-trucks.com/fr,04 69 09 60 00,Saint-Priest,France,2023-05-06T14:34:49+0200,17,1,,,,2,69800
+285,969,Publicis,Autres,0,,https://www.publicisgroupe.com/fr/splash,01 44 43 70 00,Paris,France,2023-05-06T14:30:31+0200,17,1,,,,2,75008
+286,280,POMONA,Agroalimentaire,2,,https://www.groupe-pomona.fr,04 92 17 07 00,Anthony Cedex,France,2018-11-08T15:21:54+0100,17,1,,,,1,92160
+287,968,PMU,Autres,0,,https://www.pmu.fr,/,Paris,France,2023-05-06T14:21:51+0200,17,1,,,,2,75015
+288,967,Orpéa,Autres,0,,https://www.orpea.com,01 40 69 48 00,Puteaux,France,2023-05-05T22:43:05+0200,17,1,,,,2,92800
+289,966,Orange,Télécommunications,0,,https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwi2w8iRhN_-AhXokmgJHbdlAkEYABAAGgJ3Zg&oho,01 44 44 22 22,Issy-les-Moulineaux,France,2023-05-05T22:38:22+0200,17,1,,,,2,92130
+290,965,Monoprix,Autres,0,,https://www.monoprix.fr,01 78 99 90 00,Clichy Cedex,France,2023-05-05T22:33:07+0200,17,1,,,,2,92116
+291,964,Michelin,Automobile,0,,https://www.michelin.fr,04 73 32 20 00,Clermont-Ferrand,France,2023-05-05T16:43:17+0200,17,1,,,,2,63000
+292,963,Maison Johanes Boubee,Autres,0,,https://www.maisonjohanesboubee.fr,05 57 62 43 00,Bordeaux,France,2023-05-05T16:39:02+0200,17,1,,,,2,33070
+293,962,MAAF,Assurance,0,,https://www.maaf.fr/fr/assurance,/,Chauray,France,2023-05-05T16:35:29+0200,17,1,,,,2,79180
+294,961,M6,Autres,0,,https://www.6play.fr,01 41 92 60 00,Neuilly-sur-Seine Cedex,France,2023-05-05T15:54:09+0200,17,1,,,,2,92575
+295,960,Longchamp,Autres,0,,https://www.longchamp.com/fr/fr,01 47 03 15 20,Paris,France,2023-05-05T15:48:47+0200,17,1,,,,2,75001
+296,959,Groupe Qualiconsult,,0,,,,,France,2023-05-04T15:33:28+0200,368,1,,,,-1,
+297,31,LAFARGE SA,Bâtiments,1,,https://www.lafarge.fr,/,PARIS Cedex 16,France,2016-01-10T10:16:36+0100,12,1,,,,-1,75782
+298,958,Lactalis,Autres,0,,https://www.lactalis.fr,02 43 67 88 88,Laval,France,2023-05-01T10:27:06+0200,17,1,,,,2,53000
+299,957,La Poste,Autres,0,,https://www.laposte.fr/?at_medium=sl&at_campaign=%5BM_Marque_PART%5D&at_platform=google&at_creation=,/,Paris,France,2023-05-01T10:21:37+0200,17,1,,,,2,75015
+300,956,Klepierre,Autres,0,,https://www.klepierre.com,01 40 67 51 00,Paris,France,2023-05-01T10:17:03+0200,17,1,,,,2,75009
+301,955,Invivo,Autres,0,,https://www.invivo-group.com/fr,01 49 97 30 00,Paris,France,2023-05-01T10:07:00+0200,17,1,,,,2,75016
+302,954,Groupe Seb,Autres,0,,https://www.groupeseb.com/fr,04 72 18 18 18,Ecully Cedex,France,2023-05-01T10:02:42+0200,17,1,,,,2,69134
+303,953,Granini,Autres,0,,https://www.eckes-granini.fr,01 53 46 35 35,Mâcon,France,2023-05-01T09:58:48+0200,17,1,,,,2,71000
+304,937,Biomérieux,Autres,0,,https://www.biomerieux.fr,08 91 65 29 83,Marcy l'etoile,France,2023-04-27T08:38:07+0200,1508,1,,,,2,69280
+305,939,Boulanger,Autres,0,,https://www.boulanger.com,03 20 87 50 06,Lesquin,France,2023-04-27T08:51:20+0200,1508,1,,,,-1,59810
+306,952,Gifi,Autres,0,,https://www.gifi.fr,05 49 78 45 20,Villeneuve-sur-Lot,France,2023-05-01T09:53:51+0200,17,1,,,,2,47300
+307,951,FDJ,Autres,0,,https://www.fdj.fr,09 69 36 60 60,Boulogne-Billancourt,France,2023-05-01T09:48:26+0200,17,1,,,,2,92100
+308,631,FAURECIA,Automobile,0,,https://www.faurecia.com,01 72 36 70 00,Nanterre,France,2020-10-01T10:57:35+0200,64,1,,,,0,92000
+309,950,Evian,Autres,0,,https://www.evian.com/fr/,04 50 84 28 00,Evian Les Bains,France,2023-05-01T09:40:06+0200,17,1,,,,2,74500
+310,949,EDF,Energie,0,,https://www.edf.fr,09 69 32 15 15,Paris,France,2023-05-01T09:33:45+0200,17,1,,,,2,75008
+311,948,Disneyland Paris,Autres,0,,https://www.disneylandparis.com/fr-fr/evenements/30e-anniversaire/?ecid=SEM_IP_S_9698811409-c-100694,01 60 30 30 00,Chessy,France,2023-04-30T15:08:09+0200,17,1,,,,2,77000
+312,169,DESCOURS ET CABAUD,Industrie,0,,https://www.descours-cabaud.com,04 72 40 85 85,LYON,France,2017-05-15T08:24:53+0200,17,1,,,,2,69002
+313,945,SCASO,Logistique,0,,https://www.scaouest.fr,05 57 97 97 97,Cestas,France,2023-04-30T14:43:21+0200,17,1,,,,2,33610
+314,27,INDUSTEEL FRANCE,Métallurgie/sidérurgie,1,BPI,,,CHATEAUNEUF,France,2016-01-10T10:16:36+0100,12,1,,,,-1,42800
+315,922,INSERM Délégation IDF,,0,crédit agricole,,,,France,2023-04-12T10:09:19+0200,12,1,,,,-1,
+316,941,Swissmetal Industries SA,,0,,,,Reconvilier,Suisse,2023-04-27T14:55:35+0200,368,1,,,,-1,2732
+317,940,FF Hockey,sport,1,,,,,France,2023-04-27T14:33:17+0200,255,1,,,,-1,
+318,43,TORAY FILMS EUROPE S.A.S.,Chimie,1,CAISSE EPARGNE,,,ST MAURICE DE BEYNOST,France,2016-01-10T10:16:36+0100,255,1,,,,-1,01700
+319,928,TALEND,,7,,,,,France,2023-04-24T11:22:16+0200,64,1,,,,-1,
+320,852,OFFICE NATIONAL DES FORETS (ONF),Secteur public,1,,,,MAISONS-ALFORT Cedex,France,2022-08-30T17:52:12+0200,64,1,,,,12,94704
+321,653,CONSEIL D'ETAT,Secteur public,1,,,,,France,2020-12-22T14:45:58+0100,64,1,,,,12,
+322,671,Service d'information du gouvernement  - SIG (Premier Ministre),Secteur public,1,,,,Paris,France,2020-12-29T11:02:26+0100,64,1,,,,12,75007
+323,927,IFTH - Institut Français du Textile et de l'Habillement,,0,,,,,France,2023-04-14T16:39:47+0200,12,1,,,,-1,
+324,926,Bruleur de Loups,sport,0,,,,,France,2023-04-13T09:38:33+0200,255,1,,,,2,
+325,289,SA BRETAGNE ANGLETERRE IRLANDE (BRITTANY FERRIES - BAI SA),Transport,1,"Ex ASI
+Crédit Agricole
+
+(B.A.I. Bretagne Angleterre Irlande)",,02 98 29 28 00,ROSCOFF Cedex,France,2018-11-16T16:31:23+0100,71,1,,,,10,29688
+326,890,CENPAC,,1,crédit agricole,,,ROISSY CHARLES DE GAULLE CEDEX,France,2023-02-01T12:47:50+0100,1291,1,,,,-1,95912
+327,335,INDIGO GALLERY / Le temps des cerises (ex DOGGLABEL),Industrie,1,"Ex Micropole
+Ancien client Micropole, maintenance PCOE, bon contact avec Marie Helene et Julien. Actions de prestation ponctuelle d'abord (Sebastien Mas, coaching mauvaise prise en main utilisateurs ou environnement) puis mise en place d'une TMA qui n'a pas été utilisée, donc pas renouvelée. faire un point. Version 4.2 actuelle. Demande de formation BO Webi en cours. Refaire un point après la formation. ancien package BO avec option BODS ce qui n'était pas intégré d'office au départ. 
+
+Banque  CREDIT AGRICOLE",,,Marseille,France,2018-12-10T14:11:34+0100,368,1,,,,-1,13010
+328,925,EGEE,,0,,,,MEYLAN,France,2023-04-12T13:41:23+0200,17,1,,,,-1,38243
+329,924,INSERM,,0,,,,,France,2023-04-12T10:27:47+0200,12,1,,,,-1,
+330,913,Banque de France,,2,"Via SAP (West House)
+
+credit agricole",,,,France,2023-03-27T11:05:19+0200,78,1,,,,-1,
+331,906,IDEA,,4,,,,,France,2023-03-15T07:02:50+0100,17,1,,,,-1,
+332,919,AQUITEM,,0,,,,,France,2023-04-06T11:25:02+0200,1291,1,,,,-1,
+333,905,AAREON,,1,Caisse d'Epargne,,0145379230,MEUDON LA FORÈT CEDEX,France,2023-03-15T06:48:57+0100,17,1,,,,-1,92366
+334,918,OPCO Uniformation cohésion sociale branche mutualité,,0,,,,,France,2023-04-05T16:09:06+0200,368,1,,,,-1,
+335,899,CDC HABITAT ADOMA,,0,crédit Agricole,www.adoma.cdc-habitat.fr,01 40 6142 00,PARIS,France,2023-03-07T06:19:10+0100,17,1,,,,-1,75013
+336,910,VILLE DE SAINT-MARTIN D'HERES,,1,C.EPARGNE,,04 76 60 73 73,ST MARTIN D'HERES CEDEX,France,2023-03-21T09:19:45+0100,17,1,,,,1,38401
+337,628,Agence de Biomédecine (ABM),Secteur public,1,,,,,France,2020-09-28T07:45:17+0200,64,1,,,,12,
+338,670,INSTITUT NATIONAL DES SCIENCES APPLIQUEES DE LYON (INSA),Secteur public,1,,,04 72 43 83 83,Villeurbanne cedex,France,2020-12-29T10:52:23+0100,64,1,,,,12,69621
+339,916,SDIS 78,,0,,,,,France,2023-04-03T15:31:30+0200,1291,1,,,,-1,
+340,914,"Direction générale des infrastructures, des transports et des mobilités (DGITM)",,2,,,,,France,2023-03-30T07:38:51+0200,12,1,,,,3,
+341,619,TEXDECOR,,1,credit agricole,,,WILLEMS,France,2020-09-07T17:36:25+0200,255,1,,,,11,59780
+342,502,CIVC,Agroalimentaire,1,"CREDIT AGRICOLE
+R&D en œnologie, beaucoup d'info économiques BO depuis 2007, régul de plusieurs milliers d'euros. Power BI, Formation?",,03 26 51 19 30,Epernay,France,2020-05-12T16:26:23+0200,368,1,,,,11,51204
+343,477,SAS V2D CREATION (STEFFY),Autres,1,"Transfert SYNERGY
+
+CAISSE D'EPARGNE",,,WATTRELOS,France,2020-02-13T10:46:41+0100,368,1,,,,11,59150
+344,480,CHAMPAGNE LANSON PERE ET FILS,Agroalimentaire,1,"Relations très moyennes avec Synergy : besoin de formations, proposition de migration bien trop lourdes.
+
+FYI : version BO BI 4.2 SP7",www.lanson.com/,03 26 78 50 50,Reims,France,2020-02-20T15:22:24+0100,368,1,,,,11,51100
+345,189,INRAE Centre Clermont Auvergne Rhône-Alpes,,1,CREDIT AGRICOLE,,,Saint-Gènes-Champanelle,France,2017-07-21T16:22:04+0200,12,1,,,,-1,63122
+346,862,MELICONI FRANCE,,1,"DG élu à la chambre de commerce de Mtp
+CREDIT AGRICOLE",,,Saint Jean de Védas,France,2022-09-26T09:58:10+0200,368,1,,,,-1,34430
+347,909,CIRAD,,0,AO Qlik à étudier,,,,France,2023-03-20T09:18:25+0100,368,1,,,,-1,
+348,907,CONSEIL DEPARTEMENTAL DE LA CHARENTE 16,,1,,,,,France,2023-03-15T09:28:10+0100,1291,1,,,,13,
+349,104,ASI INFORMATIQUE ATLANTIQUE CENTRE OUEST,,7,CREDIT AGRICOLE,,,SAINT-HERBLAIN,France,2016-01-26T12:12:52+0100,17,1,,,,3,44800
+350,904,ARCHE MC2,,0,,,,,France,2023-03-14T15:50:16+0100,17,1,,,,-1,
+351,903,Région Rhône-Alpes,,0,,,,,France,2023-03-14T05:49:30+0100,17,1,,,,-1,
+352,883,AQUITANIS,,1,CREDIT AGRICOLE,,,BORDEAUX CEDEX,France,2022-12-28T15:47:26+0100,1291,1,,,,13,33028
+353,51,POWER DATA,Autres,1,CAISSE EPARGNE,,,TOLOCHENAZ,Suisse,2016-01-10T10:16:37+0100,12,1,,,,-1,1131
+354,423,KEOLIS RENNES,Transport,1,"Site CEGEDIM
+Caisse d'Epargne",,,Rennes Cedex,France,2019-10-23T17:39:39+0200,71,1,,,,-1,35040
+355,901,LADAPT,,0,,,,PANTIN cedex,France,2023-03-08T12:07:29+0100,17,1,,,,-1,93508
+356,699,ASCOMETAL France Holding SAS,,1,crédit agricole,,,HAGONDANGE,France,2021-05-04T18:17:24+0200,60,1,,,,6,F57302
+357,487,ONEY,Banque,1,CAISSE EPARGNE,,,LILLE CEDEX 9,France,2020-03-09T17:37:06+0100,255,1,,,,11,59895
+358,431,NUTRITION ET SANTE,Agroalimentaire,1,"Caisse d'Epargne Languedoc-Roussillon
+Gerlinea, Gerblé, groupe japonais, compte PCOE BO historiquement, repris par Alain en avril 2021, plusieurs actions, SAC et SAC planning, vente de souscription et mise en œuvre, pilotage partie financière et industrielle. autre projet TMA BO et Talend depuis 2022, car le chef de projet est parti pendant 1 an. L'idée étant de remplacer le chef de projet, prévision de 150/200 jours sur 2022 pour du correctif et de l'évolutif. Après le retour du chef de projet, le but est de prolonger la TMA. Benoit Borde pilote. D'autres sujets autour de la data science en cours printemps 2022. Nouveau DSI bon contact. Attention a bien segmenter la facturaton",,05 62 18 73 73,Revel,France,2019-10-23T17:39:39+0200,368,1,,,,3,31250
+359,640,GIE Océan,Banque,1,"Filiale de BNP Paribas
+
+CAISSE D'EPARGNE",,,Rennes,France,2020-11-13T11:15:27+0100,71,1,,,,-1,35000
+360,10,GEODIS BM,Logistique,1,CREDIT AGRICOLE,,04 79 88 50 50,MERY,France,2016-01-10T10:16:35+0100,12,1,,,,-1,73295
+361,694,Ministères Transition Ecologique Cohésion des territoires Mer (MTE),Secteur public,1,caisse d'Epargne,,,Saint-Médard-en-Jalles,France,2021-04-13T15:30:54+0200,71,1,,,,12,33166
+362,308,MAIRIE DE BAGNEUX,Secteur public,1,"Ex ASI
+
+credit agricole",,01 42 31 60 00,BAGNEUX,France,2018-11-21T17:14:34+0100,255,1,,,,-1,92220
+363,452,W-HA,,1,"filiale d'Orange
+
+CREDIT AGRICOLE",,01 41 86 09 69,Boulogne-Billancourt,France,2019-10-23T17:39:39+0200,255,1,,,,-1,92100
+364,660,Services du Premier Ministre (SPM),Secteur public,1,,,01 42 75 80 00,Paris,France,2020-12-28T15:21:37+0100,64,1,,,,12,75007
+365,898,COPO PARIS 2024,,0,,,,SAINT-DENIS,France,2023-02-28T06:35:59+0100,17,1,,,,-1,93210
+366,781,BIOGARAN,Pharmacie,1,CAISSE EPARGNE,,,COLOMBES CEDEX,France,2022-03-03T07:18:06+0100,17,1,,,,3,92707
+367,408,Flex-N-Gate France,,1,crédit agricole,,,AUDINCOURT Cedex,France,2019-10-23T17:39:38+0200,52,1,,,,-1,25402
+368,442,"NAPAQARO SERVICES Courtepaille  (ex SERARE, NEW COURT MANAGEMENT))",,1,"caisse Epargne
+Contrat PCOE qui vient de Synergie, peu de contact
+a été racheté par Buffalo Grill, groupe Napaqaro, changement d'adresse, mis à jour ok",,,Montrouge,France,2019-10-23T17:39:39+0200,368,1,,,,-1,92120
+369,896,INSTITUT GODINOT,,0,,,,REIMS,France,2023-02-27T08:02:26+0100,17,1,,,,1,51100
+370,276,SOCIETE DAUPHINOISE POUR L'HABITAT(SDH),,0,,www.sdh.fr,,ECHIROLLES,France,2018-10-16T17:27:25+0200,52,1,,,,-1,38431
+371,282,BONTAZ CENTRE,Industrie,1,"Ex ASI
+Caisse d'Epargne",,0450893800,CLUSES CEDEX,France,2018-11-14T11:38:50+0100,52,1,,,,10,74314
+372,895,MAISON VIALADE,,0,"lead SAP, Hugo Hallez",,,Perpignan,France,2023-02-17T10:19:54+0100,368,1,,,,-1,
+373,894,Groupe Legendre,,0,,https://www.groupe-legendre.com/,02 99 86 75 86,Rennes Cedex 2,France,2023-02-16T12:45:52+0100,71,1,,,,-1,35208
+374,820,SKERING,,1,caisse Epargne,,,PARIS,France,2022-04-12T15:47:57+0200,255,1,,,,-1,75020
+375,882,MSF LOGISTIQUE (MEDECINS SANS FRONTIERES LOGISTIQUE),,1,credit agricole,,,MERIGNAC,France,2022-12-28T11:08:43+0100,1291,1,,,,13,33700
+376,401,Eminence SAS,Industrie,1,"CREDIT AGRICOLE DU LANGUEDOC
+Maintenance BO, base de donnée DB2, pas ETL. initié un projet de prévision de vente qui est en cours non finalisé, offshore ( moins cher mais plus long) ou nearshore ( plus cher mais plus court), inshore ( fabriqué en France bcp plus cher mais disponible immédiatement.) le but étant d'anticiper les ventes pour avoir pas cher et disponible au bon moment. TMA déjà partiellement payé. Nouveau projet 2021 PMM reporting projet PRI pour comparer la partie estimation qui vient du plan de collection . Sous estimé par l'ancien commercial, donc il y a un travail de réestimation de format d'extraction de l'outils, et les indicateurs sont à retravailler .Le groupe Delta Galil a racheté Eminence et impose M3( ERP),  Nouveau DSI, nouveau contrôle de gestion, Maxime va prendre le relais. un peu de temps avant de reprendre ses marques. RACHETE et n'est plus décisionnaire en direct",,,Aimargues,France,2019-10-23T17:39:38+0200,368,1,,,,0,30470
+377,310,AGC 22,Services,1,"Ex ASI
+
+caisse d'Epargne (attention paie encore sur BNP en 02/2023)",,02 96 79 20 00,PLERIN CEDEX,France,2018-11-22T11:27:30+0100,71,1,,,,10,22195
+378,422,Jeanne Arthes,Chimie,1,"fabrication parfum et cosmétique
+contact avec le responsable controle de gestion, intallation de plateforme BO, mise en place d'une copie de base de donnée pour faire du reporting. SSIS est leur ETL. Data viz pour le comité de direction via Need4viz a été proposé mais sans suite.
+Client débordé sur des périodes par la logistique peut parfois répondre avec du retard.",,04 93 70 90 60,Grasse Cedex,France,2019-10-23T17:39:39+0200,368,1,,,,-1,06131
+379,892,GRDF,,0,,,,,France,2023-02-08T13:11:08+0100,17,1,,,,-1,
+380,720,Centre Hospitalier de Jury,Secteur public,1,,,03 87 56 39 39,Metz cedex 3,France,2021-08-18T17:17:34+0200,60,1,,,,0,57073
+381,831,CH Novillars,Servies hospitaliers,1,,,03 81 60 58 00,Novillars,France,2022-05-12T09:51:38+0200,64,1,,,,3,25220
+382,746,Agence de l'Eau,Secteur public,2,caisse d'épargne,,,,France,2022-01-04T15:50:24+0100,12,1,,,,-1,
+383,889,Innoval,,0,Compte adressé via B&D,https://www.innoval.com/,,Noyal-sur-Vilaine,France,2023-01-20T11:17:07+0100,71,1,,,,-1,35538
+384,840,Business Decision University,,1,CAISSE D'EPARGNE,,,Paris La Défense Cedex,France,2022-06-03T10:26:46+0200,71,1,,,,-1,92931
+385,293,Ville de La Roche-sur-Yon,Secteur public,1,Ex ASI,,02 51 47 47 47,La Roche-sur-Yon Cedex,France,2018-11-19T15:43:18+0100,71,1,,,,10,85021
+386,891,Opal,,0,,,,,France,2023-02-03T16:42:28+0100,255,1,,,,-1,
+387,372,AGGLOMERATION DE BEZIERS,Secteur public,1,"credit agricole. 
+Client récupéré en appel d'offre, consultation gagnée sur 2 ans en 2019, pour la maintenance PCOE. contact Fabrice. marché renouvelé en 2022 jusqu'en 2024. Bon de commande émis puis attente de facture directement. A priori version 4.2. serveur ? Licences? TMA en place depuis 2021 (contact Sabrina), assistance technique à la demande 6 jours / an, non consommés. A voir avant 2022 besoin d'aller plus loin dans la prise en charge de l'outils ou formation ou patch éventuel. email a faire pour accord de repousser la TMA à l'utilisation plus tard. Faire un point mai.",lagglo.fr/nous-contacter/,04 67 01 68 68,BEZIERS Cedex,France,2019-07-26T15:39:43+0200,368,1,,,,-1,34536
+388,759,HOLDING TEXTILE HERMES,,1,BPI,,,PIERRE-BENITE,France,2022-02-02T06:29:12+0100,17,1,,,,-1,69310
+389,848,Paris Saint-Germain PSG,,1,RIB Credit agricole,,0147437171,PARIS,France,2022-07-05T11:37:58+0200,17,1,,,,-1,75016
+390,636,Hôpital Gériatrique les Sources Nice,Servies hospitaliers,1,"Contact Alain, partenaire Pedab nous a donné le contrat. EOM .  Contrat maintenance PCOE, et licences BO vendues en novembre 2021, ( 16 Null + 1 nommé?). formations? faire un point R&D? Need4viz? point en avril. juin 2022 besoin en formation.",,,Nice,France,2020-10-22T10:33:49+0200,368,1,,,,-1,06105
+391,886,KARAPASS,,2,Facturation via AUDENTIEL,,,,France,2023-01-11T17:45:47+0100,1291,1,,,,13,
+392,888,TAGETIK,,1,,,,,France,2023-01-18T12:31:39+0100,1291,1,,,,13,
+393,511,MONDIAL RELAY,,1,CAISSE d' Epargne Languedoc Roussillon,,0969322332,HEM,France,2020-06-18T11:51:07+0200,255,1,,,,11,59510
+394,370,CHU RENNES,Servies hospitaliers,1,caisse d'Epargne,,02 99 28 43 21,Rennes cedex 9,France,2019-07-22T14:11:11+0200,71,1,,,,-1,35033
+395,445,TDF,,1,BPI,,01 55 95 10 00,MONTROUGE,France,2019-10-23T17:39:39+0200,17,1,,,,-1,92541
+396,560,SUNCLEAR,,1,CAISSE D'EPARGNE,,03 20 65 70 00,Marcq-en-Baroeul,France,2020-08-03T13:58:02+0200,255,1,,,,11,59700
+397,11,BOIRON,Pharmacie,1,"BPI
+Factures sur site CEGEDIM",,,MESSIMY,France,2016-01-10T10:16:35+0100,12,1,,,,-1,69510
+398,887,Monceau Assurances,,0,,,,,France,2023-01-16T15:11:04+0100,368,1,,,,-1,
+399,481,LALLEMAND,,1,"Contact Jonathan Bodin, passif de formation statistiques 2020. 
+Equipe de 5 data scientists, veulent garder en interne les compétences statistiques mais ont besoin de montée en compétence par le biais de la formation et externaliser quelques travaux. Sujets de traitement de données et création de métadonnées. Capteurs et données récoltées. Prévoir cadrage sur quelques sujets cible.
+
+CAISSE EPARGNE",,,BLAGNAC,France,2020-02-25T18:54:32+0100,368,1,,,,-1,31702
+400,409,Fonds de Garantie - FGA,Assurance,1,CAISSE D'Epargne,,0143967700,Vincennes Cedex,France,2019-10-23T17:39:38+0200,255,1,,,,-1,94682
+401,591,CLARINS LOGISTIQUE,,1,"https://portal.basware.com/open/clarinsdematerialisation
+credit agricole
+Ex Synergie, très proche de Synergie encore avec prestations régulières (Rémy Carbon). Vente additionnelle récente sur la partie logistique de Clarins, upgrade licence BO (pour une autre entité laboratoire) autorisation d'avoir les licences pour des deux entités sœurs. PCOE maintenance chez nous qui va donc grossir. Partie logistique uniquement de Clarins.",,,GLISY,France,2020-09-07T15:01:34+0200,368,1,,,,11,80440
+402,697,Direction générale de la santé (DGS),Secteur public,0,,,,,France,2021-04-19T11:14:40+0200,64,1,,,,12,
+403,225,MINISTERE DE LA TRANSITION ECOLOGIQUE ET SOLIDAIRE,Secteur public,1,,,,Metz,France,2018-01-23T15:31:52+0100,12,1,,,,12,57076
+404,329,ADEF HABITAT (ex ADEF ALGONIS),Immobilier,1,"Ex ASI
+
+caisse d'Epargne",,01 46 70 16 00,Ivry-sur-Seine,France,2018-12-05T17:27:13+0100,255,1,,,,10,94200
+405,379,AGEFIPH,Secteur public,1,,,,Bagneux Cedex,France,2019-10-23T17:39:38+0200,255,1,,,,-1,92226
+406,879,INETUM BUSINESS SOLUTIONS FRANCE,,2,crédit agricole,,,ST OUEN SUR SEINE,France,2022-11-28T09:56:34+0100,64,1,,,,-1,93400
+407,446,Transports MESGUEN,,1,caisse d'épargne,,+33298292424,Saint-Pol-de-Léon,France,2019-10-23T17:39:39+0200,71,1,,,,-1,29250
+408,296,SEMITAN,Transport,1,"Ex ASI
+CAISSE EPARGNE
+facture par courrier REFUSE les factures électronques",semitan.fr,02 51 81 77 00,Nantes Cedex 01,France,2018-11-20T14:57:31+0100,71,1,,,,10,44046
+409,347,CSP PARIS FASHION GROUP (WELL),Grande distribution,1,"Client historique, contact principal Cécile (contrôle de gestion), uniquement de la maintenance, PCOE actuellement, outils Business planning and consolidation BPC. Un point annuel organisé. A priori pas BO, mais pousser sur l'outils SAC planning qui va remplacer BPC (en fin de vie), donc acces à plein de reporting. Voir avec Laurent Lecart qui sera plus au courant des projets BI. siège dans le sud mais industrie dans le nord voir si besoin au niveau de la chaine de production. point à faire en avril.",,,LE VIGAN CEDEX,France,2019-02-18T06:24:41+0100,368,1,,,,-1,30123
+410,429,Mutuelle Fraternelle d'Assurances -MFA,Assurance,1,caisse d'Epargne,,01 49 68 68 84,Clichy Cedex,France,2019-10-23T17:39:39+0200,255,1,,,,-1,92111
+411,561,CAISSE DES FRANCAIS DE L ETRANGER (CFE),,1,Compte SYNERGY,,,,France,2020-08-07T14:58:49+0200,255,1,,,,11,
+412,337,Hopital Privé d'Antony (HPA),Servies hospitaliers,1,"HPA est un client de AEGLE, et AEGLE étaient eux même clients chez nous. Ils nous ont recommandé quand le client a eu un besoin spécifique. le contact métier est un docteur, peu de temps, difficultés à faire démarrer les sujets. Retards de paiement récurrents.",,01 46 74 37 00,ANTONY CEDEX,France,2018-12-12T14:56:24+0100,368,1,,,,-1,92166
+413,334,JM WESTON,Industrie,1,Ex MICROPOLE,http://jmweston.com,,LIMOGES CEDEX,France,2018-12-10T11:21:33+0100,71,1,,,,1,87021
+414,580,AKDN (Délégation FR de la Fondation AGA KHAN),,1,CREDIT AGRICOLE,,,GOUVIEUX,France,2020-09-07T13:45:05+0200,60,1,,,,11,60270
+415,338,LA COURONNE,Industrie,1,Ex MCIROPOLE,ROULLET ST ESTEPHE,0545243526,,France,2018-12-17T12:08:54+0100,71,1,,,,-1,16440
+416,283,GREF DE BRETAGNE,Formation,1,"Ex ASI
+banque CAISSE D'Epargne Languedoc",http://www.gref-bretagne.com,02 99 54 79 00,RENNES CEDEX,France,2018-11-14T12:11:17+0100,71,1,,,,10,35043
+417,508,BGFI Bank Europe,Banque,1,"50 personnes
+équipe IT : 5 personnes
+pas de responsable BI
+
+CREDIT AGRICOLE",,,Paris,France,2020-06-18T11:25:27+0200,255,1,,,,11,75008
+418,569,MOVITEX,,1,,,,Villeneuve-d’Ascq,France,2020-09-03T09:50:45+0200,255,1,,,,11,59650
+419,286,UMG MUTUALIA,Assurance,1,Ex ASI,www.mutualia.fr,,VANNES,France,2018-11-14T16:06:08+0100,71,1,,,,10,56000
+420,465,GIP ALFA Centre,Formation,1,,,0238771718,Orléans,France,2020-01-16T17:04:26+0100,71,1,,,,-1,45000
+421,885,BUTAGAZ,Energie,0,,,09 70 81 81 22,,France,2023-01-09T09:18:59+0100,64,1,,,,0,
+422,687,GROUPE BRANDT,,1,Crédit Agricole,,,RUEIL MALMAISON,France,2021-03-11T16:58:18+0100,368,1,,,,-1,92500
+423,850,RG Safety,,0,,https://www.groupe-rg.com/fr_FR/,0472232430,SAINT-PRIEST,France,2022-07-12T14:45:25+0200,12,1,,,,1,69800
+424,881,Hérault Logement,,0,Contact Sébastien,https://logement.herault.fr/,,Clermont l'Hérault,France,2022-12-27T15:05:35+0100,368,1,,,,-1,34800
+425,49,BERGER LEVRAULT,Edition de logiciels,1,PI et PA,,,PEROLS,France,2016-01-10T10:16:36+0100,12,1,,,,-1,34477
+426,740,"Agence nationale de sécurité sanitaire de l'alimentation, de l'environnement et du travail (ANSES)",Secteur public,1,caisse d'Epargne,,,MAISONS-ALFORT Cedex,France,2021-12-03T17:22:33+0100,64,1,,,,12,94701
+427,439,RPC Containers Ltd / GCS (Berry Global),Industrie,1,"Caisse D'Epargne Languedoc.
+AGCS / RPC, fabrication de bouchons, bcp d'innovations, acier complexe, import export assez cher avec une grosse logistique 90% d'air dans le stockage. rentrés via orange service, on a mis en place un entrepôt de données, SAP BO, développé les flux et les univers. projet costing optimisation des couts avec le responsable du contrôleur de gestion. Les finances sont désormais détenues par Londres; mais Nicolas Delval est notre contact principal avec qui il faut traiter pout différents sujets. SAC a été présenté mais ca n'a pas marché. nous avons encore la maintenance PCOE. Tout est remonté au niveau du groupe mais il faudrait pousser pour avoir des contacts et d'autres sujets au niveau du groupe.",,,Rushden,Royaume_Uni,2019-10-23T17:39:39+0200,368,1,,,,-1,NN10 6FB
+428,566,CHICOREE LEROUX,Agroalimentaire,1,,www.leroux.fr,03 20 68 48 00,ORCHIES,France,2020-08-28T16:20:27+0200,368,1,,,,11,59310
+429,570,LALIQUE,Autres,1,,www.lalique.com/fr/,01 55 90 59 63,Paris,France,2020-09-03T14:43:08+0200,368,1,,,,11,75008
+430,606,LABORATOIRES PERRIGO FRANCE (Ex Labo OMEGA PHARMA FCE),Pharmacie,1,,,,CHATILLON,France,2020-09-07T16:18:59+0200,60,1,,,,11,92320
+431,632,AIRBUS HELICOPTERS,Aéronautique,0,"Wiisdom nous a mis en contact avec eux, en 2020. Pas encore travailler. relancer pour faire un point.
+Relance Alain fin 2022, AH recrute actuellement des Data scientist, Amara a travaillé sur un projet 4.0 avec M. Pacqueteau",,04 42 85 85 85,,France,2020-10-01T15:42:52+0200,368,1,,,,-1,
+432,735,Ecole nationale supérieure des officiers de sapeurs-pompiers (ENSOSP),Secteur public,1,"Eventuelle formation BODS, afin d'utiliser les outils existants et éviter les frais supplémentaires d'ahttps://ui.boondmanager.com/companies?loadSearch=truecquisition d'ETL.",,04 42 39 04 00,Aix-en-Provence,France,2021-11-22T16:41:59+0100,64,1,,,,12,13798
+433,859,NEED4VIZ,,7,,,,,France,2022-09-15T16:29:14+0200,64,1,,,,-1,
+434,391,CAST SA,Edition de logiciels,1,caisse d'Epargne,,,Meudon,France,2019-10-23T17:39:38+0200,255,1,,,,-1,92190
+435,382,Areas Dommages,Assurance,1,Caisse d'Epargne,,,Paris 08,France,2019-10-23T17:39:38+0200,255,1,,,,-1,75008
+436,421,INSEP,,1,CAISSE D'EPARGNE,,,Paris 12,France,2019-10-23T17:39:39+0200,52,1,,,,-1,75012
+437,574,SUPERMARCHES MATCH Belgique,,1,credit Agricole,,,FLEURUS,Belgique,2020-09-04T19:54:29+0200,255,1,,,,11,B-6220
+438,314,CARIFOREF PAYS DE LA LOIRE,Secteur public,1,"Ex ASI
+credit agricole",,02 40 20 57 43,NANTES,France,2018-11-26T15:13:41+0100,71,1,,,,10,44200
+439,395,DELSEY,Industrie,1,CREDIT AGRICOLE,,01 34 31 76 30,SURVILLIERS,France,2019-10-23T17:39:38+0200,78,1,,,,-1,95470
+440,868,Université de Montpellier / Institut de la science et des données SDN,,0,"ISDM Institut science données de Montpellier antenne pouvant subventionner des projets. 
+
+Formation univers BO à proposer attention en direct avec l'ISDM",,,Montpellier,France,2022-10-13T09:28:22+0200,368,1,,,,-1,
+441,828,Fédération Française d'Haltérophilie et Musculation (FFHM),sport,0,,,,,France,2022-04-25T17:29:52+0200,255,1,,,,-1,
+442,824,Fédération Française de Badminton,sport,0,"Organigramme complet avec architecture adresse mail
+
+http://www.ffbad.org/la-ffbad/son-organisation/direction-technique-nationale/
+
+Chaque cadre technique a eu une adresse mail. Pour les contacter : prenom.nom@ffbad.org",,,,France,2022-04-15T11:11:53+0200,255,1,,,,-1,
+443,496,Fédération Française de Football FFF,,2,"CREDIT AGRICOLE
+Factures sur portail FFF",,,PARIS,France,2020-04-24T18:58:53+0200,17,1,,,,-1,75015
+444,878,CLIENT TEST,,0,,,,,France,2022-11-25T07:14:03+0100,17,1,,,,-1,
+445,877,Midi Libre,,0,"Groupe de presse, DSI partagées, projets compliqués guerres politique, parc BO existant, projets réalisés par Harold ( rapports BO problèmes d'univers, opacités difficile d'avoir des infos, deuxième projet comptage des abonnements, rentrer par la Dépêche. Contact Anne directement ne pas mettre Harold dans la boucle tout de suite. 
+(ref Ouest France par Grégory) Montage d'un centre de service chez Ouest France, ouvert sur la partie Big Data, ""trition"" des abonnés chez WF... prises de références ok.
+Olivier Plais DGA ( commenditaire projet comptage des abonnements), Christophe EDO ( incontournable mais bloquant), Amelie Magniet (directice des abonnés).",,04 67 07 67 07,Saint Jean de Védas,France,2022-11-23T14:37:21+0100,368,1,,,,-1,34438
+446,876,TaM,,0,"Infos Harold: N&D formation à la carte pour du mail report, prises de décisions un peu lente, compétition entre les services, BO mal utilisé, donc PWBI et Talend ont été choisis et a priori mis en place.  Xavier (controleur de gestion) est en charge du dev décisionnel. Ego assez important. Présence Harold ok et premier contact Harold ok",,04 67 22 87 87,Montpellier,France,2022-11-23T09:48:54+0100,368,1,,,,-1,34000
+447,865,GGL Aménagement,,0,"feuille de route demandée à ND et B&D, Next sera moins cher, B&D, BI, Power BI et Talend à court terme sortir des rapports rapidement pour le marketing et la finance, à long terme analyse prédictive, manque de professionnalisme est reproché à ND au niveau timing, Seenovate peut se positionner pour faire des régies, appuyer sur l'idée la data sur les références clients.
+References à citer dans l'immobilier: Hammerson dans l'immo commercial, Nexity, Anger Loire Habitat, ADEF aussi mais c'est vraiment spécialisé difficultés sociales,  ramery, ne plus passer par le contrôleur de gestion, Client encore engagé avec N&D, prevoir un RDV avec la DSI debut d'année.",,,Montpellier,France,2022-10-04T13:51:57+0200,368,1,,,,-1,34000
+448,875,SUBSEA 7,,0,,,,,France,2022-11-22T10:07:28+0100,368,1,,,,-1,
+449,856,HEINEKEN,,0,Société facturée PEDAB,,,,France,2022-09-13T05:48:26+0200,17,1,,,,-1,
+450,411,GESTIONOVA (Groupe Rougnon),,1,CREDIT AGRICOLE,,,Vélizy Villacoublay CEDEX,France,2019-10-23T17:39:38+0200,78,1,,,,-1,78143
+451,219,SARIA INDUSTRIES,Agroalimentaire,1,caisse d'epargne,,01 41 40 30 00,CLICHY,France,2017-12-07T15:27:45+0100,71,1,,,,-1,92110
+452,300,IPC SA,Services,1,Ex ASI,www.ipc-sa.com,02 98 43 45 44,BREST Cedex 2,France,2018-11-20T15:49:09+0100,71,1,,,,10,29218
+453,858,Orange Business Services SA (Ex B&D Nord Ouest),,1,,,,PARIS LA DEFENSE,France,2022-09-13T11:05:07+0200,71,1,,,,-1,92931
+454,853,Territoire de Belfort,Secteur public,1,,,,BELFORT CEDEX,France,2022-09-02T10:31:43+0200,64,1,,,,1,90020
+455,681,MINISTERE DE L'AGRICULTURE,Secteur public,1,,,,,France,2021-03-04T09:52:02+0100,64,1,,,,12,
+456,851,CH Lorquin,,1,,,03 87 23 14 15,Lorquin,France,2022-07-19T08:43:07+0200,64,1,,,,-1,57790
+457,306,HOP!,Transport,1,"Ex ASI
+
+CREDIT AGRICOLE",,,Bouguenais,France,2018-11-21T15:46:15+0100,71,1,,,,10,44340
+458,147,CONSEIL DEPARTEMENTAL DU VAR - CD 83,,0,,,,Toulon,France,2017-01-25T09:24:06+0100,368,1,,,,-1,
+459,873,CXL,,0,,,,,France,2022-10-27T09:24:46+0200,368,1,,,,-1,
+460,871,CD 95,,0,crédit agricole,,,,France,2022-10-18T11:01:53+0200,255,1,,,,-1,
+461,866,INSEE,,0,Crédit Agricole,,,,France,2022-10-04T14:27:33+0200,12,1,,,,-1,
+462,729,CNOUS (Centre national des œuvres universitaires et scolaires),Secteur public,1,Caisse Epargne,,0171229700,VANVES,France,2021-10-29T07:23:16+0200,64,1,,,,12,92170
+463,870,Linkedin,,0,,,,,France,2022-10-17T13:56:34+0200,368,1,,,,-1,
+464,869,Société d'Aménagement du Golf de Bossey SAGB,Immobilier,1,,,,BOSSEY,France,2022-10-13T15:31:46+0200,72,4,,,,2,74160
+465,412,GFK Retail and Technology,,1,,,,NANTERRE,France,2019-10-23T17:39:38+0200,255,1,,,,-1,92000
+466,750,ADEME,Secteur public,1,,https://www.ademe.fr/,02 41 20 41 20,Angers,France,2022-01-13T18:28:38+0100,71,1,,,,12,49000
+467,389,Caisse de Prévoyance et de Retraite des Notaires - CPRN,Assurance,1,CAISSE EPARGNE,,,Paris 08,France,2019-10-23T17:39:38+0200,255,1,,,,-1,75008
+468,867,Ville de VITROLLES,,0,Besoin migration BO + formations,,,,France,2022-10-12T16:57:55+0200,368,1,,,,-1,
+469,565,GENERAL MILLS,,1,"Caisse d'Epargne Languedoc Roussillon
+
+La nouvelle adresse de General Mills France sera : Tour Horizon, 30 Cr de l'Île Seguin (9ème étage), 92100 Boulogne-Billancourt. 
+Adresse effective début mai 2022",,,BOULOGNE BILLANCOURT,France,2020-08-28T15:31:16+0200,78,1,,,,-1,92100
+470,77,HAMMERSON FRANCE,Bâtiments,1,caisse d'Epargne Languedoc Roussillon,,,PARIS 01,France,2016-01-10T10:18:30+0100,255,1,,,,-1,75001
+471,736,Maison de Santé Béthel,Servies hospitaliers,1,CREDIT AGRICOLE,,03 88  56 18 99,STRASBOURG,France,2021-11-23T15:14:59+0100,64,1,,,,3,67031
+472,864,ALTO,Energie,1,CREDIT AGRICOLE,,,PARIS,France,2022-10-03T09:48:58+0200,72,4,,,,0,75008
+473,863,BASTIDE LE CONFORT MEDICAL,,0,,,,,France,2022-09-29T11:27:26+0200,368,1,,,,-1,
+474,861,MICHEL PILLON,,0,,,06 10 77 84 29,NAUCELLE,France,2022-09-19T18:17:34+0200,52,1,,,,-1,12800
+475,638,TotalEnergies Proxi Nord-Est,,1,BPI,,,,France,2020-11-02T14:06:58+0100,72,1,,,,-1,
+476,710,Adventiel,Services,1,credit agricole,https://www.adventiel.com/,09 71 00 50 50,Pacé,France,2021-07-06T16:56:04+0200,71,1,,,,-1,35740
+477,860,GTI,,1,,,,,France,2022-09-16T08:38:15+0200,17,1,,,,-1,
+478,318,UNIVERSITE de POITIERS (IUT),Secteur public,1,"Ex ASI
+
+caisse Epargne",,,POITIERS CEDEX,France,2018-11-26T16:03:27+0100,71,1,,,,-1,86010
+479,188,GIP SIB,Servies hospitaliers,1,"Crédit Agricole
+Factures sur chorus pro",,,RENNES Cedex,France,2017-07-17T09:28:57+0200,17,1,,,,-1,35065
+480,200,KEOLIS CAEN MOBILITES,Transport,1,"Caisse d'Epargne
+Factures sur site Cegedim",,,Fleury-sur-Orne,France,2017-09-19T10:19:44+0200,71,1,,,,-1,14123
+481,91,TOTALENERGIES,Pétrochimie,1,"BPI FRANCE
+Factures sur site CEGEDIM",,0141354000,NANTERRE,France,2016-01-10T10:18:30+0100,17,1,,,,-1,92000
+482,546,TOTALENERGIES LEARNING SOLUTIONS SAS,Formation,1,"bpi
+Factures sur site CEGEDIM",,,COURBEVOIE,France,2020-07-13T16:24:40+0200,17,1,,,,-1,92400
+483,855,SDIS 13,Défense,0,,,,,France,2022-09-07T10:29:34+0200,368,1,,,,1,
+484,257,DEPARTEMENT DU TERRITOIRE DE BELFORT,Secteur public,0,Caisse d'Epargne,,,BELFORT,France,2018-06-15T16:35:14+0200,64,1,,,,1,90
+485,553,ATIH,,0,,,,,France,2020-07-23T15:20:19+0200,12,1,,,,-1,
+486,854,Direction Générale du Travail (DGT),,0,,,,,France,2022-09-02T10:32:11+0200,64,1,,,,-1,
+487,585,CAMAIEU INTERNATIONAL (RJ / FIB ),,1,"caisse d'Epargne
+Client ex Synergie, encore une proximité Synergie. Situation économique client compliqué, a été racheté par la foncière bordelaise. Gros pb cyber attaque passé. Attention à la facturation. Nouveaux projets à voir en fonction de la santé de l'entreprise.
+
+Société ACIAM (CAMAIEU) en redressement judiciaire en date du 01/08/22",,03 20 99 58 58,Roubaix,France,2020-09-07T14:17:22+0200,368,1,,,,11,59100
+488,723,Manutan Collectivités,,1,Caisse d'Epargne,https://www.manutan-collectivites.fr/,,Chauray,France,2021-09-22T15:47:08+0200,71,1,,,,-1,79180
+489,718,BNP FLEET ON,,0,CREDIT AGRICOLE,,,,France,2021-07-26T17:10:31+0200,17,1,,,,-1,
+490,6,ALYOTIS,Conseil,7,CREDIT AGRICOLE,,,LYON,France,2016-01-10T10:16:35+0100,12,1,,,,-1,69002
+491,683,Agence nationale de sécurité du médicament et des produits de santé (ANSM),Secteur public,1,,,,,France,2021-03-09T08:52:49+0100,64,1,,,,12,
+492,153,NEMERA,,1,caisse d'Epargne,,,La Verpillière,France,2017-03-08T17:41:04+0100,17,1,,,,-1,38290
+493,315,SALAUN HOLIDAYS,Transport,1,"Ex ASI
+
+crédit agricole",,02 98 73 05 77,PONT DE BUIS LES QUIMERC'H,France,2018-11-26T15:28:07+0100,71,1,,,,10,29590
+494,501,ALKOR (Majuscule),,1,credit agricole,,03 23 06 64 74,SAINT QUENTIN,France,2020-04-30T10:03:08+0200,12,1,,,,11,02100
+495,397,Diagnostica Stago SAS,Biomédical,1,"Laboratoire Pharmaceutique créé en 1945, Stago est aujourd'hui une société de l'Industrie du Diagnostic In Vitro (IVD) leader dans l'exploration de l'Hémostase et de la Thrombose.
+
+caisse d'Epargne",,01 46 88 20 20,Asnieres Sur Seine cedex,France,2019-10-23T17:39:38+0200,88,1,,,,-1,92665
+496,810,Direction Générale de la Gendarmerie (DGGN),Secteur public,1,,,,MALAKOFF,France,2022-04-05T17:49:02+0200,64,1,,,,12,92240
+497,841,AESIO,Assurance,2,caisse d'Epargne,,,,France,2022-06-03T11:31:39+0200,12,1,,,,10,
+498,849,Région Nouvelle Aquitaine,,0,,,,,France,2022-07-06T16:29:45+0200,368,1,,,,-1,
+499,847,EWAD,,0,credit agricole,,,,France,2022-06-29T21:49:24+0200,17,1,,,,-1,
+500,500,ASCOMETAL Les dunes,Industrie,1,credit agricole,,,LEFFRINCKOUCKE,France,2020-04-27T11:00:31+0200,12,1,,,,11,59495
+501,582,SAARSTAHL ASCOVAL SAINT SAULVE,,1,"Bruno Le Maire et Agnès Pannier-Runacher, ministre de l'Economie et ministre déléguée chargée de l'Industrie, ""ont autorisé le groupe Liberty à se porter acquéreur des sites industriels France Rail Industry à Hayange (Moselle) et Ascoval à Saint-Saulve (Nord)"", indique un communiqué de Bercy vendredi.
+
+""Dans le cadre de cette reprise, le groupe Liberty s'est engagé à apporter 65 millions d'euros de financements nouveaux"", détaille Bercy.
+
+Cette reprise, qui permet de sauvegarder près de 700 emplois, dont 430 à Hayange et 270 à Saint-Saulve, ""jette les bases d'une filière industrielle solide"", a commenté M. Maire.",,03 27 23 17 17,SAINT SAULVE,France,2020-09-07T13:57:27+0200,60,1,,,,11,F-59880
+502,556,INTERSELECTION ACTUARIAT ADVISER,,1,"caisse d'Epargne
+Manon partie, nouveau contact Arthur, ne pas appeler le directeur général ( relations compliquées). juin 2022, la direction choisi de résilier SAC pour une solution plutôt métier. un peu déçu du manque du suivi Seenovate également qui a trop tardé. Proposer pour l'avenir un accompagnement préparation des données et formations stats.",,,BORDEAUX,France,2020-07-30T07:23:22+0200,368,1,,,,-1,33000
+503,618,SAINT MACLOU,Grande distribution,1,caisse Epargne,,,WATTRELOS cedex,France,2020-09-07T17:32:24+0200,255,1,,,,11,59391
+504,747,CDC Habitat,,0,"Caisse des dépôts et conciliations, siège Paris mais présence informatique à Montpellier. Sujets DATA à Montpellier Qliksense, Genio ( vieillissant), un peu de talend. Demandes antérieures mais nous avons eu du mal à répondre techniquement. Contrat avec ASI via un marché s'arrête. Nous y retournons avec eux sur le lot décisionnel pour être référencé. Réponse en mai 2022. Régie pour présence. Il faudra aller les rencontrer pour valoriser Seenovate. Nous sommes retenus dans le cadre du référencement sur le lot DATA, juin 2022 ( a priori 15 sociétés retenues pour ce lot). Pas mal de changements en interne, identifier les donneurs d'ordre. 15 jours pour répondre quand l'AO sort.",,,,France,2022-01-06T13:29:17+0100,368,1,,,,-1,
+505,846,Office Français pour la Biodiversité / OFB,,0,"Contacts Saliha, organigramme et contacts ci joint",,,,France,2022-06-16T15:18:13+0200,368,1,,,,-1,
+506,845,OPENCLASSROOM,,0,Cours en ligne / salon E-learning Paris 2022,,,Paris,France,2022-06-15T09:42:22+0200,368,1,,,,-1,750019
+507,615,SANTELYS,,1,,,,LOOS,France,2020-09-07T17:13:24+0200,60,1,,,,11,59120
+508,772,VAL SOLUTIONS,,0,,,,,France,2022-02-28T15:43:22+0100,12,1,,,,-1,
+509,844,SNCF,Secteur public,0,,,,,France,2022-06-09T17:39:42+0200,64,1,,,,4,
+510,610,AESIO MUTUELLE (APREVA),Assurance,1,"Les factures seront à adresser à (màj NOV 21) :
+AESIO MUTUELLE Paris 8
++ ajouter l'adresse de facturation à SAINT ÉTIENNE
+>> cf. charte de facturation fournisseur en PJ
+
+Caisse d'Epargne",,,Paris 8,France,2020-09-07T16:44:50+0200,60,1,,,,11,75008
+511,758,RC Lens,sport,0,,,03 21 13 21 32,,France,2022-01-27T11:24:44+0100,255,1,,,,-1,
+512,756,Montpellier MHSC,sport,0,,,04 67 15 46 00,,France,2022-01-26T11:52:06+0100,255,1,,,,0,
+513,763,Clermont Foot,sport,0,,,04 73 25 79 02,Clermont-Ferrand,France,2022-02-02T16:03:08+0100,255,1,,,,-1,63100
+514,769,AS St Etienne (ASSE),sport,0,,,04 77 92 31 70,,France,2022-02-22T17:40:47+0100,255,1,,,,-1,
+515,447,TRAPIL (sté des transports pétroliers),Energie,1,,,,PARIS LA DEFENSE CEDEX,France,2019-10-23T17:39:39+0200,17,1,,,,-1,92939
+516,843,Métropole Aix-Marseille Provence,,0,"AO Maintenance BO
+https://marchespublics.ampmetropole.fr/entreprise/consultation/506318?orgAcronyme=t5y",,,Marseille,France,2022-06-08T14:26:19+0200,368,1,,,,-1,13002
+517,13,CARS PHILIBERT,Logistique,1,credit agricole,,,CALUIRE ET CUIRE,France,2016-01-10T10:16:35+0100,60,1,,,,-1,69300
+518,396,Département des Hauts-de-Seine (92),Secteur public,1,,,,Nanterre Cedex,France,2019-10-23T17:39:38+0200,78,1,,,,-1,92015
+519,731,CH THEOPHILE ROUSSEL,Servies hospitaliers,1,Établissement Public de Santé Mentale,,01 30 86 38 11,MONTESSON CEDEX,France,2021-11-03T15:19:58+0100,64,1,,,,1,78363
+520,685,CHU Rouen (gip cpage),Servies hospitaliers,2,,https://www.chu-rouen.fr/,02 32 88 88 00,Rouen CEDEX,France,2021-03-10T09:17:02+0100,71,1,,,,-1,76031
+521,34,NINKASI,Agroalimentaire,1,,,04 72 76 52 34,LYON,France,2016-01-10T10:16:36+0100,12,1,,,,-1,69007
+522,427,MORET INDUSTRIES GROUP,Industrie,1,CREDIT AGRICOLE,,,Charmes,France,2019-10-23T17:39:39+0200,255,1,,,,-1,02800
+523,322,CONSEIL SUPERIEUR DU NOTARIAT (CSN),Conseil,1,"Ex ASI
+Credit agricole",,,PARIS,France,2018-11-29T17:22:33+0100,12,1,,,,10,75007
+524,734,"Direction générale de l'aménagement, du logement et de la nature (DGALN)",Secteur public,1,,,,,France,2021-11-19T16:39:08+0100,64,1,,,,12,
+525,839,KLANIK,,0,Partenaire,,,,France,2022-05-19T15:52:29+0200,368,1,,,,-1,
+526,838,CELIA,,0,,http://groupe-celia.fr/,05.65.44.34.59,Laguiole,France,2022-05-18T10:04:13+0200,368,1,,,,-1,12210
+527,837,Groupe APO / Coopérative Alliance Porci d'Oc,,0,,https://groupe-apo.fr/contact/,,SAINTE RADEGONDE,France,2022-05-18T08:51:04+0200,368,1,,,,-1,12850
+528,835,Semaphores Groupe Alpha,,0,"Voisin agence Mtp, invitation papier inauguration",,04 67 13 81 76,Montpellier,France,2022-05-16T14:18:59+0200,368,1,,,,-1,34000
+529,834,PRADEO,,0,"Voisin agence MTP, invitation inauguration",,04 67 20 99 11,Montpellier,France,2022-05-16T14:15:02+0200,368,1,,,,-1,34000
+530,833,AGEO ASSURANCES,,0,"voisins agence mtp
+courtiers assurances
+siège IDF",,,Paris,France,2022-05-13T09:44:24+0200,368,1,,,,-1,75001
+531,832,PRIMONIAL,,0,"Voisin agence mtp
+Gestion privée",,04 67 60 25 78,Montpellier,France,2022-05-13T09:31:29+0200,368,1,,,,-1,34000
+532,830,COFIGEO / RAYNAL ET ROQUELAURE,,0,,https://www.raynal-roquelaure.fr/contact/,05 65 80 23 00,CAPDENAC,France,2022-05-10T10:31:29+0200,368,1,,,,-1,12700
+533,829,R.A.G.T,,0,,,05 65 73 41 00,RODEZ,France,2022-05-09T15:06:51+0200,368,1,,,,-1,12000
+534,491,NIJI,,1,CREDIT AGRICOLE,,,RENNES,France,2020-03-25T18:09:35+0100,17,1,,,,-1,35000
+535,827,ASB Publishing,,0,,,,,France,2022-04-25T13:32:15+0200,17,1,,,,-1,
+536,817,Fédération Française de Hockey,sport,0,"Plus de contacts ici
+https://www.ffhockey.org/federation/contact.html",,,,France,2022-04-11T14:49:11+0200,255,1,,,,-1,
+537,292,SAS S.C.O. - Monique Ranou,Agroalimentaire,1,"Ex ASI
+Caisse d'epargne Languedoc roussillon",www.ranou.fr,0298528383,QUIMPER Cedex 9,France,2018-11-19T15:31:52+0100,71,1,,,,10,29563
+538,488,CEENOVATE,,7,"Client fictif portant les contrats CEENOVATE en attendant filialisation de l'activité CEENOVATE
+Adresse de facturation = contrats réels",,,,France,2020-03-11T07:31:03+0100,72,4,,,,-1,
+539,826,UNICOR,,0,,,,,France,2022-04-19T14:21:54+0200,368,1,,,,-1,
+540,825,Conseil général départemental de l'Hérault / CD34,,0,"Appel d'offre 2020 en groupement solidaire avec Trimane. 
+Phase d'offre avril 2022
+début de mission Q3, 250K, 1 an reconductible 3 fois, AMOA décisionnel / 500h",,0467676767,Montpellier,France,2022-04-15T14:52:29+0200,368,1,,,,-1,34000
+541,823,FLORETTE / AGRIAL,,0,,https://www.agrial.com/fr/ouverts-au-dialogue/nous-contacter,,Caen,France,2022-04-14T10:10:08+0200,368,1,,,,-1,14000
+542,822,Fédération Française de Roller et de Skateboard,sport,0,"Toutes les autres adresses ici
+https://ffroller.fr/contacter-la-ffroller-et-skateboard/",,,,France,2022-04-13T15:19:35+0200,255,1,,,,-1,
+543,659,VOIES NAVIGABLES DE FRANCE (VNF),Secteur public,0,,,,,France,2020-12-28T14:49:30+0100,64,1,,,,-1,
+544,678,Secrétariat général des ministères économiques et financiers,Secteur public,0,,,,,France,2021-03-02T08:39:14+0100,64,1,,,,12,
+545,679,CGDD (Ministère Ecologie),Secteur public,0,,,,,France,2021-03-02T08:44:08+0100,64,1,,,,12,
+546,680,École nationale supérieure de la police (ENSP),,0,,,04 72 53 18 50,,France,2021-03-02T08:53:47+0100,64,1,,,,-1,
+547,682,Direction générale de la sécurité intérieure (DGSI),Secteur public,0,,,,,France,2021-03-09T08:38:58+0100,64,1,,,,12,
+548,689,Direction Générale des Douanes et Droits Indirects (DGDDI),,0,,,,,France,2021-03-15T16:44:13+0100,64,1,,,,-1,
+549,519,VITIVISTA,,1,,www.vitivista.com,,Mérignac Cedex,France,2020-06-19T11:46:59+0200,255,1,,,,11,33693
+550,587,CENTRE NATIONAL DE LA CINEMATOGRAPHIE (CNC),Secteur public,1,caisse d'Epargne,,,PARIS CEDEX 14,France,2020-09-07T14:30:52+0200,255,1,,,,11,75675
+551,575,ETABLISSEMENT LUCIEN,Agroalimentaire,1,CREDIT AGRICOLE,,03 44 12 44 55,BEAUVAIS CEDEX,France,2020-09-07T09:15:05+0200,255,1,,,,11,60007
+552,818,Fédération Française d'Haltérophilie Musculation,sport,0,,,,,France,2022-04-11T15:02:02+0200,255,1,,,,-1,
+553,819,Fédération Française de Karate,sport,0,,,,,France,2022-04-11T15:23:29+0200,255,1,,,,-1,
+554,365,INTER INVEST,,1,caisse d'epargne,,,PARIS,France,2019-06-27T06:23:08+0200,17,1,,,,-1,75017
+555,816,OPTEVEN,,0,,,,,France,2022-04-08T11:51:50+0200,368,1,,,,-1,
+556,806,HUMANFAB,,0,"PDG est un sport scientist, centre d'entrainement orienté sport de haut niveau / évaluation en mode laboratoire biomécanique. Données analytiques en one shot à la demande. Creuser pour voir si ils font également de l'analyse sur la donnée longitudinale.  Valorisation de la donnée sur le plan statistique. 
+60 personnes 1 agence à Paris et 1 agence à Aix, déjà tout en interne avec toutes les approches de recherches. 
+collecte de data sport / labelliser et qualifier plus grosse base données en Europe 
+Aurait voulu nous vendre de la donnée data sport, aucun intérêt pour Seenovate. 
+N'est pas contre nous demander de l'aide si un sprint se présente. Attention ne pas donner de références.",https://www.humanfab.com/home-2/,04 42 66 42 41,Aix-en-Provence,France,2022-04-01T11:02:02+0200,368,1,,,,-1,13100
+557,815,Peintures Maestria,,0,,https://www.maestria.fr/fr/,05 61 67 97 40,PAMIERS,France,2022-04-07T16:19:09+0200,368,1,,,,-1,09100
+558,814,MONTPELLIER MEDITERANNEE METROPOLE,,0,,https://www.montpellier3m.fr/,04 67 13 60 00,MONTPELLIER,France,2022-04-07T15:05:56+0200,368,1,,,,-1,34961
+559,813,CLUB MEDITERRANEE / CLUB MED,,0,,https://www.clubmed.fr/?gclid=ec39269fd96316b6798344d103c66b5b&gclsrc=3p.ds&msclkid=ec39269fd96316b6,,Paris,France,2022-04-07T14:37:43+0200,368,1,,,,-1,75019
+560,812,Ligne Vauzelle,Industrie,2,Client apporté par Activ'iT,,,Meaux,France,2022-04-07T09:53:13+0200,255,1,,,,-1,77334
+561,768,Olympique de Marseille (OM),sport,0,,,04 84 45 38 00,Marseille,France,2022-02-21T16:29:37+0100,64,1,,,,-1,13012
+562,755,RC Strasbourg,sport,0,,,+33 (0)3 88 44 55 00,Strasbourg,France,2022-01-26T09:35:51+0100,64,1,,,,0,67000
+563,557,SMOVENGO,,0,"Velib, velos parisiens, Manon Fort contact qui gère les projets digitaux. Regis Beguelin travaille chez eux et est un ancien BR3, il nous a mis en contact. ils sont plutot Microsoft et sont gérés par CGI à Montpellier. Mission cadrage compréhension des besoins choix d'architecture. Nous n'avons pas été retenus car la proposition était trop complexe. Mais l'autre société a mal fait le travail. Nous avons ensuite via SAP fourni une prestation DATA. Nous avons une demo Seetrot grace partiellement à leurs données. ( confidentiel ) le projet n'avance pas.",,,PUTEAUX,France,2020-07-31T07:31:00+0200,368,1,,,,-1,92800
+564,78,HARMONIE MUTUELLE,Assurance,1,crédit agricole,,,ANGERS,France,2016-01-10T10:18:30+0100,17,1,,,,-1,49010
+565,673,OFFICE NATIONAL D'INFORMATION SUR LES ENSEIGNEMENTS ET LES PROFESSIONS (ONISEP),Secteur public,1,,,01 64 80 35 00,LOGNES,France,2021-01-05T13:41:56+0100,64,1,,,,12,77185
+566,809,GROUPAMA MEDITERRANEE,,0,,https://www.groupama.fr/,04 67 15 58 88,Montpellier,France,2022-04-04T15:01:51+0200,368,1,,,,-1,34000
+567,808,Gérard Bertrand,,0,Le groupe Gérard Bertrand est le fer de lance d’une viticulture engagée pour un futur meilleur,https://www.gerard-bertrand.com/pages/valeurs-vignerons-languedoc,04 68 45 28 50,Narbonne,France,2022-04-04T14:02:26+0200,368,1,,,,-1,11100
+568,807,‌SYSTEMES-2ID,,7,,,,,France,2022-04-01T14:51:39+0200,64,1,,,,-1,
+569,468,Provence Rugby,,7,"Collaboration avec le responsable préparation physique 2019 / 2020 dans le cadre de la recherche. monitoring des joueurs. Création d'un interface SAC pour eux, seulement le paiement était nécessaire,  mais le club a refusé. 30€ par mois.  Contrat existant, on a eu des données pour la recherche de thèse mais nous n'avons pas été capables de leur fournir quelque chose en retour. Prendre contact avec le président. On a pas pu publier de données scientifiques, elles ont été mal récoltées. Compte un peu touchy. Président de voyage privée.",,,Aix en Provence,France,2020-01-21T16:42:07+0100,368,1,,,,-1,13090
+570,804,ARTERRIS,Agroalimentaire,0,Message envoyé au prospect mars 2022,https://www.arterris.fr/,,Castelnaudary,France,2022-03-31T16:06:13+0200,368,1,,,,-1,11400
+571,426,MARIONNAUD LAFAYETTE,Grande distribution,1,Caisse d'Epargne Languedoc,,,Paris 02,France,2019-10-23T17:39:39+0200,78,1,,,,-1,75002
+572,210,UGITECH,,2,crédit Agricole,,,UGINE,France,2017-11-13T18:55:56+0100,17,1,,,,-1,73400
+573,803,INSTITUT SUPERIEUR DE L'AERONAUTIQUE ET DE L'ESPACE,Secteur public,0,,,,,France,2022-03-30T18:06:04+0200,64,1,,,,12,
+574,340,HYDRO (ex SAPA),Industrie,1,"Ex MICROPOLE
+ex client Micropole, pb existant dans le parc avec BO Cloud (avant SAC), souscription inexistante chez SAP sans que le client le sache. Le client a demandé a cxl cette partie de toute façon. Puis que de la maintenance PCOE uniquement BO crystal reports ( version ancienne), très compliqué à faire techniquement. Le client est compliqué à avoir et fait de la rétention d'information, ne répond pas toujours dans les délais. A fini par résilier la maintenance puisque ca n'avançait pas. Les clients voulaient un engagement au forfait pour la migration, mais étant risqué et ne connaissant pas bien l'environnement nous avons refusé. Ils ont cherché un autre prestataire sans succès. A voir si l'outils est utilisé pour du pdf ou du reporting. Il est utilisé pour faire des étiquettes pour générer du code barre. Ils ont pris du Power BI depuis 5 ans, demander si besoins d'assistance.  Relancer pour faire un point. Nicolas a travaillé le compte.",hydro.com,04 98 11 20 00,PUGET SUR ARGENS CEDEX,France,2018-12-20T16:08:53+0100,368,1,,,,1,83488
+575,738,Agence de Mutualisation des Universités et Etablissements d'enseignement supérieur (AMUE),,0,"Env Sinapses, développement et intégration auprès des universités, besoin d'aide sur le développement. Seenovate n'était pas le profil adapté pour cette mission. Puis relance mars 2022, recrutements internes, pas de visibilités budgétaire, mais bon contact. Relancer en juin.",,04 99 77 30 30,Montpellier,France,2021-12-01T09:37:04+0100,64,1,,,,-1,34000
+576,309,CERFRANCE 29,Conseil,1,"Ex ASI
+caisse d'epargne",,02 98 52 48 48,QUIMPER CEDEX,France,2018-11-21T18:31:54+0100,71,1,,,,10,29334
+577,355,OFFICE DE LA MER,,0,,,,,France,2019-04-26T15:13:30+0200,368,1,,,,-1,
+578,393,CCI OCCITANIE,Secteur public,1,,,,Blagnac,France,2019-10-23T17:39:38+0200,368,1,,,,-1,31700
+579,436,Pôles des industries Aéronautiques Corses,,1,,,,Ajaccio Cedex 9,France,2019-10-23T17:39:39+0200,368,1,,,,-1,20700
+580,672,ECOLE NATIONALE SUPERIEURE DES OFFICIERS DE SAPEURS POMPIERS,Secteur public,0,,,,Aix-en-Provence,France,2021-01-05T09:54:22+0100,368,1,,,,12,13290
+581,801,Private sport shop,sport,0,"Vente privée d'articles de sport, Vente avec stocks permanents, et vente privée, ouvert Espagne Italie Autriche Allemagne et prochainement Suisse. 1 DS + 2 BI internes, sous traitance en cas de manque de personnel sur un projet. Plusieurs projets par an.",https://www.privatesportshop.fr/content/4-qui-sommes-nous-,09 70 73 33 22,VENDARGUES,France,2022-03-21T11:05:58+0100,368,1,,,,0,34740
+582,802,YNSECT,Industrie,0,,,,EVRY,France,2022-03-21T16:40:21+0100,17,1,,,,1,91058
+583,800,Fédération française de tennis de table (FFTT),sport,0,"Organigramme complet
+
+https://www.fftt.com/site/medias/shares_files/organigramme-haut-niveau-3732.pdf",,,,France,2022-03-17T17:06:21+0100,255,1,,,,-1,
+584,775,Fédération Française de Handball,sport,0,,,01 56 70 72 72,,France,2022-03-01T11:01:14+0100,64,1,,,,-1,
+585,782,Fédération Française de Cyclisme,sport,0,,,,,France,2022-03-14T17:26:19+0100,64,1,,,,-1,
+586,784,Fédération Francaise de Golf,sport,0,,,01.41.49.77.00,,France,2022-03-15T15:03:30+0100,64,1,,,,-1,
+587,785,Fédération Française de Lutte (FF Lutte),sport,0,"Tous les contacts de l'organisation (DTN...) 
+https://www.fflutte.com/federation/direction-technique/",,,,France,2022-03-15T15:44:57+0100,255,1,,,,-1,
+588,783,Fédération Française de Danse (FF Danse),sport,0,"Tous les contacts de l'organisation (DTN...)
+https://ffdanse.fr/index.php/la-federation/direction-technique",,,,France,2022-03-15T14:40:29+0100,255,1,,,,0,
+589,786,Fédération Française de la montagne et de l'escalade (FFME),sport,0,,,,,France,2022-03-16T16:09:28+0100,255,1,,,,-1,
+590,787,Fédération Française de Handisport,sport,0,"Toutes les autres adresses mails ici
+https://www.handisport.org/comite-directeur-2020-2024/",,,,France,2022-03-16T16:14:34+0100,255,1,,,,-1,
+591,788,Fédération Française de Judo (FF Judo),sport,0,,,,,France,2022-03-17T10:37:47+0100,255,1,,,,-1,
+592,789,Fédération Française d'aviron (FF Aviron),sport,0,"Organigramme FF Aviron 
+architecture des boites mails pour la plus part prénom.nom@ffaviron.com
+https://www.ffaviron.fr/medias/downloads/ffaviron-organigramme-fonctionnel-20220106100051.pdf",,,,France,2022-03-17T10:54:28+0100,255,1,,,,-1,
+593,790,Fédération Française de Gym (FF Gym),sport,0,"Organigramme FF Gym - architecture boite mail prénom.nom@ffgym.fr
+https://www.ffgym.fr/download/6232f0bdfaef16041f8b4569/Organigramme%20FFGym%20-%20Mars%202022.pdf",,,,France,2022-03-17T11:05:00+0100,255,1,,,,-1,
+594,791,Fédération Française de Volley-Ball (FFVB),sport,0,"Organigramme et adresses mails 
+
+http://www.ffvb.org/index.php?lvlid=266&dsgtypid=37&artid=958&pos=1",,,,France,2022-03-17T11:10:13+0100,255,1,,,,-1,
+595,792,Fédération Française de Canoë Kayak (FFCK),sport,0,"En pièce jointe l'organigramme.
+
+Architecture première lettre prénomn + nom @ffck.org
+EX: bdespinose@ffck.org",,,,France,2022-03-17T11:19:57+0100,255,1,,,,-1,
+596,793,Fédération Française de Tennis (FFT),sport,0,,,,,France,2022-03-17T11:29:51+0100,255,1,,,,-1,
+597,795,Fédération Française de Baseball & Softball (FFBS),sport,0,,,,,France,2022-03-17T11:42:06+0100,255,1,,,,-1,
+598,794,Fédération Française de Triathlon (FF Tri),sport,0,,,,,France,2022-03-17T11:40:16+0100,255,1,,,,-1,
+599,796,Fédération Française de Basketball (FFBB),sport,0,,,,,France,2022-03-17T11:46:11+0100,255,1,,,,-1,
+600,798,Fédération Française d'escrime (FF Escrime),sport,0,,,,,France,2022-03-17T11:52:39+0100,255,1,,,,-1,
+601,797,Fédération Française de Boxe (FF Boxe),sport,0,,,,,France,2022-03-17T11:50:21+0100,255,1,,,,-1,
+602,799,Mouratoglou Tennis Academy,sport,0,,,,,France,2022-03-17T16:24:12+0100,255,1,,,,-1,
+603,312,ANGERS LOIRE HABITAT,Immobilier,1,"Ex ASI
+
+credit agricole",,02 41 23 57 80,Angers Cedex 02,France,2018-11-26T14:33:28+0100,71,1,,,,10,49000
+604,748,Olympique Lyonnais,sport,0,,,+33 (4) 81 07 55 00,,France,2022-01-12T09:50:32+0100,64,1,,,,0,
+605,762,Eurapharma (Artemis),,2,,,,Le Grand-Quevilly,France,2022-02-02T15:36:38+0100,71,1,,,,-1,76120
+606,764,ADISSEO,,1,caisse d'Epargne,,,ANTONY,France,2022-02-03T06:16:58+0100,17,1,,,,-1,92160
+607,103,CEREMA,Environnement,1,,,,BRON,France,2016-01-19T16:30:36+0100,12,1,,,,-1,69500
+608,780,AGISS FORMATION,Formation,0,,,04 78 85 33 51,,France,2022-03-01T15:04:44+0100,64,1,,,,-1,
+609,779,Avenir Santé Formation,Formation,0,,,,,France,2022-03-01T14:47:49+0100,64,1,,,,-1,
+610,776,Grenoble INP,Formation,0,,,(0)4 76 57 45 00,,France,2022-03-01T11:33:48+0100,64,1,,,,-1,
+611,778,UNASS,Formation,0,,,01 45 65 58 00,,France,2022-03-01T11:53:39+0100,64,1,,,,-1,
+612,777,AFNOR Compétences,Formation,0,,,01 41 62 76 22,,France,2022-03-01T11:42:40+0100,64,1,,,,-1,
+613,435,PM2S,,1,"Client en procédure de redressement sur 7 ans (2019)
+Remboursement suivant échéancier joint",,,Bois-d'Arcy,France,2019-10-23T17:39:39+0200,52,1,,,,-1,78390
+614,774,Fédération Française de Rugby,sport,0,,,01 69 63 64 65,,France,2022-03-01T10:45:55+0100,64,1,,,,-1,
+615,518,ROUGE GORGE LINGERIE,,0,"2020 : transfert de maintenance de Synergy vers INSEPTI.
+BOBJ >  01/04 > PA 4399,92€ / PV 6600€",,,WASQUEHAL,France,2020-06-18T14:34:34+0200,60,1,,,,11,59290
+616,741,Préfecture de Police de PARIS (Sous-Direction des Technologies),Secteur public,1,,,,,France,2021-12-06T15:53:42+0100,64,1,,,,12,
+617,770,FC METZ,sport,0,,,,,France,2022-02-23T10:08:56+0100,64,1,,,,-1,
+618,596,DAMART (DSB),,1,credit agricole,,,ROUBAIX CEDEX,France,2020-09-07T15:28:09+0200,255,1,,,,11,59053
+619,752,FC NANTES,sport,0,,,,,France,2022-01-21T09:56:18+0100,64,1,,,,-1,
+620,749,Stade rennais,sport,0,,,,RENNES CEDEX,France,2022-01-13T14:28:03+0100,64,1,,,,-1,35039
+621,760,FC Girondins de Bordeaux,sport,0,,,0 892 68 34 33,Le Haillan,France,2022-02-02T09:45:21+0100,64,1,,,,-1,33180
+622,761,LOSC,sport,0,,,0820.25.26.27,Camphin-en-Pévèle,France,2022-02-02T14:50:42+0100,64,1,,,,-1,59780
+623,753,Stade de Reims,sport,0,le dept performance pas joignable par tel,,03 26 09 99 34,,France,2022-01-21T10:07:56+0100,64,1,,,,0,
+624,464,AUTORITE DE LA CONCURRENCE,Secteur public,1,,,,PARIS,France,2020-01-05T19:07:14+0100,255,1,,,,-1,75001
+625,345,GIE SESAM VITALE,Secteur public,1,"Ex MICROPOLE
+
+credit agricole",,,LE MANS CEDEX 2,France,2019-01-21T18:47:49+0100,71,1,,,,-1,72019
+626,766,ATEAMBI,Conseil,1,,,0609500509,Bourg La Reine,France,2022-02-07T15:55:05+0100,299,1,,,,2,92340
+627,757,CH Guillaume Régnier,Servies hospitaliers,1,,,,Rennes Cedex 7,France,2022-01-27T10:03:27+0100,71,1,,,,-1,35703
+628,767,SDMIS,Secteur public,0,,,04 72 84 37 18,LYON,France,2022-02-09T11:01:41+0100,64,1,,,,-1,69003
+629,765,FRANCE TELEVISION,,0,,,,,France,2022-02-07T11:28:06+0100,17,1,,,,-1,
+630,469,ORAPI,,2,credit agricole,,,SAINT VULBAS,France,2020-01-22T17:11:38+0100,17,1,,,,-1,01125
+631,346,RENNES METROPOLE,Secteur public,0,,,,RENNES,France,2019-02-01T15:53:47+0100,71,1,,,,-1,35031
+632,270,PRISMA MEDIA,Média,1,CAISSE D'EPARGNE,,01 73 05 45 45,GENNEVILLIERS CEDEX,France,2018-09-13T16:35:04+0200,17,1,,,,-1,92624
+633,493,CENTRE OSCAR LAMBRET,Biomédical,1,caisse d'Epargne,,03 20 29 59 59,LILLE cedex,France,2020-04-15T12:01:14+0200,255,1,,,,11,59020
+634,380,Agence des Espaces Verts (AEV),Secteur public,1,CAISSE EPARGNE,,0183653800,PANTIN,France,2019-10-23T17:39:38+0200,255,1,,,,-1,93500
+635,407,FINEST INGREDIENTS BAKERY (DGF),Agroalimentaire,1,"Créé en 1986, DGF s’appuie sur l’expertise de ses chefs intégrés et Meilleurs Ouvriers de France pour distribuer en exclusivité les marques DGF, Four A Idées, ainsi que l’ensemble des grandes marques nationales du secteur à plus de 10 000 professionnels de la boulangerie/pâtisserie et de la restauration.
+
+Fort d’un nouveau siège, d’une nouvelle plateforme logistique commune pour les produits secs, frais et surgelés pleinement opérationnelle et d’un nouveau système informatique, DGF réalise aujourd’hui un chiffre d’affaires sous enseigne de 350 millions d’euros au travers de 23 centres de distribution couvrant l’ensemble du territoire français.",,,Chanteloup-les-Vignes,France,2019-10-23T17:39:38+0200,255,1,,,,-1,78570
+636,754,Université Paris Dauphine,Secteur public,0,,,,Paris,France,2022-01-25T15:58:47+0100,64,1,,,,12,75016
+637,109,TERRES INOVIA,Agroalimentaire,1,,,,THIVERVAL-GRIGNON,France,2016-03-22T14:08:55+0100,255,1,,,,3,78850
+638,47,METROPOLE DE DIJON,Secteur public,1,CAISSE D'EPARGNE,,,DIJON,France,2016-01-10T10:16:36+0100,12,1,,,,3,21000
+639,440,SDIS 76,Secteur public,1,CREDIT AGRICOLE,,,YVETOT,France,2019-10-23T17:39:39+0200,88,1,,,,-1,76190
+640,414,AMAE - ASSU2000,Assurance,1,caisse d'epargne,,01 48 10 15 00,Noisy-le-Sec,France,2019-10-23T17:39:38+0200,255,1,,,,-1,93130
+641,443,MICROPORT CRM,Biomédical,1,"conception et  fabrication de solution d'assistance cardiaque.
+
+caisse d'Epargne",,01 46 01 33 33,Clamart,France,2019-10-23T17:39:39+0200,255,1,,,,-1,92140
+642,579,AKFED (Aga Khan Fund For Economic Development SA,Services,1,CREDIT AGRICOLE,,,GENEVE,Suisse,2020-09-07T13:35:37+0200,60,1,,,,11,2067
+643,384,AXA Liabilities Managers,Assurance,1,caisse d'Epargne,,,PARIS,France,2019-10-23T17:39:38+0200,255,1,,,,-1,75017
+644,567,SERGIC INVEST,Immobilier,1,caisse d'Epargne,www.sergic.com,03 20 12 50 00,WASQUEHAL,France,2020-09-03T09:34:17+0200,255,1,,,,11,59290
+645,83,MUTUELLE INTEGRANCE,Assurance,1,caisse d'Epargne,,,PARIS Cedex 18,France,2016-01-10T10:18:30+0100,255,1,,,,-1,75018
+646,462,CFCAL (Crédit Foncier Communal Alsace Lorraine),Banque,1,,,,Strasbourg,France,2019-12-05T12:06:21+0100,255,1,,,,-1,67000
+647,197,IFCE,,0,,,,,France,2017-09-04T10:06:22+0200,60,1,,,,-1,
+648,751,AXESS SOLUTIONS,Edition de logiciels,0,,,04 26 29 75 20,LYON,France,2022-01-17T11:41:21+0100,64,1,,,,0,69003
+649,222,MAIRIE DE VANNES,Secteur public,1,crédit agricole,,,VANNES,France,2017-12-19T11:57:57+0100,71,1,,,,-1,56000
+650,291,DARVA,Autres,1,"Ex ASI
+
+Crédit agricole",,05 49 77 14 14,NIORT Cedex,France,2018-11-16T18:21:44+0100,71,1,,,,10,79027
+651,272,SDIS 35,Secteur public,1,credit agricole,,02 99 87 65 43,RENNES,France,2018-09-24T14:36:32+0200,71,1,,,,-1,35700
+652,295,SDIS 49,Secteur public,1,"Ex ASI
+
+CREDIT AGRICOLE",,02.41.33.21.00,BEAUCOUZE Cédex,France,2018-11-19T17:39:41+0100,71,1,,,,-1,49007
+653,4,ALPTIS ASSURANCES,Assurance,1,cAISSE D'epargne,,04 72 36 16 16,LYON Cedex 03,France,2016-01-10T10:16:35+0100,12,1,,,,-1,69445
+654,405,"Alliance des Minerais, Minéraux et Métaux A3M (ex FF de l'Acier)",Métallurgie/sidérurgie,1,caisse d'epargne,,01 40 76 44 50,PARIS CEDEX 16,France,2019-10-23T17:39:38+0200,88,1,,,,-1,75783
+655,744,RAILwAI,,1,,,,PARIS,France,2021-12-15T11:53:54+0100,17,1,,,,-1,75008
+656,316,TENDRIADE COLLET,Agroalimentaire,1,"Ex ASI
+
+CAISSE D'EPARGNE",,,CHATEAUBOURG,France,2018-11-26T15:38:21+0100,71,1,,,,-1,35220
+657,525,Additi,Média,1,Caisse d'Epargne,www.additi.fr,02 99 26 45 45,Rennes,France,2020-07-01T17:13:26+0200,71,1,,,,-1,35000
+658,700,Service des technologies et des systèmes d'information de la sécurité intérieure (STSISI) Police,Secteur public,0,,,,,France,2021-05-10T16:45:43+0200,64,1,,,,12,
+659,655,Direction générale de la cohésion sociale (DGCS),Secteur public,0,,,01 40 56 60 00,Paris,France,2020-12-28T12:20:02+0100,64,1,,,,12,75014
+660,666,AGENCE REGIONALE DE SANTE NOUVELLE AQUITAINE (ARS),Secteur public,0,,,05 57 01 44 00,Bordeaux Cedex,France,2020-12-29T10:01:51+0100,64,1,,,,12,33063
+661,664,Organisation de la direction des ressources humaines (DRH Ministères Sociaux),Secteur public,0,,,,,France,2020-12-29T09:05:15+0100,64,1,,,,12,
+662,668,Direction des affaires juridiques des ministères économiques et financiers (Ministère de l'Economie),Secteur public,0,https://ui.boondmanager.com/companies/668/contacts,,,,France,2020-12-29T10:24:32+0100,64,1,,,,12,
+663,657,Agence pour l'informatique financière de l'État (AIFE),Secteur public,0,,,,Noisy-Le-Grand Cedex,France,2020-12-28T13:59:34+0100,64,1,,,,12,93196
+664,658,HAUTE AUTORITE DE SANTE,Secteur public,0,,,,,France,2020-12-28T14:23:36+0100,64,1,,,,12,
+665,75,OPCO ATLAS,Autres,1,caisse Epargne,,,PARIS,France,2016-01-10T10:18:30+0100,17,1,,,,-1,75013
+666,742,SDIS 06,Secteur public,0,,,,,France,2021-12-09T10:04:26+0100,255,1,,,,-1,
+667,739,AFPIA,Formation,0,,,,LYON,France,2021-12-02T19:47:25+0100,17,1,,,,-1,69008
+668,724,CHU Lille,,0,credit agricole,,,Lille,France,2021-09-29T16:34:56+0200,78,1,,,,-1,59000
+669,693,AUTORITE DE SURETE NUCLEAIRE (ASN),,1,,,,,France,2021-04-06T15:21:06+0200,17,1,,,,12,
+670,627,MINISTERE DE L'INTERIEUR,Secteur public,1,,,,,France,2020-09-22T13:08:30+0200,12,1,,,,12,
+671,690,Conseil général de l'environnement et du développement durable (CGEDD),Secteur public,1,,,,,France,2021-03-15T17:11:16+0100,17,1,,,,12,
+672,737,Conseil départemental du Nord,Secteur public,0,,,,,France,2021-11-29T12:21:14+0100,255,1,,,,4,
+673,454,TotalEnergies Proxi Nord Ouest SAS (ex CPO),Oil & Gaz,1,,,02 40 92 15 92,NANTES CEDEX 4,France,2019-11-07T11:25:49+0100,52,1,,,,-1,44186
+674,323,ICO - Institut de Cancérologie de l'Ouest,Servies hospitaliers,1,,www.institut-cancerologie-ouest.com,02 40 67 99 00,SAINT HERBLAIN Cedex,France,2018-11-29T17:43:44+0100,71,1,,,,0,44805
+675,711,Direction générale de l'aviation civile (DGAC),Secteur public,0,,,,,France,2021-07-12T17:54:36+0200,64,1,,,,12,
+676,665,Agence Nationale de la Cohésion des Territoires (ANCT),Secteur public,1,,,,Paris,France,2020-12-29T09:53:11+0100,64,1,,,,12,75007
+677,669,Ministère de la Culture,Secteur public,1,,,01 40 15 80 00,Paris,France,2020-12-29T10:44:21+0100,64,1,,,,12,75001
+678,733,VILLE DE SAINT ETIENNE,,0,,,,,France,2021-11-19T13:58:05+0100,17,1,,,,-1,
+679,143,EBI SA - ECOBANK,Banque,1,Caisse d'Epargne Languedoc roussillon,,,PARIS LA DEFENSE,France,2016-11-21T15:32:01+0100,255,1,,,,1,92057
+680,193,ESSENTIEL & DOMICILE,,1,credit agricole,,,DARDILLY,France,2017-08-11T12:44:41+0200,12,1,,,,-1,69570
+681,732,Centre Hélène Borel,Servies hospitaliers,0,,,03 27 93 16 16,Raimbeaucourt,France,2021-11-05T10:36:52+0100,60,1,,,,11,59283
+682,417,Hachette Collections,,1,credit agricole,,,VANVES CEDEX,France,2019-10-23T17:39:39+0200,78,1,,,,-1,92173
+683,712,Groupe Cayon,,0,credit agricole,,,,France,2021-07-15T06:21:29+0200,17,1,,,,-1,
+684,730,EKSAE,,0,,,,,France,2021-11-03T10:51:10+0100,12,1,,,,-1,
+685,356,MACIF,Assurance,1,Crédit Agricole Languedoc,www.macif.fr,,NIORT,France,2019-04-29T13:31:24+0200,71,1,,,,-1,79000
+686,416,Hachette Livre,,1,,,,MALAKOFF,France,2019-10-23T17:39:39+0200,78,1,,,,-1,92240
+687,728,Conseil départemental du Loiret,,0,,,,,France,2021-10-20T11:40:16+0200,255,1,,,,-1,
+688,727,Région Hauts-de-France,,0,,,,,France,2021-10-20T11:33:49+0200,17,1,,,,-1,
+689,642,ATEE,Energie,1,Caisse d'Epargne Languedoc Roussillon,,,PUTEAUX CEDEX,France,2020-11-26T12:58:02+0100,12,1,,,,2,92806
+690,98,SAP FRANCE,Edition de logiciels,9,Caisse d'Epargne Languedoc Roussillon,,,LEVALLOIS-PERRET,France,2016-01-10T10:18:30+0100,17,1,,,,-1,92300
+691,726,BENVIC,Industrie,0,,,,,France,2021-10-07T12:19:45+0200,255,1,,,,-1,
+692,725,Xerox,Industrie,2,,,,,France,2021-10-07T11:23:13+0200,255,1,,,,1,
+693,467,OC'VIA Maintenance,Ferroviaire,1,,,,Nimes,France,2020-01-21T15:09:18+0100,89,1,,,,1,30900
+694,721,CNRS - IDF,,0,,,,,France,2021-08-24T18:52:12+0200,12,1,,,,-1,
+695,326,BISCUITERIE FILET BLEU SAS,Agroalimentaire,1,Ex ASI,filet-bleu.com,02 98 52 87 30,SAINT-EVARZEC,France,2018-12-04T16:03:29+0100,71,1,,,,10,29170
+696,304,BOIS ET MATERIAUX,Industrie,0,Ex ASI,,02 99 65 84 00,PACE Cedex,France,2018-11-21T14:35:15+0100,52,1,,,,10,35741
+697,704,TECHNICIMES,,1,,,,UGINE,France,2021-06-01T07:02:38+0200,17,1,,,,-1,73400
+698,703,INVENTHYS,,0,,,,EPAGNY METZ-TESSY,France,2021-06-01T06:55:30+0200,17,1,,,,-1,74370
+699,719,"DGCCRF (Direction générale de la Concurrence, de la Consommation et de la Répression des Fraudes)",Secteur public,0,,,,,France,2021-07-29T08:46:42+0200,17,1,,,,12,
+700,254,CNRS - Délégation Bretagne Pays de la Loire,Secteur public,1,,,,RENNES Cedex,France,2018-06-11T11:47:21+0200,17,1,,,,-1,35069
+701,715,C-Digital Labs,,0,Société créée pour l'externalisation de la DSI de Cordon Electronics,,,Cesson-Sévigné,France,2021-07-22T11:02:15+0200,71,1,,,,-1,35510
+702,714,PARROT SA,Industrie,0,,,+33 / (0) 3 84 82 61,DOLE,France,2021-07-16T10:22:11+0200,60,1,,,,8,39100
+703,709,Société de reprise OCVIA - JME et TMJ,,0,,,,,France,2021-07-05T11:11:58+0200,17,1,,,,-1,
+704,648,Agence du Numérique de la Sécurité Civile (ANSC),Secteur public,1,,,,PARIS,France,2020-12-17T06:52:08+0100,17,1,,,,12,75013
+705,708,TALAN,Conseil,7,,,,,France,2021-06-25T10:37:21+0200,60,1,,,,3,
+706,298,DENIS MATERIAUX,Industrie,1,Ex ASI,www.denismateriaux.com/,02 99 26 56 36,Guignen,France,2018-11-20T15:19:17+0100,71,1,,,,10,35580
+707,707,CREAVALUE,,0,,,,,France,2021-06-08T11:25:54+0200,12,1,,,,-1,
+708,706,Groupe Bernard Hayot - GBH,,0,,,,LE LAMENTIN Cedex 02,France,2021-06-01T08:56:54+0200,17,1,,,,-1,97292
+709,688,INSTITUT DE RADIOPROTECTION ET DE SURETE NUCLEAIRE (IRSN),Secteur public,1,,,,FONTENAY AUX ROSES,France,2021-03-15T11:54:32+0100,71,1,,,,12,92260
+710,705,SOLABIA,,0,,,,PANTIN Cedex,France,2021-06-01T07:46:25+0200,17,1,,,,-1,93692
+711,695,Université de Pau et des Pays de l'Adour,Secteur public,1,,,05 59 40 70 00,PAU cedex,France,2021-04-15T12:07:31+0200,71,1,,,,12,64012
+712,698,DINUM - ETALAB,,0,,,,,France,2021-04-26T16:26:29+0200,60,1,,,,-1,
+713,476,VILLE DE PARIS,,2,,,,,France,2020-02-04T10:44:01+0100,17,1,,,,-1,
+714,696,Groupe SAFO,,0,"Siège social : Voie Verte, ZI Jarry - 97122 Baie-Mahault
+
+Antenne Martinique
+ZI place d'Armes 97232 Le Lamentin
+Tél. 0596 30 07 93
+
+Antenne Guadeloupe
+Voie Verte, ZI Jarry 97122 Baie-Mahault
+Tél. 0590 38 12 33
+Fax 0590 26 73 15",,01 44 63 41 84,PARIS,France,2021-04-15T14:44:02+0200,71,1,,,,11,75009
+715,67,AUDEMARS PIGUET,Autres,1,,www.audemarspiguet.com,,LE BRASSUS,Suisse,2016-01-10T10:18:29+0100,17,1,,,,-1,1348
+716,621,UNIVERSITE DE PICARDIE J.VERNE,Secteur public,4,,,03 22 82 72 72,AMIENS CEDEX 1,France,2020-09-07T17:44:46+0200,60,1,,,,11,80025
+717,559,SELOGER,,1,,www.seloger.com,,Paris 18e,France,2020-08-03T11:47:07+0200,60,1,,,,11,75018
+718,381,ANRT,,1,,,,PARIS,France,2019-10-23T17:39:38+0200,89,1,,,,-1,75017
+719,692,PREFECTURE DE POLICE DE PARIS,,0,,,,,France,2021-04-01T07:28:02+0200,17,1,,,,12,
+720,287,OUEST FRANCE,Média,1,Ex ASI,,02 99 32 60 00,RENNES CEDEX,France,2018-11-16T14:41:45+0100,71,1,,,,10,35051
+721,686,GENETHON,Biomédical,1,,,,EVRY,France,2021-03-10T15:45:04+0100,12,1,,,,-1,91000
+722,674,LE FOYER STEPHANAIS,,2,,,,,France,2021-02-10T17:00:11+0100,12,1,,,,-1,
+723,540,SIEP du Santerre,Infrastructure,1,Service public de l'eau potable,www.siep-du-santerre.fr,03 22 88 45 27,Rosières-en-Santerre,France,2020-07-08T15:38:47+0200,71,1,,,,-1,80170
+724,59,SILA,Environnement,1,,,,CHAVANOD,France,2016-01-10T10:16:37+0100,12,1,,,,-1,74650
+725,176,OPH Aubervilliers,,2,,,,Aubervilliers,France,2017-06-09T14:42:48+0200,12,1,,,,1,93300
+726,677,Région Occitanie,,0,,,,,France,2021-02-25T06:50:01+0100,17,1,,,,4,
+727,676,INSTITUT CAMILLE MIRET,,0,,https://www.icm46.fr/,05 65 10 20 30,LEYME,France,2021-02-24T06:33:57+0100,17,1,,,,3,46120
+728,551,CAPCIR,Edition de logiciels,0,logiciel DPI pour hopitaux psychatrique (CORTEXTE),,05 61 75 94 99,MERVILLA,France,2020-07-16T16:05:48+0200,64,1,,,,-1,31320
+729,12,BUSINESS CAIRN,Conseil,7,,,,LYON,France,2016-01-10T10:16:35+0100,12,1,,,,-1,69007
+730,17,CGI FRANCE,Conseil,1,,,,LYON CEDEX 09,France,2016-01-10T10:16:35+0100,12,1,,,,-1,69336
+731,9,ATOL CD,Conseil,7,,,,GEVREY CHAMBERTIN,France,2016-01-10T10:16:35+0100,12,1,,,,-1,21220
+732,3,AIST LA PRÉVENTION ACTIVE,Biomédical,1,,,,CLERMONT FERRAND,France,2016-01-10T10:16:35+0100,12,1,,,,-1,63100
+733,45,MAIDIS,Edition de logiciels,1,,,,CHATOU,France,2016-01-10T10:16:36+0100,12,1,,,,-1,78400
+734,26,IDELLYS,Conseil,7,,,,LYON,France,2016-01-10T10:16:36+0100,12,1,,,,-1,69003
+735,36,PANZANI,Agroalimentaire,1,,,,LYON,France,2016-01-10T10:16:36+0100,12,1,,,,-1,69006
+736,37,QUALEA,Conseil,7,,,,BRON,France,2016-01-10T10:16:36+0100,12,1,,,,-1,69500
+737,64,SEMITAG,Secteur public,0,,,,,France,2016-01-10T10:16:37+0100,12,1,,,,-1,
+738,63,AGP SYSTEM,Conseil,0,,,,Lyon,France,2016-01-10T10:16:37+0100,12,1,,,,-1,69006
+739,57,SQLI,Conseil,7,,,,LYON,France,2016-01-10T10:16:37+0100,12,1,,,,-1,69009
+740,62,ABB,Automobile,0,,,,,France,2016-01-10T10:16:37+0100,12,1,,,,-1,
+741,55,APIK,Conseil,7,,,,BELLEVILLE,France,2016-01-10T10:16:37+0100,12,1,,,,-1,69220
+742,68,AXE INFORMATIQUE,Conseil,7,,,0416463077,GRENOBLE,France,2016-01-10T10:18:29+0100,17,1,,,,-1,38000
+743,99,ABINGTON ADVISORY,Conseil,7,,,,PARIS,France,2016-01-10T10:18:30+0100,17,1,,,,-1,75008
+744,87,RANDSTAD,Conseil,1,,,,SAINT DENIS LA PLAINE CEDEX,France,2016-01-10T10:18:30+0100,17,1,,,,-1,93211
+745,81,JS FITNESS,Autres,7,,,,LYON,France,2016-01-10T10:18:30+0100,17,1,,,,-1,69002
+746,72,CERTIVEA,Bâtiments,1,,,,PARIS,France,2016-01-10T10:18:30+0100,17,1,,,,-1,75016
+747,16,CSP,Pharmacie,1,,,,COURNON Cedex,France,2016-01-10T10:16:35+0100,12,1,,,,-1,63802
+748,52,STAMBIA,Edition de logiciels,9,,,,VILLEURBANNE,France,2016-01-10T10:16:37+0100,12,1,,,,-1,69100
+749,53,GB & SMITH,Edition de logiciels,9,,,,GRENOBLE,France,2016-01-10T10:16:37+0100,12,1,,,,-1,38000
+750,33,MLP,Média,1,,,,SAINT-QUENTIN-FALLAVIER,France,2016-01-10T10:16:36+0100,12,1,,,,-1,38291
+751,107,MUTUELLE VERTE,Assurance,0,,,,TOULON,France,2016-02-03T16:03:11+0100,12,1,,,,-1,
+752,5,ALTECA,Conseil,4,,,,LYON Cedex,France,2016-01-10T10:16:35+0100,12,1,,,,-1,69452
+753,35,OLIN,Industrie,8,,,0472231800,CORBAS,France,2016-01-10T10:16:36+0100,12,1,,,,-1,69960
+754,42,KEOLIS,Infrastructure,2,,,,DECINES CHARPIEU Cedex,France,2016-01-10T10:16:36+0100,12,1,,,,3,69153
+755,54,BUSINESS GEOGRAFIC,Edition de logiciels,9,,,,VILLEURBANNE,France,2016-01-10T10:16:37+0100,12,1,,,,-1,69100
+756,112,DORAS,,2,,,,DIJON,France,2016-04-13T09:52:50+0200,17,1,,,,-1,
+757,117,NTN-SNR,,0,,,,Annecy,France,2016-04-13T10:27:22+0200,17,1,,,,-1,
+758,121,MARKAL,,0,,,,Valence,France,2016-04-13T14:43:46+0200,17,1,,,,-1,
+759,123,AXEREAL,,1,,,0234595100,OLIVET,France,2016-05-10T10:26:33+0200,17,1,,,,8,45166
+760,130,FONDATION ARC,,0,,,,VILLEJUIF,France,2016-07-26T14:45:16+0200,17,1,,,,3,94803
+761,134,Groupe GMD,,0,,,,Les Ulis,France,2016-09-09T14:58:32+0200,17,1,,,,-1,91940
+762,136,ENA,,0,,,,Strasbourg,France,2016-09-13T06:48:27+0200,17,1,,,,-1,67000
+763,139,MARIETTON DEVELOPPEMENT,,0,,,,Lyon,France,2016-10-10T15:48:27+0200,17,1,,,,-1,69009
+764,140,EPS ERASME,,0,,,,ANTHONY Cedex,France,2016-10-24T13:24:06+0200,17,1,,,,0,92161
+765,142,INSTALLUX,Industrie,0,,,,,France,2016-11-09T11:45:18+0100,12,1,,,,3,
+766,18,METROPOLE DE LYON,Secteur public,1,,,,LYON CEDEX 03,France,2016-01-10T10:16:35+0100,12,1,,,,-1,69399
+767,154,EVERIAL,,0,,,,LYON,France,2017-03-08T17:46:28+0100,17,1,,,,-1,69003
+768,157,C-RIS PHARMA,Biomédical,0,,,,,France,2017-03-22T14:22:42+0100,12,1,,,,-1,
+769,160,QUALISTEO,,0,,,,NICE,France,2017-04-20T15:39:23+0200,17,1,,,,-1,06200
+770,165,SAMAT,,0,Société d'économie mixte,http://www.groupesamat.com,04 74 78 80 80,VIENNE,France,2017-05-02T18:14:22+0200,17,1,,,,0,38216
+771,166,ARCEL,,0,,www.arcel.eu,04 78 35 02 21,CHAMPAGNE AU MONT D'OR,France,2017-05-02T18:38:21+0200,17,1,,,,0,69544
+772,167,CERISE ET POTIRON,,0,,,04 37 25 25 00,CORBAS,France,2017-05-02T18:50:54+0200,17,1,,,,0,69960
+773,168,MONTAGUT,,0,,,,,France,2017-05-02T18:54:50+0200,17,1,,,,0,
+774,100,SEMARDEL,Environnement,0,,,01 64 56 75 15,Vert-le-Grand,France,2016-01-10T10:18:30+0100,17,1,,,,-1,91810
+775,171,ASPC,,2,,,,CHAZAY,France,2017-05-24T15:42:09+0200,12,1,,,,-1,69380
+776,173,SUNAERO,,0,,www.sunaero.com,04 72 08 12 12,Genay,France,2017-06-02T14:43:07+0200,12,1,,,,2,69730
+777,177,PARASITE DESIGN,Industrie,0,,,04 74 46 28 90,SAINT VULBAS,France,2017-06-13T16:58:03+0200,17,1,,,,-1,01150
+778,183,PHOTOWEB,,0,,,04 76 75 49 08,SAINT EGREVE,France,2017-06-26T15:53:15+0200,17,1,,,,-1,38120
+779,191,ELDEC,Aéronautique,0,Groupe CRANE AEROSPACE & ELECTRONICS,http://www.craneae.com/AboutUs/ELDEC.aspx,+33 4 78 26 10 10,SAINT-PRIEST,France,2017-07-31T11:08:16+0200,17,1,,,,-1,69800
+780,195,BUSINESS FRANCE,,0,,,,PARIS Cedex 14,France,2017-08-24T15:44:11+0200,17,1,,,,0,75998
+781,196,PROMOVACANCES,,0,,,,PARIS,France,2017-08-25T13:48:40+0200,17,1,,,,-1,75010
+782,124,INFORMADIS,,1,,,,COURTABOEUF Cedex,France,2016-05-17T11:21:10+0200,17,1,,,,-1,91966
+783,128,GTP CONSEIL,,1,,http://www.gtp-conseil.fr/,,Montlignon,France,2016-06-28T22:55:37+0200,17,1,,,,1,95680
+784,122,RTE,,2,,,,Paris,France,2016-04-13T15:00:52+0200,17,1,,,,-1,
+785,114,SIS,,1,,www.sis-france.com,,Courbevoie cedex,France,2016-04-13T10:05:30+0200,17,1,,,,-1,92411
+786,198,Le Télégramme,,0,,,,MORLAIX,France,2017-09-11T09:53:27+0200,17,1,,,,-1,29600
+787,110,ARROW,Edition de logiciels,9,,,,COURBEVOIE,France,2016-03-23T16:25:17+0100,12,1,,,,-1,92400
+788,203,Angers Loire Métropole,,0,,,,ANGERS CEDEX 02,France,2017-10-17T12:38:03+0200,12,1,,,,-1,49020
+789,150,CHU GRENOBLE,Servies hospitaliers,0,,,,BESANCON Cedex,France,2017-02-23T14:33:06+0100,12,1,,,,-1,25030
+790,209,ENGIE,,2,,,,LA DEFENSE,France,2017-11-10T16:54:31+0100,17,1,,,,-1,75
+791,213,ORLEANS METROPOLE,Secteur public,0,,,,ORLEANS CEDEX 01,France,2017-11-16T16:21:08+0100,52,1,,,,-1,45058
+792,220,MADE IN DESIGN,,0,,,,ECHIROLLES,France,2017-12-13T12:12:16+0100,12,1,,,,-1,38130
+793,231,CHU TOULOUSE,,0,,,,TOULOUSE CEDEX 9,France,2018-03-26T17:56:45+0200,52,1,,,,-1,31059
+794,235,CODILOG,Conseil,0,,www.codilog.fr/,01 41 37 52 30,NANTERRE,France,2018-04-03T11:33:50+0200,12,1,,,,-1,92000
+795,238,ACTION LOGEMENT,Immobilier,0,,www.actionlogement.fr,09 70 80 88 88,LYON,France,2018-04-03T14:18:27+0200,12,1,,,,-1,69003
+796,239,MAISON RICHARD,Agroalimentaire,0,,www.cafesrichard.fr,01 40 85 75 00,GENNEVILLIERS,France,2018-04-03T14:32:25+0200,12,1,,,,-1,92230
+797,244,SOLYSTIC,Industrie,0,,www.solystic.fr,+33 (0)1 49 08 41 00,BAGNEUX,France,2018-04-03T15:21:46+0200,12,1,,,,-1,92220
+798,243,IARC,Biomédical,0,,www.iarc.fr/,+33 (0)4 72 73 84 85,LYON CEDEX 08,France,2018-04-03T15:07:31+0200,12,1,,,,-1,69372
+799,245,ELIVIE,Servies hospitaliers,0,,www.elivie.fr/,04 37 56 12 12,LYON,France,2018-04-03T15:33:33+0200,12,1,,,,-1,69003
+800,247,PASàPAS,Conseil,0,,www.pasapas.com,01 53 90 17 50,PARIS,France,2018-04-03T16:20:41+0200,12,1,,,,-1,75009
+801,248,UBISTER,,0,,,,Rostrenen,France,2018-04-04T12:44:49+0200,17,1,,,,-1,22110
+802,251,SOPRA,,0,,,,,France,2018-05-11T14:53:53+0200,12,1,,,,-1,
+803,253,LEROY-SOMER,,0,,,,ANGOULEME CEDEX 9,France,2018-05-31T17:47:40+0200,17,1,,,,-1,16915
+804,256,SDIS 27,,0,,,,EVREUX,France,2018-06-13T17:09:54+0200,17,1,,,,-1,27000
+805,258,AGIRC-ARRCO,,0,,,01 71 72 12 00,PARIS CEDEX 12,France,2018-06-22T14:07:01+0200,52,1,,,,-1,75592
+806,113,UGC,,2,,,,Paris,France,2016-04-13T09:58:50+0200,17,1,,,,3,75017
+807,252,ARMOR,,2,,,,,France,2018-05-31T12:09:14+0200,12,1,,,,1,
+808,262,PGDI,,0,,,,,France,2018-08-30T16:28:28+0200,12,1,,,,-1,
+809,264,ENI,Pétrochimie,0,,,,Levallois,France,2018-08-31T11:30:11+0200,17,1,,,,3,
+810,268,ONEPOINT,,7,,www.groupeonepoint.com,+33 (0)1 70 23 03 00,PARIS,France,2018-09-11T08:13:51+0200,17,1,,,,-1,75116
+811,274,SERVAL,,0,,,,NANTERRE,France,2018-10-10T22:13:13+0200,17,1,,,,-1,92000
+812,275,VALENCE ROMANS AGGLO,Secteur public,0,,,,VALENCE,France,2018-10-16T17:15:47+0200,52,1,,,,-1,26958
+813,190,VILLE DE LYON,Secteur public,1,,,,,France,2017-07-25T16:39:03+0200,12,1,,,,-1,
+814,240,AFTRAL 69,Formation,0,,www.aftral.com,0 809 90 89 08,VAULX-EN-VELIN,France,2018-04-03T14:39:34+0200,12,1,,,,-1,69120
+815,325,BACCARAT,Autres,1,Ex ASI,www.baccarat.fr,01 40 22 11 00,BACCARAT,France,2018-12-03T15:19:19+0100,12,1,,,,10,54120
+816,348,SAGEMCOM,,2,,,,,France,2019-02-18T06:39:51+0100,17,1,,,,-1,
+817,352,ADMR 43,,0,,,,,France,2019-03-29T16:26:10+0100,12,1,,,,-1,
+818,353,CH ARRAS,Servies hospitaliers,0,,,03 21 21 10 21,,France,2019-04-02T09:27:07+0200,12,1,,,,-1,
+819,350,RMA SA,,1,,,,SAUZET,France,2019-03-11T12:44:37+0100,12,1,,,,-1,26740
+820,354,COVEA,,0,EX ASI (PERDU),,,,France,2019-04-08T15:06:03+0200,12,1,,,,-1,
+821,359,EPIDE,,0,,,,,France,2019-05-20T16:22:41+0200,17,1,,,,-1,
+822,363,APHP,,0,,,,,France,2019-06-18T14:42:21+0200,12,1,,,,-1,
+823,369,GROUPE VYV,,0,,,,,France,2019-07-22T12:07:17+0200,17,1,,,,-1,
+824,25,FERMOB,Industrie,1,,,04 74 04 00 55,THOISSEY,France,2016-01-10T10:16:36+0100,12,1,,,,-1,01140
+825,182,ID BEAUTY,,3,,www.id-beauty.com,,PARIS,France,2017-06-26T10:46:08+0200,17,1,,,,-1,75008
+826,441,SDIS 91,,1,,,,EVRY CEDEX,France,2019-10-23T17:39:39+0200,52,1,,,,-1,91007
+827,430,NAF NAF,,1,,,,Epinay Sur Seine cedex,France,2019-10-23T17:39:39+0200,52,1,,,,-1,93807
+828,455,Université Clermont Auvergne,Formation,0,,,,CLERMONT FERRAND,France,2019-11-07T18:09:16+0100,52,1,,,,-1,63000
+829,229,SIAAP,,0,,,,PARIS CEDEX 12,France,2018-02-26T11:49:41+0100,52,1,,,,-1,75589
+830,458,CALDEO,Energie,1,,,,SAINT JEAN DE BRAYE CEDEX,France,2019-11-26T12:25:03+0100,52,1,,,,-1,45808
+831,459,SCIENCES PO,,0,,,,Paris cedex 07,France,2019-11-28T09:54:20+0100,17,1,,,,-1,75337
+832,463,TMF,,1,,,,NANTERRE,France,2019-12-13T17:49:01+0100,52,1,,,,-1,92000
+833,471,Euromov,Secteur public,7,,,,,France,2020-01-24T15:17:33+0100,89,1,,,,-1,
+834,473,LIRMM,,7,,,,Montpellier,France,2020-01-24T15:27:17+0100,89,1,,,,-1,34095
+835,474,KARAMBA!,,2,,,01 84 17 34 01,PARIS,France,2020-01-27T11:46:02+0100,88,1,,,,-1,75012
+836,483,Endress + Hauser,,0,,,,,France,2020-02-27T16:27:56+0100,12,1,,,,-1,
+837,486,DMAC,,0,,dma-c.com,,,France,2020-03-04T15:00:57+0100,12,1,,,,-1,
+838,489,CONITY,Immobilier,1,,,,,France,2020-03-12T09:55:47+0100,52,1,,,,-1,
+839,456,CH ROUBAIX,Servies hospitaliers,1,,,,ROUBAIX CEDEX 1,France,2019-11-12T15:32:44+0100,17,1,,,,-1,59056
+840,241,JTEKT,Industrie,1,,www.jtekt-hpi.com/fr/,04 72 39 44 44,IRIGNY,France,2018-04-03T14:55:33+0200,12,1,,,,-1,69540
+841,503,BIAL-X,Edition de logiciels,1,,,04 72 57 89 95,LIMONEST,France,2020-05-13T11:12:34+0200,17,1,,,,-1,69760
+842,366,FRANCE AGRI MER,,2,,,,,France,2019-06-27T12:42:56+0200,12,1,,,,-1,
+843,515,MNCAP,,0,"En 2020, transfert de la maintenance depuis Synergy vers SAP en direct.
+Date anniversaire PCOE : 30 juillet.",,,,France,2020-06-18T14:09:03+0200,60,1,,,,11,
+844,516,GENFIT,,0,"2020 : résiliation de la maintenance BO auprès de Synergy.
+Infos PCOE : 01/04 > PV 3178€ / PA 2425€ > SAP",,,,France,2020-06-18T14:15:54+0200,60,1,,,,-1,
+845,521,RESSOURCES MUTUELLES ASSISTANCE,Assurance,0,,,02 40 35 08 53,,France,2020-07-01T07:08:29+0200,64,1,,,,0,
+846,527,AGRI COMMERCE,Agroalimentaire,0,,,,,France,2020-07-02T10:54:10+0200,64,1,,,,-1,
+847,530,GRAVOTECH,Industrie,0,,,04 78 55 85 50,RILLIEUX-LA-PAPE,France,2020-07-02T15:00:57+0200,64,1,,,,-1,69140
+848,533,PRIMA SOLUTION,Edition de logiciels,0,,,01 42 93 33 33,,France,2020-07-07T12:08:18+0200,64,1,,,,-1,
+849,532,GIP Symaris,Servies hospitaliers,0,"Un groupement d’intérêt public spécialisé dans la gestion des systèmes d’information.
+Le GIP Symaris (Synergie et Mutualisation des Actions de Recherche en Informatique de Santé) est administré par une assemblée générale, composée de l’ensemble de ses membres, qui se réunit une fois par an pour élaborer sa stratégie.
+Editeur du Logiciel CARIATIDES",,+33(0)3 68 09 25 00,Rouffach,France,2020-07-07T11:54:20+0200,64,1,,,,-1,F-68250
+850,534,TRECOBAT,Bâtiments,0,,,09 77 40 10 74,,France,2020-07-07T12:13:30+0200,64,1,,,,-1,
+851,536,CRYSTAL GROUP,Logistique,0,,,,,France,2020-07-07T15:10:46+0200,64,1,,,,-1,
+852,541,SERM,Bâtiments,0,,,04 67 13 63 00,Montpellier Cedex 02,France,2020-07-08T17:01:45+0200,64,1,,,,-1,34960
+853,544,LA FRANCE MUTUALISTE,Assurance,0,,,01 40 53 78 00,,France,2020-07-08T17:32:29+0200,64,1,,,,-1,
+854,141,TOTALINFO,,4,,,,ENTZHEIM,France,2016-10-28T10:08:42+0200,17,1,,,,-1,67960
+855,549,WEB100T,Edition de logiciels,0,,,05 56 36 68 38,MÉRIGNAC,France,2020-07-16T15:41:25+0200,64,1,,,,-1,33700
+856,555,SYNERGY France,,7,,,,,France,2020-07-28T11:24:49+0200,60,1,,,,-1,
+857,498,ADVITAM,Agroalimentaire,0,"Le groupe Advitam a pour maison mère la société coopérative Unéal, coopérative agricole historique dans la région Hauts-de-France.
+Il organise son activité économique autour de 4 pôles.
+Le groupe couvre l’intégralité de la chaine de valeur de la production de semences à la distribution des produits finis.",,,St Laurent Blangy,France,2020-04-27T10:45:26+0200,12,1,,,,11,62054
+858,562,SOCOTEC,,0,,,,SAINT QUENTIN EN YVELINES Cedex,France,2020-08-24T14:24:40+0200,17,1,,,,-1,78182
+859,563,SILPC,Biomédical,0,"Créé par et pour les hospitaliers il y a plus de 30 ans, le SILPC, établi sur deux sites (Limoges et Poitiers), mobilise 135 collaborateurs experts intervenants sur toute la France, DOM et TOM compris.
+Dans un esprit de service public, notre groupement de coopération agit afin que le système d’information constitue un outil performant et innovant pour les professionnels de santé, en développant un catalogue de services ouvert aux hôpitaux, ehpad, aux secteurs médico-social, social et aux ENRS.",,05 49 50 37 37,Poitiers,France,2020-08-25T16:57:40+0200,64,1,,,,-1,86000
+860,145,MAINCARE,Biomédical,0,"Maincare Solutions est un éditeur majeur de solutions digitales pour le monde de la santé. 
+Nous nous engageons aux côtés de nos clients et partenaires – établissements publics et privés, groupements, agences régionales, assureurs et mutuelles – pour les accompagner dans leur transformation digitale et améliorer la prise en charge des patients à toutes les étapes de leur parcours de santé.",,,CESTAS,France,2016-12-28T16:03:16+0100,17,1,,,,-1,33610
+861,550,MIPIH,Secteur public,0,"Attention concurrent Cpage! 
+
+Le MiPih est une structure publique de coopération inter-hospitalière spécialisée dans la construction du système d’information hospitalier.
+Avec un statut de Groupement d'intérêt Public (GIP} qui développe des solutions informatiques pour le compte de ses adhérents qui sont des Etablissements de Santé Publics. Ces adhérents participent activement aux évolutions stratégiques et applicatives de l'offre. Cette proximité avec les hôpitaux et autres établissements de santé est une des clés de succès depuis 1994.",,05 34 61 50 00,Toulouse.,France,2020-07-16T15:54:07+0200,64,1,,,,-1,31100
+862,505,TOP OFFICE,,1,,,,LEZENNES,France,2020-06-02T17:51:25+0200,12,1,,,,11,59260
+863,357,ENEDIS,Energie,0,,,,NANTERRE,France,2019-05-03T06:28:36+0200,17,1,,,,-1,92000
+864,327,MIJE,Autres,1,EX ASI,,,PARIS,France,2018-12-05T11:57:07+0100,52,1,,,,10,75004
+865,438,ROSSMANN,Industrie,1,"Notre  Groupe est le principal producteur indépendant d’emballages en carton ondulé
+en Europe et en Afrique avec une capacité de production de 500 000 tonnes.",,,Selestat Cedex,France,2019-10-23T17:39:39+0200,88,1,,,,-1,67602
+866,419,HOPITAL FOCH,Servies hospitaliers,1,,,,Suresnes Cedex,France,2019-10-23T17:39:39+0200,88,1,,,,-1,92151
+867,161,GFK,,0,,http://www.gfk.com/fr/,01 74 18 60 02,Suresnes Cedex,France,2017-04-28T10:24:30+0200,17,1,,,,-1,92156
+868,517,NCG,Edition de logiciels,0,,,03 28 33 01 77,,France,2020-06-18T14:32:03+0200,60,1,,,,11,
+869,571,EAU VIVE,Grande distribution,0,,,04 76 73 70 01,BRIÉ ET ANGONNES,France,2020-09-03T14:46:55+0200,64,1,,,,-1,38320
+870,572,BIOCOOP,Grande distribution,0,,,,Rennes CEDEX,France,2020-09-04T16:28:08+0200,71,1,,,,-1,35065
+871,604,IMERYS ALUMINATES,,0,,,0146379000,PARIS LA DEFENCE CEDEX,France,2020-09-07T16:07:38+0200,60,1,,,,11,92977
+872,609,VILLE DE SAINT QUENTIN,,0,,,,SAINT-QUENTIN,France,2020-09-07T16:39:00+0200,60,1,,,,11,02100
+873,608,LOUVRE HOTELS,,0,,,,PUTEAUX LA DEFENSE CEDEX,France,2020-09-07T16:33:20+0200,60,1,,,,11,92059
+874,617,SENFA,,0,,,,SELESTAT CEDEX,France,2020-09-07T17:20:51+0200,60,1,,,,11,67601
+875,597,DUPONT RESTAURATION,,0,,,,LIBERCOURT,France,2020-09-07T15:34:04+0200,60,1,,,,11,62820
+876,602,FLOWBIRD,,0,,,,Besançon - Cedex 9,France,2020-09-07T16:00:41+0200,60,1,,,,11,25075
+877,590,EPSM LILLE METROPOLE,,0,,,,ARMENTIERES,France,2020-09-07T14:56:56+0200,60,1,,,,11,59487
+878,603,DIGINEXT,,0,,,,Aix en Provence Cedex 3,France,2020-09-07T16:03:32+0200,60,1,,,,11,13857
+879,577,ADL PARTNER,,0,,,,MONTREUIL,France,2020-09-07T12:27:22+0200,60,1,,,,11,93100
+880,520,CIMUT,Edition de logiciels,0,éditeur de logicel pour mutuelle et assurance,,02 56 56 29 29,Quimper,France,2020-07-01T06:31:29+0200,64,1,,,,-1,29000
+881,630,CHU ST ETIENNE,Secteur public,0,,,04 77 82 80 00,SAINT-ÉTIENNE,France,2020-10-01T10:43:43+0200,64,1,,,,-1,42055
+882,613,PHILDAR,Grande distribution,0,,,03 20 68 84 48,,France,2020-09-07T17:05:38+0200,60,1,,,,11,
+883,108,ARKESYS,Formation,7,Exonération de TVA dans le cadre de la formation professionnelle continue - Article L920-4 du code du travail et article 202C du code général des impôts,,04 37 24 36 78,Lyon,France,2016-03-14T11:39:36+0100,12,1,,,,3,69007
+884,635,SDIS 13,Secteur public,0,,,,,France,2020-10-21T15:46:41+0200,64,1,,,,-1,
+885,651,ONYX EST,,0,,,,Aubervilliers,France,2020-12-22T09:05:51+0100,17,1,,,,-1,93300
+886,667,COLLEGE DE FRANCE,Secteur public,0,,,,,France,2020-12-29T10:19:42+0100,60,1,,,,12,
+887,269,XEFI,Infrastructure,1,,https://www.xefi.fr,04 72 83 75 75,Rillieux-la-Pape,France,2018-09-11T12:14:50+0200,12,1,,,,-1,69140
+888,675,IDEAL MEETINGS & EVENTS,,0,,,,Levallois Perret,France,2021-02-15T08:29:59+0100,17,1,,,,-1,92300
+889,646,NAOS - Bioderma,Pharmacie,0,,,,LYON CEDEX 03,France,2020-12-14T16:38:17+0100,12,1,,,,2,69447
+890,641,Centre Hospitalier Guy Thomas de Riom,Servies hospitaliers,0,,,,RIOM,France,2020-11-26T06:42:24+0100,17,1,,,,-1,63200
+891,451,Université de Paris (ex Diderot - Paris 7),Secteur public,1,,,,Paris Cedex 13,France,2019-10-23T17:39:39+0200,88,1,,,,-1,75205
+892,581,IPS WEST AFRICA,,1,,,,ABIDJAN,Cote_d_Ivoire,2020-09-07T13:52:23+0200,60,1,,,,11,01 BP 3963
+893,652,Secrétariat Général pour l'Investissement - SGPI,Secteur public,0,,,01 42 75 80 00,Paris SP 07,France,2020-12-22T14:40:17+0100,17,1,,,,12,75700
+894,639,Haute Autorité pour la Transparence de la Vie Publique (HATVP),Secteur public,0,,,,Paris,France,2020-11-06T13:21:11+0100,17,1,,,,12,75002
+895,643,Direction de l'Information Légale et Administrative (DILA),Secteur public,0,,,01 40 58 75 00,Paris Cedex 15,France,2020-12-02T17:55:33+0100,64,1,,,,12,75727
+896,319,IMPRIMERIE TONNELLIER SAS,Industrie,1,Ex ASI,,,CONDE SUR NOIREAU,France,2018-11-26T16:19:27+0100,71,1,,,,10,14110
+897,224,CONSEIL DEPARTEMENTAL DE L'ESSONNE,,0,,,,,France,2018-01-19T11:47:42+0100,88,1,,,,-1,
+898,647,DMA CONSEIL,Conseil,1,,,,DOMMARTIN,France,2020-12-17T06:14:19+0100,17,1,,,,-1,69380
+899,89,MINISTERE DE LA SANTE,Secteur public,1,,,,LYON,France,2016-01-10T10:18:30+0100,17,1,,,,12,69002
+900,650,SEENOVATE GROUPE,,7,,,,,France,2020-12-21T18:49:56+0100,17,4,,,,-1,
+901,625,INSTITUT NATIONAL DE RECHERCHES ARCHEOLOGIQUES PREVENTIVES (INRAP),Secteur public,1,,,,PARIS,France,2020-09-21T10:20:08+0200,17,1,,,,12,75014
+902,420,INEO SYSTRANS,Energie,4,,,,ACHERES,France,2019-10-23T17:39:39+0200,88,1,,,,-1,78260
+903,633,OPEN GROUPE,,0,,https://www.open.global/fr,01 71 06 31 28,Levallois Perret,France,2020-10-05T16:14:46+0200,60,1,,,,-1,92300
+904,400,CY CERGY PARIS UNIVERSITE (EISTI),Secteur public,1,,,,Cergy Pontoise Cedex,France,2019-10-23T17:39:38+0200,88,1,,,,-1,95011
+905,336,LES ECHOS (LVMH),Média,1,Ex MICROPOLE,,,Paris,France,2018-12-10T16:47:26+0100,12,1,,,,1,75015
+906,623,VERYWEAR,,0,,,,WASQUEHAL,France,2020-09-07T17:50:57+0200,60,1,,,,11,59290
+907,620,Transpole - Keolis Lille,,0,,,,MARCQ EN BAROEUL Cedex,France,2020-09-07T17:41:14+0200,60,1,,,,11,59701
+908,614,DIRAMODE,,0,,,,VILLENEUVE D'ASCQ,France,2020-09-07T17:09:26+0200,60,1,,,,11,59652
+909,607,LAINIERE DE PICARDIE BC,,0,,,,,France,2020-09-07T16:28:15+0200,60,1,,,,11,
+910,598,EPHIGEA SAS,,0,,,,TOURCOING CEDEX,France,2020-09-07T15:38:03+0200,60,1,,,,11,59335
+911,595,JACOBS DOUWE EGBERTS Trading FR SAS,,0,,,,NOYELLES LES SECLIN,France,2020-09-07T15:22:55+0200,60,1,,,,11,59139
+912,593,MAIRIE D'AIRE SUR LA LYS,,0,,,,AIRE-SUR-LA-LYS,France,2020-09-07T15:12:33+0200,60,1,,,,11,62120
+913,583,BENALU SAS,,0,,,,LIEVIN CEDEX,France,2020-09-07T14:00:25+0200,60,1,,,,11,62801
+914,97,CH NEUILLY PUTEAUX COURBEVOIE,Servies hospitaliers,0,,,,,France,2016-01-10T10:18:30+0100,17,1,,,,-1,
+915,15,CH OLORON,Servies hospitaliers,1,,,,OLORON STE MARIE,France,2016-01-10T10:16:35+0100,12,1,,,,-1,64404
+916,552,GHU Paris - CH Sainte Anne,Servies hospitaliers,0,psychiatrie & neurosciences,,01 45 65 80 00,Paris,France,2020-07-16T16:42:12+0200,64,1,,,,-1,75014
+917,179,CH ANGOULEME,Servies hospitaliers,0,,,,Angoulême,France,2017-06-19T08:57:45+0200,17,1,,,,-1,16959
+918,568,Groupe Hospitalier (CH) Seclin Carvin,Servies hospitaliers,0,,,03 20 62 70 00,SECLIN,France,2020-09-03T09:42:25+0200,60,1,,,,11,59471
+919,434,PANAGET,Industrie,1,,,,BOURGBARRE,France,2019-10-23T17:39:39+0200,88,1,,,,-1,35230
+920,403,EUROPE QUALITE France,Industrie,1,,,0474952995,Villefontaine Cedex,France,2019-10-23T17:39:38+0200,88,1,,,,-1,38091
+921,398,DOMAXIS,Immobilier,1,,,,Paris Cedex 15,France,2019-10-23T17:39:38+0200,52,1,,,,-1,75726
+922,204,ALPES ISERE HABITAT (ex OPAC 38),Immobilier,1,,,04 76 20 50 50,GRENOBLE CEDEX 2,France,2017-10-24T09:56:21+0200,12,1,,,,-1,38035
+923,564,GIP Carif Ile-de-France - Défi métiers,,0,,www.defi-metiers.fr,01 56 53 32 32,Saint-Ouen,France,2020-08-28T09:08:03+0200,88,1,,,,-1,93400
+924,453,WEBHELP Nederland BV,,1,,,,Zoetermeer,Pays_Bas,2019-10-23T17:39:39+0200,89,1,,,,-1,2718 SC
+925,344,LORANS SAS,Industrie,1,Ex Micropole,,02 99 33 36 00,RENNES CEDEX,France,2019-01-11T19:39:07+0100,71,1,,,,-1,35012
+926,321,CENTIGON France SAS,Automobile,1,Ex ASI,www.centigon.com/fr/,02 96 50 12 90,Lamballe cedex,France,2018-11-29T16:32:53+0100,71,1,,,,10,22404
+927,294,SERAP Industries,Industrie,1,Ex ASI,www.groupeserap.fr,02 43 08 49 49,GORRON,France,2018-11-19T16:03:43+0100,71,1,,,,10,53120
+928,545,MIEL MUTUELLE (MALAKOFF),Assurance,0,,,04 77 49 35 35,,France,2020-07-08T17:47:42+0200,64,1,,,,-1,
+929,543,IDENTITE MUTUELLE,Assurance,0,,www.identites-mutuelle.com,01 43 18 34 00,Paris,France,2020-07-08T17:26:22+0200,64,1,,,,-1,75017
+930,542,ASSURANCE MUTUELLE DES MOTARDS,Assurance,0,,,04 67 50 67 50,,France,2020-07-08T17:11:55+0200,64,1,,,,-1,
+931,539,CSF Crédit Social des Fonctionnaires,,0,,,,Paris,France,2020-07-08T14:47:33+0200,64,1,,,,-1,75009
+932,538,ACTION LOGEMENT GROUPE,,0,,,01 87 02 10 00,,France,2020-07-08T14:31:40+0200,64,1,,,,-1,
+933,537,FRANCOIS FONDEVILLE,Bâtiments,0,,,04 68 50 94 94,,France,2020-07-07T15:13:38+0200,64,1,,,,-1,
+934,535,Matière Sas,Bâtiments,0,,,+33 (0)4 71 46 50 00,,France,2020-07-07T12:18:23+0200,64,1,,,,-1,
+935,528,JARDEL SERVICES,Logistique,0,,,0561378877 taper 7,,France,2020-07-02T11:06:25+0200,64,1,,,,-1,
+936,526,MUTUELLE ARCHITECTE FRANCAIS,Assurance,0,,,+33 1 41 91 77 77,,France,2020-07-02T10:29:24+0200,64,1,,,,0,
+937,524,MUTUELLE MEDICIS,Assurance,0,,,01 73 78 32 78,,France,2020-07-01T17:07:49+0200,64,1,,,,0,
+938,475,Laiteries H. Triballat,Agroalimentaire,0,,www.rians.com/fr,,Rians,France,2020-01-30T11:43:14+0100,71,1,,,,-1,18220
+939,523,MUTUELLE UNEO,Assurance,0,,,09 64 43 60 88,,France,2020-07-01T14:54:13+0200,64,1,,,,0,
+940,404,AKTO (FAF.TT),,0,"Rachat de FAF.TT par AKTO
+
+
+AKTO - Réseau Intergros 
+
+13 boulevard Mont d'Est - CS10022 
+93192 NOISY-LE-GRAND Cedex",www.akto.fr,,Paris cedex 19,France,2019-10-23T17:39:38+0200,60,1,,,,-1,75940
+941,504,Wilo Intec,Industrie,0,,,,Aubigny sur Nère,France,2020-05-22T16:28:48+0200,71,1,,,,-1,18700
+942,375,CPE ENERGIES,Oil & Gaz,1,,,,MAXEVILLE,France,2019-10-11T14:28:10+0200,17,1,,,,-1,54320
+943,495,GROUPE HOSPITALIER NORD ESSONNE,Servies hospitaliers,1,,,01 64 54 33 33,LONGJUMEAU,France,2020-04-16T12:11:08+0200,88,1,,,,-1,91160
+944,492,DMS-ENERGIES,Energie,1,,,,GRAND QUEVILLY,France,2020-04-10T10:41:31+0200,17,1,,,,-1,76120
+945,385,BearingPoint France,,1,,,,Paris La Défense cedex,France,2019-10-23T17:39:38+0200,88,1,,,,-1,92907
+946,232,VALANTUR,Industrie,1,,www.valantur.com,02 54 42 57 38,MORNAC,France,2018-03-30T16:47:39+0200,12,1,,,,-1,16600
+947,212,FRAME PEDAB Group,,0,,,,VELIZY,France,2017-11-15T09:23:34+0100,17,1,,,,-1,78140
+948,482,Hôpital Lozère,Servies hospitaliers,0,Adhérent CPAGE,www.ch-mende.fr,04 66 49 49 49,MENDE,France,2020-02-27T09:22:42+0100,12,1,,,,6,48000
+949,32,MAIRIE DE VICHY,Secteur public,1,,,,VICHY CEDEX,France,2016-01-10T10:16:36+0100,12,1,,,,-1,03201
+950,470,INEO SYSTRANS,Energie,1,,,0139225700,ACHERES,France,2020-01-23T11:35:13+0100,88,1,,,,-1,78260
+951,457,CHARVET LA MURE BIANCO,Energie,1,,,04 72 44 13 13,LYON CEDEX 02,France,2019-11-19T14:44:46+0100,52,1,,,,-1,69286
+952,460,Mairie de Romainville,,0,,www.ville-romainville.fr/,01 49 15 55 00,Romainville cedex,France,2019-12-05T10:37:52+0100,12,1,,,,1,93231
+953,432,OCEANE CONSULTING IS,,1,,,,Paris 02,France,2019-10-23T17:39:39+0200,52,1,,,,-1,75002
+954,433,OPCAIM S/C ADEFIM BOURGOGNE,,1,,,,CHALON SUR SAONE CEDEX,France,2019-10-23T17:39:39+0200,52,1,,,,-1,71104
+955,392,CBCM Finances,,1,,,,Paris cedex 12,France,2019-10-23T17:39:38+0200,52,1,,,,-1,75572
+956,158,VILLE DE VILLEFRANCHE S/ SAONE,,1,,,,Villefranche-sur-Saône,France,2017-03-28T16:19:58+0200,12,1,,,,-1,69400
+957,132,MICROPOLE RHONE-ALPES,,7,,,,VILLEURBANNE,France,2016-09-09T14:15:51+0200,17,1,,,,-1,69100
+958,374,FEDIPAT,,0,,,,,France,2019-09-26T12:01:53+0200,12,1,,,,-1,
+959,368,DEPARTEMENT DE LA CORREZE (19),,0,,,05 55 93 70 00,Tulle,France,2019-07-17T12:34:14+0200,12,1,,,,6,19000
+960,206,FEDERATION FRANCAISE DE SKI,,1,,,,Annecy Cedex,France,2017-10-24T17:06:54+0200,17,1,,,,3,74011
+961,138,GINKOIA,,2,,,04 50 53 87 53,PASSY,France,2016-10-10T15:45:20+0200,17,1,,,,-1,74190
+962,361,ADOCIA,Pharmacie,0,,https://www.adocia.com/fr/,04 72 61 06 10,Lyon,France,2019-05-23T15:42:07+0200,12,1,,,,-1,69003
+963,360,CG 22 Côtes d'Armor,,0,,,,,France,2019-05-21T09:20:07+0200,12,1,,,,-1,
+964,279,CANAL SEINE NORD EUROPE,,0,,www.canal-seine-nord-europe.fr,,Margny-lès-Compiègne,France,2018-11-08T07:02:26+0100,17,1,,,,-1,60280
+965,281,FORUM DES REFUGIES,,0,,,,Villeurbanne,France,2018-11-09T15:00:29+0100,52,1,,,,-1,69100
+966,331,ANTIN RESIDENCES (ex GIE ARCADES SERVICES),,1,Ex ASI (résiliation BO 11/2019),,01 49 95 37 37,PARIS CEDEX 09,France,2018-12-06T13:27:03+0100,12,1,,,,-1,75439
+967,105,BR3 CONSULTANTS,Services,1,,,,LYON,France,2016-01-26T16:16:40+0100,1,1,,,,3,69002
+968,332,GROUPE BLANCHARD (AMAX),,1,Ex ASI,,,L HERMITAGE,France,2018-12-06T13:46:51+0100,12,1,,,,-1,35590
+969,333,CIL ATLANTIQUE,,0,Ex ASI,,,,France,2018-12-06T17:23:32+0100,52,1,,,,10,
+970,343,CAEN HABITAT,,1,Ex ASI,,02 31 27 50 00,CAEN cedex 4,France,2019-01-03T11:51:15+0100,12,1,,,,10,14052
+971,342,CLERMONT AUVERGNE METROPOLE,,0,,,,,France,2018-12-27T11:16:38+0100,12,1,,,,-1,
+972,341,GIE AGSI,,1,,,,,France,2018-12-20T18:25:47+0100,52,1,,,,-1,
+973,227,SYNERGIE EST,,1,,https://www.synergie-est.fr/,03 81 63 29 10,Roulans,France,2018-02-14T12:12:49+0100,17,1,,,,-1,25640
+974,330,PELLENC SA,Agroalimentaire,1,Ex MICROPOLE,,,PERTUIS CEDEX,France,2018-12-06T09:28:53+0100,12,1,,,,1,84122
+975,178,AFTRAL SERVICES,,1,Ex ASI,,03 44 66 36 36,Monchy-Saint-Éloi,France,2017-06-15T11:01:40+0200,17,1,,,,10,60290
+976,301,Editions Francis LEFEBVRE,Média,1,Ex ASI,,,Montrouge Cedex,France,2018-11-20T17:13:03+0100,52,1,,,,10,92546
+977,305,TRIBALLAT NOYAL,Industrie,1,Ex ASI,,02 90 04 11 11,NOYAL-SUR-VILAINE CEDEX,France,2018-11-21T15:38:18+0100,52,1,,,,10,35531
+978,288,CBP (FINANCIERE CEP),Assurance,1,Ex ASI,,02 72 68 12 42,SAINT HERBLAIN,France,2018-11-16T15:57:10+0100,52,1,,,,10,44800
+979,302,Editions LEGISLATIVES,Média,1,Ex ASI,,,Montrouge Cedex,France,2018-11-20T17:17:58+0100,52,1,,,,10,92546
+980,260,INSTITUT GUSTAVE ROUSSY,,2,,,,VILLEJUIF,France,2018-07-20T13:08:24+0200,17,1,,,,-1,94800
+981,278,CAMPUS FRANCE,Secteur public,0,,,,Paris,France,2018-10-25T16:04:58+0200,52,1,,,,-1,75010
+982,58,VILLE D'ANNECY,Secteur public,1,,,,,France,2016-01-10T10:16:37+0100,12,1,,,,-1,
+983,277,DEPARTEMENT DE LA VENDEE,Secteur public,0,,,,LA ROCHE SUR YON,France,2018-10-16T17:37:18+0200,52,1,,,,-1,85923
+984,273,Caisse Prévoyance Sociale de Polynésie,,0,,,,,France,2018-09-27T07:23:35+0200,17,1,,,,5,
+985,267,DEPARTEMENT DE LA SARTHE,Secteur public,0,,,,LE MANS,France,2018-09-10T15:29:12+0200,52,1,,,,-1,72
+986,265,CELDA - BPCE,,2,,,,SAINT ETIENNE,France,2018-09-05T17:48:04+0200,12,1,,,,-1,42000
+987,255,VERESCENCE France,Industrie,1,,,01.40.90.36.00,PUTEAUX,France,2018-06-11T14:06:51+0200,12,1,,,,-1,92
+988,261,METROPOLE DE NIMES,Secteur public,0,,,,NIMES,France,2018-08-28T09:51:01+0200,52,1,,,,-1,
+989,250,DEPARTEMENT DES DEUX SEVRES,Secteur public,0,,,,NIORT,France,2018-05-11T14:15:11+0200,52,1,,,,-1,79
+990,234,POMA - GROUPE HTI,Transport,0,,www.poma.net,04 76 28 70 00,VOREPPE,France,2018-04-03T11:26:17+0200,12,1,,,,-1,38340
+991,246,CH LORIENT,Servies hospitaliers,0,,www.chbs.fr/,02 97 06 90 90,LORIENT CEDEX,France,2018-04-03T15:41:59+0200,12,1,,,,-1,56322
+992,237,SGD GROUP,Pharmacie,0,,www.sgd-pharma.com/fr,+33 (0)1 4090 3600,PUTEAUX CEDEX,France,2018-04-03T11:42:26+0200,12,1,,,,-1,92807
+993,233,MEUBLES PARISOT,Autres,0,,www.parisot.com,+33 (0)3 84 93 52 52,SAINT-LOUP-SUR-SEMOUSE,France,2018-03-30T16:51:40+0200,12,1,,,,-1,70800
+994,230,TANNERIE d'ANNONAY SAS,Industrie,1,,www.tannerie.com,04 75 32 42 80,ANNONAY,France,2018-03-07T12:30:27+0100,52,1,,,,-1,07102
+995,228,HURRICANE AGENCY,,0,,,,,France,2018-02-19T09:40:14+0100,12,1,,,,-1,
+996,226,CEGID Secteur Public,,0,,,,PARIS,France,2018-02-06T08:13:14+0100,17,1,,,,-1,75008
+997,221,CELTINOV,,1,,,,SAINT GERMAIN DU PINEL,France,2017-12-13T16:40:56+0100,17,1,,,,-1,35370
+998,24,EYNARD ROBIN (EFIRE),Industrie,1,,,,SAINT-FONS,France,2016-01-10T10:16:36+0100,12,1,,,,-1,69191
+999,216,AML SYSTEMS,,0,,,,LE BOURGET,France,2017-12-04T08:58:04+0100,17,1,,,,-1,93350
+1000,215,INRA PARIS,Environnement,0,,,,PARIS CEDEX 07,France,2017-11-30T15:42:20+0100,52,1,,,,4,75338
+1001,214,KEOLIS DIJON,,2,,,,Dijon,France,2017-11-27T17:00:31+0100,17,1,,,,-1,
+1002,126,CANSSM - FILIERIS,,1,Caisse Autonome Nationale de la Sécurité Sociale dans les Mines,,,PARIS cedex 15,France,2016-06-13T08:36:07+0200,17,1,,,,1,75714
+1003,207,DEPARTEMENT DE GERS,Secteur public,0,,,,,France,2017-10-27T14:07:45+0200,52,1,,,,-1,
+1004,205,DEPARTEMENT DE L'AUBE,Secteur public,0,,,,Troyes cedex,France,2017-10-24T10:09:33+0200,52,1,,,,-1,10026
+1005,202,DEPARTEMENT DE L'ALLIER,Secteur public,0,,http://www.allier.fr,04.70.34.40.03,Moulins Cedex,France,2017-10-13T09:21:48+0200,12,1,,,,-1,03016
+1006,201,NEOLIA - HABI EST,,0,,,,,France,2017-10-03T09:14:26+0200,12,1,,,,1,
+1007,164,GAILLON - VitasheetGroup,,0,"En 2014, la société est scindée en deux partie et GAILLON SAS se focalise sur la production de plaque de plastique. La société de 50 personnes est dépendante en partie du siège : informatique géré en externe par un consultant.",www.vitasheetgroup.com/fr/,04 74 69 93 65,St Georges de Reneins,France,2017-05-02T17:29:17+0200,17,1,,,,0,69830
+1008,199,ALIZE TRADING,Banque,0,,,,,France,2017-09-18T10:46:12+0200,12,1,,,,1,
+1009,192,TECBAK,,1,,www.foosball-society.com/fr/,09 72 30 41 41,PARIS,France,2017-08-01T08:20:49+0200,17,1,,,,-1,75017
+1010,152,BUSINESS ET DECISION,,7,,,,LYON,France,2017-03-08T17:00:22+0100,17,1,,,,-1,69006
+1011,146,APCA - Réseau des Chambres d'Agriculture,Agroalimentaire,2,,,,PARIS,France,2017-01-24T17:45:47+0100,17,1,,,,1,75008
+1012,187,ETABLISSEMENT GEORGES CLAVEL,,0,,,,RIOLS,France,2017-07-10T14:37:14+0200,12,1,,,,1,34220
+1013,22,EOVI MCD,Assurance,1,,,,SAINT ETIENNE CEDEX,France,2016-01-10T10:16:36+0100,12,1,,,,-1,42030
+1014,181,BATIM'ALU,,0,Gros sujet informatique : ERP + BI. Mais complètement débordés. S'adresser à l'assistante qui gère le projet avec le DG = pro-active.,,04 77 91 23 00,SAINT ETIENNE,France,2017-06-20T09:16:27+0200,12,1,,,,0,42000
+1015,174,Société des Centres Commerciaux,,0,,,,LE CHESNAY,France,2017-06-06T16:09:54+0200,17,1,,,,-1,78150
+1016,170,TITANOBEL,,0,MyReport + Excel,ww.titanobel.com/fr/,03 80 47 67 10,PONTAILLER SUR SAONE,France,2017-05-19T11:28:15+0200,17,1,,,,0,21270
+1017,163,CH ISSOIRE,Servies hospitaliers,0,"CPAGE
+
+Licences BO vendues par BR3 en 2009.
+BO Xi 12 ou 13 + Crossway",www.ch-issoire.com/,04 73 89 72 72,ISSOIRE,France,2017-05-02T17:09:55+0200,17,1,,,,0,63500
+1018,61,ITAFRAN,Autres,0,,http://fr.itafran.com/,04 37 25 35 05,Corbas,France,2016-01-10T10:16:37+0100,12,1,,,,-1,69960
+1019,162,AUTOCAM - Groupe NN,Automobile,0,,http://www.autocam.com,04 50 89 99 99,Marnaz,France,2017-05-02T15:59:55+0200,17,1,,,,0,74460
+1020,66,ADP SUISSE SA,Edition de logiciels,1,,,,DIETIKON,Suisse,2016-01-10T10:18:29+0100,12,1,,,,-1,CH8953
+1021,155,REIMS METROPOLE,,0,,www.reims.fr,,REIMS Cedex,France,2017-03-10T12:10:19+0100,17,1,,,,-1,51722
+1022,149,CAISSE NATIONALE RSI,,0,,,,,France,2017-02-23T10:23:31+0100,12,1,,,,-1,
+1023,133,GIE OSIRIS,Energie,1,,,,SAINT MAURICE L'EXIL CEDEX,France,2016-09-09T14:41:44+0200,17,1,,,,6,38556
+1024,135,SDIS DE l'AIN,,0,,,,,France,2016-09-09T15:02:34+0200,17,1,,,,-1,
+1025,131,DRSM-IDF,Secteur public,0,,,,PARIS,France,2016-08-16T09:05:21+0200,17,1,,,,1,75019
+1026,129,CNG - Centre National de Gestion,,2,,http://www.cng.sante.fr/,,PARIS cedex 15,France,2016-07-06T02:55:41+0200,17,1,,,,3,7577
+1027,44,VIX TECHNOLOGY FRANCE,Infrastructure,1,,,,BESANCON,France,2016-01-10T10:16:36+0100,12,1,,,,-1,25000
+1028,127,Groupe Caisse des Dépots,,0,,,,PARIS,France,2016-06-17T08:19:06+0200,17,1,,,,1,75013
+1029,86,POINT P. DEVELOPPEMENT,Autres,1,,,,PARIS 19,France,2016-01-10T10:18:30+0100,17,1,,,,-1,75019
+1030,120,REGION ALPC (AQUITAINE),Secteur public,0,,,,,France,2016-04-13T14:02:45+0200,12,1,,,,4,
+1031,119,HEXATIO,,0,Ex IGC,,,Lyon,France,2016-04-13T10:37:44+0200,17,1,,,,-1,
+1032,115,VILLE DE CHARENTON LE PONT,,0,,,,Charenton le Pont,France,2016-04-13T10:20:07+0200,17,1,,,,-1,
+1033,111,APICIL,,2,,,,,France,2016-04-11T11:06:02+0200,17,1,,,,0,
+1034,74,SENEGALAISE DES EAUX,Energie,1,,,,DAKAR,Senegal,2016-01-10T10:18:30+0100,17,1,,,,-1,
+1035,40,SANOFI CHIMIE,Chimie,8,,,,NEUVILLE SUR SAONE CEDEX,France,2016-01-10T10:16:36+0100,12,1,,,,-1,69583
+1036,73,DIADEMYS,Conseil,4,,,,SURESNES,France,2016-01-10T10:18:30+0100,17,1,,,,-1,92150
+1037,69,CAPSECUR CONSEIL,Conseil,8,,,,SAINT DENIS LA PLAINE CEDEX,France,2016-01-10T10:18:30+0100,17,1,,,,-1,93211
+1038,106,GROUPE SYMPOSIA,Services,7,,,,BOULOGNE BILLANCOURT,France,2016-02-01T11:11:15+0100,17,1,,,,3,92100
+1039,29,INTERCAOUTCHOUC,Industrie,8,,,,SAINT-FONS,France,2016-01-10T10:16:36+0100,12,1,,,,-1,69191
+1040,71,CEQUAMI,Bâtiments,1,,,,PARIS,France,2016-01-10T10:18:30+0100,17,1,,,,-1,75016
+1041,80,INSTITUT NAT DE BOULANGERIE PATISSERIE,Agroalimentaire,1,,,,ROUEN,France,2016-01-10T10:18:30+0100,17,1,,,,-1,76100
+1042,82,MC2 RESSOURCES HUMAINES,Conseil,1,,,,MONTESSON,France,2016-01-10T10:18:30+0100,17,1,,,,-1,78360
+1043,84,OPCALIA AUVERGNE,Autres,1,,,,CLERMONT FERRAND,France,2016-01-10T10:18:30+0100,17,1,,,,-1,63100
+1044,85,OPCALIA  ILE DE FRANCE,Autres,1,,,,PARIS 08,France,2016-01-10T10:18:30+0100,17,1,,,,-1,75008
+1045,88,SECURITAS FRANCE SARL,Infrastructure,1,,,,PARIS CEDEX 15,France,2016-01-10T10:18:30+0100,17,1,,,,-1,75901
+1046,92,TWIN SOLUTIONS,Conseil,7,,,,PARIS,France,2016-01-10T10:18:30+0100,17,1,,,,-1,75017
+1047,93,VALAD FRANCE,Bâtiments,1,,,,PARIS 16,France,2016-01-10T10:18:30+0100,17,1,,,,-1,75016
+1048,94,IDEAL GOURMET,Autres,0,,,,,France,2016-01-10T10:18:30+0100,17,1,,,,-1,
+1049,95,SOUS MON TOIT,Autres,0,,,,,France,2016-01-10T10:18:30+0100,17,1,,,,-1,
+1050,96,FEDERAL MOGUL,Automobile,0,,,,,France,2016-01-10T10:18:30+0100,17,1,,,,-1,
+1051,65,ADP GSI FRANCE,Edition de logiciels,1,,,,NANTERRE Cedex,France,2016-01-10T10:18:29+0100,17,1,,,,-1,92016
+1052,50,BOLLORE THIN PAPER,Chimie,0,,,,THONON,France,2016-01-10T10:16:37+0100,12,1,,,,-1,74202
+1053,56,EXL GROUP,Conseil,7,,,,LYON,France,2016-01-10T10:16:37+0100,12,1,,,,-1,69003
+1054,60,ALDES AERAULIQUE,Autres,0,,,,VENISSIEUX,France,2016-01-10T10:16:37+0100,12,1,,,,-1,69200
+1055,28,INOVA CONSTRUCTION,Bâtiments,1,,,,RUEIL MALMAISON CEDEX,France,2016-01-10T10:16:36+0100,12,1,,,,-1,92508
+1056,48,MOULIN SOUFFLET,Agroalimentaire,0,,,,,France,2016-01-10T10:16:36+0100,12,1,,,,-1,
+1057,1,AGEFOS PME - DÉLÉGATION DE L'AIN,Autres,1,,,,PERONNAS,France,2016-01-10T10:16:35+0100,12,1,,,,-1,01960
+1058,2,AGEFOS PME - DÉLÉGATION RHÔNE ALPES,Autres,1,,,,LYON Cedex 07,France,2016-01-10T10:16:35+0100,12,1,,,,-1,69348
+1059,8,ASI INFORMATIQUE - RHÔNE ALPES,Conseil,7,,,,ECULLY,France,2016-01-10T10:16:35+0100,12,1,,,,-1,69130
