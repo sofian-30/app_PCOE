@@ -26,8 +26,8 @@ n_app = 1 # numéro de l'appli
 
 
 # Charger le tableau Excel
-df = pd.read_excel(r"/mnt/c/CA_2023.xlsx", sheet_name='Maintenance SAP BusinessObjects',parse_dates=['Date anniversaire'], date_parser=pd.to_datetime)
-# df = pd.read_excel(r"C:\Users\SofianOUASS\Desktop\PCoE\Suivi CA licences et maintenance 2023.xlsx", sheet_name='Maintenance SAP BusinessObjects')
+# df = pd.read_excel(r"/mnt/c/CA_2023.xlsx", sheet_name='Maintenance SAP BusinessObjects',parse_dates=['Date anniversaire'], date_parser=pd.to_datetime)
+df = pd.read_excel(r"C:\Users\SofianOUASS\Desktop\PCoE\Suivi CA licences et maintenance 2023.xlsx", sheet_name='Maintenance SAP BusinessObjects')
 
 # On remplit la colonne renouvellement en fonction des critères donnés dans les SPECS
 today=datetime.now()
@@ -40,7 +40,7 @@ df['Alerte renouvellement'] = (df['Date anniversaire'] - today).dt.days
 new_columns = []
 for col in df.columns:
     new_columns.append({'name': col, 'id': col, 'type': 'text'})
-    if col == 'Achat SAP Maintenance ou GBS ou NEED4VIZ':
+    if col == 'Date anniversaire':
         new_columns.append({'name': 'Alerte renouvellement', 'id': 'Alerte renouvellement', 'type': 'text'})
         new_columns.append({'name': 'Alerte validation devis', 'id': 'Alerte validation devis', 'type': 'text'})
         new_columns.append({'name': 'Nouveau prix d\'achat', 'id': 'input-nv-prix-achat', 'type': 'text'})
