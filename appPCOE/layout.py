@@ -119,16 +119,16 @@ modal_pop_up= dbc.Modal(
                                 dbc.CardHeader("Alertes"),
                                     dbc.CardBody([
                                         dbc.Row([
-                                            dmc.Badge("Résilié",color='grey')
-                                            ], className="mb-2"),
-                                        dbc.Row([
-                                            dmc.Badge("Renouvellement",color='grey')
+                                            dmc.Badge("Génération devis",color='grey')
                                             ], className="mb-2"),
                                         dbc.Row([
                                             dmc.Badge("Validation devis",color='grey')
                                             ], className="mb-2"),
                                         dbc.Row([
-                                            dmc.Badge("Génération devis",color='grey')
+                                            dmc.Badge("Renouvellement",color='grey')
+                                            ], className="mb-2"),
+                                        dbc.Row([
+                                            dmc.Badge("Résilié",color='grey')
                                             ], className="mb-2"),
                                         ])
                                     ])
@@ -150,11 +150,29 @@ modal_pop_up= dbc.Modal(
                             dbc.Col([daq.ToggleSwitch(
                                 id='input-check-infos',
                                 color="green",  # Couleur du bouton ON
-                                label=['Non', 'Oui'],  # Texte pour les positions OFF et ON
+                                # label=['Non', 'Oui'],  # Texte pour les positions OFF et ON
                                 size=40,  # Taille du bouton
                                 value=False  # Par défaut, OFF
                             )],width={"size": 6}         
-                            ),         
+                            ), 
+                            dbc.Col([html.Label("Validation infos")],width={"size": 6}),
+                            dbc.Col([dcc.Dropdown(
+                                                    id='input-valdation-infos',
+                                                    options=[
+                                                        {'label': 'INFOS ERRONEES', 'value': 'infos_erronees'},
+                                                        {'label': 'OUI', 'value': 'oui'},
+                                                            ],
+                                                    placeholder='Sélectionnez la validation infos',
+                                                ),],width={"size": 6}
+                            ),  
+                            dbc.Col([html.Label("Envoi devis")],width={"size": 6}),
+                            dbc.Col([daq.ToggleSwitch(
+                                id='input-envoi-devis',
+                                color="green",  # Couleur du bouton ON
+                                size=40,  # Taille du bouton
+                                value=False  # Par défaut, OFF
+                            )],width={"size": 6}
+                            ),      
                             dbc.Col([html.Label("Accord de principe")],width={"size": 6}),
                             dbc.Col([daq.ToggleSwitch(
                                 id='input-accord-de-principe',
@@ -217,13 +235,6 @@ modal_pop_up= dbc.Modal(
                                             ], width={"size": 6})]),
                                             dbc.Row([
                                             dbc.Col([
-                                                dbc.Label("Marge maintenance")], width={"size": 6}),
-                                            dbc.Col([
-                                                dcc.Input(id='input-Marge-maintenance', type='number', placeholder='Entrez la Marge maintenance'),
-                                                html.Span('%', style={'margin-left': '5px'})
-                                            ], width={"size": 6})]),
-                                            dbc.Row([
-                                            dbc.Col([
                                                 dbc.Label("Marge %")], width={"size": 6}),
                                             dbc.Col([
                                                 dcc.Input(id='input-Marge-pourcentage', type='number', placeholder='Entrez la Marge %'),
@@ -245,10 +256,11 @@ modal_pop_up= dbc.Modal(
                                             ], width={"size": 6})]),
                                             dbc.Row([
                                             dbc.Col([
-                                                dbc.Label("Mois d'imputation")], width={"size": 6}),
+                                                dbc.Label("Marge N+1 (%)")], width={"size": 6}),
                                             dbc.Col([
-                                                dcc.Input(id='input-mois-imputation', type='text', placeholder='Sélectionnez une date'),
-                                            ], width={"size": 6})])
+                                                dcc.Input(id='input-Marge-N+1', type='number', placeholder='Entrez la Marge N+1'),
+                                                html.Span('%', style={'margin-left': '5px'})
+                                            ], width={"size": 6})]),
                                             # Ajoutez d'autres éléments de contenu ici
                                         ]),
                                     )], width={"size": 6})]),
