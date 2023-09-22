@@ -296,8 +296,8 @@ modal_pop_up= dbc.Modal(
                                                 dcc.Dropdown(
                                                     id='input-type-contrat',
                                                     options=[
-                                                        {'label': 'SAP BOBJ', 'value': 'sap_bobj'},
-                                                        {'label': 'SAP PAPER', 'value': 'sap_paper'},
+                                                        {'label': 'SAP BOBJ', 'value': 'SAP BOBJ'},
+                                                        {'label': 'SAP PAPER', 'value': 'SAP PAPER'},
                                                         {'label': '', 'value': ''},
                                                     ],
                                                     placeholder='Sélectionnez le Type de contrat',
@@ -310,8 +310,8 @@ modal_pop_up= dbc.Modal(
                                                 dcc.Dropdown(
                                                     id='input-type-support-sap',
                                                     options=[
-                                                        {'label': 'Enterprise', 'value': 'entreprise'},
-                                                        {'label': 'Standard', 'value': 'standard'},
+                                                        {'label': 'Enterprise', 'value': 'Enterprise'},
+                                                        {'label': 'Standard', 'value': 'Standard'},
                                                         {'label': '', 'value': ''},
                                                     ],
                                                     placeholder='Sélectionnez le Type de support SAP',
@@ -355,37 +355,10 @@ modal_pop_up= dbc.Modal(
                                             'padding': '5px',  # Espacement intérieur
                                         }, placeholder='adresse client'),
                                         ], {"size": 2,"offset":-1}),
-                                            dbc.Col([
-                                                dbc.Label("Date de Facture")],
-                                                width={"size": 2,"offset":0}),
-                                            dbc.Col([
-                                                dcc.DatePickerSingle(id='input-Date-de-facture', display_format='DD/MM/YYYY', placeholder='Sélectionnez une date'),
-                                            ], width={"size": 2,"offset":-1}),
+                                            
                                          ], className="mb-2"),
 
-                                         dbc.Row([
-                                            dbc.Col([
-                                                dbc.Label("ville")],
-                                                width={"size": 2,"offset":0}),
-                                            dbc.Col([
-                                                dcc.Input(
-                                                    id='input-ville',
-                                                    type='text',
-                                                    placeholder='ville',
-                                                ),
-                                                ], width={"size": 2,"offset":-1}),
-                                            dbc.Col([
-                                                dbc.Label("CP")],
-                                                width={"size": 2,"offset":2}),
-                                            dbc.Col([
-                                                dcc.Input(
-                                                    id='input-cp',
-                                                    type='text',
-                                                    placeholder='Code postal',
-                                                ),
-                                            ], width={"size": 2,"offset":-1}),
-                                        ], className="mb-2"),
-
+                                         
                                         dbc.Row([dbc.Col([
                                                 dbc.Label("Parc de licences")],
                                                 width={"size": 2,"offset":0}),

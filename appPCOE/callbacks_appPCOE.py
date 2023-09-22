@@ -160,9 +160,6 @@ def store_selected_row(selected_rows,dict_data):
     Output('input-cond-fact', 'value'),
     Output('input-cond-paiement', 'value'),
     Output('input-adresse-client', 'value'),
-    Output('input-Date-de-facture', 'value'),
-    Output('input-ville', 'value'),
-    Output('input-cp', 'value'),
     Output('input-parc-licences', 'value'), # card "Informations contractuelles"
 
     # Output('input-CA-maintenance-facture', 'value'),
@@ -199,7 +196,7 @@ def update_modal_pop_up(selected_row_data):
     date_anniversaire = selected_row_data.get('Date anniversaire', '')
     code_projet_boond = selected_row_data.get('Code projet Boond', '') # via API
     resp_commercial = selected_row_data.get('Resp\nCommercial', '')
-    editeur = selected_row_data.get('Type de contrat', '')  # Editeur à Cf.avec ACA pour faire le lien, je ne vois pas où il est dans xls!
+    editeur = selected_row_data.get('Editeur', '')  # Editeur à Cf.avec ACA pour faire le lien, je ne vois pas où il est dans xls!
 
     badge_generation_devis = selected_row_data.get('Génération devis', '') # card "Alertes" (badge)
     badge_validation_devis = selected_row_data.get('Validation devis', '')
@@ -227,10 +224,16 @@ def update_modal_pop_up(selected_row_data):
     condition_facturation = selected_row_data.get('Condition de facturation', '')
     condition_paiement = selected_row_data.get('Condition de Paiement', '')
     adresse_client = selected_row_data.get('Adresse', '')
-    date_facture = selected_row_data.get('Date de facture', None)
     ville = selected_row_data.get('ville', '')
     cp = selected_row_data.get('CP', '')
     parc_licences = selected_row_data.get('Parc de licences', '')
+
+    adresse_client = adresse_client +"\n " + cp + "\n " + ville
+    if type_contrat is None and editeur == 'SAP':
+        type_contrat = "SAP BOBJ"
+
+    print(type_contrat)
+    print(editeur)
     
     # CA_maintenance_facture = selected_row_data.get('CA maintenance facturé', '')
     # Achat_SAP_Maintenance_GBS_NEED4VIZ = selected_row_data.get('Achat SAP Maintenance ou GBS ou NEED4VIZ', '')
@@ -249,16 +252,13 @@ def update_modal_pop_up(selected_row_data):
     # mois_imputation = selected_row_data.get("Mois d'imputation", "")
     # coeff_evolution_prix_achat = selected_row_data.get('Coeff évolution prix achat', 0.00)
     # coeff_marge = selected_row_data.get('Coeff marge', 0.00)
-    print('le type contrat est:')
-    print(type_contrat)
-    print('le type support sap')
-    print(type_support_sap)
+    
          
     return (client, erp_number, date_anniversaire, code_projet_boond,resp_commercial, editeur,
             badge_generation_devis,badge_validation_devis,badge_alerte_renouvellement,badge_resilie,
             check_infos,valdation_infos,envoi_devis,accord_principe,signature_client,achat_editeur,traitement_comptable,paiement_sap,
             nv_prix_achat,nv_prix_vente,marge_pourcentage,montant_vente_annuel,montant_annuel_achat,marge_annuel,
-            type_contrat,type_support_sap,condition_facturation,condition_paiement,adresse_client,date_facture,ville,cp,parc_licences
+            type_contrat,type_support_sap,condition_facturation,condition_paiement,adresse_client,parc_licences
                 
             )
 
