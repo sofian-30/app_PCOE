@@ -61,15 +61,18 @@ for col in df.columns:
 ##liste des noms de colonne: Informations contrats clients=
 # ['Client', 'ERP Number \nRéf SAP', 'Date anniversaire', 'Code projet Boond', 'Resp\nCommercial', 'Type de contrat']
 
-# #liste des noms de colonne: Autres infos =['CA maintenance facturé', 'Achat SAP Maintenance ou GBS ou NEED4VIZ',
-#   'Marge maintenance ', 'Marge %', 'Montant vente annuel N+1', 'Montant annuel Achat N+1',
-#     "Mois d'imputation", 'Type de support SAP', 'Parc/Techno', 'Numéro de facture',
-#       'Date de facture', 'Proposition SAP reçue', 'Relance client**', 'Proposition Seenovate créée',
-#         'Proposition Seenovate envoyée', 'Proposition signée par le client', 'Attente  N° Cde client avant facturation',
-#           'Facture  créée', 'Commande faite SAP', 'Facture SAP reçue', 'Remarques',
-#             'janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'aout', 'septembre', 'octobre', 'novembre', 'décembre',
-#               'janvier.1', 'février.1', 'mars.1', 'avril.1', 'mai.1', 'juin.1', 'juillet.1', 'aout.1', 'septembre.1', 'octobre.1',
-#                 'novembre.1', 'décembre.1']
+# #liste des noms de colonne: 
+# ['Agence', 'Client', 'ERP_Number_Ref_SAP', 'Code projet Boond', 'Date anniversaire',
+#   'CA maintenance facturé', 'Achat SAP Maintenance ou GBS ou NEED4VIZ', 'Marge maintenance ',
+#     'Marge %', 'Montant vente annuel N+1', 'Montant annuel Achat N+1', "Mois d'imputation",
+#       'Type de support SAP', 'Type de contrat', 'Parc/Techno', 'Numéro de facture',
+#         'Date de facture', 'Resp\nCommercial', 'Proposition SAP reçue', 'Relance client**',
+#           'Proposition Seenovate créée', 'Proposition Seenovate envoyée',
+#             'Proposition signée par le client', 'Attente  N° Cde client avant facturation',
+#               'Facture  créée', 'Commande faite SAP', 'Facture SAP reçue', 'Remarques',
+#                 'Devis', 'Accord de principe', 'Signature client', 'Achat éditeur', 'Renouvelé',
+#                   'Traitement comptable', 'Paiement SAP', 'Demande de résiliation', 
+#                   'Communication éditeur', 'Résilié', 'Converti ou Extension']             
 
 # Ajout d'un composant dcc.Store pour stocker les données de la ligne sélectionnée
 stockage_ligne = dcc.Store(id='o1_store_row')
@@ -101,7 +104,7 @@ modal_pop_up= dbc.Modal(
                                             ], width={"size": 6}),
                                             dbc.Col([
                                                 dbc.Label("Code projet Boond", width=6),
-                                                dbc.Label(id='input-code-projet') # En attente de Boond
+                                                dbc.Label(id='input-code-projet-boond') # En attente de Boond
                                             ], width={"size": 6}),
                                             dbc.Col([
                                                 dbc.Label("Resp. Commercial", width=6),
@@ -120,16 +123,16 @@ modal_pop_up= dbc.Modal(
                                 dbc.CardHeader("Alertes"),
                                     dbc.CardBody([
                                         dbc.Row([
-                                            dmc.Badge("Génération devis",color='grey')
+                                            dmc.Badge("Génération devis", id= 'input-badge-generation-devis',color='grey')
                                             ], className="mb-2"),
                                         dbc.Row([
-                                            dmc.Badge("Validation devis",color='grey')
+                                            dmc.Badge("Validation devis", id= 'input-badge-validation-devis', color='grey')
                                             ], className="mb-2"),
                                         dbc.Row([
-                                            dmc.Badge("Renouvellement",color='grey')
+                                            dmc.Badge("Renouvellement", id= 'input-badge-alerte-renouvellement', color='grey')
                                             ], className="mb-2"),
                                         dbc.Row([
-                                            dmc.Badge("Résilié",color='grey')
+                                            dmc.Badge("Résilié", id= 'input-badge-resilie', color='grey')
                                             ], className="mb-2"),
                                         ])
                                     ])
@@ -287,7 +290,7 @@ modal_pop_up= dbc.Modal(
                                         # Contenu de la section 'Informations contractuelles'
                                         dbc.Row([
                                             dbc.Col([
-                                                dbc.Label("Type de Contrat")],
+                                                dbc.Label("Type de contrat")],
                                                 width={"size": 2,"offset":1}),
                                             dbc.Col([
                                                 dcc.Dropdown(
@@ -307,7 +310,7 @@ modal_pop_up= dbc.Modal(
                                                 dcc.Dropdown(
                                                     id='input-type-support-sap',
                                                     options=[
-                                                        {'label': 'Entreprise', 'value': 'entreprise'},
+                                                        {'label': 'Enterprise', 'value': 'entreprise'},
                                                         {'label': 'Standard', 'value': 'standard'},
                                                         {'label': '', 'value': ''},
                                                     ],
@@ -384,7 +387,7 @@ modal_pop_up= dbc.Modal(
                                         ], className="mb-2"),
 
                                         dbc.Row([dbc.Col([
-                                                dbc.Label("Parc de licence")],
+                                                dbc.Label("Parc de licences")],
                                                 width={"size": 2,"offset":0}),
                                             dbc.Col([
                                                 dcc.Input(
