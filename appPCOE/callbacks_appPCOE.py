@@ -140,7 +140,7 @@ def store_selected_row(selected_rows,dict_data):
     Output('input-badge-resilie', 'children'), # card "Alertes" (badge)
 
     Output('input-check-infos', 'children'),
-    Output('input-valdation-infos', 'children'),
+    Output('input-validation-erronnes', 'children'),
     Output('input-envoi-devis', 'children'),
     Output('input-accord-de-principe', 'children'),
     Output('input-signature-client', 'children'),
@@ -204,7 +204,7 @@ def update_modal_pop_up(selected_row_data):
     badge_resilie = selected_row_data.get('Résilié', '')
 
     check_infos = selected_row_data.get('Check Infos', '') #card "Status et conditions financières"-status
-    valdation_infos = selected_row_data.get('Validation infos', '')
+    validation_erronees = selected_row_data.get('Validation erronées', '')
     envoi_devis = selected_row_data.get('Envoi devis', '')
     accord_principe = selected_row_data.get('Accord de principe', '')
     signature_client = selected_row_data.get('Signature client', '')
@@ -228,9 +228,15 @@ def update_modal_pop_up(selected_row_data):
     cp = selected_row_data.get('CP', '')
     parc_licences = selected_row_data.get('Parc de licences', '')
 
+    # Composition de l'adresse avec saut de ligne
     adresse_client = adresse_client +"\n " + cp + "\n " + ville
+
+    # Conditions "Type de contrat" par rapport à l'éditeur
     if type_contrat is None and editeur == 'SAP':
         type_contrat = "SAP BOBJ"
+
+    # Convertion en % et arrondi à 2 chiffres après virgule
+    marge_pourcentage = round(marge_pourcentage * 100, 2)
 
     print(type_contrat)
     print(editeur)
@@ -256,7 +262,7 @@ def update_modal_pop_up(selected_row_data):
          
     return (client, erp_number, date_anniversaire, code_projet_boond,resp_commercial, editeur,
             badge_generation_devis,badge_validation_devis,badge_alerte_renouvellement,badge_resilie,
-            check_infos,valdation_infos,envoi_devis,accord_principe,signature_client,achat_editeur,traitement_comptable,paiement_sap,
+            check_infos,validation_erronees,envoi_devis,accord_principe,signature_client,achat_editeur,traitement_comptable,paiement_sap,
             nv_prix_achat,nv_prix_vente,marge_pourcentage,montant_vente_annuel,montant_annuel_achat,marge_annuel,
             type_contrat,type_support_sap,condition_facturation,condition_paiement,adresse_client,parc_licences
                 

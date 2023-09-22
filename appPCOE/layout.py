@@ -159,15 +159,13 @@ modal_pop_up= dbc.Modal(
                                 value=False  # Par défaut, OFF
                             )],width={"size": 6}         
                             ), 
-                            dbc.Col([html.Label("Validation infos")],width={"size": 6}),
-                            dbc.Col([dcc.Dropdown(
-                                                    id='input-valdation-infos',
-                                                    options=[
-                                                        {'label': 'INFOS ERRONEES', 'value': 'infos_erronees'},
-                                                        {'label': 'OUI', 'value': 'oui'},
-                                                            ],
-                                                    placeholder='Sélectionnez la validation infos',
-                                                ),],width={"size": 6}
+                            dbc.Col([html.Label("Validation erronées")],width={"size": 6}),
+                            dbc.Col([daq.ToggleSwitch(
+                                id='input-validation-erronnes',
+                                color="red",  # Couleur du bouton ON
+                                size=40,  # Taille du bouton
+                                value=False  # Par défaut, OFF
+                            )],width={"size": 6}
                             ),  
                             dbc.Col([html.Label("Envoi devis")],width={"size": 6}),
                             dbc.Col([daq.ToggleSwitch(
@@ -345,7 +343,7 @@ modal_pop_up= dbc.Modal(
                                         dbc.Row([
                                             dbc.Col([
                                                 dbc.Label('Adresse')],
-                                                width={"size": 2,"offset":0}),
+                                                width={"size": 2,"offset":1}),
                                             dbc.Col([                                              
 					                        dcc.Input(id='input-adresse-client', type='text',style={
                                             'width': '200px',  # Largeur du champ de saisie
@@ -361,12 +359,12 @@ modal_pop_up= dbc.Modal(
                                          
                                         dbc.Row([dbc.Col([
                                                 dbc.Label("Parc de licences")],
-                                                width={"size": 2,"offset":0}),
+                                                width={"size": 2,"offset":1}),
                                             dbc.Col([
                                                 dcc.Input(
                                                     id='input-parc-licences',
                                                     type='text',style={
-                                            'width': '300px',  # Largeur du champ de saisie
+                                            'width': '400px',  # Largeur du champ de saisie
                                             'height': '30px',  # Hauteur du champ de saisie
                                             'border': '1px solid #ccc',  # Bordure du champ de saisie
                                             'border-radius': '3px',  #'5px' Coins arrondis
