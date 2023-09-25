@@ -45,85 +45,6 @@ def store_selected_row(selected_rows,dict_data):
     else:
         return {}
     
-    
-# #callback pour préremplir le type support sap du pop up
-# @app.callback(
-#     Output('input-type-support-sap', 'value'),
-#     Input('o1_store_row', 'data'),
-#     prevent_initial_call=True,
-# )
-# def update_type_support_sap(selected_row_data):
-#     Type_de_support_sap = selected_row_data.get('Type de support SAP', '')
-#     return Type_de_support_sap
-
-
-# #callback pour préremplir le 'Status et Conditions financières' du pop up
-# @app.callback(
-#     Output('input-check-infos', 'value'),   
-#     Output('input-accord-de-principe', 'value'),# Sortie pour afficher le texte
-#     Output('input-signature-client', 'value'),
-#     Output('input-traitement-comptable', 'value'),
-#     Output('input-achat-editeur', 'value'),
-#     Output('input-paiement-sap', 'value'),
-
-#     Output('input-nv-prix-achat', 'value'),
-#     Output('input-nv-prix-vente', 'value'),
-#     # Output('input-Marge-maintenance', 'value'),
-#     # Output('input-Marge-pourcentage', 'value'),
-#     # Output('input-Montant-vente-annuel-N+1', 'value'),
-#     # Output('input-Montant-annuel-Achat-N+1', 'value'),
-#     #Output('input-mois-imputation', 'value'),
-#     Input('status-content', 'data'),  # Utilisez l'ID de l'ensemble de contenu
-#     prevent_initial_call=True,
-# )
-# def update_Status_conditions_financieres(selected_row_data):
-#     check_infos = selected_row_data.get('Check Infos', '')
-#     accord_de_principe = selected_row_data.get('Accord de principe', '')
-#     signature_client= selected_row_data.get('Signature client', '')
-#     traitement_comptable= selected_row_data('Traitement comptable', '')
-#     achat_editeur= selected_row_data.get('Achat éditeur', '')
-#     paiement_sap= selected_row_data.get('Paiement SAP', '')
-
-#     nv_prix_achat_value = selected_row_data.get('Nouveau prix d\'achat', '')
-#     nv_prix_vente_value = selected_row_data.get('Nouveau prix de vente', '')
-#     # marge_maintenance_value = selected_row_data.get("Marge maintenance", '')
-#     # marge_pourcentage_value = selected_row_data.get("Marge %", '')
-#     # montant_vente_annuel_value = selected_row_data.get('Montant vente annuel N+1', '')
-#     # montant_annuel_achat_value = selected_row_data.get('Montant annuel Achat N+1', '')
-#     #mois_imputation = selected_row_data.get("Mois d'imputation", '')
-
-#     return  (check_infos,accord_de_principe,signature_client,achat_editeur,
-#              paiement_sap,nv_prix_achat_value, nv_prix_vente_value,traitement_comptable)#, mois_imputation)
-## def update_toggle_switch_color(value):
-##    if value == 'Oui':
-##        return "green"  # Si la valeur est "Oui", la couleur est verte
-##     else:
-##         return "default"  # Sinon, utilisez la couleur par défaut
-
-# #callback pour préremplir le 'Conditions financières' du pop up
-# @app.callback(
-#     Output('output-nv-prix-achat', 'value'),
-#     Output('output-nv-prix-vente', 'value'),
-#     Output('output-Marge-maintenance', 'value'),
-#     Output('output-Marge-pourcentage', 'value'),
-#     Output('output-Montant-vente-annuel-N+1', 'value'),
-#     Output('output-Montant-annuel-Achat-N+1', 'value'),
-#     Output('output-mois-imputation', 'value'),
-#     Input('conditions-financieres-content', 'children'),  # Utilisez l'ID de l'ensemble de contenu
-#     prevent_initial_call=True,
-# )
-# def update_conditions_financieres(selected_row_data):
-#     nv_prix_achat_value = selected_row_data.get('Nouveau prix d\'achat', '')
-#     nv_prix_vente_value = selected_row_data.get('Nouveau prix de vente', '')
-#     marge_maintenance_value = selected_row_data.get("Marge maintenance", '')
-#     marge_pourcentage_value = selected_row_data.get("Marge %", '')
-#     montant_vente_annuel_value = selected_row_data.get('Montant vente annuel N+1', '')
-#     montant_annuel_achat_value = selected_row_data.get('Montant annuel Achat N+1', '')
-#     mois_imputation_value = selected_row_data.get("Mois d'imputation", '')
-
-#     return (nv_prix_achat_value, nv_prix_vente_value, marge_maintenance_value,
-#          marge_pourcentage_value, montant_vente_annuel_value, 
-#          montant_annuel_achat_value, mois_imputation_value)
 
 # Callback pour remplir les champs du modal pop-up avec les données de la ligne sélectionnée dans la table
 @app.callback(
@@ -161,29 +82,6 @@ def store_selected_row(selected_rows,dict_data):
     Output('input-cond-paiement', 'value'),
     Output('input-adresse-client', 'value'),
     Output('input-parc-licences', 'value'), # card "Informations contractuelles"
-
-    # Output('input-CA-maintenance-facture', 'value'),
-    # Output('input-Achat-SAP-Maintenance-GBS-NEED4VIZ', 'value'),
-    # Output('input-Marge-maintenance', 'value'),
-    # Output('input-Marge-pourcentage', 'value'),
-    # Output('input-Montant-vente-annuel-N+1', 'value'),
-    # Output('input-Montant-annuel-Achat-N+1', 'value'),
-    # Output('input-Date-de-facture', 'date'),
-    # Output('input-Proposition-SAP-reçue', 'value'),
-    # Output('input-relance-client', 'date'),
-    # Output('input-Proposition-Seenovate-creee', 'value'), 
-    # Output('input-Proposition-Seenovate-envoyee', 'date'),
-    # Output('input-Proposition-signee-par-le-client', 'date'),
-    # Output('input-attente-Cde-client', 'value'),
-    # Output('input-facture-creee', 'date'), #'value'
-    # Output('input-commande-faite-sap', 'value'),
-    # Output('input-facture-sap-recue', 'value'),
-    # Output('input-remarques', 'value'),
-    # Output('input-Parc-Techno', 'value'),
-    # Output("input-Numero-de-facture", "value"),
-    # Output("input-mois-imputation", "value"),
-    # Output('input-coeff-evolution-prix-achat', 'value'),
-    # Output('input-coeff-marge', 'value'),
 
     #Input("o1_modal", 'data'), #input du modal pop-up complet
     Input('o1_store_row', 'data'),#input du layout complet
@@ -238,26 +136,6 @@ def update_modal_pop_up(selected_row_data):
     # Convertion en % et arrondi à 2 chiffres après virgule
     marge_pourcentage = round(marge_pourcentage * 100, 2)
 
-    print(type_contrat)
-    print(editeur)
-    
-    # CA_maintenance_facture = selected_row_data.get('CA maintenance facturé', '')
-    # Achat_SAP_Maintenance_GBS_NEED4VIZ = selected_row_data.get('Achat SAP Maintenance ou GBS ou NEED4VIZ', '')
-    # proposition_sap_recue = selected_row_data.get('Proposition SAP reçue', ' ')
-    # relance_client = selected_row_data.get('Relance client**', None)
-    # proposition_seenovate_creee = selected_row_data.get('Proposition Seenovate créée', '')
-    # proposition_seenovate_envoyee = selected_row_data.get('Proposition Seenovate envoyée', None)
-    # proposition_signee_par_le_client = selected_row_data.get('Proposition signée par le client', None)
-    # attente_Cde_client = selected_row_data.get('Attente  N° Cde client avant facturation', '')
-    # facture_creee = selected_row_data.get('Facture  créée', '')
-    # commande_faite_sap = selected_row_data.get('Commande faite SAP', '')
-    # facture_sap_recue = selected_row_data.get('Facture SAP reçue', '')
-    # remarques = selected_row_data.get('Remarques', '')
-    # Parc_Techno = selected_row_data.get('Parc/Techno', '')
-    # Numero_de_facture = selected_row_data.get('Numéro de facture', '')
-    # mois_imputation = selected_row_data.get("Mois d'imputation", "")
-    # coeff_evolution_prix_achat = selected_row_data.get('Coeff évolution prix achat', 0.00)
-    # coeff_marge = selected_row_data.get('Coeff marge', 0.00)
     
          
     return (client, erp_number, date_anniversaire, code_projet_boond,resp_commercial, editeur,
@@ -268,10 +146,13 @@ def update_modal_pop_up(selected_row_data):
                 
             )
 
-
+## def update_toggle_switch_color(value):
+##    if value == 'Oui':
+##        return "green"  # Si la valeur est "Oui", la couleur est verte
+##     else:
+##         return "default"  # Sinon, utilisez la couleur par défaut
 
 # ...............................
-
 
 #callback pour ouvrir le pop-up et valider les données saisies ou modifiées
 @app.callback(
@@ -288,137 +169,116 @@ def update_modal_open_state(n_btn_modif_ech, n_btn_submit_validate):
     return dash.no_update
 
 ##########################################################################################################
-# #callback pour mettre à jour les données du tableau
-# @app.callback(
-#     Output("o1_data_table", "data"),  # Mettez à jour les données du tableau
-#     Input("o1_btn_submit_validate", "n_clicks"),
-#     State('o1_data_table', 'selected_rows'),
-#     State("input-client", "value"),
-#     State("input-erp-number", "value"),
-#     State("input-date-anniversaire", "value"), #"date"
-#     State("input-code-projet-boond", "value"),
-#     State("input-resp-commercial", "value"),
-#     State("input-editeur", "value"),
-#     State("input-CA-maintenance-facture", "value"),
-#     State("input-Achat-SAP-Maintenance-GBS-NEED4VIZ", "value"),
-#     State("input-Marge-maintenance", "value"),
-#     State("input-Marge-pourcentage", "value"),
-#     State("input-Montant-vente-annuel-N+1", "value"),
-#     State("input-Montant-annuel-Achat-N+1", "value"),
-#     State("input-Date-de-facture", "date"),
-#     State("input-Proposition-SAP-reçue", "value"),
-#     State("input-relance-client", "date"),
-#     State("input-Proposition-Seenovate-creee", "value"),
-#     State("input-Proposition-Seenovate-envoyee", "date"),
-#     State("input-Proposition-signee-par-le-client", "date"),
-#     State("input-attente-Cde-client", "value"),
-#     State("input-facture-creee", "date"),
-#     State("input-commande-faite-sap", "value"),
-#     State("input-facture-sap-recue", "value"),
-#     State("input-remarques", "value"),
-#     State("input-Parc-Techno", "value"),
-#     State("input-Numero-de-facture", "value"),
-#     State("input-mois-imputation", "value"),
-#     State("o1_data_table", "data"),
-#     State('input-type-support-sap', 'value'),
+#callback pour mettre à jour les données du tableau
+@app.callback(
+    Output("o1_data_table", "data"),  # Mettez à jour les données du tableau
+    Input("o1_btn_submit_validate", "n_clicks"),
+    State('o1_data_table', 'selected_rows'),
 
-#     State('input-check-infos', 'value'),
-#     State('input-accord-de-principe', 'value'),# Sortie pour afficher le texte
-#     State('input-signature-client', 'value'),
-#     State('input-traitement-comptable', 'value'),
-#     State('input-achat-editeur', 'value'),
-#     State('input-paiement-sap', 'value'),
-#     State('input-nv-prix-achat', 'value'),
-#     State('input-nv-prix-vente', 'value'),
-#     State('input-Marge-maintenance', 'value'),
-#     State('input-Marge-pourcentage', 'value'),
-#     State('input-Montant-vente-annuel-N+1', 'value'),
-#     State('input-Montant-annuel-Achat-N+1', 'value'),
+    State("input-client", "value"),
+    State("input-erp-number", "value"),
+    State("input-date-anniversaire", "value"), #"date"
+    State("input-code-projet-boond", "value"),                                          #"children" ou "value"?!!!
+    State("input-resp-commercial", "value"),
+    State("input-editeur", "value"), # card "informations générales"                                
 
-#     ## State('input-mois-imputation', 'value'),
-#     ## State('status-content', 'data'),
+    # State('input-badge-generation-devis', 'children'),
+    # State('input-badge-validation-devis', 'children'),
+    # State('input-badge-alerte-renouvellement', 'children'),
+    # State('input-badge-resilie', 'children'), # card "Alertes" (badge)
 
-#     ## State('data-store', 'data'),
-#     prevent_initial_call=True,
-# )
+    State('input-check-infos', 'children'),
+    State('input-validation-erronnes', 'children'),
+    State('input-envoi-devis', 'children'),
+    State('input-accord-de-principe', 'children'),
+    State('input-signature-client', 'children'),
+    State('input-achat-editeur', 'children'),
+    State('input-traitement-comptable', 'children'),
+    State('input-paiement-sap', 'children'), #card "Status et conditions financières"-status
+
+    State('input-nv-prix-achat', 'value'),
+    State('input-nv-prix-vente', 'value'),
+    State('input-Marge-pourcentage', 'value'),
+    State('input-Montant-vente-annuel-N+1', 'value'),
+    State('input-Montant-annuel-Achat-N+1', 'value'),
+    State('input-Marge-N+1', 'value'), # card "Status et conditions financières"-cond. financières
+
+    State('input-type-contrat', 'value'),
+    State('input-type-support-sap', 'value'),
+    State('input-cond-fact', 'value'),
+    State('input-cond-paiement', 'value'),
+    State('input-adresse-client', 'value'),
+    State('input-parc-licences', 'value'), # card "Informations contractuelles"
 
 
-# def update_table_data(n_btn_submit_validate, selected_row_number, client, erp_number, 
-#                      date_anniversaire, code_projet_boond, resp_commercial, editeur,
-#                      CA_maintenance_facture, Achat_SAP_Maintenance_GBS_NEED4VIZ, 
-#                      Marge_maintenance, marge_pourcentage, montant_vente_annuel, 
-#                      montant_annuel_achat, date_facture, proposition_sap_recue, 
-#                      relance_client, proposition_seenovate_creee, proposition_seenovate_envoyee,
-#                      proposition_signee_par_le_client, attente_Cde_client, facture_creee, 
-#                      commande_faite_sap, facture_sap_recue, remarques, Parc_Techno, 
-#                      Numero_de_facture, data_main_table, Type_de_support_sap, check_infos,
-#                      accord_de_principe,signature_client,achat_editeur,traitement_comptable,paiement_sap,nv_prix_achat_value,
-#                      nv_prix_vente_value, marge_maintenance_value,
-#                      marge_pourcentage_value, montant_vente_annuel_value, 
-#                      montant_annuel_achat_value, mois_imputation): 
+    State("o1_data_table", "data"),
+    State('data-store', 'data'),
+    prevent_initial_call=True,
+)#     ## State('status-content', 'data'),
 
-#     if selected_row_number is not None and selected_row_number:  # Vérifiez si une ligne a été sélectionnée
-#         # Validez les données ici (effectuez des vérifications si nécessaire)
 
-#         # Construisez le dictionnaire des données mises à jour
-#         updated_data = {
-#             "Client": client,
-#             "ERP_Number_Ref_SAP": erp_number,
-#             "Date anniversaire": date_anniversaire,
-#             "Code projet Boond": code_projet_boond,
-#             "Resp\nCommercial": resp_commercial,
-#             "Type de contrat": editeur,
-#             "CA maintenance facturé": CA_maintenance_facture,
-#             "Achat SAP Maintenance ou GBS ou NEED4VIZ": Achat_SAP_Maintenance_GBS_NEED4VIZ,
-#             "Marge maintenance ": Marge_maintenance,
-#             "Marge %": marge_pourcentage,
-#             "Montant vente annuel N+1": montant_vente_annuel,
-#             "Montant annuel Achat N+1": montant_annuel_achat,
-#             "Date de facture": date_facture,
-#             "Proposition SAP reçue": proposition_sap_recue,
-#             "Relance client**": relance_client,
-#             "Proposition Seenovate créée": proposition_seenovate_creee,
-#             "Proposition Seenovate envoyée": proposition_seenovate_envoyee,
-#             "Proposition signée par le client": proposition_signee_par_le_client,
-#             "Attente  N° Cde client avant facturation": attente_Cde_client,
-#             "Facture  créée": facture_creee,
-#             "Commande faite SAP": commande_faite_sap,
-#             "Facture SAP reçue": facture_sap_recue,
-#             "Remarques": remarques,
-#             "Parc/Techno": Parc_Techno,
-#             "Numéro de facture": Numero_de_facture,
-#             "Type de support SAP": Type_de_support_sap,
+def update_table_data(n_btn_submit_validate, selected_row_number,
+                     client, erp_number,date_anniversaire, code_projet_boond, resp_commercial, editeur,
+                     badge_generation_devis,badge_validation_devis,badge_alerte_renouvellement,badge_resilie,
+                     check_infos,validation_erronnes,envoi_devis,accord_de_principe,signature_client,achat_editeur,traitement_comptable,paiement_sap,
+                     nv_prix_achat,nv_prix_vente,marge_pourcentage,montant_vente_annuel,montant_annuel_achat,marge_annuel,
+                     type_contrat,type_support_sap,condition_facturation,condition_paiement,adresse_client,parc_licences,
 
-#             "Check Infos": check_infos,
-#             "Accord de principe":accord_de_principe,
-#             "Signature client":signature_client,
-#             "Achat éditeur":achat_editeur,
-#             'Traitement comptable': traitement_comptable,
-#             "Paiement SAP":paiement_sap,
+                     data_main_table
 
-#             'Nouveau prix d\'achat': nv_prix_vente_value,
-#             'Nouveau prix de vente':marge_maintenance_value,
-#             "Marge maintenance" : marge_pourcentage_value,
-#             "Montant vente annuel N+1": montant_vente_annuel_value,
-#             "Montant annuel Achat N+1": montant_annuel_achat_value,
-#             "Mois d'imputation": mois_imputation
+                     ): 
+
+    if selected_row_number is not None and selected_row_number:  # Vérifiez si une ligne a été sélectionnée
+        # Validez les données ici (effectuez des vérifications si nécessaire)
+
+        # Construisez le dictionnaire des données mises à jour
+        updated_data = {
+            "Client": client,
+            "ERP_Number_Ref_SAP": erp_number,
+            "Date anniversaire": date_anniversaire,
+            "Code projet Boond": code_projet_boond,
+            "Resp\nCommercial": resp_commercial,
+            "Type de contrat": editeur,
+
+            "Génération devis": badge_generation_devis,
+            "Validation devis": badge_validation_devis,
+            "Renouvellement": badge_alerte_renouvellement,
+            "Résilié": badge_resilie,
+
+            "Check Infos": check_infos,
+            "Validation erronées": validation_erronnes,
+            "Envoi devis": envoi_devis,
+            "Accord de principe":accord_de_principe,
+            "Signature client":signature_client,
+            "Achat éditeur":achat_editeur,
+            'Traitement comptable': traitement_comptable,
+            "Paiement SAP":paiement_sap,
+
+            'Nouveau prix d\'achat': nv_prix_achat,
+            'Nouveau prix de vente':nv_prix_vente,
+            "Marge %" : marge_pourcentage,
+            "Montant vente annuel N+1": montant_vente_annuel,
+            "Montant annuel Achat N+1": montant_annuel_achat,
+            "Marge N+1 (%)": marge_annuel,
+
+             "Type de contrat": type_contrat,
+             "Type de Support SAP": type_support_sap,
+             "Condition de facturation": condition_facturation,
+             "Condition de Paiement": condition_paiement,
+             'adresse client': adresse_client,
+             "Parc de licences": parc_licences
+                                    
             
-#         }
+        }
 
-#         # Mettez à jour les données de la ligne sélectionnée dans data_main_table
-#         for key, value in updated_data.items():
-#             data_main_table[selected_row_number[0]][key] = value
+        # Mettez à jour les données de la ligne sélectionnée dans data_main_table
+        for key, value in updated_data.items():
+            data_main_table[selected_row_number[0]][key] = value
 
-#     return data_main_table
+    return data_main_table
 
   ###############################################################################################################  
     
-
-
-
-
-
-
 
 # #transformer le format de la date d'anniversaire      
 # from datetime import datetime
@@ -447,13 +307,3 @@ def update_modal_open_state(n_btn_modif_ech, n_btn_submit_validate):
 #         return "green"  # Si la valeur est "Oui", la couleur est verte
 #     else:
 #         return "default"  # Sinon, utilisez la couleur par défaut
-
-
-
-
-
-
-
-
-
-

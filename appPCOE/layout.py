@@ -44,8 +44,8 @@ for col in df.columns:
     if col == 'Date anniversaire':
         new_columns.append({'name': 'Alerte renouvellement', 'id': 'Alerte renouvellement', 'type': 'text'})
         new_columns.append({'name': 'Alerte validation devis', 'id': 'Alerte validation devis', 'type': 'text'})
-        new_columns.append({'name': 'Nouveau prix d\'achat', 'id': 'input-nv-prix-achat', 'type': 'text'})
-        new_columns.append({'name': 'Nouveau prix de vente', 'id': 'input-nv-prix-vente', 'type': 'text'})
+        new_columns.append({'name': 'Nouveau prix d\'achat', 'id': 'input-nv-prix-achat', 'type': 'number'})
+        new_columns.append({'name': 'Nouveau prix de vente', 'id': 'input-nv-prix-vente', 'type': 'number'})
 
 #############################################################################################################
 #                                          Appel API                                                        #
@@ -560,15 +560,18 @@ dash_table.DataTable(
     row_selectable='single'
 ),
     
-    # Bouton "Modifier une saisie"
+    # Boutons: "Modifier une saisie", "Evolution du prix", "Générer Devis"
 dbc.Row([
     dbc.Col([
         dbc.Button('Modifier une saisie', id="o1_btn_modif_ech", className="me-1", n_clicks=0, color='warning'),
-    ], width={"size": 3, "offset": 3}),
+    ], width={"size": 3}),
+    dbc.Col([
+        dbc.Button('Evolution du prix', id="o1_btn_evol_prix", className="me-1", n_clicks=0, color='info'),
+    ], width={"size": 3}),
     dbc.Col([
         dbc.Button('Générer Devis', id="o1_btn_gener_devis", className="me-1", n_clicks=0, color='success'),
-        ],width={"size": 3, "offset": 0})
-], className="pb-3"),
+    ], width={"size": 3}),
+], className="pb-3 justify-content-between"),
 
  modal_pop_up, stockage_ligne, stockage_mis_a_jour
     
