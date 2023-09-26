@@ -135,7 +135,7 @@ def update_modal_pop_up(selected_row_data):
 
     # Convertion en % et arrondi à 2 chiffres après virgule
     marge_pourcentage = round(marge_pourcentage * 100, 2)
-
+    marge_annuel = round(marge_annuel * 100, 2)
     
          
     return (client, erp_number, date_anniversaire, code_projet_boond,resp_commercial, editeur,
@@ -146,11 +146,6 @@ def update_modal_pop_up(selected_row_data):
                 
             )
 
-## def update_toggle_switch_color(value):
-##    if value == 'Oui':
-##        return "green"  # Si la valeur est "Oui", la couleur est verte
-##     else:
-##         return "default"  # Sinon, utilisez la couleur par défaut
 
 # ...............................
 
@@ -174,6 +169,7 @@ def update_modal_open_state(n_btn_modif_ech, n_btn_submit_validate):
     Output("o1_data_table", "data"),  # Mettez à jour les données du tableau
     Input("o1_btn_submit_validate", "n_clicks"),
     State('o1_data_table', 'selected_rows'),
+    State("o1_data_table", "data"),
 
     State("input-client", "value"),
     State("input-erp-number", "value"),
@@ -182,19 +178,19 @@ def update_modal_open_state(n_btn_modif_ech, n_btn_submit_validate):
     State("input-resp-commercial", "value"),
     State("input-editeur", "value"), # card "informations générales"                                
 
-    # State('input-badge-generation-devis', 'children'),
-    # State('input-badge-validation-devis', 'children'),
-    # State('input-badge-alerte-renouvellement', 'children'),
-    # State('input-badge-resilie', 'children'), # card "Alertes" (badge)
+    State('input-badge-generation-devis', 'value'),
+    State('input-badge-validation-devis', 'value'),
+    State('input-badge-alerte-renouvellement', 'value'),
+    State('input-badge-resilie', 'value'), # card "Alertes" (badge)
 
-    State('input-check-infos', 'children'),
-    State('input-validation-erronnes', 'children'),
-    State('input-envoi-devis', 'children'),
-    State('input-accord-de-principe', 'children'),
-    State('input-signature-client', 'children'),
-    State('input-achat-editeur', 'children'),
-    State('input-traitement-comptable', 'children'),
-    State('input-paiement-sap', 'children'), #card "Status et conditions financières"-status
+    State('input-check-infos', 'value'),
+    State('input-validation-erronnes', 'value'),
+    State('input-envoi-devis', 'value'),
+    State('input-accord-de-principe', 'value'),
+    State('input-signature-client', 'value'),
+    State('input-achat-editeur', 'value'),
+    State('input-traitement-comptable', 'value'),
+    State('input-paiement-sap', 'value'), #card "Status et conditions financières"-status
 
     State('input-nv-prix-achat', 'value'),
     State('input-nv-prix-vente', 'value'),
@@ -210,24 +206,23 @@ def update_modal_open_state(n_btn_modif_ech, n_btn_submit_validate):
     State('input-adresse-client', 'value'),
     State('input-parc-licences', 'value'), # card "Informations contractuelles"
 
-
-    State("o1_data_table", "data"),
-    State('data-store', 'data'),
+    
+    #State("o1_data_table", "data"),
+    # State('data-store', 'data'),
     prevent_initial_call=True,
-)#     ## State('status-content', 'data'),
+)
 
 
-def update_table_data(n_btn_submit_validate, selected_row_number,
+def update_table_data(n_btn_submit_validate, selected_row_number, data_main_table, 
+                      
                      client, erp_number,date_anniversaire, code_projet_boond, resp_commercial, editeur,
                      badge_generation_devis,badge_validation_devis,badge_alerte_renouvellement,badge_resilie,
                      check_infos,validation_erronnes,envoi_devis,accord_de_principe,signature_client,achat_editeur,traitement_comptable,paiement_sap,
                      nv_prix_achat,nv_prix_vente,marge_pourcentage,montant_vente_annuel,montant_annuel_achat,marge_annuel,
-                     type_contrat,type_support_sap,condition_facturation,condition_paiement,adresse_client,parc_licences,
-
-                     data_main_table
+                     type_contrat,type_support_sap,condition_facturation,condition_paiement,adresse_client,parc_licences
 
                      ): 
-
+    
     if selected_row_number is not None and selected_row_number:  # Vérifiez si une ligne a été sélectionnée
         # Validez les données ici (effectuez des vérifications si nécessaire)
 
@@ -271,6 +266,7 @@ def update_table_data(n_btn_submit_validate, selected_row_number,
             
         }
 
+        
         # Mettez à jour les données de la ligne sélectionnée dans data_main_table
         for key, value in updated_data.items():
             data_main_table[selected_row_number[0]][key] = value
@@ -278,32 +274,39 @@ def update_table_data(n_btn_submit_validate, selected_row_number,
     return data_main_table
 
   ###############################################################################################################  
-    
 
-# #transformer le format de la date d'anniversaire      
-# from datetime import datetime
-
-# # La date d'anniversaire au format initial
-# date_anniversaire_str = '2023-12-31T00:00:00'
-
-# # Convertir la chaîne de caractères en objet datetime
-# date_obj = datetime.strptime(date_anniversaire_str, '%Y-%m-%dT%H:%M:%S')
-
-# # Formater la date au format 'DD/MM'
-# date_formatee = date_obj.strftime('%d/%m')
-
-# # Afficher la date au format souhaité
-# print(date_formatee)
-
+# # Callback pour ouvrir/fermer le modal_pop_up_evol_prix lorsque le bouton est cliqué
 # @app.callback(
-#     Output('input-accord-de-principe', 'children'),# Sortie pour afficher le texte
-#     Output('input-signature-client', 'children'),
-#     Output('input-achat-editeur', 'children'),
-#     Output('input-paiement-sap', 'children'),
-#     Input('status-content', 'children')  # Utilisez l'ID de l'ensemble de contenu
+#     Output("excel_modal", "is_open"),
+#     [Input("o1_btn_evol_prix", "n_clicks"),
+#      Input("close_excel_modal", "n_clicks")],
+#     [State("excel_modal", "is_open")]
 # )
-# def update_toggle_switch_color(value):
-#     if value == 'Oui':
-#         return "green"  # Si la valeur est "Oui", la couleur est verte
-#     else:
-#         return "default"  # Sinon, utilisez la couleur par défaut
+# def toggle_excel_modal(btn_click, close_click, is_open):
+#     if btn_click or close_click:
+#         return not is_open
+#     return is_open
+
+# # Callback pour charger et afficher le tableau Excel dans le modal_pop_up_evol_prix
+# @app.callback(
+#     Output("excel_table", "children"),
+#     [Input("o1_btn_evol_prix", "n_clicks")]
+# )
+# def load_excel_table(btn_click):
+#     if btn_click:
+#         # Chargez votre fichier Excel et convertissez-le en un DataFrame Pandas
+#         excel_file_path = r'appPCOE\src\tableau_calcul_evolution_prix.xlsx'
+        
+#         try:
+#             df = pd.read_excel(excel_file_path)
+#             # print('le df est:')
+#             # print(df)
+            
+#             # Convertissez le DataFrame en une table HTML
+#             excel_table = df.to_html(classes='table table-striped')
+
+#             return html.Div(dcc.Markdown(excel_table))
+#         except Exception as e:
+#             return html.Div(f"Erreur lors du chargement du fichier Excel : {str(e)}")
+
+#C:\Users\SofianOUASS\Documents\Dev\app-pcoe\appPCOE\src\tableau_calcul_evolution_prix.xlsx

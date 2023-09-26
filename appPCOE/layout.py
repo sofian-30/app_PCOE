@@ -44,8 +44,8 @@ for col in df.columns:
     if col == 'Date anniversaire':
         new_columns.append({'name': 'Alerte renouvellement', 'id': 'Alerte renouvellement', 'type': 'text'})
         new_columns.append({'name': 'Alerte validation devis', 'id': 'Alerte validation devis', 'type': 'text'})
-        new_columns.append({'name': 'Nouveau prix d\'achat', 'id': 'input-nv-prix-achat', 'type': 'number'})
-        new_columns.append({'name': 'Nouveau prix de vente', 'id': 'input-nv-prix-vente', 'type': 'number'})
+        new_columns.append({'name': 'Nouveau prix d\'achat', 'id': 'input-nv-prix-achat', 'type': 'numeric'})
+        new_columns.append({'name': 'Nouveau prix de vente', 'id': 'input-nv-prix-vente', 'type': 'numeric'})
 
 #############################################################################################################
 #                                          Appel API                                                        #
@@ -76,7 +76,8 @@ for col in df.columns:
 
 # Ajout d'un composant dcc.Store pour stocker les données de la ligne sélectionnée
 stockage_ligne = dcc.Store(id='o1_store_row')
-stockage_mis_a_jour = dcc.Store(id='o1_store_updated_data')  # Ajout de ce composant
+stockage_mis_a_jour = dcc.Store(id='o1_store_updated_data')  
+stockage_popup_evprix= dcc.Store(id='excel_data')
 
 # Fenêtre modale pour la modification de saisie (Avec Accordion)
 modal_pop_up= dbc.Modal(
@@ -394,6 +395,17 @@ modal_pop_up= dbc.Modal(
 
     # Ajoutez d'autres éléments de votre mise en page ici
 
+# # Modal pour afficher le tableau Excel
+# modal_pop_up_evol_prix=dbc.Modal([
+#         dbc.ModalHeader("Tableau coefficient des prix"),
+#         dbc.ModalBody([
+#             html.Div(id="excel_table")
+#         ]),
+#         dbc.ModalFooter(
+#             dbc.Button("Fermer", id="close_excel_modal", className="ml-auto")
+#         ),
+#     ], id="excel_modal", is_open=False),
+
 
 # Mise en page de l'application
 layout_PCOE = html.Div([
@@ -560,19 +572,20 @@ dash_table.DataTable(
     row_selectable='single'
 ),
     
-    # Boutons: "Modifier une saisie", "Evolution du prix", "Générer Devis"
+    # Boutons: "Modifier une saisie", "Calcul évolution prix", "Générer Devis"
 dbc.Row([
     dbc.Col([
         dbc.Button('Modifier une saisie', id="o1_btn_modif_ech", className="me-1", n_clicks=0, color='warning'),
     ], width={"size": 3}),
     dbc.Col([
-        dbc.Button('Evolution du prix', id="o1_btn_evol_prix", className="me-1", n_clicks=0, color='info'),
+        dbc.Button('Calcul évolution prix', id="o1_btn_evol_prix", className="me-1", n_clicks=0, color='info'),
     ], width={"size": 3}),
     dbc.Col([
         dbc.Button('Générer Devis', id="o1_btn_gener_devis", className="me-1", n_clicks=0, color='success'),
     ], width={"size": 3}),
 ], className="pb-3 justify-content-between"),
 
- modal_pop_up, stockage_ligne, stockage_mis_a_jour
+ modal_pop_up, stockage_ligne, stockage_mis_a_jour,
+#  modal_pop_up_evol_prix,stockage_popup_evprix
     
 ])
