@@ -395,16 +395,27 @@ modal_pop_up= dbc.Modal(
 
     # Ajoutez d'autres éléments de votre mise en page ici
 
-# # Modal pour afficher le tableau Excel
-# modal_pop_up_evol_prix=dbc.Modal([
-#         dbc.ModalHeader("Tableau coefficient des prix"),
-#         dbc.ModalBody([
-#             html.Div(id="excel_table")
-#         ]),
-#         dbc.ModalFooter(
-#             dbc.Button("Fermer", id="close_excel_modal", className="ml-auto")
-#         ),
-#     ], id="excel_modal", is_open=False),
+# Modal pour afficher le tableau Excel "Tableau coefficient des prix"
+modal_pop_up_evol_prix = dbc.Modal([
+    dbc.ModalHeader("Tableau coefficient des prix"),
+    dcc.Loading(
+        id="loading-excel-table",
+        type="default",
+        children=[
+            dash_table.DataTable(
+                id='excel_table',
+                columns=[
+                    {"name": str(col), "id": str(col)} for col in df.columns
+                ],
+                data=df.to_dict('records'),
+                page_size=10,  # Nombre d'entrées par page
+            ),
+        ]
+    ),
+    dbc.ModalFooter(
+        dbc.Button("Fermer", id="close_excel_modal", className="ml-auto")
+    ),
+], id="excel_modal", is_open=False)
 
 
 # Mise en page de l'application
@@ -586,6 +597,6 @@ dbc.Row([
 ], className="pb-3 justify-content-between"),
 
  modal_pop_up, stockage_ligne, stockage_mis_a_jour,
-#  modal_pop_up_evol_prix,stockage_popup_evprix
+ modal_pop_up_evol_prix,stockage_popup_evprix
     
 ])

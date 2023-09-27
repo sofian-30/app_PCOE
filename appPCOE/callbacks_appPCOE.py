@@ -6,6 +6,7 @@ import dash
 from dash import ctx, html, dcc
 import datetime
 from appPCOE.src.generation_devis import remplir_devis
+from datetime import datetime
 
 # df = pd.read_excel(r"/mnt/c/CA_2023.xlsx", sheet_name='Maintenance SAP BusinessObjects')
 df = pd.read_excel(r"C:\Users\SofianOUASS\Desktop\PCoE\Suivi CA licences et maintenance 2023.xlsx", sheet_name='Maintenance SAP BusinessObjects')
@@ -173,8 +174,8 @@ def update_modal_open_state(n_btn_modif_ech, n_btn_submit_validate):
 
     State("input-client", "value"),
     State("input-erp-number", "value"),
-    State("input-date-anniversaire", "value"), #"date"
-    State("input-code-projet-boond", "value"),                                          #"children" ou "value"?!!!
+    State("input-date-anniversaire", "value"), 
+    State("input-code-projet-boond", "value"),                                          
     State("input-resp-commercial", "value"),
     State("input-editeur", "value"), # card "informations générales"                                
 
@@ -207,9 +208,7 @@ def update_modal_open_state(n_btn_modif_ech, n_btn_submit_validate):
     State('input-parc-licences', 'value'), # card "Informations contractuelles"
 
     
-    #State("o1_data_table", "data"),
-    # State('data-store', 'data'),
-    prevent_initial_call=True,
+        prevent_initial_call=True,
 )
 
 
@@ -275,38 +274,50 @@ def update_table_data(n_btn_submit_validate, selected_row_number, data_main_tabl
 
   ###############################################################################################################  
 
-# # Callback pour ouvrir/fermer le modal_pop_up_evol_prix lorsque le bouton est cliqué
-# @app.callback(
-#     Output("excel_modal", "is_open"),
-#     [Input("o1_btn_evol_prix", "n_clicks"),
-#      Input("close_excel_modal", "n_clicks")],
-#     [State("excel_modal", "is_open")]
-# )
-# def toggle_excel_modal(btn_click, close_click, is_open):
-#     if btn_click or close_click:
-#         return not is_open
-#     return is_open
+# Callback pour ouvrir/fermer le modal_pop_up_evol_prix lorsque le bouton est cliqué
+@app.callback(
+    Output("excel_modal", "is_open"),
+    [Input("o1_btn_evol_prix", "n_clicks"),
+     Input("close_excel_modal", "n_clicks")],
+    [State("excel_modal", "is_open")]
+)
+def toggle_excel_modal(btn_click, close_click, is_open):
+    if btn_click or close_click:
+        return not is_open
+    return is_open
 
-# # Callback pour charger et afficher le tableau Excel dans le modal_pop_up_evol_prix
-# @app.callback(
-#     Output("excel_table", "children"),
-#     [Input("o1_btn_evol_prix", "n_clicks")]
-# )
-# def load_excel_table(btn_click):
-#     if btn_click:
-#         # Chargez votre fichier Excel et convertissez-le en un DataFrame Pandas
-#         excel_file_path = r'appPCOE\src\tableau_calcul_evolution_prix.xlsx'
+# Callback pour charger et afficher le tableau Excel dans le modal_pop_up_evol_prix
+@app.callback(
+    Output("excel_table", "data"),
+    Output("excel_table", "columns"),
+    [Input("o1_btn_evol_prix", "n_clicks")]
+)
+def load_excel_table(btn_click):
+    if btn_click:
+        # Chargez votre fichier Excel et convertissez-le en un DataFrame Pandas
+        excel_file_path = r'appPCOE\src\tableau_calcul_evolution_prix.xlsx'
         
-#         try:
-#             df = pd.read_excel(excel_file_path)
-#             # print('le df est:')
-#             # print(df)
-            
-#             # Convertissez le DataFrame en une table HTML
-#             excel_table = df.to_html(classes='table table-striped')
+        try:
+            df = pd.read_excel(excel_file_path)
+            columns = [{"name": str(col), "id": str(col)} for col in df.columns]
+            data = df.to_dict('records')
 
-#             return html.Div(dcc.Markdown(excel_table))
-#         except Exception as e:
-#             return html.Div(f"Erreur lors du chargement du fichier Excel : {str(e)}")
+            return data, columns
+        except Exception as e:
+            return [], []
 
 #C:\Users\SofianOUASS\Documents\Dev\app-pcoe\appPCOE\src\tableau_calcul_evolution_prix.xlsx
+
+
+# #callback retourne la date du jour si switch "on"
+# @app.callback(
+#     Output('status-content', 'children'),
+#     Input('input-validation-erronnes', 'value'),
+#     State('status-content', 'children')
+# )
+# def update_date_output(is_switched_on, current_text):
+#     if is_switched_on:
+#         current_date = datetime.now().strftime("Date du jour : %Y-%m-%d %H:%M:%S")
+#         return current_date
+#     else:
+#         return current_text
