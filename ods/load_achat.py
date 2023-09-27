@@ -139,8 +139,7 @@ df = pd.json_normalize(ls_res)
 # Conversion des champs en numérique
 df.achat_etat = df.achat_etat.astype(int)
 df.achat_montantht = df.achat_montantht.astype('float64')
-print(df)
-print(df.columns)
+df = df.rename(columns={'achat_quantité': 'achat_quantite'})
 df['achat_quantite'] = df['achat_quantite'].astype('float64')
 df.achat_type = df.achat_type.astype(int)
 
