@@ -2,6 +2,7 @@ import pandas as pd
 
 from db import connect_to_db, disconnect_from_db, insert_df_to_table
 from config import logger
+from utils import process_monitoring
 
 
 def execute_script(python_script: str) -> None:
@@ -78,6 +79,16 @@ logger.debug(f"df_boond.shape = {df_boond.shape}")
 # Écrire le résultat dans un fichier CSV
 df_boond.to_csv('./data/boond.csv', index=False, sep=';')
 
+# Ecrire le résultat en BDD
+table_name = "boond_table"
+
 conn = connect_to_db()
-insert_df_to_table(df_boond, "boond_table", 'replace', conn)
+
+try:
+    nb_lines = len(df_boond)
+    insert_df_to_table(df_boond, table_name, 'replace', conn)
+    process_monitoring(conn, table_name, nb_lines=nb_lines)
+except Exception as err:
+    process_monitoring(conn, table_name, error_message=repr(err))
+
 disconnect_from_db(conn)
