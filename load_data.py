@@ -25,7 +25,7 @@ for script in script_to_execute:
 df_projet = pd.read_csv("data/projet.csv", sep=",", quotechar='"', index_col=0)
 df_profil = pd.read_csv("data/profil.csv", sep=",", quotechar='"', index_col=0)
 df_crmsociete = pd.read_csv("data/crmsociete.csv", sep=",", quotechar='"', index_col=0)
-df_achat = pd.read_csv("data/data_rfo/achat.csv", sep=";", quotechar='"')
+df_achat = pd.read_csv("data/achat.csv", sep=",", quotechar='"', index_col=0)
 df_projet_achat = pd.read_csv("data/projet_achat.csv", sep=",", quotechar='"', index_col=0)
 df_bdc = pd.read_csv("data/bondecommande.csv", sep=",", quotechar='"', index_col=0)
 

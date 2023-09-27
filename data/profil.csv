@@ -1,54 +1,61 @@
 ,id_profil,profil_date,profil_dateupdate,profil_civilite,profil_prenom,profil_nom,profil_reference,profil_type,profil_statut,profil_etat,profil_visibilite,param_mobilite,comp_competence,dt_titre,profil_datenaissance,id_respmanager,id_resprh,id_societe,id_pole,profil_email
-0,73,2019-09-02T06:35:08+0200,2023-09-27T11:54:02+0200,0,Florian,RICARD,00117,0,Assistant administratif,1,1,['mondeeuropefrancerhonealpes'],,Consultant data,2000-03-05,48,12,1,30,florian.ricard@seenovate.com
-1,54,2017-09-29T17:14:07+0200,2023-09-27T10:03:01+0200,0,Maxime,RIOLAND,00105,0,Ingénieur décisionnel,1,1,['mondeeuropefrancerhonealpes'],,Consultant Seenovate,1993-04-17,84,12,1,30,maxime.rioland@seenovate.com
-2,84,2019-12-10T16:09:46+0100,2023-09-27T10:03:01+0200,0,Frank,IMBACH,00046,0,Data Intelligence Manager,1,1,['mondeeuropefrancelanguedocroussillon'],,DIM et Responsable SeeSports,1991-07-23,48,71,1,30,frank.imbach@seenovate.com
-3,2357,2023-08-14T11:24:40+0200,2023-09-27T10:01:00+0200,1,Ludivine,BLANQUET,,0,Consultante Data,1,1,['mondeeuropefrancelanguedocroussillon'],,Consultante Data,1997-05-05,84,71,1,30,ludivine.blanquet@seenovate.com
-4,2150,2023-06-21T14:40:42+0200,2023-09-27T09:39:34+0200,1,Sindy,BOUGHNIM,299,0,Cheffe de projets,1,1,['mondeeuropefranceiledefrance'],,Cheffe de projets,1990-05-10,2354,78,1,30,sindy.boughnim@seenovate.com
-5,433,2022-03-18T16:35:35+0100,2023-09-26T17:46:14+0200,0,Bruno,QUEGUINER,00237,0,Consultant Décisionnel,1,1,['mondeeuropefrancebretagne'],30/06/2023 (SDU),Consultant Décisionnel,1995-06-15,1107,71,1,30,bruno.queguiner@seenovate.com
-6,1106,2022-10-12T10:59:51+0200,2023-09-26T17:23:50+0200,1,Meriem,DIB,00263,0,Consultante décisionnel,1,1,['mondeeuropefranceiledefrance'],Talend SQL - maj 30/06/2023 (GDE),Consultante décisionnel,1984-07-03,865,78,1,30,meriem.dib@seenovate.com
-7,11,2016-01-10T10:06:07+0100,2023-09-26T16:18:10+0200,0,Laurent,HAUMONT,00095,0,Consultant,1,1,['mondeeuropefrancerhonealpes'],,Consultant Seenovate,1973-07-27,969,12,1,30,laurent.haumont@seenovate.com
-8,1080,2022-09-30T10:31:22+0200,2023-09-26T15:30:14+0200,0,Baptiste,CRETIN,00251,0,Consultant Décisionnel,1,1,['mondeeuropefrancerhonealpes'],"Power BI
+0,674,2022-05-17T15:53:46+0200,2023-09-27T15:46:25+0200,1,Nadia,DAKHLI,00236,0,Consultante décisionnelle,1,1,['mondeeuropefrancerhonealpes'],,Consultante en informatique décisionnelle,1987-02-08,6,12,1,30,nadia.dakhli@seenovate.com
+1,18,2016-01-10T10:06:08+0100,2023-09-27T15:06:42+0200,0,Fredy,GAULLIER,00003,0,Chef de projet,1,1,['mondeeuropefranceiledefrance'],,Chef de projet décisionnel,1978-05-11,299,78,1,30,fredy.gaullier@seenovate.com
+2,2360,2023-08-14T15:13:35+0200,2023-09-27T14:17:21+0200,1,Maria,SOTO,,0,Consultant Data,1,1,['mondeeuropefrancebretagne'],"DevOps
+C++
+Python
+Recherche opérationnelle",Consultant Data,1983-11-24,2319,71,1,30,maria.soto@seenovate.com
+3,2317,2023-08-01T17:07:57+0200,2023-09-27T14:16:50+0200,1,Arij,AMIRI,,0,Data scientist (PhD),1,1,['mondeeuropefranceiledefrance'],"R
+Python 
+Power BI",Data scientist (PhD),1993-03-19,2319,78,1,30,arij.amiri@seenovate.com
+4,73,2019-09-02T06:35:08+0200,2023-09-27T11:54:02+0200,0,Florian,RICARD,00117,0,Assistant administratif,1,1,['mondeeuropefrancerhonealpes'],,Consultant data,2000-03-05,48,12,1,30,florian.ricard@seenovate.com
+5,54,2017-09-29T17:14:07+0200,2023-09-27T10:03:01+0200,0,Maxime,RIOLAND,00105,0,Ingénieur décisionnel,1,1,['mondeeuropefrancerhonealpes'],,Consultant Seenovate,1993-04-17,84,12,1,30,maxime.rioland@seenovate.com
+6,84,2019-12-10T16:09:46+0100,2023-09-27T10:03:01+0200,0,Frank,IMBACH,00046,0,Data Intelligence Manager,1,1,['mondeeuropefrancelanguedocroussillon'],,DIM et Responsable SeeSports,1991-07-23,48,71,1,30,frank.imbach@seenovate.com
+7,2357,2023-08-14T11:24:40+0200,2023-09-27T10:01:00+0200,1,Ludivine,BLANQUET,,0,Consultante Data,1,1,['mondeeuropefrancelanguedocroussillon'],,Consultante Data,1997-05-05,84,71,1,30,ludivine.blanquet@seenovate.com
+8,2150,2023-06-21T14:40:42+0200,2023-09-27T09:39:34+0200,1,Sindy,BOUGHNIM,299,0,Cheffe de projets,1,1,['mondeeuropefranceiledefrance'],,Cheffe de projets,1990-05-10,2354,78,1,30,sindy.boughnim@seenovate.com
+9,433,2022-03-18T16:35:35+0100,2023-09-26T17:46:14+0200,0,Bruno,QUEGUINER,00237,0,Consultant Décisionnel,1,1,['mondeeuropefrancebretagne'],30/06/2023 (SDU),Consultant Décisionnel,1995-06-15,1107,71,1,30,bruno.queguiner@seenovate.com
+10,1106,2022-10-12T10:59:51+0200,2023-09-26T17:23:50+0200,1,Meriem,DIB,00263,0,Consultante décisionnel,1,1,['mondeeuropefranceiledefrance'],Talend SQL - maj 30/06/2023 (GDE),Consultante décisionnel,1984-07-03,865,78,1,30,meriem.dib@seenovate.com
+11,11,2016-01-10T10:06:07+0100,2023-09-26T16:18:10+0200,0,Laurent,HAUMONT,00095,0,Consultant,1,1,['mondeeuropefrancerhonealpes'],,Consultant Seenovate,1973-07-27,969,12,1,30,laurent.haumont@seenovate.com
+12,1080,2022-09-30T10:31:22+0200,2023-09-26T15:30:14+0200,0,Baptiste,CRETIN,00251,0,Consultant Décisionnel,1,1,['mondeeuropefrancerhonealpes'],"Power BI
 SSIS
 Salesforce",Consultant Décisionnel,1981-08-12,1500,12,1,30,baptiste.cretin@seenovate.com
-9,2248,2023-07-17T09:47:19+0200,2023-09-26T15:24:47+0200,0,Landry,KOMBO,,0,Consultant Décisionnel,1,1,['mondeeuropefrancerhonealpes'],"BO
+13,2248,2023-07-17T09:47:19+0200,2023-09-26T15:24:47+0200,0,Landry,KOMBO,,0,Consultant Décisionnel,1,1,['mondeeuropefrancerhonealpes'],"BO
 Informatica",Consultant Décisionnel,1990-01-24,11,12,1,30,landry.kombo@seenovate.com
-10,2046,2023-05-30T15:52:25+0200,2023-09-26T15:24:44+0200,1,Laetitia,ZGRAJA,00297,0,"Consultante décisionnel,",1,1,['mondeeuropefranceaquitaine'],"Datastage 
+14,2046,2023-05-30T15:52:25+0200,2023-09-26T15:24:44+0200,1,Laetitia,ZGRAJA,00297,0,"Consultante décisionnel,",1,1,['mondeeuropefranceaquitaine'],"Datastage 
 Informatica
 Talend
 WebI
 BODS",Consultant décisionnel,1979-08-19,1292,71,1,30,laetitia.zgraja@seenovate.com
-11,2535,2023-09-26T14:46:25+0200,2023-09-26T15:08:17+0200,0,Alexandre,MASSY,,1,,1,1,[],,CONSULTANT AMOA SKY REACH INTELLIGENCE,,17,64,1,30,alexandre.massy@gmail.com
-12,2360,2023-08-14T15:13:35+0200,2023-09-26T14:25:57+0200,1,Maria,SOTO,,0,Consultant Data,1,1,['mondeeuropefrancebretagne'],,Consultant Data,1983-11-24,2319,71,1,30,maria.soto@seenovate.com
-13,2361,2023-08-14T15:29:51+0200,2023-09-26T14:20:19+0200,0,Nonvignon,GBETINSANON,,0,Consultant data,1,1,['mondeeuropefrancerhonealpes'],TALEND,Consultant data,1988-03-02,865,12,1,30,nonvignon.gbetinsanon@seenovate.com
-14,94,2020-01-08T10:06:29+0100,2023-09-22T16:51:48+0200,0,Benoît,GUILLOT,00124,0,Consultants décisionnel sénior,1,1,['mondeeuropefrancebretagne'],,Consultant Seenovate,1974-08-20,969,71,1,30,benoit.guillot@seenovate.com
-15,297,2022-01-02T13:23:31+0100,2023-09-22T15:09:26+0200,1,Marie-Anne,PILETTE,00226,0,Data Intelligence Manager,1,1,['mondeeuropefranceiledefrance'],,"Senior Manager, Direction Technique et Innovation",1978-06-20,48,78,1,30,marie-anne.pilette@seenovate.com
-16,824,2022-06-07T16:24:01+0200,2023-09-22T15:09:17+0200,0,Jean-François,RAZAFINJATOVO,00239,0,,1,1,['mondeeuropefranceiledefrance'],"SAP BO / BI
+15,2535,2023-09-26T14:46:25+0200,2023-09-26T15:08:17+0200,0,Alexandre,MASSY,,1,,1,1,[],,CONSULTANT AMOA SKY REACH INTELLIGENCE,,17,64,1,30,alexandre.massy@gmail.com
+16,2361,2023-08-14T15:29:51+0200,2023-09-26T14:20:19+0200,0,Nonvignon,GBETINSANON,,0,Consultant data,1,1,['mondeeuropefrancerhonealpes'],TALEND,Consultant data,1988-03-02,865,12,1,30,nonvignon.gbetinsanon@seenovate.com
+17,94,2020-01-08T10:06:29+0100,2023-09-22T16:51:48+0200,0,Benoît,GUILLOT,00124,0,Consultants décisionnel sénior,1,1,['mondeeuropefrancebretagne'],,Consultant Seenovate,1974-08-20,969,71,1,30,benoit.guillot@seenovate.com
+18,297,2022-01-02T13:23:31+0100,2023-09-22T15:09:26+0200,1,Marie-Anne,PILETTE,00226,0,Data Intelligence Manager,1,1,['mondeeuropefranceiledefrance'],,"Senior Manager, Direction Technique et Innovation",1978-06-20,48,78,1,30,marie-anne.pilette@seenovate.com
+19,824,2022-06-07T16:24:01+0200,2023-09-22T15:09:17+0200,0,Jean-François,RAZAFINJATOVO,00239,0,,1,1,['mondeeuropefranceiledefrance'],"SAP BO / BI
 Informatica - formation directe chez l'éditeur",Chef de projet BI,1978-04-11,297,78,1,30,jean-francois.razafinjatovo@seenovate.com
-17,1500,2023-02-06T09:58:37+0100,2023-09-22T15:08:48+0200,0,Stéphane,BADRE,00284,0,Consultant  décisionnel  expérimenté,1,1,['mondeeuropefrancebretagne'],"MSBI
+20,1500,2023-02-06T09:58:37+0100,2023-09-22T15:08:48+0200,0,Stéphane,BADRE,00284,0,Consultant  décisionnel  expérimenté,1,1,['mondeeuropefrancebretagne'],"MSBI
 Genio
 Cognos - 30/06/2023 (SDU)",Consultant  décisionnel  expérimenté,1970-05-29,1107,71,1,30,stephane.badre@seenovate.com
-18,888,2022-07-06T10:39:50+0200,2023-09-22T15:08:19+0200,1,Sarah,BENLOUCIF,00256,0,Consultante décisionnelle,1,1,['mondeeuropefrancerhonealpes'],"Power BI - certif obtenue
+21,888,2022-07-06T10:39:50+0200,2023-09-22T15:08:19+0200,1,Sarah,BENLOUCIF,00256,0,Consultante décisionnelle,1,1,['mondeeuropefrancerhonealpes'],"Power BI - certif obtenue
 SSIS
 Synapse - notions",Consultante Décisionnelle,1982-06-26,221,12,1,30,sarah.benloucif@seenovate.com
-19,1128,2022-10-19T16:49:26+0200,2023-09-22T15:08:03+0200,0,Valentin,RIGOUX,00260,0,Consultant  décisionnel,1,1,['mondeeuropefrancelanguedocroussillon'],MSBI - maj 30/06/2023 (SBA),Consultant  décisionnel,1995-11-22,1500,71,1,30,valentin.rigoux@seenovate.com
-20,159,2020-11-30T12:46:02+0100,2023-09-22T12:02:55+0200,0,Chouaib,BRAKNI,00167,0,Consultant datascientist,1,1,['mondeeuropefrancerhonealpes'],maj 30/06/2023 (ABO),Consultant Seenovate,1993-06-23,231,12,1,30,chouaib.brakni@seenovate.com
-21,18,2016-01-10T10:06:08+0100,2023-09-21T18:39:10+0200,0,Fredy,GAULLIER,00003,0,Chef de projet,1,1,['mondeeuropefranceiledefrance'],,Chef de projet décisionnel,1978-05-11,299,78,1,30,fredy.gaullier@seenovate.com
-22,1408,2023-01-18T11:33:21+0100,2023-09-21T16:08:13+0200,0,Loic,IAPTEFF,00276,0,Data Scientist,1,1,['mondeeuropefrancerhonealpes'],"Python
+22,1128,2022-10-19T16:49:26+0200,2023-09-22T15:08:03+0200,0,Valentin,RIGOUX,00260,0,Consultant  décisionnel,1,1,['mondeeuropefrancelanguedocroussillon'],MSBI - maj 30/06/2023 (SBA),Consultant  décisionnel,1995-11-22,1500,71,1,30,valentin.rigoux@seenovate.com
+23,159,2020-11-30T12:46:02+0100,2023-09-22T12:02:55+0200,0,Chouaib,BRAKNI,00167,0,Consultant datascientist,1,1,['mondeeuropefrancerhonealpes'],maj 30/06/2023 (ABO),Consultant Seenovate,1993-06-23,231,12,1,30,chouaib.brakni@seenovate.com
+24,1408,2023-01-18T11:33:21+0100,2023-09-21T16:08:13+0200,0,Loic,IAPTEFF,00276,0,Data Scientist,1,1,['mondeeuropefrancerhonealpes'],"Python
 R",Data Scientist,1995-01-06,70,12,1,30,loic.iapteff@seenovate.com
-23,2358,2023-08-14T15:00:29+0200,2023-09-21T15:50:27+0200,0,Christophe,MAREC,,0,Ingénieur d'Affaires,1,1,['mondeeuropefrancepaysdelaloire'],,Ingénieur d'Affaires,1993-03-03,17,71,1,20,christophe.marec@seenovate.com
-24,2359,2023-08-14T15:04:51+0200,2023-09-21T12:26:52+0200,1,Soda,DIA,,0,Consultant décisionnel,1,1,['mondeeuropefranceiledefrance'],"MSBI
+25,2358,2023-08-14T15:00:29+0200,2023-09-21T15:50:27+0200,0,Christophe,MAREC,,0,Ingénieur d'Affaires,1,1,['mondeeuropefrancepaysdelaloire'],,Ingénieur d'Affaires,1993-03-03,17,71,1,20,christophe.marec@seenovate.com
+26,2359,2023-08-14T15:04:51+0200,2023-09-21T12:26:52+0200,1,Soda,DIA,,0,Consultant décisionnel,1,1,['mondeeuropefranceiledefrance'],"MSBI
 PostGre",Consultant décisionnel,1997-03-27,2354,78,1,30,soda.dia@seenovate.com
-25,1108,2022-10-12T11:10:04+0200,2023-09-21T10:01:45+0200,0,Alexandre,MARCHAL,00266,0,Chef  de  projets  statistiques,1,1,['mondeeuropefrancelanguedocroussillon'],PYTHON : notions,Chef de projet en statistiques,1989-08-16,84,71,1,30,alexandre.marchal@seenovate.com
-26,997,2022-08-16T12:01:37+0200,2023-09-21T09:19:40+0200,0,Amar,BEN AHMED,00254,0,Consultant  Décisionnel,1,1,['mondeeuropefrancelanguedocroussillon'],,Consultant Décisionnel,1976-07-15,3,71,1,30,amar.ben-ahmed@seenovate.com
-27,16,2016-01-10T10:06:08+0100,2023-09-21T09:02:22+0200,0,Matthieu,CANAUD,00100,0,Data Scientist,1,1,['mondeeuropefrancerhonealpes'],,DIM et Responsable Valorisation et Progicialisation,1983-06-09,969,48,1,30,matthieu.canaud@seenovate.com
-28,294,2021-12-29T20:11:19+0100,2023-09-20T17:38:32+0200,1,Florence,MEUNIER,00223,10,Office & Happiness manager,1,1,['mondeeuropefrancerhonealpes'],,Office & Happy manager,1986-10-07,228,228,1,6,florence.meunier@seenovate.com
-29,2186,2023-06-28T10:52:24+0200,2023-09-20T14:52:21+0200,0,Younes,OMEIR,303,0,Consultant Décisionnel,1,1,['mondeeuropefrancerhonealpes'],MAJ le 16/08/2023,Consultant décisionnel,1997-12-08,995,12,1,30,younes.omeir@seenovate.com
-30,249,2021-06-21T11:53:08+0200,2023-09-20T14:33:41+0200,0,Pascal,GOURLAOUEN,00193,0,Chef de projets,1,1,['mondeeuropefranceiledefrance'],,DIM,1976-11-19,3,78,1,30,pascal.gourlaouen@seenovate.com
-31,243,2021-05-11T16:42:27+0200,2023-09-20T11:10:25+0200,1,Nejma,NOEL,200,0,Chargée de dossiers CEENOVATE,1,1,['mondeeuropefrancerhonealpes'],"gestion administrative de dossiers CEE, accompagnement partenaires PRO",Chargée de dossiers CEE,1997-03-05,72,72,4,30,nejma.noel@ceenovate.fr
-32,112,2020-09-03T19:20:16+0200,2023-09-19T22:23:33+0200,0,Tom,RAMIN,00148,0,Datascientist,1,1,['mondeeuropefranceiledefrance'],,Data scientist,1998-03-22,99,12,1,30,tom.ramin@seenovate.com
-33,284,2021-11-03T13:25:16+0100,2023-09-19T12:24:34+0200,0,Benjamin,BLANC,00217,0,Datascientist,1,1,['mondeeuropefrancebretagne'],,Datascientist,1995-05-06,101,71,1,30,benjamin.blanc@seenovate.com
-34,222,2021-03-10T18:42:22+0100,2023-09-19T11:02:50+0200,1,Juliette,FIEVET,00178,0,Product owner,1,1,['mondeeuropefrancerhonealpes'],,Product Owner,1990-04-02,6,12,1,30,juliette.fievet@seenovate.com
-35,399,2022-02-25T16:16:53+0100,2023-09-18T19:39:07+0200,0,Ka Ho Oscar,WONG,00232,0,Consultant Décisionnel,1,1,['mondeeuropefranceiledefrance'],"AMOA
+27,1108,2022-10-12T11:10:04+0200,2023-09-21T10:01:45+0200,0,Alexandre,MARCHAL,00266,0,Chef  de  projets  statistiques,1,1,['mondeeuropefrancelanguedocroussillon'],PYTHON : notions,Chef de projet en statistiques,1989-08-16,84,71,1,30,alexandre.marchal@seenovate.com
+28,997,2022-08-16T12:01:37+0200,2023-09-21T09:19:40+0200,0,Amar,BEN AHMED,00254,0,Consultant  Décisionnel,1,1,['mondeeuropefrancelanguedocroussillon'],,Consultant Décisionnel,1976-07-15,3,71,1,30,amar.ben-ahmed@seenovate.com
+29,16,2016-01-10T10:06:08+0100,2023-09-21T09:02:22+0200,0,Matthieu,CANAUD,00100,0,Data Scientist,1,1,['mondeeuropefrancerhonealpes'],,DIM et Responsable Valorisation et Progicialisation,1983-06-09,969,48,1,30,matthieu.canaud@seenovate.com
+30,294,2021-12-29T20:11:19+0100,2023-09-20T17:38:32+0200,1,Florence,MEUNIER,00223,10,Office & Happiness manager,1,1,['mondeeuropefrancerhonealpes'],,Office & Happy manager,1986-10-07,228,228,1,6,florence.meunier@seenovate.com
+31,2186,2023-06-28T10:52:24+0200,2023-09-20T14:52:21+0200,0,Younes,OMEIR,303,0,Consultant Décisionnel,1,1,['mondeeuropefrancerhonealpes'],MAJ le 16/08/2023,Consultant décisionnel,1997-12-08,995,12,1,30,younes.omeir@seenovate.com
+32,249,2021-06-21T11:53:08+0200,2023-09-20T14:33:41+0200,0,Pascal,GOURLAOUEN,00193,0,Chef de projets,1,1,['mondeeuropefranceiledefrance'],,DIM,1976-11-19,3,78,1,30,pascal.gourlaouen@seenovate.com
+33,243,2021-05-11T16:42:27+0200,2023-09-20T11:10:25+0200,1,Nejma,NOEL,200,0,Chargée de dossiers CEENOVATE,1,1,['mondeeuropefrancerhonealpes'],"gestion administrative de dossiers CEE, accompagnement partenaires PRO",Chargée de dossiers CEE,1997-03-05,72,72,4,30,nejma.noel@ceenovate.fr
+34,112,2020-09-03T19:20:16+0200,2023-09-19T22:23:33+0200,0,Tom,RAMIN,00148,0,Datascientist,1,1,['mondeeuropefranceiledefrance'],,Data scientist,1998-03-22,99,12,1,30,tom.ramin@seenovate.com
+35,284,2021-11-03T13:25:16+0100,2023-09-19T12:24:34+0200,0,Benjamin,BLANC,00217,0,Datascientist,1,1,['mondeeuropefrancebretagne'],,Datascientist,1995-05-06,101,71,1,30,benjamin.blanc@seenovate.com
+36,222,2021-03-10T18:42:22+0100,2023-09-19T11:02:50+0200,1,Juliette,FIEVET,00178,0,Product owner,1,1,['mondeeuropefrancerhonealpes'],,Product Owner,1990-04-02,6,12,1,30,juliette.fievet@seenovate.com
+37,399,2022-02-25T16:16:53+0100,2023-09-18T19:39:07+0200,0,Ka Ho Oscar,WONG,00232,0,Consultant Décisionnel,1,1,['mondeeuropefranceiledefrance'],"AMOA
 Qlik
 Talend
 Planning
@@ -56,168 +63,164 @@ Report Design
 PowerBI
 Tableau
 Formation",Consultant Décisionnel,1993-11-24,1293,78,1,30,oscar.wong@seenovate.com
-36,9,2016-01-10T10:06:07+0100,2023-09-18T19:37:25+0200,1,Marie-Julie,ESCUDIE,00093,0,Consultant,1,1,['mondeeuropefrancerhonealpes'],,Responsable des Solutions de Pilotage Interne,1974-10-14,299,12,1,30,marie-julie.escudie@seenovate.com
-37,3,2016-01-10T10:06:07+0100,2023-09-18T11:18:53+0200,0,Sébastien,MAS,00088,0,Consultant,1,1,['mondeeuropefrancerhonealpes'],,DIM et Référent archi BO,1976-08-15,969,12,1,30,sebastien.mas@seenovate.com
-38,2318,2023-08-01T17:12:28+0200,2023-09-15T10:16:57+0200,0,Thibaud,ROUYRE,,0,Consultant Décisionnel,1,1,['mondeeuropefrancerhonealpes'],"SAP BW
+38,9,2016-01-10T10:06:07+0100,2023-09-18T19:37:25+0200,1,Marie-Julie,ESCUDIE,00093,0,Consultant,1,1,['mondeeuropefrancerhonealpes'],,Responsable des Solutions de Pilotage Interne,1974-10-14,299,12,1,30,marie-julie.escudie@seenovate.com
+39,3,2016-01-10T10:06:07+0100,2023-09-18T11:18:53+0200,0,Sébastien,MAS,00088,0,Consultant,1,1,['mondeeuropefrancerhonealpes'],,DIM et Référent archi BO,1976-08-15,969,12,1,30,sebastien.mas@seenovate.com
+40,2318,2023-08-01T17:12:28+0200,2023-09-15T10:16:57+0200,0,Thibaud,ROUYRE,,0,Consultant Décisionnel,1,1,['mondeeuropefrancerhonealpes'],"SAP BW
 HANA
 SAP Analytics Cloud",Consultant Décisionnel,1984-11-09,2354,12,1,30,thibaud.rouyre@seenovate.com
-39,2320,2023-08-01T17:25:11+0200,2023-09-15T10:16:31+0200,1,Camille,CHANTELOT,,0,Consultant décisionnel,1,1,['mondeeuropefrancerhonealpes'],"Python 
+41,2320,2023-08-01T17:25:11+0200,2023-09-15T10:16:31+0200,1,Camille,CHANTELOT,,0,Consultant décisionnel,1,1,['mondeeuropefrancerhonealpes'],"Python 
 Power BI 
 DBT 
 Snowflake",Consultant décisionnel,1995-07-03,2354,12,1,30,camille.chantelot@seenovate.com
-40,2316,2023-08-01T17:04:00+0200,2023-09-15T10:15:23+0200,1,Amel,HASSENA,,0,Consultant décisionnel,1,1,['mondeeuropefranceiledefrance'],"Talend 
+42,2316,2023-08-01T17:04:00+0200,2023-09-15T10:15:23+0200,1,Amel,HASSENA,,0,Consultant décisionnel,1,1,['mondeeuropefranceiledefrance'],"Talend 
 Power BI",Consultant décisionnel,1998-01-06,2354,78,1,30,amel.hassena@seenovate.com
-41,1592,2023-03-08T11:19:29+0100,2023-09-15T09:58:26+0200,0,François,LEBRUMENT,00287,0,Stagiaire Data Scientist,1,1,['mondeeuropefrancebretagne'],,Consultant Data,1999-12-07,231,71,1,30,francois.lebrument@seenovate.com
-42,161,2020-12-09T15:41:36+0100,2023-09-15T09:44:18+0200,1,Chloé,REGOND,00166,10,Chargée de dossiers CEENOVATE,1,1,['mondeeuropefrancerhonealpes'],gestion de dossiers CEE et conseil en gestion de CEE,Chargée de dossiers CEE,1996-03-02,72,72,4,30,chloe.regond@ceenovate.fr
-43,2319,2023-08-01T17:21:55+0200,2023-09-14T14:48:35+0200,0,Vincent,MARGOT,,0,DIM,1,1,['mondeeuropefrancerhonealpes'],"Machine LEarning
+43,1592,2023-03-08T11:19:29+0100,2023-09-15T09:58:26+0200,0,François,LEBRUMENT,00287,0,Stagiaire Data Scientist,1,1,['mondeeuropefrancebretagne'],,Consultant Data,1999-12-07,231,71,1,30,francois.lebrument@seenovate.com
+44,161,2020-12-09T15:41:36+0100,2023-09-15T09:44:18+0200,1,Chloé,REGOND,00166,10,Chargée de dossiers CEENOVATE,1,1,['mondeeuropefrancerhonealpes'],gestion de dossiers CEE et conseil en gestion de CEE,Chargée de dossiers CEE,1996-03-02,72,72,4,30,chloe.regond@ceenovate.fr
+45,2319,2023-08-01T17:21:55+0200,2023-09-14T14:48:35+0200,0,Vincent,MARGOT,,0,DIM,1,1,['mondeeuropefrancerhonealpes'],"Machine LEarning
 Python
 Python Dash",DIM,1988-12-12,297,12,1,30,vincent.margot@seenovate.com
-44,1407,2023-01-18T10:20:08+0100,2023-09-14T14:48:35+0200,0,Sébastian,LE COZ,00267,0,Data scientist,1,1,['mondeeuropefrancebretagne'],"R
+46,1407,2023-01-18T10:20:08+0100,2023-09-14T14:48:35+0200,0,Sébastian,LE COZ,00267,0,Data scientist,1,1,['mondeeuropefrancebretagne'],"R
 Python",Data scientist,1992-08-16,84,71,1,30,sebastian.le-coz@seenovate.com
-45,273,2021-09-30T17:37:01+0200,2023-09-14T14:06:48+0200,0,Balla,DIEYE,,1,,1,1,[],,Sous-traitant décisionnel,,9,78,1,30,balla.dieye@ext.seenovate.com
-46,267,2021-09-21T09:45:03+0200,2023-09-14T12:29:43+0200,0,Reda,EL HOUITI,00199,0,,1,1,['mondeeuropefranceiledefrance'],,Consultant décisionnel,1980-07-01,824,78,1,30,reda.elhouiti@seenovate.com
-47,2455,2023-09-08T14:26:16+0200,2023-09-14T11:42:58+0200,0,Joey,BRUNO,,0,,1,1,['mondeeuropefrancebretagne'],,<Alternance> Data Analyst,1998-12-21,84,71,1,30,joey.bruno@seenovate.com
-48,2317,2023-08-01T17:07:57+0200,2023-09-14T11:09:36+0200,1,Arij,AMIRI,,0,Data scientist (PhD),1,1,['mondeeuropefranceiledefrance'],"R
-Python 
-Power BI",Data scientist (PhD),1993-03-19,2319,78,1,30,arij.amiri@seenovate.com
-49,2354,2023-08-14T11:08:35+0200,2023-09-14T08:26:43+0200,0,Guillaume,LECOUTEUX,00306,0,Data Intelligence Manager,1,1,['mondeeuropefranceaquitaine'],,Data Intelligence Manager,1983-05-23,297,71,1,30,guillaume.lecouteux@seenovate.com
-50,299,2022-01-11T10:59:51+0100,2023-09-13T20:13:30+0200,0,Florian,AMBROSI,00228,0,Directeur Scientifique et Innovation Adjoint,1,1,['mondeeuropefrancebretagne'],,Directeur Technique et Innovation Adjoint,1986-07-21,48,17,1,3,florian.ambrosi@seenovate.com
-51,85,2019-12-10T17:22:35+0100,2023-09-13T17:27:56+0200,2,Pauline,GARCIA,00048,0,Datascientist,1,1,['mondeeuropefrancelanguedocroussillon'],,Consultant Seenovate,1996-11-13,2319,71,1,30,pauline.garcia@seenovate.com
-52,231,2021-03-29T10:30:22+0200,2023-09-13T17:26:38+0200,0,Amara,BOUDIB,00180,0,Chef de projet Datasciences,1,1,['mondeeuropefrancerhonealpes'],MAJ SDU 13/07/2023,DIM,1977-07-09,1107,12,1,30,amara.boudib@seenovate.com
-53,971,2022-07-28T17:56:43+0200,2023-09-13T17:26:38+0200,0,Jérôme-Philippe,GARSI,00248,0,Consultant Data  Intelligence,1,1,['mondeeuropefrancerhonealpes'],"R 
+47,273,2021-09-30T17:37:01+0200,2023-09-14T14:06:48+0200,0,Balla,DIEYE,,1,,1,1,[],,Sous-traitant décisionnel,,9,78,1,30,balla.dieye@ext.seenovate.com
+48,267,2021-09-21T09:45:03+0200,2023-09-14T12:29:43+0200,0,Reda,EL HOUITI,00199,0,,1,1,['mondeeuropefranceiledefrance'],,Consultant décisionnel,1980-07-01,824,78,1,30,reda.elhouiti@seenovate.com
+49,2455,2023-09-08T14:26:16+0200,2023-09-14T11:42:58+0200,0,Joey,BRUNO,,0,,1,1,['mondeeuropefrancebretagne'],,<Alternance> Data Analyst,1998-12-21,84,71,1,30,joey.bruno@seenovate.com
+50,2354,2023-08-14T11:08:35+0200,2023-09-14T08:26:43+0200,0,Guillaume,LECOUTEUX,00306,0,Data Intelligence Manager,1,1,['mondeeuropefranceaquitaine'],,Data Intelligence Manager,1983-05-23,297,71,1,30,guillaume.lecouteux@seenovate.com
+51,299,2022-01-11T10:59:51+0100,2023-09-13T20:13:30+0200,0,Florian,AMBROSI,00228,0,Directeur Scientifique et Innovation Adjoint,1,1,['mondeeuropefrancebretagne'],,Directeur Technique et Innovation Adjoint,1986-07-21,48,17,1,3,florian.ambrosi@seenovate.com
+52,85,2019-12-10T17:22:35+0100,2023-09-13T17:27:56+0200,2,Pauline,GARCIA,00048,0,Datascientist,1,1,['mondeeuropefrancelanguedocroussillon'],,Consultant Seenovate,1996-11-13,2319,71,1,30,pauline.garcia@seenovate.com
+53,231,2021-03-29T10:30:22+0200,2023-09-13T17:26:38+0200,0,Amara,BOUDIB,00180,0,Chef de projet Datasciences,1,1,['mondeeuropefrancerhonealpes'],MAJ SDU 13/07/2023,DIM,1977-07-09,1107,12,1,30,amara.boudib@seenovate.com
+54,971,2022-07-28T17:56:43+0200,2023-09-13T17:26:38+0200,0,Jérôme-Philippe,GARSI,00248,0,Consultant Data  Intelligence,1,1,['mondeeuropefrancerhonealpes'],"R 
 SAS
 Python",Consultant Data Intelligence,1981-09-21,299,12,1,30,jerome-philippe.garsi@seenovate.com
-54,61,2018-07-30T17:05:26+0200,2023-09-13T10:30:31+0200,1,Coriane,NANA JIPMO,00109,0,Data scientist & consultant informatique,1,1,['mondeeuropefrancerhonealpes'],,Consultant Seenovate,1989-04-30,6,12,1,30,coriane.nana-jipmo@seenovate.com
-55,296,2022-01-02T12:37:52+0100,2023-09-13T10:27:33+0200,1,Marine,THEIS,224,10,Talent Acquisition Manager,1,1,['mondeeuropefrancerhonealpes'],,Talent Acquisition Manager,1990-09-18,282,282,1,5,marine.theis@seenovate.com
-56,1352,2023-01-05T10:42:08+0100,2023-09-21T10:24:42+0200,0,Hatem,GOUASMI,00269,0,Consultant  décisionnel expérimenté,1,1,['mondeeuropefrancerhonealpes'],"BO
+55,61,2018-07-30T17:05:26+0200,2023-09-13T10:30:31+0200,1,Coriane,NANA JIPMO,00109,0,Data scientist & consultant informatique,1,1,['mondeeuropefrancerhonealpes'],,Consultant Seenovate,1989-04-30,6,12,1,30,coriane.nana-jipmo@seenovate.com
+56,296,2022-01-02T12:37:52+0100,2023-09-13T10:27:33+0200,1,Marine,THEIS,224,10,Talent Acquisition Manager,1,1,['mondeeuropefrancerhonealpes'],,Talent Acquisition Manager,1990-09-18,282,282,1,5,marine.theis@seenovate.com
+57,1352,2023-01-05T10:42:08+0100,2023-09-21T10:24:42+0200,0,Hatem,GOUASMI,00269,0,Consultant  décisionnel expérimenté,1,1,['mondeeuropefrancerhonealpes'],"BO
 BODS",Consultant décisionnel expérimenté,1987-02-01,3,12,1,30,hatem.gouasmi@seenovate.com
-57,1499,2023-02-06T09:53:15+0100,2023-09-12T17:03:53+0200,0,Frédéric,COLIN,00282,0,Consultant  décisionnel  expérimenté,1,1,['mondeeuropefrancebretagne'],"BO
+58,1499,2023-02-06T09:53:15+0100,2023-09-12T17:03:53+0200,0,Frédéric,COLIN,00282,0,Consultant  décisionnel  expérimenté,1,1,['mondeeuropefrancebretagne'],"BO
 BODS
 Talend",Consultant décisionnel expérimenté,1963-02-05,3,71,1,30,frederic.colin@seenovate.com
-58,969,2022-07-28T17:23:57+0200,2023-09-12T15:33:41+0200,0,Harold,AKROUT,00247,0,Data Intelligence Manager,1,1,['mondeeuropefrancelanguedocroussillon'],,DIM,1989-08-23,48,71,1,30,harold.akrout@seenovate.com
-59,104,2020-04-08T16:34:07+0200,2023-09-12T15:29:19+0200,1,Nancy,SECK,00143,0,Consultant décisionnel junior,1,1,['mondeeuropefrancelanguedocroussillon'],,Consultant décisionnel,1993-05-27,77,71,1,30,nancy.seck@seenovate.com
-60,58,2018-03-09T18:18:07+0100,2023-09-12T14:43:02+0200,0,Coca,LEDRA,31,0,Directrice production,0,1,[],,Responsable de production,1970-07-12,17,1,1,,coca.ledra@br3consultants.fr
-61,145,2020-10-07T12:37:32+0200,2023-09-12T14:42:44+0200,1,NAEMA,FOUNTI,,11,Chargée de dossiers CEENOVATE,0,1,[],,Chargée de dossiers CEE,1986-02-19,72,17,4,,naema.founti@ceenovate.fr
-62,23,2016-01-10T10:06:08+0100,2023-09-12T14:42:16+0200,0,Cyril,GUITON,20,0,Consultant,0,1,[],,Consultant,1983-12-29,17,1,1,,cyril.guiton@br3consultants.fr
-63,5,2016-01-10T10:06:07+0100,2023-09-12T14:41:57+0200,0,Sébastien,PROULT,6,0,Consultant,0,1,[],,Consultant,1976-03-30,17,1,1,,sebastien.proult@br3consultants.fr
-64,39,2016-05-30T13:43:48+0200,2023-09-12T14:41:37+0200,0,Fabrice,KONAN,26,0,Consultant décisionnel,0,1,[],,Consultant BI,1975-01-26,17,1,1,,fabrice.konan@br3consultants.fr
-65,37,2016-05-02T09:49:33+0200,2023-09-12T14:41:18+0200,0,Grégory,BOURNOF-BRAZ,22,0,Consultant AMOA,0,1,[],,Consultant en stratégie digitale,1977-05-01,17,1,1,,gregory.bournof-braz@br3consultants.fr
-66,10,2016-01-10T10:06:07+0100,2023-09-12T14:40:56+0200,0,Guillaume,ESCOFIER,00094,0,Consultant,0,1,['mondeeuropefrancerhonealpes'],,Consultant Seenovate,1971-05-08,12,12,1,,guillaume.escofier@seenovate.com
-67,46,2016-10-03T12:06:19+0200,2023-09-12T14:40:37+0200,0,Pierre,CHELLEN,23,0,Consultant décisionnel,0,1,[],,Consultant BI,1978-10-12,17,1,1,,pierre.chellen@br3consultants.fr
-68,146,2020-10-13T11:53:31+0200,2023-09-12T14:40:01+0200,1,Nadia,TAIBI,00153,0,Chef de projets,0,1,['mondeeuropefranceiledefrance'],,Consultant Seenovate,1979-09-19,78,78,1,,nadia.taibi@seenovate.com
-69,62,2018-08-29T10:04:16+0200,2023-09-12T14:39:22+0200,0,Frank,SAUVAGE,38,0,Consultant data scientist & décisionnel,0,1,['mondeeuropefrancelanguedocroussillon'],,Consultant Seenovate,1976-05-16,12,12,1,,frank.sauvage@seenovate.com
-70,89,2019-12-13T12:22:01+0100,2023-09-12T14:38:16+0200,0,Jean-Michel,ESTIBALS,,10,DIRECTEUR GENERAL,0,1,[],,Directeur général,1967-07-28,,89,1,,jm.estibals@seenovate.com
-71,1591,2023-03-07T17:51:04+0100,2023-09-12T14:15:41+0200,0,Titouan,HOUDE,00288,0,Stage Sport Scientist,1,1,['mondeeuropefrancerhonealpes'],,Consultant Data,1998-06-10,84,12,1,30,titouan.houde@seenovate.com
-72,1348,2023-01-05T09:47:11+0100,2023-09-12T12:47:37+0200,1,Diane,NGOUNOU,00272,0,Consultante Décisionnelle,1,1,['mondeeuropefranceiledefrance'],"PowerBI 
+59,969,2022-07-28T17:23:57+0200,2023-09-12T15:33:41+0200,0,Harold,AKROUT,00247,0,Data Intelligence Manager,1,1,['mondeeuropefrancelanguedocroussillon'],,DIM,1989-08-23,48,71,1,30,harold.akrout@seenovate.com
+60,104,2020-04-08T16:34:07+0200,2023-09-12T15:29:19+0200,1,Nancy,SECK,00143,0,Consultant décisionnel junior,1,1,['mondeeuropefrancelanguedocroussillon'],,Consultant décisionnel,1993-05-27,77,71,1,30,nancy.seck@seenovate.com
+61,58,2018-03-09T18:18:07+0100,2023-09-12T14:43:02+0200,0,Coca,LEDRA,31,0,Directrice production,0,1,[],,Responsable de production,1970-07-12,17,1,1,,coca.ledra@br3consultants.fr
+62,145,2020-10-07T12:37:32+0200,2023-09-12T14:42:44+0200,1,NAEMA,FOUNTI,,11,Chargée de dossiers CEENOVATE,0,1,[],,Chargée de dossiers CEE,1986-02-19,72,17,4,,naema.founti@ceenovate.fr
+63,23,2016-01-10T10:06:08+0100,2023-09-12T14:42:16+0200,0,Cyril,GUITON,20,0,Consultant,0,1,[],,Consultant,1983-12-29,17,1,1,,cyril.guiton@br3consultants.fr
+64,5,2016-01-10T10:06:07+0100,2023-09-12T14:41:57+0200,0,Sébastien,PROULT,6,0,Consultant,0,1,[],,Consultant,1976-03-30,17,1,1,,sebastien.proult@br3consultants.fr
+65,39,2016-05-30T13:43:48+0200,2023-09-12T14:41:37+0200,0,Fabrice,KONAN,26,0,Consultant décisionnel,0,1,[],,Consultant BI,1975-01-26,17,1,1,,fabrice.konan@br3consultants.fr
+66,37,2016-05-02T09:49:33+0200,2023-09-12T14:41:18+0200,0,Grégory,BOURNOF-BRAZ,22,0,Consultant AMOA,0,1,[],,Consultant en stratégie digitale,1977-05-01,17,1,1,,gregory.bournof-braz@br3consultants.fr
+67,10,2016-01-10T10:06:07+0100,2023-09-12T14:40:56+0200,0,Guillaume,ESCOFIER,00094,0,Consultant,0,1,['mondeeuropefrancerhonealpes'],,Consultant Seenovate,1971-05-08,12,12,1,,guillaume.escofier@seenovate.com
+68,46,2016-10-03T12:06:19+0200,2023-09-12T14:40:37+0200,0,Pierre,CHELLEN,23,0,Consultant décisionnel,0,1,[],,Consultant BI,1978-10-12,17,1,1,,pierre.chellen@br3consultants.fr
+69,146,2020-10-13T11:53:31+0200,2023-09-12T14:40:01+0200,1,Nadia,TAIBI,00153,0,Chef de projets,0,1,['mondeeuropefranceiledefrance'],,Consultant Seenovate,1979-09-19,78,78,1,,nadia.taibi@seenovate.com
+70,62,2018-08-29T10:04:16+0200,2023-09-12T14:39:22+0200,0,Frank,SAUVAGE,38,0,Consultant data scientist & décisionnel,0,1,['mondeeuropefrancelanguedocroussillon'],,Consultant Seenovate,1976-05-16,12,12,1,,frank.sauvage@seenovate.com
+71,89,2019-12-13T12:22:01+0100,2023-09-12T14:38:16+0200,0,Jean-Michel,ESTIBALS,,10,DIRECTEUR GENERAL,0,1,[],,Directeur général,1967-07-28,,89,1,,jm.estibals@seenovate.com
+72,1591,2023-03-07T17:51:04+0100,2023-09-12T14:15:41+0200,0,Titouan,HOUDE,00288,0,Stage Sport Scientist,1,1,['mondeeuropefrancerhonealpes'],,Consultant Data,1998-06-10,84,12,1,30,titouan.houde@seenovate.com
+73,1348,2023-01-05T09:47:11+0100,2023-09-12T12:47:37+0200,1,Diane,NGOUNOU,00272,0,Consultante Décisionnelle,1,1,['mondeeuropefranceiledefrance'],"PowerBI 
 SSAS
 SQL Server
 SSRS",Consultante Décisionnelle,1991-01-08,824,78,1,30,diane.ngounou@seenovate.com
-73,1800,2023-04-12T10:47:11+0200,2023-09-12T11:06:16+0200,0,Paul-Aziel,KONTCHOU,00291,0,Consultant  décisionnel,1,1,['mondeeuropefranceiledefrance'],"BO
+74,1800,2023-04-12T10:47:11+0200,2023-09-12T11:06:16+0200,0,Paul-Aziel,KONTCHOU,00291,0,Consultant  décisionnel,1,1,['mondeeuropefranceiledefrance'],"BO
 Webi 
 Power BI",Consultant décisionnel,1987-08-17,1293,78,1,30,paul-aziel.kontchou@seenovate.com
-74,1291,2022-12-15T12:02:27+0100,2023-09-11T17:42:12+0200,0,Jean-Philippe,WAGSCHAL,00270,10,Directeur d'agence,1,1,['mondeeuropefranceaquitaine'],,Responsable d’Agence,1968-09-01,17,17,1,20,jean-philippe.wagschal@seenovate.com
-75,60,2018-06-25T13:50:27+0200,2023-09-11T17:42:11+0200,1,Audrey,CARNEIRO,00108,10,Ingénieur commercial,1,1,['mondeeuropefrancerhonealpes'],,Ingénieure Marketing & Commercial,1995-03-17,17,12,1,20,audrey.carneiro@seenovate.com
-76,64,2018-12-18T16:23:09+0100,2023-09-11T17:42:11+0200,0,Nicolas,BEAU,00111,10,Consultant Business Intelligence,1,1,['mondeeuropefrancerhonealpes'],,Ingénieur commercial,1983-02-06,17,17,1,20,nicolas.beau@seenovate.com
-77,255,2021-07-05T11:20:54+0200,2023-09-11T17:42:11+0200,0,Baptiste,d'ESPINOSE DE LACAILLERIE,00198,10,Commercial,1,1,['mondeeuropefranceiledefrance'],,Ingénieur Commercial,1994-09-27,17,17,1,20,baptiste.despinose@seenovate.com
-78,368,2022-02-15T10:08:04+0100,2023-09-11T17:42:11+0200,1,Anne,TAULELLE,00231,10,Ingénieure Commerciale,1,1,['mondeeuropefrancelanguedocroussillon'],,Ingénieure Commerciale,1984-03-17,17,17,1,20,anne.taulelle@seenovate.com
-79,1508,2023-02-09T16:51:46+0100,2023-09-11T17:42:10+0200,1,Alexandra,ARJONA,00285,10,Assistante Commerciale Alternante,1,1,['mondeeuropefranceaquitaine'],,Assistante Commerciale Alternante,2004-01-14,17,1291,1,20,alexandra.arjona@seenovate.com
-80,7,2016-01-10T10:06:07+0100,2023-09-11T17:13:33+0200,0,Serge,RICARD,00091,10,DIRECTEUR GENERAL,1,1,['mondeeuropefrancerhonealpes'],,Président,1966-02-04,,,1,3,serge.ricard@seenovate.com
-81,282,2021-10-27T10:04:47+0200,2023-09-11T17:12:58+0200,0,Hervé,HOTOT,00211,10,Directeur des Ressources Humaines,1,1,['mondeeuropefranceiledefrance'],,Directeur des Ressources Humaines,1963-07-17,17,17,1,3,herve.hotot@seenovate.com
-82,227,2021-03-18T16:34:34+0100,2023-09-11T17:12:10+0200,0,Gilles,RAMIN,00174,0,Operations Manager,1,1,['mondeeuropefrancerhonealpes'],"Management du Delivery, Management des processus, Management des risques, Certifications des processus et des services, Formations des consultants à la relation client et à la gestion de projets, Management de la relation client, Intelligence relationnelle, intégration de CRM/ERP",Operations Manager,1963-10-08,299,17,1,30,gilles.ramin@seenovate.com
-83,241,2021-05-10T09:15:42+0200,2023-09-11T17:11:49+0200,0,Mohamed,GARNI,00185,0,Chef de projet décisionnel,1,1,['mondeeuropefranceiledefrance'],,Chef de projet décisionnel,1965-07-20,824,78,1,30,mohamed.garni@seenovate.com
-84,38,2016-05-02T09:49:51+0200,2023-09-11T17:11:29+0200,0,Frédéric,RICHARD,00101,0,Consultant décisionnel,1,1,['mondeeuropefrancerhonealpes'],MAJ MAP le 06/06/2023,Consultant Seenovate,1972-08-07,9,12,1,30,frederic.richard@seenovate.com
-85,17,2016-01-10T10:06:08+0100,2023-09-11T17:10:38+0200,0,Alain,REPIQUET,00107,10,DIRECTEUR GENERAL,1,1,['mondeeuropefrancerhonealpes'],,Directeur Général & Directeur commercial / marketing,1971-01-27,,,1,3,alain.repiquet@seenovate.com
-86,65,2019-01-24T17:23:49+0100,2023-09-26T17:31:26+0200,0,Pierre-Guillaume,VACHERET,00112,0,consultant Business Intelligence,1,1,['mondeeuropefrancerhonealpes'],MAJ MJE le 19/07/2023,Consultant Seenovate,1984-05-23,9,12,1,30,pierre-guillaume.vacheret@seenovate.com
-87,72,2019-07-18T10:57:18+0200,2023-09-11T17:09:57+0200,0,Marc,DELPLANQUE,00115,0,Consultant en système d'information,1,1,['mondeeuropefrancerhonealpes'],"Commercialisation et gestion d'activités de traitement de dossiers CEE, conseil sur le dispositif CEE",Directeur CEE,1987-07-04,48,17,4,30,marc.delplanque@seenovate.com
-88,48,2017-01-24T11:07:52+0100,2023-09-11T17:09:39+0200,0,Jonathan,BODIN,00103,0,Consultant data scientist et décisionnel,1,1,['mondeeuropefrancerhonealpes'],,Directeur Technique et Innovation,1983-05-04,17,17,1,3,jonathan.bodin@seenovate.com
-89,52,2017-09-06T16:02:24+0200,2023-09-11T17:09:18+0200,1,Dominique,LOPEZ,00104,10,Office Senior Manager,1,1,['mondeeuropefrancerhonealpes'],,Office senior manager,1961-12-24,228,228,1,6,dominique.lopez@seenovate.com
-90,228,2021-03-18T16:43:10+0100,2023-09-11T17:08:53+0200,0,Thierry,GREFF,00173,10,Finance Manager,1,1,['mondeeuropefranceiledefrance'],,FINANCE MANAGER,1963-06-09,17,17,1,3,thierry.greff@seenovate.com
-91,8,2016-01-10T10:06:07+0100,2023-09-11T17:08:25+0200,0,Laurent,VIDAL,00092,0,Consultant Ingénieur projet,1,1,['mondeeuropefrancerhonealpes'],MAJ le 27/07/2023,Consultant Seenovate,1972-03-15,9,12,1,30,laurent.vidal@seenovate.com
-92,13,2016-01-10T10:06:07+0100,2023-09-11T17:07:29+0200,1,Claire,ROYER,00097,0,Consultant,1,1,['mondeeuropefrancerhonealpes'],,Consultant Seenovate,1975-12-23,6,12,1,30,claire.royer@seenovate.com
-93,147,2020-10-13T12:11:22+0200,2023-09-11T14:02:01+0200,0,Mathias,CHAMBOST,00151,10,Marketeur et agent administratif,1,1,['mondeeuropefrancerhonealpes'],,Chargé de Marketing,1996-03-25,60,12,1,20,mathias.chambost@seenovate.com
-94,78,2019-10-22T17:08:51+0200,2023-09-11T10:30:12+0200,0,Jean-David,LO FAN HIN,00017,10,Responsable technique,1,1,['mondeeuropefranceiledefrance'],,Directeur Agence Paris,1984-05-04,17,17,1,3,jean.lofanhin@seenovate.com
-95,12,2016-01-10T10:06:07+0100,2023-09-11T10:30:11+0200,0,Thierry,CHAULET,00096,10,Directeur Agence Lyon,1,1,['mondeeuropefrancerhonealpes'],,Responsable Agence Lyon,1983-01-12,17,17,1,3,thierry.chaulet@seenovate.com
-96,71,2019-07-17T15:44:17+0200,2023-09-11T10:30:11+0200,0,Grégory,LEROUX,00116,10,Responsable Agence Ouest,1,1,['mondeeuropefrancebretagne'],,Responsable Agence Ouest,1973-08-04,17,17,1,3,gregory.leroux@seenovate.com
-97,266,2021-09-20T09:37:58+0200,2023-09-08T16:38:33+0200,0,François,ROSIQUE,00202,0,Référent CEE,1,1,['mondeeuropefrancerhonealpes'],"Dispositif CEE, exigences travaux, relations partenaires",Référent CEE,1966-02-01,72,72,4,30,francois.rosique@ceenovate.fr
-98,865,2022-06-24T10:25:28+0200,2023-09-08T16:34:41+0200,0,Guillaume,DENIAU,00244,0,Consultant  Décisionnel,1,1,['mondeeuropefrancebretagne'],Référent TALEND - maj 30/06/2023 (SDU),Consultant  Décisionnel,1969-09-20,1107,71,1,30,guillaume.deniau@seenovate.com
-99,83,2019-12-10T16:05:35+0100,2023-09-08T16:33:51+0200,1,Ourdia,MEZZOU,00047,0,Consultant décisionnel,1,1,['mondeeuropefranceiledefrance'],,Consultant Seenovate,1987-01-02,99,78,1,30,ourdia.mezzou@seenovate.com
-100,113,2020-09-03T19:28:43+0200,2023-09-08T16:23:20+0200,1,Natou,MASSALE,00150,10,Service Sales,1,1,['mondeeuropefrancerhonealpes'],,Responsable Ressources Humaines,1996-08-05,282,282,1,5,natou.massale@seenovate.com
-101,1300,2022-12-20T11:14:39+0100,2023-09-08T16:15:36+0200,0,Antoine,GIROUD,00277,0,Consultant Décisionnel,1,1,['mondeeuropefranceaquitaine'],,Consultant Décisionnel,1984-04-03,1292,71,1,30,antoine.giroud@seenovate.com
-102,1475,2023-02-01T11:09:39+0100,2023-09-08T12:04:33+0200,0,Willy,NFONDANG,,1,,1,1,[],,Indépendant MLT,,52,52,1,30,willy.nfondang@gmail.com
-103,972,2022-07-29T10:48:45+0200,2023-09-08T11:40:47+0200,0,Ludovic,OLIVRIN,00255,0,Consultant  décisionnel,1,1,['mondeeuropefrancelanguedocroussillon'],,Consultant Décisionnel,1983-06-04,1292,71,1,30,ludovic.olivrin@seenovate.com
-104,2356,2023-08-14T11:19:48+0200,2023-09-08T09:52:42+0200,1,Chayma,DAAYEB,,0,Consultant data,1,1,['mondeeuropefrancelanguedocroussillon'],"R
+75,1291,2022-12-15T12:02:27+0100,2023-09-11T17:42:12+0200,0,Jean-Philippe,WAGSCHAL,00270,10,Directeur d'agence,1,1,['mondeeuropefranceaquitaine'],,Responsable d’Agence,1968-09-01,17,17,1,20,jean-philippe.wagschal@seenovate.com
+76,60,2018-06-25T13:50:27+0200,2023-09-11T17:42:11+0200,1,Audrey,CARNEIRO,00108,10,Ingénieur commercial,1,1,['mondeeuropefrancerhonealpes'],,Ingénieure Marketing & Commercial,1995-03-17,17,12,1,20,audrey.carneiro@seenovate.com
+77,64,2018-12-18T16:23:09+0100,2023-09-11T17:42:11+0200,0,Nicolas,BEAU,00111,10,Consultant Business Intelligence,1,1,['mondeeuropefrancerhonealpes'],,Ingénieur commercial,1983-02-06,17,17,1,20,nicolas.beau@seenovate.com
+78,255,2021-07-05T11:20:54+0200,2023-09-11T17:42:11+0200,0,Baptiste,d'ESPINOSE DE LACAILLERIE,00198,10,Commercial,1,1,['mondeeuropefranceiledefrance'],,Ingénieur Commercial,1994-09-27,17,17,1,20,baptiste.despinose@seenovate.com
+79,368,2022-02-15T10:08:04+0100,2023-09-11T17:42:11+0200,1,Anne,TAULELLE,00231,10,Ingénieure Commerciale,1,1,['mondeeuropefrancelanguedocroussillon'],,Ingénieure Commerciale,1984-03-17,17,17,1,20,anne.taulelle@seenovate.com
+80,1508,2023-02-09T16:51:46+0100,2023-09-11T17:42:10+0200,1,Alexandra,ARJONA,00285,10,Assistante Commerciale Alternante,1,1,['mondeeuropefranceaquitaine'],,Assistante Commerciale Alternante,2004-01-14,17,1291,1,20,alexandra.arjona@seenovate.com
+81,7,2016-01-10T10:06:07+0100,2023-09-11T17:13:33+0200,0,Serge,RICARD,00091,10,DIRECTEUR GENERAL,1,1,['mondeeuropefrancerhonealpes'],,Président,1966-02-04,,,1,3,serge.ricard@seenovate.com
+82,282,2021-10-27T10:04:47+0200,2023-09-11T17:12:58+0200,0,Hervé,HOTOT,00211,10,Directeur des Ressources Humaines,1,1,['mondeeuropefranceiledefrance'],,Directeur des Ressources Humaines,1963-07-17,17,17,1,3,herve.hotot@seenovate.com
+83,227,2021-03-18T16:34:34+0100,2023-09-11T17:12:10+0200,0,Gilles,RAMIN,00174,0,Operations Manager,1,1,['mondeeuropefrancerhonealpes'],"Management du Delivery, Management des processus, Management des risques, Certifications des processus et des services, Formations des consultants à la relation client et à la gestion de projets, Management de la relation client, Intelligence relationnelle, intégration de CRM/ERP",Operations Manager,1963-10-08,299,17,1,30,gilles.ramin@seenovate.com
+84,241,2021-05-10T09:15:42+0200,2023-09-11T17:11:49+0200,0,Mohamed,GARNI,00185,0,Chef de projet décisionnel,1,1,['mondeeuropefranceiledefrance'],,Chef de projet décisionnel,1965-07-20,824,78,1,30,mohamed.garni@seenovate.com
+85,38,2016-05-02T09:49:51+0200,2023-09-11T17:11:29+0200,0,Frédéric,RICHARD,00101,0,Consultant décisionnel,1,1,['mondeeuropefrancerhonealpes'],MAJ MAP le 06/06/2023,Consultant Seenovate,1972-08-07,9,12,1,30,frederic.richard@seenovate.com
+86,17,2016-01-10T10:06:08+0100,2023-09-11T17:10:38+0200,0,Alain,REPIQUET,00107,10,DIRECTEUR GENERAL,1,1,['mondeeuropefrancerhonealpes'],,Directeur Général & Directeur commercial / marketing,1971-01-27,,,1,3,alain.repiquet@seenovate.com
+87,65,2019-01-24T17:23:49+0100,2023-09-26T17:31:26+0200,0,Pierre-Guillaume,VACHERET,00112,0,consultant Business Intelligence,1,1,['mondeeuropefrancerhonealpes'],MAJ MJE le 19/07/2023,Consultant Seenovate,1984-05-23,9,12,1,30,pierre-guillaume.vacheret@seenovate.com
+88,72,2019-07-18T10:57:18+0200,2023-09-11T17:09:57+0200,0,Marc,DELPLANQUE,00115,0,Consultant en système d'information,1,1,['mondeeuropefrancerhonealpes'],"Commercialisation et gestion d'activités de traitement de dossiers CEE, conseil sur le dispositif CEE",Directeur CEE,1987-07-04,48,17,4,30,marc.delplanque@seenovate.com
+89,48,2017-01-24T11:07:52+0100,2023-09-11T17:09:39+0200,0,Jonathan,BODIN,00103,0,Consultant data scientist et décisionnel,1,1,['mondeeuropefrancerhonealpes'],,Directeur Technique et Innovation,1983-05-04,17,17,1,3,jonathan.bodin@seenovate.com
+90,52,2017-09-06T16:02:24+0200,2023-09-11T17:09:18+0200,1,Dominique,LOPEZ,00104,10,Office Senior Manager,1,1,['mondeeuropefrancerhonealpes'],,Office senior manager,1961-12-24,228,228,1,6,dominique.lopez@seenovate.com
+91,228,2021-03-18T16:43:10+0100,2023-09-11T17:08:53+0200,0,Thierry,GREFF,00173,10,Finance Manager,1,1,['mondeeuropefranceiledefrance'],,FINANCE MANAGER,1963-06-09,17,17,1,3,thierry.greff@seenovate.com
+92,8,2016-01-10T10:06:07+0100,2023-09-11T17:08:25+0200,0,Laurent,VIDAL,00092,0,Consultant Ingénieur projet,1,1,['mondeeuropefrancerhonealpes'],MAJ le 27/07/2023,Consultant Seenovate,1972-03-15,9,12,1,30,laurent.vidal@seenovate.com
+93,13,2016-01-10T10:06:07+0100,2023-09-11T17:07:29+0200,1,Claire,ROYER,00097,0,Consultant,1,1,['mondeeuropefrancerhonealpes'],,Consultant Seenovate,1975-12-23,6,12,1,30,claire.royer@seenovate.com
+94,147,2020-10-13T12:11:22+0200,2023-09-11T14:02:01+0200,0,Mathias,CHAMBOST,00151,10,Marketeur et agent administratif,1,1,['mondeeuropefrancerhonealpes'],,Chargé de Marketing,1996-03-25,60,12,1,20,mathias.chambost@seenovate.com
+95,78,2019-10-22T17:08:51+0200,2023-09-11T10:30:12+0200,0,Jean-David,LO FAN HIN,00017,10,Responsable technique,1,1,['mondeeuropefranceiledefrance'],,Directeur Agence Paris,1984-05-04,17,17,1,3,jean.lofanhin@seenovate.com
+96,12,2016-01-10T10:06:07+0100,2023-09-11T10:30:11+0200,0,Thierry,CHAULET,00096,10,Directeur Agence Lyon,1,1,['mondeeuropefrancerhonealpes'],,Responsable Agence Lyon,1983-01-12,17,17,1,3,thierry.chaulet@seenovate.com
+97,71,2019-07-17T15:44:17+0200,2023-09-11T10:30:11+0200,0,Grégory,LEROUX,00116,10,Responsable Agence Ouest,1,1,['mondeeuropefrancebretagne'],,Responsable Agence Ouest,1973-08-04,17,17,1,3,gregory.leroux@seenovate.com
+98,266,2021-09-20T09:37:58+0200,2023-09-08T16:38:33+0200,0,François,ROSIQUE,00202,0,Référent CEE,1,1,['mondeeuropefrancerhonealpes'],"Dispositif CEE, exigences travaux, relations partenaires",Référent CEE,1966-02-01,72,72,4,30,francois.rosique@ceenovate.fr
+99,865,2022-06-24T10:25:28+0200,2023-09-08T16:34:41+0200,0,Guillaume,DENIAU,00244,0,Consultant  Décisionnel,1,1,['mondeeuropefrancebretagne'],Référent TALEND - maj 30/06/2023 (SDU),Consultant  Décisionnel,1969-09-20,1107,71,1,30,guillaume.deniau@seenovate.com
+100,83,2019-12-10T16:05:35+0100,2023-09-08T16:33:51+0200,1,Ourdia,MEZZOU,00047,0,Consultant décisionnel,1,1,['mondeeuropefranceiledefrance'],,Consultant Seenovate,1987-01-02,99,78,1,30,ourdia.mezzou@seenovate.com
+101,113,2020-09-03T19:28:43+0200,2023-09-08T16:23:20+0200,1,Natou,MASSALE,00150,10,Service Sales,1,1,['mondeeuropefrancerhonealpes'],,Responsable Ressources Humaines,1996-08-05,282,282,1,5,natou.massale@seenovate.com
+102,1300,2022-12-20T11:14:39+0100,2023-09-08T16:15:36+0200,0,Antoine,GIROUD,00277,0,Consultant Décisionnel,1,1,['mondeeuropefranceaquitaine'],,Consultant Décisionnel,1984-04-03,1292,71,1,30,antoine.giroud@seenovate.com
+103,1475,2023-02-01T11:09:39+0100,2023-09-08T12:04:33+0200,0,Willy,NFONDANG,,1,,1,1,[],,Indépendant MLT,,52,52,1,30,willy.nfondang@gmail.com
+104,972,2022-07-29T10:48:45+0200,2023-09-08T11:40:47+0200,0,Ludovic,OLIVRIN,00255,0,Consultant  décisionnel,1,1,['mondeeuropefrancelanguedocroussillon'],,Consultant Décisionnel,1983-06-04,1292,71,1,30,ludovic.olivrin@seenovate.com
+105,2356,2023-08-14T11:19:48+0200,2023-09-08T09:52:42+0200,1,Chayma,DAAYEB,,0,Consultant data,1,1,['mondeeuropefrancelanguedocroussillon'],"R
 Python
 SQL",Consultant Data,1991-09-15,70,71,1,30,chayma.daayeb@seenovate.com
-105,2079,2023-06-02T14:26:41+0200,2023-09-07T17:16:49+0200,0,Basile,REINERT,00301,0,Data Scientist,1,1,['mondeeuropefrancerhonealpes'],,Apprenti Data Scientist,2000-03-08,70,12,1,30,basile.reinert@seenovate.com
-106,70,2019-05-28T15:00:03+0200,2023-09-07T17:11:31+0200,0,Gabriel,KOCEVAR,00114,0,Consultant en statistiques,1,1,['mondeeuropefrancerhonealpes'],,DIM et Responsable R&D,1989-06-23,48,12,1,30,gabriel.kocevar@seenovate.com
-107,75,2019-10-22T16:45:11+0200,2023-09-07T15:27:42+0200,0,Mathieu,BENOIT,00014,0,Consultant décisionnel,1,1,['mondeeuropefrancelanguedocroussillon'],sap bi,Consultant Seenovate,1986-04-05,1293,71,1,30,mathieu.benoit@seenovate.com
-108,106,2020-05-14T11:51:31+0200,2023-09-07T14:50:11+0200,0,Jonathan,JOSEPH,00144,0,Consultant décisionnel,1,1,['mondeeuropefranceiledefrance'],,Consultant Seenovate,1991-10-17,824,78,1,30,jonathan.joseph@seenovate.com
-109,87,2019-12-10T17:29:41+0100,2023-09-07T14:11:22+0200,0,Darren,SAMRETH,00044,0,Datascientist,1,1,['mondeeuropefrancelanguedocroussillon'],,Consultant Seenovate,1996-01-28,70,71,1,30,darren.samreth@seenovate.com
-110,67,2019-03-13T11:52:51+0100,2023-09-07T13:50:30+0200,0,Benoit,BORDE,00113,0,Consultant Business Intelligence,1,1,['mondeeuropefrancerhonealpes'],,DIM et Responsable CDS,1977-08-03,48,12,1,30,benoit.borde@seenovate.com
-111,348,2022-02-01T15:15:29+0100,2023-09-07T13:50:30+0200,0,Damien,QUAIN,00230,0,Ingénieur DevOps,1,1,['mondeeuropefrancelanguedocroussillon'],,Ingénieur DevOps,1993-10-27,77,71,1,30,damien.quain@seenovate.com
-112,1870,2023-04-26T10:03:16+0200,2023-09-07T11:23:19+0200,1,Kenza,EL MEZABI,00294,10,Assistante administrative,1,1,['mondeeuropefranceiledefrance'],,Assistante administrative,1982-11-06,48,78,1,30,Kenza.elmezabi@seenovate.com
-113,1228,2022-11-22T10:34:21+0100,2023-09-07T11:10:46+0200,0,Karim,KHARBACHE,00265,0,Consultant  décisionnel,0,1,['mondeeuropefranceiledefrance'],"SAP BI 
+106,2079,2023-06-02T14:26:41+0200,2023-09-07T17:16:49+0200,0,Basile,REINERT,00301,0,Data Scientist,1,1,['mondeeuropefrancerhonealpes'],,Apprenti Data Scientist,2000-03-08,70,12,1,30,basile.reinert@seenovate.com
+107,70,2019-05-28T15:00:03+0200,2023-09-07T17:11:31+0200,0,Gabriel,KOCEVAR,00114,0,Consultant en statistiques,1,1,['mondeeuropefrancerhonealpes'],,DIM et Responsable R&D,1989-06-23,48,12,1,30,gabriel.kocevar@seenovate.com
+108,75,2019-10-22T16:45:11+0200,2023-09-07T15:27:42+0200,0,Mathieu,BENOIT,00014,0,Consultant décisionnel,1,1,['mondeeuropefrancelanguedocroussillon'],sap bi,Consultant Seenovate,1986-04-05,1293,71,1,30,mathieu.benoit@seenovate.com
+109,106,2020-05-14T11:51:31+0200,2023-09-07T14:50:11+0200,0,Jonathan,JOSEPH,00144,0,Consultant décisionnel,1,1,['mondeeuropefranceiledefrance'],,Consultant Seenovate,1991-10-17,824,78,1,30,jonathan.joseph@seenovate.com
+110,87,2019-12-10T17:29:41+0100,2023-09-07T14:11:22+0200,0,Darren,SAMRETH,00044,0,Datascientist,1,1,['mondeeuropefrancelanguedocroussillon'],,Consultant Seenovate,1996-01-28,70,71,1,30,darren.samreth@seenovate.com
+111,67,2019-03-13T11:52:51+0100,2023-09-07T13:50:30+0200,0,Benoit,BORDE,00113,0,Consultant Business Intelligence,1,1,['mondeeuropefrancerhonealpes'],,DIM et Responsable CDS,1977-08-03,48,12,1,30,benoit.borde@seenovate.com
+112,348,2022-02-01T15:15:29+0100,2023-09-07T13:50:30+0200,0,Damien,QUAIN,00230,0,Ingénieur DevOps,1,1,['mondeeuropefrancelanguedocroussillon'],,Ingénieur DevOps,1993-10-27,77,71,1,30,damien.quain@seenovate.com
+113,1870,2023-04-26T10:03:16+0200,2023-09-07T11:23:19+0200,1,Kenza,EL MEZABI,00294,10,Assistante administrative,1,1,['mondeeuropefranceiledefrance'],,Assistante administrative,1982-11-06,48,78,1,30,Kenza.elmezabi@seenovate.com
+114,1228,2022-11-22T10:34:21+0100,2023-09-07T11:10:46+0200,0,Karim,KHARBACHE,00265,0,Consultant  décisionnel,0,1,['mondeeuropefranceiledefrance'],"SAP BI 
 power BI",Consultant Décisionnel,1970-01-01,3,78,1,30,karim.kharbache@seenovate.com
-114,2355,2023-08-14T11:14:10+0200,2023-09-07T09:52:40+0200,1,Léna,LE BOUGEANT,,10,Chargé de recrutement,1,1,['mondeeuropefrancebretagne'],,Chargé de recrutement,2000-08-03,282,71,1,5,lena.le-bougeant@seenovate.com
-115,277,2021-10-12T18:53:42+0200,2023-09-07T09:16:00+0200,0,Djamal,BENNADJI,213,0,Consultant décisionnel,1,1,['mondeeuropefranceiledefrance'],,Consultant décisionnel,1989-11-24,824,78,1,30,djamal.bennadji@seenovate.com
-116,872,2022-06-28T18:23:10+0200,2023-09-06T15:02:30+0200,0,Matar,TRAORE,,1,,1,1,[],,Consultant sté SYSTEMES 2ID,,64,,1,30,matar.traore@cnous.fr
-117,276,2021-10-06T17:36:37+0200,2023-09-06T15:02:00+0200,1,Camille,BOUILLOD,214,0,Chargée de dossiers CEENOVATE,1,1,['mondeeuropefrancerhonealpes'],gestion administrative de dossiers CEE,Chargée de dossiers CEE,1993-12-29,72,72,4,30,camille.bouillod@ceenovate.fr
-118,1398,2023-01-17T09:36:10+0100,2023-09-06T14:42:22+0200,0,Préciser le N° du projet,AtolCD,,1,,1,1,[],,,,64,,1,30,NPU
-119,2225,2023-07-10T16:16:45+0200,2023-09-06T10:30:57+0200,0,Georges,LEGROS,,1,,1,1,[],,sous-traitant SKY REACH INTELLIGENCE,,17,17,1,30,contact@skyreachintelligence.com
-120,2314,2023-08-01T15:45:57+0200,2023-09-06T10:30:20+0200,0,Karim (ext),KHARBACHE,,1,,1,1,[],,Sous-traitant DATATHINK,,78,78,1,30,karimkharbache@gmail.com
-121,1458,2023-01-25T15:40:25+0100,2023-09-06T10:15:13+0200,1,Hajer,HAMMOUDA,00281,10,Gestionnaire ADV,0,1,['mondeeuropefrancerhonealpes'],,Gestionnaire ADV,1994-03-20,228,12,1,6,hajer.hammouda@seenovate.com
-122,1853,2023-04-21T16:07:17+0200,2023-09-06T08:42:32+0200,1,Rym,TOUBAL,00292,0,Consultante décisionnelle,1,1,['mondeeuropefrancerhonealpes'],,Consultante Décisionnelle,1984-07-06,221,12,1,30,rym.toubal@seenovate.com
-123,1801,2023-04-12T11:21:53+0200,2023-09-05T14:27:21+0200,1,Germene,DJANPOUO KUEPO,00289,0,Consultante décisionnelle,1,1,['mondeeuropefranceiledefrance'],"SAP BO
+115,2355,2023-08-14T11:14:10+0200,2023-09-07T09:52:40+0200,1,Léna,LE BOUGEANT,,10,Chargé de recrutement,1,1,['mondeeuropefrancebretagne'],,Chargé de recrutement,2000-08-03,282,71,1,5,lena.le-bougeant@seenovate.com
+116,277,2021-10-12T18:53:42+0200,2023-09-07T09:16:00+0200,0,Djamal,BENNADJI,213,0,Consultant décisionnel,1,1,['mondeeuropefranceiledefrance'],,Consultant décisionnel,1989-11-24,824,78,1,30,djamal.bennadji@seenovate.com
+117,872,2022-06-28T18:23:10+0200,2023-09-06T15:02:30+0200,0,Matar,TRAORE,,1,,1,1,[],,Consultant sté SYSTEMES 2ID,,64,,1,30,matar.traore@cnous.fr
+118,276,2021-10-06T17:36:37+0200,2023-09-06T15:02:00+0200,1,Camille,BOUILLOD,214,0,Chargée de dossiers CEENOVATE,1,1,['mondeeuropefrancerhonealpes'],gestion administrative de dossiers CEE,Chargée de dossiers CEE,1993-12-29,72,72,4,30,camille.bouillod@ceenovate.fr
+119,1398,2023-01-17T09:36:10+0100,2023-09-06T14:42:22+0200,0,Préciser le N° du projet,AtolCD,,1,,1,1,[],,,,64,,1,30,NPU
+120,2225,2023-07-10T16:16:45+0200,2023-09-06T10:30:57+0200,0,Georges,LEGROS,,1,,1,1,[],,sous-traitant SKY REACH INTELLIGENCE,,17,17,1,30,contact@skyreachintelligence.com
+121,2314,2023-08-01T15:45:57+0200,2023-09-06T10:30:20+0200,0,Karim (ext),KHARBACHE,,1,,1,1,[],,Sous-traitant DATATHINK,,78,78,1,30,karimkharbache@gmail.com
+122,1458,2023-01-25T15:40:25+0100,2023-09-06T10:15:13+0200,1,Hajer,HAMMOUDA,00281,10,Gestionnaire ADV,0,1,['mondeeuropefrancerhonealpes'],,Gestionnaire ADV,1994-03-20,228,12,1,6,hajer.hammouda@seenovate.com
+123,1853,2023-04-21T16:07:17+0200,2023-09-06T08:42:32+0200,1,Rym,TOUBAL,00292,0,Consultante décisionnelle,1,1,['mondeeuropefrancerhonealpes'],,Consultante Décisionnelle,1984-07-06,221,12,1,30,rym.toubal@seenovate.com
+124,1801,2023-04-12T11:21:53+0200,2023-09-05T14:27:21+0200,1,Germene,DJANPOUO KUEPO,00289,0,Consultante décisionnelle,1,1,['mondeeuropefranceiledefrance'],"SAP BO
 SQL 
 Talend - maj 30/06/2023 (GDE)",Consultante décisionnel,1991-06-17,865,78,1,30,germene.kuepo@seenovate.com
-124,271,2021-09-23T18:10:51+0200,2023-09-05T11:50:59+0200,0,Yan,ZHI,00205,0,Chef de projet décisionnel,0,1,['mondeeuropefranceiledefrance'],,chef de projet décisionnel,1979-06-15,297,78,1,30,yan.zhi@seenovate.com
-125,2003,2023-05-23T11:09:07+0200,2023-09-05T11:45:33+0200,0,Mohammed,EL BOURI,00296,0,Consultant  décisionnel,0,1,['mondeeuropefranceiledefrance'],Power BI - MYSQL - maj 30/06/2023 (GDE),Consultant Décisionnel,1997-02-02,865,78,1,30,mohammed.el-bouri@seenovate.com
-126,995,2022-08-16T11:52:46+0200,2023-09-04T20:56:25+0200,0,Laoiri,BENAMAR,00246,0,Consultant  décisionnel,1,1,['mondeeuropefrancelanguedocroussillon'],MAJ le 20/07/2023,Consultant  décisionnel  expérimenté,1967-11-02,1107,71,1,30,laoiri.benamar@seenovate.com
-127,1589,2023-03-07T17:12:18+0100,2023-09-04T20:56:25+0200,1,Emma,CABARET,00028,0,Consultante Décisionnelle,1,1,['mondeeuropefranceiledefrance'],"OTIC Genio
+125,271,2021-09-23T18:10:51+0200,2023-09-05T11:50:59+0200,0,Yan,ZHI,00205,0,Chef de projet décisionnel,0,1,['mondeeuropefranceiledefrance'],,chef de projet décisionnel,1979-06-15,297,78,1,30,yan.zhi@seenovate.com
+126,2003,2023-05-23T11:09:07+0200,2023-09-05T11:45:33+0200,0,Mohammed,EL BOURI,00296,0,Consultant  décisionnel,0,1,['mondeeuropefranceiledefrance'],Power BI - MYSQL - maj 30/06/2023 (GDE),Consultant Décisionnel,1997-02-02,865,78,1,30,mohammed.el-bouri@seenovate.com
+127,995,2022-08-16T11:52:46+0200,2023-09-04T20:56:25+0200,0,Laoiri,BENAMAR,00246,0,Consultant  décisionnel,1,1,['mondeeuropefrancelanguedocroussillon'],MAJ le 20/07/2023,Consultant  décisionnel  expérimenté,1967-11-02,1107,71,1,30,laoiri.benamar@seenovate.com
+128,1589,2023-03-07T17:12:18+0100,2023-09-04T20:56:25+0200,1,Emma,CABARET,00028,0,Consultante Décisionnelle,1,1,['mondeeuropefranceiledefrance'],"OTIC Genio
 Qlikview
 Qliksense",Consultante Décisionnelle,1998-07-21,1292,78,1,30,emma.cabaret@seenovate.com
-128,2101,2023-06-09T15:50:19+0200,2023-09-04T17:38:21+0200,1,Aurélie,TERMON,00298,0,Consultante décisionnelle,1,1,['mondeeuropefranceaquitaine'],"Talend
+129,2101,2023-06-09T15:50:19+0200,2023-09-04T17:38:21+0200,1,Aurélie,TERMON,00298,0,Consultante décisionnelle,1,1,['mondeeuropefranceaquitaine'],"Talend
 Datastage 
 Support",Consultante Décisionnelle,1991-02-16,1293,71,1,30,aurelie.termon@seenovate.com
-129,2161,2023-06-23T08:44:36+0200,2023-09-25T21:28:16+0200,0,Raouf,OUDINA,302,0,Consultant  décisionnel,1,1,['mondeeuropefranceiledefrance'],"ODI / Datastage
+130,2161,2023-06-23T08:44:36+0200,2023-09-25T21:28:16+0200,0,Raouf,OUDINA,302,0,Consultant  décisionnel,1,1,['mondeeuropefranceiledefrance'],"ODI / Datastage
 BO / Power BI
 SQL",Consultant décisionnel,1993-11-03,824,78,1,30,raouf.oudina@seenovate.com
-130,864,2022-06-24T10:20:10+0200,2023-09-01T09:09:13+0200,1,Fanny,MAFFRE,00241,0,Cheffe de projets Data Intelligence,1,1,['mondeeuropefrancelanguedocroussillon'],,Cheffe de projet,1986-07-10,70,71,1,30,fanny.maffre@seenovate.com
-131,259,2021-08-04T09:32:58+0200,2023-09-01T00:14:37+0200,0,Michel,KACOU,00196,0,Chargé de dossiers CEENOVATE,1,1,['mondeeuropefrancerhonealpes'],Gestion de dossiers CEE,Chargé de dossiers CEE,1990-11-21,72,72,4,30,michel.kacou@ceenovate.fr
-132,157,2020-11-17T17:07:36+0100,2023-09-01T00:14:36+0200,1,Fanny,COMBAZ,00161,0,Chargée de dossiers CEENOVATE,1,1,['mondeeuropefrancerhonealpes'],contrôle et instruction de dossiers CEE,Chargée de dossiers CEE,2000-09-20,72,72,4,30,fanny.combaz@ceenovate.fr
-133,1079,2022-09-30T10:24:00+0200,2023-09-01T00:14:33+0200,0,Dominique,POCAS,00259,0,Consultant Décisionnel,1,1,['mondeeuropefrancerhonealpes'],MJE le 17/07/2023,Consultant Décisionnel,1973-08-20,9,12,1,30,dominique.pocas@seenovate.com
-134,100,2020-02-20T11:25:27+0100,2023-09-01T00:14:32+0200,0,Tristan,CONTI,00135,0,Datascientist,1,1,['mondeeuropefrancerhonealpes'],,Data Scientist,1997-05-06,70,12,1,30,tristan.conti@seenovate.com
-135,221,2021-03-10T18:24:04+0100,2023-09-01T00:14:32+0200,0,Eric,NARQUIN,00176,0,Consultant décisionnel,1,1,['mondeeuropefrancebretagne'],,DIM,1981-09-02,297,71,1,30,eric.narquin@seenovate.com
-136,6,2016-01-10T10:06:07+0100,2023-09-01T00:14:31+0200,0,Jean-Marc,REGOND,00090,0,Chef de projet,1,1,['mondeeuropefrancerhonealpes'],,DIM,1966-07-26,297,12,1,30,jean-marc.regond@seenovate.com
-137,1292,2022-12-15T12:05:46+0100,2023-09-01T00:14:31+0200,0,Arssalane,BOURASS,00278,0,Data Intelligence Manager,1,1,['mondeeuropefranceaquitaine'],,Data Intelligence Manager,1978-07-24,297,71,1,30,arssalane.bourass@seenovate.com
-138,77,2019-10-22T17:05:01+0200,2023-09-01T00:14:30+0200,0,Damien,CHENEAUX,00013,0,Consultant décisionnel,1,1,['mondeeuropefrancelanguedocroussillon'],,Consultant Seenovate,1982-10-07,67,71,1,30,damien.cheneaux@seenovate.com
-139,233,2021-03-30T09:37:01+0200,2023-09-01T00:14:28+0200,0,Arthur,BROUSSARD,00181,0,Consultant décisionnel,1,1,['mondeeuropefrancerhonealpes'],,Consultant décisionnel,1997-01-22,6,12,1,30,arthur.broussard@seenovate.com
-140,236,2021-04-15T17:02:03+0200,2023-09-01T00:14:28+0200,1,Audrey,DINE,00182,0,Consultant décisionnel,1,1,['mondeeuropefrancebretagne'],,Consultante décisionnel,1992-09-07,221,71,1,30,audrey.dine@seenovate.com
-141,53,2017-09-29T17:11:08+0200,2023-09-01T00:14:27+0200,1,Lucile,MAILLEFAUD,00106,0,Ingénieur décisionnel,1,1,['mondeeuropefrancerhonealpes'],"Compétence complémentaire:
+131,864,2022-06-24T10:20:10+0200,2023-09-01T09:09:13+0200,1,Fanny,MAFFRE,00241,0,Cheffe de projets Data Intelligence,1,1,['mondeeuropefrancelanguedocroussillon'],,Cheffe de projet,1986-07-10,70,71,1,30,fanny.maffre@seenovate.com
+132,259,2021-08-04T09:32:58+0200,2023-09-01T00:14:37+0200,0,Michel,KACOU,00196,0,Chargé de dossiers CEENOVATE,1,1,['mondeeuropefrancerhonealpes'],Gestion de dossiers CEE,Chargé de dossiers CEE,1990-11-21,72,72,4,30,michel.kacou@ceenovate.fr
+133,157,2020-11-17T17:07:36+0100,2023-09-01T00:14:36+0200,1,Fanny,COMBAZ,00161,0,Chargée de dossiers CEENOVATE,1,1,['mondeeuropefrancerhonealpes'],contrôle et instruction de dossiers CEE,Chargée de dossiers CEE,2000-09-20,72,72,4,30,fanny.combaz@ceenovate.fr
+134,1079,2022-09-30T10:24:00+0200,2023-09-01T00:14:33+0200,0,Dominique,POCAS,00259,0,Consultant Décisionnel,1,1,['mondeeuropefrancerhonealpes'],MJE le 17/07/2023,Consultant Décisionnel,1973-08-20,9,12,1,30,dominique.pocas@seenovate.com
+135,100,2020-02-20T11:25:27+0100,2023-09-01T00:14:32+0200,0,Tristan,CONTI,00135,0,Datascientist,1,1,['mondeeuropefrancerhonealpes'],,Data Scientist,1997-05-06,70,12,1,30,tristan.conti@seenovate.com
+136,221,2021-03-10T18:24:04+0100,2023-09-01T00:14:32+0200,0,Eric,NARQUIN,00176,0,Consultant décisionnel,1,1,['mondeeuropefrancebretagne'],,DIM,1981-09-02,297,71,1,30,eric.narquin@seenovate.com
+137,6,2016-01-10T10:06:07+0100,2023-09-01T00:14:31+0200,0,Jean-Marc,REGOND,00090,0,Chef de projet,1,1,['mondeeuropefrancerhonealpes'],,DIM,1966-07-26,297,12,1,30,jean-marc.regond@seenovate.com
+138,1292,2022-12-15T12:05:46+0100,2023-09-01T00:14:31+0200,0,Arssalane,BOURASS,00278,0,Data Intelligence Manager,1,1,['mondeeuropefranceaquitaine'],,Data Intelligence Manager,1978-07-24,297,71,1,30,arssalane.bourass@seenovate.com
+139,77,2019-10-22T17:05:01+0200,2023-09-01T00:14:30+0200,0,Damien,CHENEAUX,00013,0,Consultant décisionnel,1,1,['mondeeuropefrancelanguedocroussillon'],,Consultant Seenovate,1982-10-07,67,71,1,30,damien.cheneaux@seenovate.com
+140,233,2021-03-30T09:37:01+0200,2023-09-01T00:14:28+0200,0,Arthur,BROUSSARD,00181,0,Consultant décisionnel,1,1,['mondeeuropefrancerhonealpes'],,Consultant décisionnel,1997-01-22,6,12,1,30,arthur.broussard@seenovate.com
+141,236,2021-04-15T17:02:03+0200,2023-09-01T00:14:28+0200,1,Audrey,DINE,00182,0,Consultant décisionnel,1,1,['mondeeuropefrancebretagne'],,Consultante décisionnel,1992-09-07,221,71,1,30,audrey.dine@seenovate.com
+142,53,2017-09-29T17:11:08+0200,2023-09-01T00:14:27+0200,1,Lucile,MAILLEFAUD,00106,0,Ingénieur décisionnel,1,1,['mondeeuropefrancerhonealpes'],"Compétence complémentaire:
 	Gestion de projet 
 o	Estimation de charge – chiffrage  Niveau débutant
 o	Planning – gestion du risque  Niveau débutant",Consultant Seenovate,1993-03-14,6,12,1,30,lucile.maillefaud@seenovate.com
-142,1127,2022-10-19T16:45:25+0200,2023-09-01T00:14:27+0200,0,Edouard,CORBEL,00261,0,Consultant  décisionnel,1,1,['mondeeuropefrancebretagne'],"SAP BI 
+143,1127,2022-10-19T16:45:25+0200,2023-09-01T00:14:27+0200,0,Edouard,CORBEL,00261,0,Consultant  décisionnel,1,1,['mondeeuropefrancebretagne'],"SAP BI 
 SAP BO
 SAP BW",Consultant  décisionnel,1993-05-27,221,71,1,30,edouard.corbel@seenovate.com
-143,262,2021-09-02T14:55:23+0200,2023-09-01T00:14:26+0200,0,Yisakor,WELDEGEBRIEL,00197,0,Apprenti Datascientist,1,1,['mondeeuropefrancerhonealpes'],,Datascientist,1998-02-10,84,12,1,30,yisakor.weldegebriel@seenovate.com
-144,92,2019-12-27T11:09:20+0100,2023-09-01T00:14:25+0200,0,Elio,SANCHEZ,00139,0,Consultant décisionnel,1,1,['mondeeuropefranceiledefrance'],MAJ : 06/06/2023 MAP,Consultant Seenovate,1984-09-16,824,78,1,30,elio.sanchez@seenovate.com
-145,890,2022-07-06T11:47:31+0200,2023-09-01T00:14:25+0200,0,Cyril,FOUILLAT,00249,0,Consultant Décisionnel Expérimenté,1,1,['mondeeuropefrancerhonealpes'],"ODI
+144,262,2021-09-02T14:55:23+0200,2023-09-01T00:14:26+0200,0,Yisakor,WELDEGEBRIEL,00197,0,Apprenti Datascientist,1,1,['mondeeuropefrancerhonealpes'],,Datascientist,1998-02-10,84,12,1,30,yisakor.weldegebriel@seenovate.com
+145,92,2019-12-27T11:09:20+0100,2023-09-01T00:14:25+0200,0,Elio,SANCHEZ,00139,0,Consultant décisionnel,1,1,['mondeeuropefranceiledefrance'],MAJ : 06/06/2023 MAP,Consultant Seenovate,1984-09-16,824,78,1,30,elio.sanchez@seenovate.com
+146,890,2022-07-06T11:47:31+0200,2023-09-01T00:14:25+0200,0,Cyril,FOUILLAT,00249,0,Consultant Décisionnel Expérimenté,1,1,['mondeeuropefrancerhonealpes'],"ODI
 OBI
 Stambia 
 JDE
 SQL, PLSql",Consultant décisionnel expérimenté,1977-11-13,221,12,1,30,cyril.fouillat@seenovate.com
-146,76,2019-10-22T17:01:01+0200,2023-09-01T00:14:25+0200,0,Thibaud,LEPRETRE,00012,0,Consultant décisionnel,1,1,['mondeeuropefranceiledefrance'],,Consultant Seenovate,1989-04-02,824,78,1,30,thibaud.lepretre@seenovate.com
-147,278,2021-10-13T17:26:46+0200,2023-09-01T00:14:24+0200,1,Inasse,BELLAHCEN,210,10,Apprenti Qualité,1,1,['mondeeuropefrancerhonealpes'],,Manager Qualité (en apprentissage),1998-03-19,227,12,1,30,inasse.bellahcen@seenovate.com
-148,279,2021-10-18T16:52:31+0200,2023-09-01T00:14:23+0200,0,Henri,TAN,00221,0,,1,1,['mondeeuropefranceiledefrance'],,Consultant décisionnel,1981-08-04,77,78,1,30,henri.tan@seenovate.com
-149,415,2022-03-10T12:14:18+0100,2023-09-01T00:14:22+0200,0,Marc,PRINCIPATO,00233,0,Consultant décisionnel,1,1,['mondeeuropefranceiledefrance'],,Consultant décisionnel,1997-12-29,101,78,1,30,marc.principato@seenovate.com
-150,1030,2022-09-05T10:12:33+0200,2023-09-01T00:14:21+0200,1,Louanne,BERT,00258,0,,1,1,['mondeeuropefrancerhonealpes'],,Alternante BI,2001-02-24,99,12,1,30,louanne.bert@seenovate.com
-151,1741,2023-03-31T09:26:23+0200,2023-09-01T00:14:21+0200,1,Chloé,CHIFFLET,00290,10,Chargée de communication,1,1,['mondeeuropefrancerhonealpes'],,Chargée de communication,1999-08-26,60,12,1,20,chloe.chifflet@seenovate.com
-152,1750,2023-04-03T11:25:06+0200,2023-09-01T00:14:21+0200,0,Belkacem,IMADALI,00293,0,Administrateur Systèmes et Réseaux,1,1,['mondeeuropefranceiledefrance'],,<Alternance> Administrateur Systèmes et Réseaux,2000-05-02,67,78,1,30,belkacem.imadali@seenovate.com
-153,86,2019-12-10T17:27:05+0100,2023-09-01T00:14:20+0200,0,Sébastien,CORNU,00052,0,,1,1,['mondeeuropefrancelanguedocroussillon'],,Consultant Seenovate,1987-02-14,1500,71,1,30,sebastien.cornu@seenovate.com
-154,153,2020-11-10T16:56:09+0100,2023-09-01T00:14:19+0200,0,Yann,HERVY,00162,0,Consultant décisionnel,1,1,['mondeeuropefrancebretagne'],,Consultant Seenovate,1988-07-14,221,71,1,30,yann.hervy@seenovate.com
-155,285,2021-11-03T13:30:13+0100,2023-09-01T00:14:19+0200,1,Diahara,MAIGA,00218,0,Datascientist,1,1,['mondeeuropefranceiledefrance'],,Data Scientist,1994-04-24,221,78,1,30,diahara.maiga@seenovate.com
-156,674,2022-05-17T15:53:46+0200,2023-09-01T00:14:19+0200,1,Nadia,DAKHLI,00236,0,Consultante décisionnelle,1,1,['mondeeuropefrancerhonealpes'],,Consultante en informatique décisionnelle,1987-02-08,6,12,1,30,nadia.dakhli@seenovate.com
+147,76,2019-10-22T17:01:01+0200,2023-09-01T00:14:25+0200,0,Thibaud,LEPRETRE,00012,0,Consultant décisionnel,1,1,['mondeeuropefranceiledefrance'],,Consultant Seenovate,1989-04-02,824,78,1,30,thibaud.lepretre@seenovate.com
+148,278,2021-10-13T17:26:46+0200,2023-09-01T00:14:24+0200,1,Inasse,BELLAHCEN,210,10,Apprenti Qualité,1,1,['mondeeuropefrancerhonealpes'],,Manager Qualité (en apprentissage),1998-03-19,227,12,1,30,inasse.bellahcen@seenovate.com
+149,279,2021-10-18T16:52:31+0200,2023-09-01T00:14:23+0200,0,Henri,TAN,00221,0,,1,1,['mondeeuropefranceiledefrance'],,Consultant décisionnel,1981-08-04,77,78,1,30,henri.tan@seenovate.com
+150,415,2022-03-10T12:14:18+0100,2023-09-01T00:14:22+0200,0,Marc,PRINCIPATO,00233,0,Consultant décisionnel,1,1,['mondeeuropefranceiledefrance'],,Consultant décisionnel,1997-12-29,101,78,1,30,marc.principato@seenovate.com
+151,1030,2022-09-05T10:12:33+0200,2023-09-01T00:14:21+0200,1,Louanne,BERT,00258,0,,1,1,['mondeeuropefrancerhonealpes'],,Alternante BI,2001-02-24,99,12,1,30,louanne.bert@seenovate.com
+152,1741,2023-03-31T09:26:23+0200,2023-09-01T00:14:21+0200,1,Chloé,CHIFFLET,00290,10,Chargée de communication,1,1,['mondeeuropefrancerhonealpes'],,Chargée de communication,1999-08-26,60,12,1,20,chloe.chifflet@seenovate.com
+153,1750,2023-04-03T11:25:06+0200,2023-09-01T00:14:21+0200,0,Belkacem,IMADALI,00293,0,Administrateur Systèmes et Réseaux,1,1,['mondeeuropefranceiledefrance'],,<Alternance> Administrateur Systèmes et Réseaux,2000-05-02,67,78,1,30,belkacem.imadali@seenovate.com
+154,86,2019-12-10T17:27:05+0100,2023-09-01T00:14:20+0200,0,Sébastien,CORNU,00052,0,,1,1,['mondeeuropefrancelanguedocroussillon'],,Consultant Seenovate,1987-02-14,1500,71,1,30,sebastien.cornu@seenovate.com
+155,153,2020-11-10T16:56:09+0100,2023-09-01T00:14:19+0200,0,Yann,HERVY,00162,0,Consultant décisionnel,1,1,['mondeeuropefrancebretagne'],,Consultant Seenovate,1988-07-14,221,71,1,30,yann.hervy@seenovate.com
+156,285,2021-11-03T13:30:13+0100,2023-09-01T00:14:19+0200,1,Diahara,MAIGA,00218,0,Datascientist,1,1,['mondeeuropefranceiledefrance'],,Data Scientist,1994-04-24,221,78,1,30,diahara.maiga@seenovate.com
 157,101,2020-03-05T07:53:32+0100,2023-09-01T00:14:18+0200,1,Claire,LASSAUSAIE,00140,0,Consultante BI,1,1,['mondeeuropefrancerhonealpes'],,Consultant Seenovate,1997-08-15,969,12,1,30,claire.lassausaie@seenovate.com
 158,1293,2022-12-15T12:06:38+0100,2023-09-01T00:14:17+0200,0,Xavier,ARNOUX,00280,0,Consultant Décisionnel,1,1,['mondeeuropefranceaquitaine'],,Consultant Décisionnel,1990-06-16,67,71,1,30,xavier.arnoux@seenovate.com
 159,1538,2023-02-21T16:57:22+0100,2023-09-01T00:14:14+0200,1,Mariama Thy,CAMARA,00286,10,"Chargée de recrutement,",1,1,['mondeeuropefranceiledefrance'],,Chargé de recrutement,1991-03-15,282,78,1,5,mariama.camara@seenovate.com
