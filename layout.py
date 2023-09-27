@@ -28,9 +28,7 @@ layout_template = html.Div([
 ######################################################################################################
 
 
-children = []
-
-children.append(dbc.Col(width=1))
+children = [dbc.Col(width=1)]
 
 for i in list_app["ind"]:
     child_group_form = dbc.Col([
