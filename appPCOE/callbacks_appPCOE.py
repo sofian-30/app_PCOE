@@ -1,7 +1,6 @@
 from app import app
 from dash.dependencies import Input, Output, State
 import pandas as pd
-from dash.exceptions import PreventUpdate
 import dash
 from dash import ctx, html, dcc
 import datetime
@@ -11,6 +10,7 @@ from datetime import datetime
 # df = pd.read_excel(r"/mnt/c/CA_2023.xlsx", sheet_name='Maintenance SAP BusinessObjects')
 df = pd.read_excel(r"C:\Users\SofianOUASS\Desktop\PCoE\Suivi CA licences et maintenance 2023.xlsx", sheet_name='Maintenance SAP BusinessObjects')
 
+df = pd.read_excel("./data/Suivi CA licences et maintenance 2023.xlsx", sheet_name='Maintenance SAP BusinessObjects')
 
 # Callback de génération de devis.
 @app.callback(
@@ -33,13 +33,13 @@ def export_devis(n0,data_row):
 @app.callback(
     Output('o1_store_row', 'data'),
     Input('o1_data_table', 'selected_rows'),
-    Input('o1_data_table','data'),
+    Input('o1_data_table', 'data'),
     prevent_initial_call=True,
 )
-def store_selected_row(selected_rows,dict_data):
+def store_selected_row(selected_rows, dict_data):
     # print(selected_rows)
     # print(dict_data)
-    df=pd.DataFrame.from_dict(dict_data)
+    df = pd.DataFrame.from_dict(dict_data)
     if selected_rows:
         selected_row_data = df.iloc[selected_rows[0]].to_dict()
         return selected_row_data
@@ -265,7 +265,6 @@ def update_table_data(n_btn_submit_validate, selected_row_number, data_main_tabl
             
         }
 
-        
         # Mettez à jour les données de la ligne sélectionnée dans data_main_table
         for key, value in updated_data.items():
             data_main_table[selected_row_number[0]][key] = value

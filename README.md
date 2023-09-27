@@ -1,3 +1,78 @@
+# Application PCOE
+
+## Guide d'installation pour Windows
+
+### Cloner le projet
+
+Vous pouvez récupérer les fichiers nécessaires au projet en utilisant Git ([lien d'installation](https://git-scm.com/downloads)) en ligne de commande.
+
+```
+cd /path/to/my/project/directory
+https://gitlab.seenovate.com/seenovate/interne/app-pcoe.git
+```
+
+### Python 3.9.7
+
+1. Téléchargez l'installeur Python version 3.9.7 en cliquant [ici](https://www.python.org/ftp/python/3.9.7/python-3.9.7-amd64.exe).
+2. Lancez l'installeur et effectuez l'installation.
+3. Testez l'installation de Python en ouvrant une invite de commande et lancez la commande `python`. Vous devriez accéder à la console Python. Si ce n'est pas le cas, vérifiez que le dossier où se trouve l'exécutable python.exe a bien été ajouté à la variable d'environnement Windows PATH.
+
+   ![alt text](./images/install_python.png "Installation Python")
+
+4. Créer votre environnement virtuel Python
+
+   Un environnement virtuel est un répertoire contenant une installation de Python autonome (indépendante de celle du système d’exploitation). Il est particulièrement pratique pour que tous les développeurs utilisent les mêmes versions des packages Python. Le fichier **requirements.txt** sert à lister les packages nécessaires pour le projet ainsi que leurs versions utilisées.
+
+   ```
+   cd /path/to/my/project
+   py -3.9 -m venv app_pcoe_venv 
+   cd ./app_pcoe_venv/Scripts
+   ./activate
+   cd ../..
+   pip install --upgrade pip
+   pip install -r requirements.txt
+   ```
+
+   Pour ne plus utiliser l'environnement virtuel **app_pcoe_venv**, lancez la commande `deactivate`.
+
+5. Lancez le programme
+
+   ```
+   python ./index.py
+   ```
+
+### Base de données
+
+Les données sont stockées dans une base de données PostgreSQL de version **15.3**.
+Pour l'environnement de développement, la base de données PostgreSQL peut être inclus au sein d'un Docker. La procédure de mise en place de la base de données en local est décrite ci-dessous.
+
+1. Télécharger, installer et démarrer [Docker](https://docs.docker.com/get-docker/).
+2. Se placer dans le dossier racine du projet : **app-pcoe**
+3. Créer la base de données **pcoe**
+    * Créer l'image Docker **postgresql_pcoe_image** avec la commande `docker build -f ./Dockerfile_postgresql -t postgresql_pcoe_image .`  
+      Lors de la création de l'image, le script SQL d'initialisation **init.sql**, qui est chargé de créer un utilisateur et les tables, est exécuté.  
+      Vous pouvez vérifier que l'image a bien été créée en lançant la commande `docker images`
+    * Démarrer le conteneur **postgresql_pcoe_container** avec la commande `docker run -d --name postgresql_pcoe_container -p 5435:5432 postgresql_pcoe_image`  
+      Le port 5432 (le port par défaut des BDD PostgreSQL) du conteneur est redirigé vers le port 5435 de votre PC.  
+      Vous pouvez vérifier l'état du conteneur en lançant la commande `docker ps`, et vous pouvez arrêter et démarrer le conteneur avec les commandes `docker stop postgresql_pcoe_container` et `docker start postgresql_pcoe_container`.
+4. Tester les connexions
+
+   Ouvrez un client SQL et créez une connexion avec les informations suivantes.
+
+
+* **PCOE**
+
+| Environnement | DEV                  | PROD |
+|---------------|----------------------|------|
+| **host**      | localhost            | ???  |
+| **port**      | 5435                 | ???  |
+| **database**  | pcoe                 | ???  |
+| **user**      | pcoe                 | ???  |
+| **password**  | iRMUVCCU8Z7lyyvtizJt | ???  |
+
+> Je conseille d'utiliser le client SQL [DBeaver](https://dbeaver.io/). Il supporte toutes les bases de données les plus connues.
+
+
 # Mode d'emploi : Template Dash 
 
 # 1. Edition du portail 
