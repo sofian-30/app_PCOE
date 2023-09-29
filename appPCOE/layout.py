@@ -7,6 +7,7 @@ from datetime import datetime
 
 import dash_mantine_components as dmc
 import dash_daq as daq
+from db import connect_to_db, disconnect_from_db, sql_to_df
 
 # Import functions
 # from index import get_auth
@@ -19,28 +20,20 @@ import dash_daq as daq
 list_app = pd.read_csv("assets/list_app.csv", header=0, sep=';')
 n_app = 1  # numéro de l'appli
 
-# Charger le tableau Excel
-# df = pd.read_excel(r"/mnt/c/CA_2023.xlsx", sheet_name='Maintenance SAP BusinessObjects',parse_dates=['Date anniversaire'], date_parser=pd.to_datetime)
-df = pd.read_excel(r"C:\Users\SofianOUASS\Desktop\PCoE\Suivi CA licences et maintenance 2023.xlsx",
-                   sheet_name='Maintenance SAP BusinessObjects')
 
-# On remplit la colonne renouvellement et alerte validation devis en fonction des critères donnés dans les SPECS
-today = datetime.now()
+# Charger les tables app_table et boond_table
+conn = connect_to_db()
+df_app = sql_to_df("SELECT * FROM app_table", conn=conn)
+df_boond = sql_to_df("SELECT * FROM boond_table", conn=conn)
+disconnect_from_db(conn)
+df = pd.merge(df_boond, df_app, how='inner', on='code_projet_boond')
 
-# Remplacez les valeurs NaN par une date par défaut (par exemple, 1er janvier 1900)
-
-df['Alerte renouvellement'] = (df['Date anniversaire'] - today).dt.days
-df['Alerte validation devis'] = (df['Date anniversaire'] - today).dt.days
 
 # Ajout des 4 nouvelles colonnes après colonne 'Date anniversaire'
 new_columns = []
 for col in df.columns:
     new_columns.append({'name': col, 'id': col, 'type': 'text'})
-    if col == 'Date anniversaire':
-        new_columns.append({'name': 'Alerte renouvellement', 'id': 'Alerte renouvellement', 'type': 'text'})
-        new_columns.append({'name': 'Alerte validation devis', 'id': 'Alerte validation devis', 'type': 'text'})
-        new_columns.append({'name': 'Nouveau prix d\'achat', 'id': 'input-nv-prix-achat', 'type': 'numeric'})
-        new_columns.append({'name': 'Nouveau prix de vente', 'id': 'input-nv-prix-vente', 'type': 'numeric'})
+print(new_columns)
 
 #############################################################################################################
 #                                          Appel API                                                        #
