@@ -7,6 +7,7 @@ from dash import ctx, html, dcc
 import datetime
 from appPCOE.src.generation_devis import remplir_devis
 from datetime import datetime
+import datetime
 
 # df = pd.read_excel(r"/mnt/c/CA_2023.xlsx", sheet_name='Maintenance SAP BusinessObjects')
 df = pd.read_excel(r"C:\Users\SofianOUASS\Desktop\PCoE\Suivi CA licences et maintenance 2023.xlsx", sheet_name='Maintenance SAP BusinessObjects')
@@ -47,7 +48,7 @@ def store_selected_row(selected_rows,dict_data):
         return {}
     
 
-# Callback pour remplir les champs du modal pop-up avec les données de la ligne sélectionnée dans la table
+# Callback pour remplir les champs du modal pop-up "modifier la saisie" avec les données de la ligne sélectionnée dans la table
 @app.callback(
     Output('input-client', 'children'),
     Output('input-erp-number', 'children'),
@@ -70,11 +71,11 @@ def store_selected_row(selected_rows,dict_data):
     Output('input-traitement-comptable', 'children'),
     Output('input-paiement-sap', 'children'), #card "Status et conditions financières"-status
 
-    Output('input-nv-prix-achat', 'value'),
-    Output('input-nv-prix-vente', 'value'),
+    Output('input-prix-achat-actuel', 'value'),
+    Output('input-prix-vente-actuel', 'value'),
     Output('input-Marge-pourcentage', 'value'),
-    Output('input-Montant-vente-annuel-N+1', 'value'),
-    Output('input-Montant-annuel-Achat-N+1', 'value'),
+    Output('input-nv-prix-vente', 'value'),
+    Output('input-nv-prix-achat', 'value'),
     Output('input-Marge-N+1', 'value'), # card "Status et conditions financières"-cond. financières
 
     Output('input-type-contrat', 'value'),
@@ -84,7 +85,6 @@ def store_selected_row(selected_rows,dict_data):
     Output('input-adresse-client', 'value'),
     Output('input-parc-licences', 'value'), # card "Informations contractuelles"
 
-    #Input("o1_modal", 'data'), #input du modal pop-up complet
     Input('o1_store_row', 'data'),#input du layout complet
     prevent_initial_call=True,
 )
@@ -111,11 +111,11 @@ def update_modal_pop_up(selected_row_data):
     traitement_comptable = selected_row_data.get('Traitement comptable', '')
     paiement_sap = selected_row_data.get('Paiement SAP', '')
 
-    nv_prix_achat = selected_row_data.get('Nouveau prix d\'achat', '') # card "Status et conditions financières"-cond. financières
-    nv_prix_vente = selected_row_data.get('Nouveau prix de vente', '')
+    prix_achat_actuel = selected_row_data.get('Prix d\'achat actuel', '') # card "Status et conditions financières"-cond. financières
+    prix_vente_actuel = selected_row_data.get('Prix de vente actuel', '')
     marge_pourcentage = selected_row_data.get('Marge %', '')
-    montant_vente_annuel = selected_row_data.get('Montant vente annuel N+1', '')
-    montant_annuel_achat = selected_row_data.get('Montant annuel Achat N+1', '')
+    nv_prix_vente = selected_row_data.get('Nouveau prix de vente', '')
+    nv_prix_achat = selected_row_data.get("Nouveau prix d'achat", '')
     marge_annuel = selected_row_data.get('Marge N+1 (%)', '') 
 
     type_contrat = selected_row_data.get('Type de contrat', '')     # card "Informations contractuelles"
@@ -128,21 +128,49 @@ def update_modal_pop_up(selected_row_data):
     parc_licences = selected_row_data.get('Parc de licences', '')
 
     # Composition de l'adresse avec saut de ligne
-    adresse_client = adresse_client +"\n " + cp + "\n " + ville
+    # adresse_client = adresse_client +"\n " + str(cp) + "\n " + ville
+
+    if adresse_client is not None:
+        adresse_client = str(adresse_client) + "\n "
+    else:
+        adresse_client = ""
+
+    if cp is not None:
+        adresse_client += str(cp) + "\n "
+
+    if ville is not None:
+        adresse_client += ville
+
 
     # Conditions "Type de contrat" par rapport à l'éditeur
     if type_contrat is None and editeur == 'SAP':
         type_contrat = "SAP BOBJ"
 
-    # Convertion en % et arrondi à 2 chiffres après virgule
-    marge_pourcentage = round(marge_pourcentage * 100, 2)
-    marge_annuel = round(marge_annuel * 100, 2)
+
+   # Vérifiez d'abord si marge_pourcentage est None avant de faire le calcul
+    if marge_pourcentage is not None:
+        marge_pourcentage = round(marge_pourcentage * 100, 2)
+
+# Vérifiez si marge_annuel est None avant de faire le calcul
+    if marge_annuel is not None:
+        marge_annuel = round(marge_annuel * 100, 2)
+
+# Vérifiez si prix_achat_actuel est None avant de faire le calcul
+    if prix_achat_actuel is not None:
+        prix_achat_actuel = round(prix_achat_actuel, 2)
+
+# Vérifiez si prix_vente_actuel est None avant de faire le calcul
+    if prix_vente_actuel is not None:
+        prix_vente_actuel = round(prix_vente_actuel, 2)
+
+
+    #date_anniversaire= date_anniversaire.strftime("%d/%m")
     
          
     return (client, erp_number, date_anniversaire, code_projet_boond,resp_commercial, editeur,
             badge_generation_devis,badge_validation_devis,badge_alerte_renouvellement,badge_resilie,
             check_infos,validation_erronees,envoi_devis,accord_principe,signature_client,achat_editeur,traitement_comptable,paiement_sap,
-            nv_prix_achat,nv_prix_vente,marge_pourcentage,montant_vente_annuel,montant_annuel_achat,marge_annuel,
+            prix_achat_actuel,prix_vente_actuel,marge_pourcentage,nv_prix_vente,nv_prix_achat,marge_annuel,
             type_contrat,type_support_sap,condition_facturation,condition_paiement,adresse_client,parc_licences
                 
             )
@@ -150,22 +178,30 @@ def update_modal_pop_up(selected_row_data):
 
 # ...............................
 
-#callback pour ouvrir le pop-up et valider les données saisies ou modifiées
+#callback pour ouvrir le pop-up "modifier la saisie" 
+#  "valider" et/ou "Annuler" les données saisies ou modifiées
 @app.callback(
-    Output("o1_modal", "is_open"),  # Ouvrir le modal
+    Output("o1_modal", "is_open"),  # Open the modal
     Input("o1_btn_modif_ech", "n_clicks"),
     Input("o1_btn_submit_validate", "n_clicks"),
+    Input("o1_btn_submit_cancel", "n_clicks"),
+    State("o1_modal", "is_open"),
     prevent_initial_call=True,
 )
-def update_modal_open_state(n_btn_modif_ech, n_btn_submit_validate):
+def update_modal_open_state(n_btn_modif_ech, n_btn_submit_validate, n_btn_submit_cancel, is_open):
+    ctx = dash.callback_context
+
     if ctx.triggered_id == "o1_btn_modif_ech":
-        return True  # Ouvrir la fenêtre modale
+        return True  # Open the modal
     elif ctx.triggered_id == "o1_btn_submit_validate":
-        return False  # Fermer la fenêtre modale après validation
-    return dash.no_update
+        return False  # Close the modal after validation
+    elif ctx.triggered_id == "o1_btn_submit_cancel":
+        return False  # Close the modal when "Annuler" is clicked
+    return is_open
+
 
 ##########################################################################################################
-#callback pour mettre à jour les données du tableau
+#callback pour mettre à jour les données du tableau (callback retour)
 @app.callback(
     Output("o1_data_table", "data"),  # Mettez à jour les données du tableau
     Input("o1_btn_submit_validate", "n_clicks"),
@@ -193,11 +229,11 @@ def update_modal_open_state(n_btn_modif_ech, n_btn_submit_validate):
     State('input-traitement-comptable', 'value'),
     State('input-paiement-sap', 'value'), #card "Status et conditions financières"-status
 
-    State('input-nv-prix-achat', 'value'),
-    State('input-nv-prix-vente', 'value'),
+    State('input-prix-achat-actuel', 'value'),
+    State('input-prix-vente-actuel', 'value'),
     State('input-Marge-pourcentage', 'value'),
-    State('input-Montant-vente-annuel-N+1', 'value'),
-    State('input-Montant-annuel-Achat-N+1', 'value'),
+    State('input-nv-prix-vente', 'value'),
+    State('input-nv-prix-achat', 'value'),
     State('input-Marge-N+1', 'value'), # card "Status et conditions financières"-cond. financières
 
     State('input-type-contrat', 'value'),
@@ -210,17 +246,54 @@ def update_modal_open_state(n_btn_modif_ech, n_btn_submit_validate):
     
         prevent_initial_call=True,
 )
+# def update_modal_badges(selected_row_data):
+#     badge_validation_devis_color = 'grey'
+#     badge_alerte_renouvellement_color = 'grey'
 
+#     def get_color_based_on_row_data(row_data, column_name):
+#         value = row_data.get(column_name, None)  # Obtenez la valeur de la colonne spécifiée
+
+#     # Appliquez votre logique de couleur en fonction de la valeur de la colonne
+#         if column_name == 'Alerte validation devis':
+#             if value > 240:
+#                 return 'green'
+#         elif 90 < value < 240:
+#             return 'orange'
+#         else:
+#             return 'red'
+#         elif column_name == 'Alerte renouvellement':
+#         if value > 120:
+#             return 'green'
+#         elif 45 <= value < 120:
+#             return 'orange'
+#         else:
+#             return 'red'
+        
+#         # Ajoutez votre logique pour la colonne "Résilié" ici
+#         pass
+
+#     # Si la colonne spécifiée n'est pas reconnue, renvoyez une couleur par défaut (par exemple, 'grey')
+#     return 'grey'
+
+    
+
+#     # Obtenez les données de la ligne sélectionnée
+#     if selected_row_data:
+#         badge_validation_devis_color = get_color_based_on_row_data(selected_row_data, 'Validation devis')
+#         badge_alerte_renouvellement_color = get_color_based_on_row_data(selected_row_data, 'Renouvellement')
+
+#     return  badge_validation_devis_color, badge_alerte_renouvellement_color
 
 def update_table_data(n_btn_submit_validate, selected_row_number, data_main_table, 
                       
                      client, erp_number,date_anniversaire, code_projet_boond, resp_commercial, editeur,
                      badge_generation_devis,badge_validation_devis,badge_alerte_renouvellement,badge_resilie,
                      check_infos,validation_erronnes,envoi_devis,accord_de_principe,signature_client,achat_editeur,traitement_comptable,paiement_sap,
-                     nv_prix_achat,nv_prix_vente,marge_pourcentage,montant_vente_annuel,montant_annuel_achat,marge_annuel,
+                     prix_achat_actuel,prix_vente_actuel,marge_pourcentage,nv_prix_vente,nv_prix_achat,marge_annuel,
                      type_contrat,type_support_sap,condition_facturation,condition_paiement,adresse_client,parc_licences
 
                      ): 
+                     
     
     if selected_row_number is not None and selected_row_number:  # Vérifiez si une ligne a été sélectionnée
         # Validez les données ici (effectuez des vérifications si nécessaire)
@@ -232,7 +305,7 @@ def update_table_data(n_btn_submit_validate, selected_row_number, data_main_tabl
             "Date anniversaire": date_anniversaire,
             "Code projet Boond": code_projet_boond,
             "Resp\nCommercial": resp_commercial,
-            "Type de contrat": editeur,
+            "Editeur": editeur, #"Type de contrat"
 
             "Génération devis": badge_generation_devis,
             "Validation devis": badge_validation_devis,
@@ -248,11 +321,11 @@ def update_table_data(n_btn_submit_validate, selected_row_number, data_main_tabl
             'Traitement comptable': traitement_comptable,
             "Paiement SAP":paiement_sap,
 
-            'Nouveau prix d\'achat': nv_prix_achat,
-            'Nouveau prix de vente':nv_prix_vente,
+            'Prix d\'achat actuel': prix_achat_actuel,
+            'Prix de vente actuel':prix_vente_actuel,
             "Marge %" : marge_pourcentage,
-            "Montant vente annuel N+1": montant_vente_annuel,
-            "Montant annuel Achat N+1": montant_annuel_achat,
+            "Nouveau prix de vente": nv_prix_vente,
+            "Nouveau prix d'achat": nv_prix_achat,
             "Marge N+1 (%)": marge_annuel,
 
              "Type de contrat": type_contrat,
@@ -274,50 +347,75 @@ def update_table_data(n_btn_submit_validate, selected_row_number, data_main_tabl
 
   ###############################################################################################################  
 
-# Callback pour ouvrir/fermer le modal_pop_up_evol_prix lorsque le bouton est cliqué
-@app.callback(
-    Output("excel_modal", "is_open"),
-    [Input("o1_btn_evol_prix", "n_clicks"),
-     Input("close_excel_modal", "n_clicks")],
-    [State("excel_modal", "is_open")]
-)
-def toggle_excel_modal(btn_click, close_click, is_open):
-    if btn_click or close_click:
-        return not is_open
-    return is_open
+# # Callback pour ouvrir/fermer le modal_pop_up_evol_prix lorsque le bouton est cliqué
+# @app.callback(
+#     Output("excel_modal", "is_open"),
+#     [Input("o1_btn_evol_prix", "n_clicks"),
+#      Input("close_excel_modal", "n_clicks")],
+#     [State("excel_modal", "is_open")]
+# )
+# def toggle_excel_modal(btn_click, close_click, is_open):
+#     if btn_click or close_click:
+#         return not is_open
+#     return is_open
 
-# Callback pour charger et afficher le tableau Excel dans le modal_pop_up_evol_prix
-@app.callback(
-    Output("excel_table", "data"),
-    Output("excel_table", "columns"),
-    [Input("o1_btn_evol_prix", "n_clicks")]
-)
-def load_excel_table(btn_click):
-    if btn_click:
-        # Chargez votre fichier Excel et convertissez-le en un DataFrame Pandas
-        excel_file_path = r'appPCOE\src\tableau_calcul_evolution_prix.xlsx'
+# # Callback pour charger et afficher le tableau Excel dans le modal_pop_up_evol_prix
+# @app.callback(
+#     [Output("excel_table", "data"), Output("excel_table", "columns")],
+#     [Input("o1_btn_evol_prix", "n_clicks")]
+# )
+# def load_excel_table(btn_click):
+#     if btn_click:
+#         # Chargez votre fichier Excel et convertissez-le en un DataFrame Pandas
+#         excel_file_path = r'appPCOE\src\tableau_calcul_evolution_prix.xlsx'
         
-        try:
-            df = pd.read_excel(excel_file_path)
-            columns = [{"name": str(col), "id": str(col)} for col in df.columns]
-            data = df.to_dict('records')
+#         try:
+#             df = pd.read_excel(excel_file_path)
+#             columns = [{"name": str(col), "id": str(col)} for col in df.columns]
+#             data = df.to_dict('records')
 
-            return data, columns
-        except Exception as e:
-            return [], []
+#             return data, columns
+#         except Exception as e:
+#             return [], []  # Retourne une liste vide pour les données et les colonnes en cas d'erreur
+
 
 #C:\Users\SofianOUASS\Documents\Dev\app-pcoe\appPCOE\src\tableau_calcul_evolution_prix.xlsx
 
+#................................................................................................
 
-# #callback retourne la date du jour si switch "on"
-# @app.callback(
-#     Output('status-content', 'children'),
-#     Input('input-validation-erronnes', 'value'),
-#     State('status-content', 'children')
-# )
-# def update_date_output(is_switched_on, current_text):
-#     if is_switched_on:
-#         current_date = datetime.now().strftime("Date du jour : %Y-%m-%d %H:%M:%S")
-#         return current_date
-#     else:
-#         return current_text
+#Callback pour activer la date quand switch "on" sur accordion "status et conditions financières"
+@app.callback(
+    Output('check-infos-date', 'children'),
+    Input('input-check-infos', 'value')
+)
+def update_check_infos_date(value):
+    if value:
+        return f"{datetime.date.today().strftime('%d/%m/%Y')}"
+    else:
+        return ""
+    
+
+#..................................................................................................
+#callback pour gérer l'ouverture du pop-up "résilier" et la gestion des boutons "Oui" et "Non"
+@app.callback(
+    Output("confirm-resiliation", "displayed"),
+    Output("confirm-resiliation", "message"),
+    Output("o1_btn_submit_resiliation", "disabled"),
+    Input("o1_btn_submit_resiliation", "n_clicks"),
+    Input("confirm-resiliation", "submit_n_clicks"),
+    Input("confirm-resiliation", "cancel_n_clicks"),
+    prevent_initial_call=True,
+)
+def confirm_resiliation(n_resiliation_clicks, submit_n_clicks, cancel_n_clicks):
+    if n_resiliation_clicks > 0:
+        if submit_n_clicks is None and cancel_n_clicks is None:
+            return True, "Souhaitez-vous réellement saisir une résiliation client?", True
+        elif submit_n_clicks > 0:
+            # Traitement à effectuer lorsque "Oui" est cliqué
+            # Vous pouvez insérer ici la logique de résiliation client
+            return False, "", False
+        else:
+            # Traitement à effectuer lorsque "Non" est cliqué
+            return False, "", False
+
+    return False, "", False
