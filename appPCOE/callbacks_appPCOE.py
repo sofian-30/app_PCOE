@@ -38,8 +38,7 @@ def export_devis(n0,data_row):
     prevent_initial_call=True,
 )
 def store_selected_row(selected_rows,dict_data):
-    # print(selected_rows)
-    # print(dict_data)
+    
     df=pd.DataFrame.from_dict(dict_data)
     if selected_rows:
         selected_row_data = df.iloc[selected_rows[0]].to_dict()
@@ -57,10 +56,10 @@ def store_selected_row(selected_rows,dict_data):
     Output('input-resp-commercial', 'children'),
     Output('input-editeur', 'children'),# card "informations générales"
 
-    Output('input-badge-generation-devis', 'children'),
-    Output('input-badge-validation-devis', 'children'),
-    Output('input-badge-alerte-renouvellement', 'children'),
-    Output('input-badge-resilie', 'children'), # card "Alertes" (badge)
+    # Output('input-badge-generation-devis', 'children'),   #'children' or 'style' or 'color'
+    # Output('input-badge-validation-devis', 'children'),
+    # Output('input-badge-alerte-renouvellement', 'children'),
+    # Output('input-badge-resilie', 'children'), # card "Alertes" (badge)
 
     Output('input-check-infos', 'children'),
     Output('input-validation-erronnes', 'children'),
@@ -88,6 +87,9 @@ def store_selected_row(selected_rows,dict_data):
     Input('o1_store_row', 'data'),#input du layout complet
     prevent_initial_call=True,
 )
+
+
+
 def update_modal_pop_up(selected_row_data):
 
     client = selected_row_data.get('Client', '') # card "informations générales"
@@ -97,10 +99,10 @@ def update_modal_pop_up(selected_row_data):
     resp_commercial = selected_row_data.get('Resp\nCommercial', '')
     editeur = selected_row_data.get('Editeur', '')  # Editeur à Cf.avec ACA pour faire le lien, je ne vois pas où il est dans xls!
 
-    badge_generation_devis = selected_row_data.get('Génération devis', '') # card "Alertes" (badge)
-    badge_validation_devis = selected_row_data.get('Validation devis', '')
-    badge_alerte_renouvellement = selected_row_data.get('Renouvellement', '')
-    badge_resilie = selected_row_data.get('Résilié', '')
+    # badge_generation_devis = selected_row_data.get('Génération devis', '') # card "Alertes" (badge)
+    # badge_validation_devis = selected_row_data.get('Validation devis', '')
+    # badge_alerte_renouvellement = selected_row_data.get('Renouvellement', '')
+    # badge_resilie = selected_row_data.get('Résilié', '')
 
     check_infos = selected_row_data.get('Check Infos', '') #card "Status et conditions financières"-status
     validation_erronees = selected_row_data.get('Validation erronées', '')
@@ -168,7 +170,7 @@ def update_modal_pop_up(selected_row_data):
     
          
     return (client, erp_number, date_anniversaire, code_projet_boond,resp_commercial, editeur,
-            badge_generation_devis,badge_validation_devis,badge_alerte_renouvellement,badge_resilie,
+            # badge_generation_devis,badge_validation_devis,badge_alerte_renouvellement,badge_resilie,
             check_infos,validation_erronees,envoi_devis,accord_principe,signature_client,achat_editeur,traitement_comptable,paiement_sap,
             prix_achat_actuel,prix_vente_actuel,marge_pourcentage,nv_prix_vente,nv_prix_achat,marge_annuel,
             type_contrat,type_support_sap,condition_facturation,condition_paiement,adresse_client,parc_licences
@@ -215,10 +217,10 @@ def update_modal_open_state(n_btn_modif_ech, n_btn_submit_validate, n_btn_submit
     State("input-resp-commercial", "value"),
     State("input-editeur", "value"), # card "informations générales"                                
 
-    State('input-badge-generation-devis', 'value'),
-    State('input-badge-validation-devis', 'value'),
-    State('input-badge-alerte-renouvellement', 'value'),
-    State('input-badge-resilie', 'value'), # card "Alertes" (badge)
+    # State('input-badge-generation-devis', 'value'),   #'children' or 'style' or 'color'
+    # State('input-badge-validation-devis', 'value'),
+    # State('input-badge-alerte-renouvellement', 'value'),
+    # State('input-badge-resilie', 'value'), # card "Alertes" (badge)
 
     State('input-check-infos', 'value'),
     State('input-validation-erronnes', 'value'),
@@ -246,48 +248,11 @@ def update_modal_open_state(n_btn_modif_ech, n_btn_submit_validate, n_btn_submit
     
         prevent_initial_call=True,
 )
-# def update_modal_badges(selected_row_data):
-#     badge_validation_devis_color = 'grey'
-#     badge_alerte_renouvellement_color = 'grey'
-
-#     def get_color_based_on_row_data(row_data, column_name):
-#         value = row_data.get(column_name, None)  # Obtenez la valeur de la colonne spécifiée
-
-#     # Appliquez votre logique de couleur en fonction de la valeur de la colonne
-#         if column_name == 'Alerte validation devis':
-#             if value > 240:
-#                 return 'green'
-#         elif 90 < value < 240:
-#             return 'orange'
-#         else:
-#             return 'red'
-#         elif column_name == 'Alerte renouvellement':
-#         if value > 120:
-#             return 'green'
-#         elif 45 <= value < 120:
-#             return 'orange'
-#         else:
-#             return 'red'
-        
-#         # Ajoutez votre logique pour la colonne "Résilié" ici
-#         pass
-
-#     # Si la colonne spécifiée n'est pas reconnue, renvoyez une couleur par défaut (par exemple, 'grey')
-#     return 'grey'
-
-    
-
-#     # Obtenez les données de la ligne sélectionnée
-#     if selected_row_data:
-#         badge_validation_devis_color = get_color_based_on_row_data(selected_row_data, 'Validation devis')
-#         badge_alerte_renouvellement_color = get_color_based_on_row_data(selected_row_data, 'Renouvellement')
-
-#     return  badge_validation_devis_color, badge_alerte_renouvellement_color
 
 def update_table_data(n_btn_submit_validate, selected_row_number, data_main_table, 
                       
                      client, erp_number,date_anniversaire, code_projet_boond, resp_commercial, editeur,
-                     badge_generation_devis,badge_validation_devis,badge_alerte_renouvellement,badge_resilie,
+                    #  badge_generation_devis,badge_validation_devis,badge_alerte_renouvellement,badge_resilie,
                      check_infos,validation_erronnes,envoi_devis,accord_de_principe,signature_client,achat_editeur,traitement_comptable,paiement_sap,
                      prix_achat_actuel,prix_vente_actuel,marge_pourcentage,nv_prix_vente,nv_prix_achat,marge_annuel,
                      type_contrat,type_support_sap,condition_facturation,condition_paiement,adresse_client,parc_licences
@@ -307,10 +272,10 @@ def update_table_data(n_btn_submit_validate, selected_row_number, data_main_tabl
             "Resp\nCommercial": resp_commercial,
             "Editeur": editeur, #"Type de contrat"
 
-            "Génération devis": badge_generation_devis,
-            "Validation devis": badge_validation_devis,
-            "Renouvellement": badge_alerte_renouvellement,
-            "Résilié": badge_resilie,
+            # "Génération devis": badge_generation_devis,
+            # "Validation devis": badge_validation_devis,
+            # "Renouvellement": badge_alerte_renouvellement,
+            # "Résilié": badge_resilie,
 
             "Check Infos": check_infos,
             "Validation erronées": validation_erronnes,
@@ -347,6 +312,99 @@ def update_table_data(n_btn_submit_validate, selected_row_number, data_main_tabl
 
   ###############################################################################################################  
 
+#Callback pour activer la date quand switch "on" sur accordion "status et conditions financières"
+@app.callback(
+    Output('check-infos-date', 'children'),
+    Input('input-check-infos', 'value')
+)
+def update_check_infos_date(value):
+    if value:
+        return f"{datetime.date.today().strftime('%d/%m/%Y')}"
+    else:
+        return ""
+    
+
+#..................................................................................................
+#callback pour gérer l'ouverture du pop-up "résilier" et la gestion des boutons "Oui" et "Non"
+@app.callback(
+    Output("confirm-resiliation", "displayed"),
+    Output("confirm-resiliation", "message"),
+    Output("o1_btn_submit_resiliation", "disabled"),
+    Input("o1_btn_submit_resiliation", "n_clicks"),
+    Input("confirm-resiliation", "submit_n_clicks"),
+    Input("confirm-resiliation", "cancel_n_clicks"),
+    prevent_initial_call=True,
+)
+def confirm_resiliation(n_resiliation_clicks, submit_n_clicks, cancel_n_clicks):
+    if n_resiliation_clicks > 0:
+        if submit_n_clicks is None and cancel_n_clicks is None:
+            return True, "Souhaitez-vous réellement saisir une résiliation client?", True
+        elif submit_n_clicks is not None and submit_n_clicks > 0:
+            # Traitement à effectuer lorsque "Oui" est cliqué
+            # Vous pouvez insérer ici la logique de résiliation client
+            
+            return False, "", False
+        else:
+            # Traitement à effectuer lorsque "Non" est cliqué
+            return False, "", False
+
+    return False, "", False
+
+
+#...........................................................................................
+#callback carte "Alertes"
+@app.callback(
+    Output('input-badge-validation-devis', 'style'), #color
+    Output('input-badge-alerte-renouvellement', 'style'),
+    Input('o1_btn_modif_ech', 'n_clicks'),  # Utilisez le bouton comme déclencheur
+    Input('o1_store_row', 'data'),
+    prevent_initial_call=True,
+)
+def update_badge_colors(n_clicks,selected_row_data):
+    if selected_row_data is None:
+        # Gérez le cas où selected_row_data est None
+        return {'color': 'gray'}, {'color': 'gray'}
+   # print("Selected Row Data:", selected_row_data)
+    
+    # Initialisez les styles par défaut
+    validation_devis_style = {'color': 'blue'}  # Style par défaut pour "Validation devis"
+    alerte_renouvellement_style = {'color': 'blue'}  # Style par défaut pour "Renouvellement"
+
+    # Obtenez les valeurs de "Validation devis" et "Renouvellement" à partir des données de la ligne sélectionnée
+    validation_devis = selected_row_data.get('Alerte validation devis', '')
+    #print('Validation Devis:', validation_devis)
+
+    alerte_renouvellement = selected_row_data.get('Alerte renouvellement', '')
+    #print('Alerte Renouvellement:', alerte_renouvellement)
+
+    # Convertissez en float pour permettre la comparaison avec les entiers
+    validation_devis = float(validation_devis) if validation_devis else 0.0
+    alerte_renouvellement = float(alerte_renouvellement) if alerte_renouvellement else 0.0
+
+    # Mettez à jour les styles en fonction des conditions
+    if validation_devis > 240:
+        validation_devis_style['color'] = 'green'
+    elif 90 < validation_devis <= 240:
+        validation_devis_style['color'] = 'orange'
+    else:
+        validation_devis_style['color'] = 'red'
+
+    if alerte_renouvellement > 120:
+        alerte_renouvellement_style['color'] = 'green'
+    elif 45 <= alerte_renouvellement <= 120:
+        alerte_renouvellement_style['color'] = 'orange'
+    else:
+        alerte_renouvellement_style['color'] = 'red'
+
+    # print("Validation Devis Style:", validation_devis_style)
+    # print("Alerte Renouvellement Style:", alerte_renouvellement_style)
+
+    return validation_devis_style, alerte_renouvellement_style
+
+
+
+#..................................................................................
+
 # # Callback pour ouvrir/fermer le modal_pop_up_evol_prix lorsque le bouton est cliqué
 # @app.callback(
 #     Output("excel_modal", "is_open"),
@@ -381,41 +439,5 @@ def update_table_data(n_btn_submit_validate, selected_row_number, data_main_tabl
 
 #C:\Users\SofianOUASS\Documents\Dev\app-pcoe\appPCOE\src\tableau_calcul_evolution_prix.xlsx
 
-#................................................................................................
 
-#Callback pour activer la date quand switch "on" sur accordion "status et conditions financières"
-@app.callback(
-    Output('check-infos-date', 'children'),
-    Input('input-check-infos', 'value')
-)
-def update_check_infos_date(value):
-    if value:
-        return f"{datetime.date.today().strftime('%d/%m/%Y')}"
-    else:
-        return ""
-    
 
-#..................................................................................................
-#callback pour gérer l'ouverture du pop-up "résilier" et la gestion des boutons "Oui" et "Non"
-@app.callback(
-    Output("confirm-resiliation", "displayed"),
-    Output("confirm-resiliation", "message"),
-    Output("o1_btn_submit_resiliation", "disabled"),
-    Input("o1_btn_submit_resiliation", "n_clicks"),
-    Input("confirm-resiliation", "submit_n_clicks"),
-    Input("confirm-resiliation", "cancel_n_clicks"),
-    prevent_initial_call=True,
-)
-def confirm_resiliation(n_resiliation_clicks, submit_n_clicks, cancel_n_clicks):
-    if n_resiliation_clicks > 0:
-        if submit_n_clicks is None and cancel_n_clicks is None:
-            return True, "Souhaitez-vous réellement saisir une résiliation client?", True
-        elif submit_n_clicks > 0:
-            # Traitement à effectuer lorsque "Oui" est cliqué
-            # Vous pouvez insérer ici la logique de résiliation client
-            return False, "", False
-        else:
-            # Traitement à effectuer lorsque "Non" est cliqué
-            return False, "", False
-
-    return False, "", False

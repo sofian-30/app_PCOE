@@ -200,16 +200,16 @@ modal_pop_up= dbc.Modal(
                                 dbc.CardHeader("Alertes"),
                                     dbc.CardBody([
                                         dbc.Row([
-                                            dmc.Badge("Renouvellement", id= 'input-badge-alerte-renouvellement', color='grey')
+                                            dmc.Badge("Renouvellement", id= 'input-badge-alerte-renouvellement', color='blue')
                                             ], className="mb-2"),
                                         dbc.Row([
-                                            dmc.Badge("Génération devis", id= 'input-badge-generation-devis',color='grey')
+                                            dmc.Badge("Génération devis", id= 'input-badge-generation-devis',color='blue')
                                             ], className="mb-2"),
                                         dbc.Row([
-                                            dmc.Badge("Validation devis", id= 'input-badge-validation-devis', color='grey')
+                                            dmc.Badge("Validation devis", id= 'input-badge-validation-devis', color='blue')
                                             ], className="mb-2"),
                                         dbc.Row([
-                                            dmc.Badge("Résilié", id= 'input-badge-resilie', color='grey')
+                                            dmc.Badge("Résilié", id= 'input-badge-resilie', color='blue')
                                             ], className="mb-2"),
                                         ])
                                     ])
