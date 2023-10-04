@@ -1,6 +1,7 @@
-import pandas as pd
-import urllib.request
 import json
+import urllib.request
+
+import pandas as pd
 
 
 # Paramètres de connexion à l'API

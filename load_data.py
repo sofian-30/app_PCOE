@@ -1,8 +1,9 @@
-import pandas as pd
 from datetime import datetime
 
-from db import connect_to_db, disconnect_from_db, insert_df_to_table
+import pandas as pd
+
 from config import logger
+from db import connect_to_db, disconnect_from_db, insert_df_to_table
 from utils import process_monitoring
 
 
@@ -189,3 +190,6 @@ def load_data_from_csv() -> None:
     except Exception as err:
         process_monitoring(conn, boond_table_name, error_message=repr(err))
     disconnect_from_db(conn)
+
+
+load_data_from_csv()

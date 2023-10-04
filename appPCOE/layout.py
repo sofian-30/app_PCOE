@@ -1,11 +1,10 @@
 import dash_bootstrap_components as dbc
-from dash import dash_table
-from dash import dcc, html
-from app import app
-import pandas as pd
-
-import dash_mantine_components as dmc
 import dash_daq as daq
+import dash_mantine_components as dmc
+import pandas as pd
+from dash import dash_table, dcc, html
+
+from app import app
 from db import connect_to_db, disconnect_from_db, sql_to_df
 from utils import apply_calcul_sale_price
 

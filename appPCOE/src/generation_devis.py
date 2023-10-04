@@ -1,6 +1,7 @@
-from docx import Document
 import datetime
+
 from dateutil.relativedelta import relativedelta
+from docx import Document
 
 
 def remplir_devis(acces_devis, client, adresse, CP, ville, editeur, type_support, date_anniversaire, code_boond,

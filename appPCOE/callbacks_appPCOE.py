@@ -1,8 +1,9 @@
-from app import app
-from dash.dependencies import Input, Output, State
-import pandas as pd
 import dash
+import pandas as pd
 from dash import dcc
+from dash.dependencies import Input, Output, State
+
+from app import app
 from appPCOE.src.generation_devis import remplir_devis
 from utils import update_app_table, update_app_table_resiliation
 

@@ -1,10 +1,11 @@
 from datetime import datetime
 from typing import Any
 
-from config import logger
-from db import execute_sql_request, connect_to_db, disconnect_from_db
-from sqlalchemy.engine import Connection
 import pandas as pd
+from sqlalchemy.engine import Connection
+
+from config import logger
+from db import connect_to_db, disconnect_from_db, execute_sql_request
 
 
 def process_monitoring(conn: Connection, table_name: str, success_flag: int = 1, nb_lines: int = 0,
