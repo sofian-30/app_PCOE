@@ -28,7 +28,6 @@ def update_app_table(code_projet_boond: int,
                      prix_vente_n1: float,
                      marge_n1: float,
                      parc_licence: str,
-                     resilie: bool,
                      check_infos: bool,
                      validation_erronee: bool,
                      envoi_devis: bool,
@@ -37,14 +36,17 @@ def update_app_table(code_projet_boond: int,
                      achat_editeur: bool,
                      traitement_comptable: bool,
                      paiement_sap: bool) -> None:
-    if not resilie:
-        resilie = False
+    if not prix_vente_n1:
+        prix_vente_n1 = 'NULL'
+    if not prix_achat_n1:
+        prix_achat_n1 = 'NULL'
+    if not marge_n1:
+        marge_n1 = 'NULL'
     update_request = f"""UPDATE app_table
                      SET prix_achat_n1 = {prix_achat_n1},
                          prix_vente_n1 = {prix_vente_n1},
                          marge_n1 = {marge_n1},
                          parc_licence = '{parc_licence}',
-                         resilie = {resilie},
                          check_infos = {check_infos},
                          validation_erronee = {validation_erronee},
                          envoi_devis = {envoi_devis},
@@ -56,4 +58,13 @@ def update_app_table(code_projet_boond: int,
                      WHERE code_projet_boond = {code_projet_boond}"""
     conn = connect_to_db()
     execute_sql_request(update_request, conn=conn)
+    disconnect_from_db(conn)
+
+
+def update_app_table_resiliation(code_projet_boond: str) -> None:
+    resiliation_request = f"""UPDATE app_table
+                     SET resilie = True
+                     WHERE code_projet_boond = {code_projet_boond}"""
+    conn = connect_to_db()
+    execute_sql_request(resiliation_request, conn=conn)
     disconnect_from_db(conn)

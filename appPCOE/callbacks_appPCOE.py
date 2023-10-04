@@ -4,7 +4,7 @@ import pandas as pd
 import dash
 from dash import dcc
 from appPCOE.src.generation_devis import remplir_devis
-from utils import update_app_table
+from utils import update_app_table, update_app_table_resiliation
 
 df = pd.read_excel("./data/Suivi CA licences et maintenance 2023.xlsx", sheet_name='Maintenance SAP BusinessObjects')
 
@@ -262,7 +262,7 @@ def update_modal_open_state(n_btn_modif_ech, n_btn_submit_validate, n_btn_submit
     # State('input-badge-generation-devis', 'value'),   #'children' or 'style' or 'color'
     # State('input-badge-validation-devis', 'value'),
     # State('input-badge-alerte-renouvellement', 'value'),
-    State('input-badge-resilie', 'value'),  # card "Alertes" (badge)
+    # State('input-badge-resilie', 'value'),  # card "Alertes" (badge)
 
     State('input-check-infos', 'value'),
     State('input-validation-erronnes', 'value'),
@@ -292,8 +292,7 @@ def update_modal_open_state(n_btn_modif_ech, n_btn_submit_validate, n_btn_submit
 def update_table_data(n_btn_submit_validate, selected_row_number, data_main_table,
 
                       client, erp_number, date_anniversaire, code_projet_boond, resp_commercial, editeur,
-                      #  badge_generation_devis,badge_validation_devis,badge_alerte_renouvellement,
-                      badge_resilie,
+                      #  badge_generation_devis,badge_validation_devis,badge_alerte_renouvellement, badge_resilie,
                       check_infos, validation_erronnes, envoi_devis, accord_de_principe, signature_client,
                       achat_editeur, traitement_comptable, paiement_sap,
                       prix_achat_actuel, prix_vente_actuel, marge_pourcentage, nv_prix_vente, nv_prix_achat,
@@ -341,7 +340,6 @@ def update_table_data(n_btn_submit_validate, selected_row_number, data_main_tabl
             'Adresse': adresse_client,
             "Parc de licences": parc_licences
         }
-        print(f"updated_data = {updated_data}")
 
         # Mettez à jour les données de la ligne sélectionnée dans data_main_table
         for key, value in updated_data.items():
@@ -349,7 +347,7 @@ def update_table_data(n_btn_submit_validate, selected_row_number, data_main_tabl
 
         # Mettre à jour en BDD
         update_app_table(data_main_table[selected_row_number[0]]['code_projet_boond'],
-                         nv_prix_achat, nv_prix_vente, marge_annuel, parc_licences, badge_resilie,
+                         nv_prix_achat, nv_prix_vente, marge_annuel, parc_licences,
                          check_infos, validation_erronnes, envoi_devis, accord_de_principe, signature_client,
                          achat_editeur, traitement_comptable, paiement_sap)
 
@@ -380,9 +378,11 @@ def update_table_data(n_btn_submit_validate, selected_row_number, data_main_tabl
     Input("o1_btn_submit_resiliation", "n_clicks"),
     Input("confirm-resiliation", "submit_n_clicks"),
     Input("confirm-resiliation", "cancel_n_clicks"),
+    State('o1_data_table', 'selected_rows'),
+    State("o1_data_table", "data"),
     prevent_initial_call=True,
 )
-def confirm_resiliation(n_resiliation_clicks, submit_n_clicks, cancel_n_clicks):
+def confirm_resiliation(n_resiliation_clicks, submit_n_clicks, cancel_n_clicks, selected_row_number, data_main_table):
     if n_resiliation_clicks > 0:
         if submit_n_clicks is None and cancel_n_clicks is None:
             return True, "Souhaitez-vous réellement saisir une résiliation client?", True, 'blue'  # Initialiser la couleur du badge à bleu
@@ -390,6 +390,7 @@ def confirm_resiliation(n_resiliation_clicks, submit_n_clicks, cancel_n_clicks):
             # Traitement à effectuer lorsque "Oui" est cliqué
             # Vous pouvez insérer ici la logique de résiliation client
             # Mettre à jour la couleur du badge en rouge
+            update_app_table_resiliation(data_main_table[selected_row_number[0]]['code_projet_boond'])
             return False, "", False, 'red'
         else:
             # Traitement à effectuer lorsque "Non" est cliqué
