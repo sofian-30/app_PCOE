@@ -36,7 +36,7 @@ auth = dash_auth.BasicAuth(
 app.layout = layout_template
 
 if __name__ == '__main__':
-    # if sys.platform.startswith('win32'): ?
+    #if sys.platform.startswith('win32'): ?
     app.run_server(debug=True)
-    # else:
-    #   app.run_server(host='0.0.0.0', port=port)
+    #else:
+     #   app.run_server(host='0.0.0.0', port=port)
