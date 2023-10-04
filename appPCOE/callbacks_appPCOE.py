@@ -2,26 +2,20 @@ from app import app
 from dash.dependencies import Input, Output, State
 import pandas as pd
 import dash
-from dash import ctx, html, dcc
-import datetime
+from dash import ctx, dcc
 from appPCOE.src.generation_devis import remplir_devis
-from datetime import datetime
-import numpy as np  # Importez la bibliothèque NumPy
-
-# df = pd.read_excel(r"/mnt/c/CA_2023.xlsx", sheet_name='Maintenance SAP BusinessObjects')
-df = pd.read_excel(r"C:\Users\SofianOUASS\Desktop\PCoE\Suivi CA licences et maintenance 2023.xlsx", sheet_name='Maintenance SAP BusinessObjects')
 
 df = pd.read_excel("./data/Suivi CA licences et maintenance 2023.xlsx", sheet_name='Maintenance SAP BusinessObjects')
+
 
 # Callback de génération de devis.
 @app.callback(
     Output('download_devis', 'data'),
     Input('o1_btn_gener_devis', 'n_clicks'),
-    State('o1_store_row','data'),
+    State('o1_store_row', 'data'),
     prevent_initial_call=True
 )
-def export_devis(n0,data_row):
-    
+def export_devis(n0, data_row):
     # A faire : finir de rentrer les autres informations.
     # Faire une vérification avant l'envoi du devis
     remplir_devis('acces_devis',data_row['Client'],'adresse','CP','ville','editeur','type_support',data_row['Date anniversaire'],'code_boond','conditions_facturation',
@@ -45,16 +39,16 @@ def store_selected_row(selected_rows,dict_data):
         return selected_row_data
     else:
         return {}
-    
+
 
 # Callback pour remplir les champs du modal pop-up "modifier la saisie" avec les données de la ligne sélectionnée dans la table
 @app.callback(
     Output('input-client', 'children'),
     Output('input-erp-number', 'children'),
-    Output('input-date-anniversaire', 'children'),#"date"
+    Output('input-date-anniversaire', 'children'),  # "date"
     Output('input-code-projet-boond', 'children'),
     Output('input-resp-commercial', 'children'),
-    Output('input-editeur', 'children'),# card "informations générales"
+    Output('input-editeur', 'children'),  # card "informations générales"
 
     # Output('input-badge-generation-devis', 'color'),   #'children' or 'style' or 'color'
     # Output('input-badge-validation-devis', 'color'),
@@ -68,7 +62,7 @@ def store_selected_row(selected_rows,dict_data):
     Output('input-signature-client', 'children'),
     Output('input-achat-editeur', 'children'),
     Output('input-traitement-comptable', 'children'),
-    Output('input-paiement-sap', 'children'), #card "Status et conditions financières"-status
+    Output('input-paiement-sap', 'children'),  # card "Status et conditions financières"-status
 
     Output('input-prix-achat-actuel', 'value'),
     Output('input-prix-vente-actuel', 'value'),
@@ -82,10 +76,10 @@ def store_selected_row(selected_rows,dict_data):
     Output('input-cond-fact', 'value'),
     Output('input-cond-paiement', 'value'),
     Output('input-adresse-client', 'value'),
-    Output('input-parc-licences', 'value'), # card "Informations contractuelles"
+    Output('input-parc-licences', 'value'),  # card "Informations contractuelles"
 
-    # Input('o1_filtre_resp_com', 'value'),# filtre resp. com.
-    Input('o1_store_row', 'data'),#input du layout complet
+    # Input("o1_modal", 'data'), #input du modal pop-up complet
+    Input('o1_store_row', 'data'),  # input du layout complet
     prevent_initial_call=True,
 )
 
@@ -100,20 +94,20 @@ def store_selected_row(selected_rows,dict_data):
 #         return filtered_values
 
 def update_modal_pop_up(selected_row_data):
-
-    client = selected_row_data.get('Client', '') # card "informations générales"
-    erp_number = selected_row_data.get('ERP_Number_Ref_SAP', '') #'ERP Number \nRéf SAP'
+    client = selected_row_data.get('Client', '')  # card "informations générales"
+    erp_number = selected_row_data.get('ERP_Number_Ref_SAP', '')  # 'ERP Number \nRéf SAP'
     date_anniversaire = selected_row_data.get('Date anniversaire', '')
-    code_projet_boond = selected_row_data.get('Code projet Boond', '') # via API
+    code_projet_boond = selected_row_data.get('Code projet Boond', '')  # via API
     resp_commercial = selected_row_data.get('Resp\nCommercial', '')
-    editeur = selected_row_data.get('Editeur', '')  # Editeur à Cf.avec ACA pour faire le lien, je ne vois pas où il est dans xls!
+    editeur = selected_row_data.get('Editeur',
+                                    '')  # Editeur à Cf.avec ACA pour faire le lien, je ne vois pas où il est dans xls!
 
     # badge_generation_devis = selected_row_data.get('Génération devis', '') # card "Alertes" (badge)
     # badge_validation_devis = selected_row_data.get('Validation devis', '')
     # badge_alerte_renouvellement = selected_row_data.get('Renouvellement', '')
     # badge_resilie = selected_row_data.get('Résilié', '')
 
-    check_infos = selected_row_data.get('Check Infos', '') #card "Status et conditions financières"-status
+    check_infos = selected_row_data.get('Check Infos', '')  # card "Status et conditions financières"-status
     validation_erronees = selected_row_data.get('Validation erronées', '')
     envoi_devis = selected_row_data.get('Envoi devis', '')
     accord_principe = selected_row_data.get('Accord de principe', '')
@@ -122,14 +116,15 @@ def update_modal_pop_up(selected_row_data):
     traitement_comptable = selected_row_data.get('Traitement comptable', '')
     paiement_sap = selected_row_data.get('Paiement SAP', '')
 
-    prix_achat_actuel = selected_row_data.get('Prix d\'achat actuel', '') # card "Status et conditions financières"-cond. financières
-    prix_vente_actuel = selected_row_data.get('Prix de vente actuel', '')
-    marge_pourcentage = selected_row_data.get('Marge %', '')
+    nv_prix_achat = selected_row_data.get('Nouveau prix d\'achat',
+                                          '')  # card "Status et conditions financières"-cond. financières
     nv_prix_vente = selected_row_data.get('Nouveau prix de vente', '')
-    nv_prix_achat = selected_row_data.get("Nouveau prix d'achat", '')
-    marge_annuel = selected_row_data.get('Marge N+1 (%)', '') 
+    marge_pourcentage = selected_row_data.get('Marge %', '')
+    montant_vente_annuel = selected_row_data.get('Montant vente annuel N+1', '')
+    montant_annuel_achat = selected_row_data.get('Montant annuel Achat N+1', '')
+    marge_annuel = selected_row_data.get('Marge N+1 (%)', '')
 
-    type_contrat = selected_row_data.get('Type de contrat', '')     # card "Informations contractuelles"
+    type_contrat = selected_row_data.get('Type de contrat', '')  # card "Informations contractuelles"
     type_support_sap = selected_row_data.get('Type de support SAP', '')
     condition_facturation = selected_row_data.get('Condition de facturation', '')
     condition_paiement = selected_row_data.get('Condition de Paiement', '')
@@ -235,8 +230,7 @@ def update_modal_pop_up(selected_row_data):
 
 # ...............................
 
-#callback pour ouvrir le pop-up "modifier la saisie" 
-#  "valider" et/ou "Annuler" les données saisies ou modifiées
+# callback pour ouvrir le pop-up et valider les données saisies ou modifiées
 @app.callback(
     Output("o1_modal", "is_open"),  # Open the modal
     Input("o1_btn_modif_ech", "n_clicks"),
@@ -257,8 +251,9 @@ def update_modal_open_state(n_btn_modif_ech, n_btn_submit_validate, n_btn_submit
     return is_open
 
 
+
 ##########################################################################################################
-#callback pour mettre à jour les données du tableau (callback retour)
+# callback pour mettre à jour les données du tableau
 @app.callback(
     Output("o1_data_table", "data"),  # Mettez à jour les données du tableau
     Input("o1_btn_submit_validate", "n_clicks"),
@@ -267,10 +262,10 @@ def update_modal_open_state(n_btn_modif_ech, n_btn_submit_validate, n_btn_submit
 
     State("input-client", "value"),
     State("input-erp-number", "value"),
-    State("input-date-anniversaire", "value"), 
-    State("input-code-projet-boond", "value"),                                          
+    State("input-date-anniversaire", "value"),
+    State("input-code-projet-boond", "value"),
     State("input-resp-commercial", "value"),
-    State("input-editeur", "value"), # card "informations générales"                                
+    State("input-editeur", "value"),  # card "informations générales"
 
     # State('input-badge-generation-devis', 'value'),   #'children' or 'style' or 'color'
     # State('input-badge-validation-devis', 'value'),
@@ -284,7 +279,7 @@ def update_modal_open_state(n_btn_modif_ech, n_btn_submit_validate, n_btn_submit
     State('input-signature-client', 'value'),
     State('input-achat-editeur', 'value'),
     State('input-traitement-comptable', 'value'),
-    State('input-paiement-sap', 'value'), #card "Status et conditions financières"-status
+    State('input-paiement-sap', 'value'),  # card "Status et conditions financières"-status
 
     State('input-prix-achat-actuel', 'value'),
     State('input-prix-vente-actuel', 'value'),
@@ -298,10 +293,9 @@ def update_modal_open_state(n_btn_modif_ech, n_btn_submit_validate, n_btn_submit
     State('input-cond-fact', 'value'),
     State('input-cond-paiement', 'value'),
     State('input-adresse-client', 'value'),
-    State('input-parc-licences', 'value'), # card "Informations contractuelles"
+    State('input-parc-licences', 'value'),  # card "Informations contractuelles"
 
-    
-        prevent_initial_call=True,
+    prevent_initial_call=True,
 )
 
 def update_table_data(n_btn_submit_validate, selected_row_number, data_main_table, 
@@ -335,11 +329,11 @@ def update_table_data(n_btn_submit_validate, selected_row_number, data_main_tabl
             "Check Infos": check_infos,
             "Validation erronées": validation_erronnes,
             "Envoi devis": envoi_devis,
-            "Accord de principe":accord_de_principe,
-            "Signature client":signature_client,
-            "Achat éditeur":achat_editeur,
+            "Accord de principe": accord_de_principe,
+            "Signature client": signature_client,
+            "Achat éditeur": achat_editeur,
             'Traitement comptable': traitement_comptable,
-            "Paiement SAP":paiement_sap,
+            "Paiement SAP": paiement_sap,
 
             'Prix d\'achat actuel': prix_achat_actuel,
             'Prix de vente actuel':prix_vente_actuel,
@@ -348,14 +342,12 @@ def update_table_data(n_btn_submit_validate, selected_row_number, data_main_tabl
             "Nouveau prix d'achat": nv_prix_achat,
             "Marge N+1 (%)": marge_annuel,
 
-             "Type de contrat": type_contrat,
-             "Type de Support SAP": type_support_sap,
-             "Condition de facturation": condition_facturation,
-             "Condition de Paiement": condition_paiement,
-             'adresse client': adresse_client,
-             "Parc de licences": parc_licences
-                                    
-            
+            "Type de contrat": type_contrat,
+            "Type de Support SAP": type_support_sap,
+            "Condition de facturation": condition_facturation,
+            "Condition de Paiement": condition_paiement,
+            'adresse client': adresse_client,
+            "Parc de licences": parc_licences
         }
 
         # Mettez à jour les données de la ligne sélectionnée dans data_main_table
@@ -364,7 +356,8 @@ def update_table_data(n_btn_submit_validate, selected_row_number, data_main_tabl
 
     return data_main_table
 
-  ###############################################################################################################  
+
+###############################################################################################################
 
 # #Callback pour activer la date quand switch "on" sur accordion "status et conditions financières"
 # @app.callback(

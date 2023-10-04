@@ -20,11 +20,8 @@ from layout import home_page
 def display_page(pathname, content):
     if pathname == '/':
         content = home_page
-
     elif pathname == '/appPCOE':
         content = layout_PCOE
-
-
     else:
         pass
     return content

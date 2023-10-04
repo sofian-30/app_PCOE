@@ -1,14 +1,13 @@
 import pandas as pd
-import requests
 import urllib.request
 import json
+
 
 # Paramètres de connexion à l'API
 def get_auth():
     JWT = 'eyJ0eXBlIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJ1c2VyVG9rZW4iOiIzMzJlNzM2NTY1NmU2Zjc2NjE3NDY1IiwiY2xpZW50VG9rZW4iOiI3MzY1NjU2ZTZmNzY2MTc0NjUiLCJ0aW1lIjoxNjg5ODM3NTkxLCJtb2RlIjoibm9ybWFsIn0.LZHTNajdWn_L98J9xTy1P2NMnoTiNSXsgFMWipDRQYI'
     BASE_API = 'https://ui.boondmanager.com/api'
-    return JWT, BASE_API # retourne le JWT et l'URL de l'API
-
+    return JWT, BASE_API  # retourne le JWT et l'URL de l'API
 
 
 # Identification vers l'API
@@ -22,13 +21,13 @@ params = {
 }
 
 # URL complète de la requête
-url = BASE_API + '/companies?maxResults=500&page='+str(PageNumber)
+url = BASE_API + '/companies?maxResults=500&page=' + str(PageNumber)
 req = urllib.request.Request(url)
 
- ## Authentification
+# Authentification
 req.add_header('X-Jwt-Client-Boondmanager', jwt)
 
-## Invocation 
+# Invocation
 response = urllib.request.urlopen(req, data=None)
 
 # Lecture de la réponse JSON

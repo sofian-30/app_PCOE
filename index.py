@@ -6,12 +6,14 @@ Created on Mon Feb  8 10:52:41 2021
 """
 
 import os
-
-import dash_auth
-
-import callbacks
 from app import app
+import callbacks
+import dash_auth
 from layout import layout_template
+from appPCOE import callbacks_appPCOE
+
+# from app2 import callbacks_app2
+# from app3 import callbacks_app3
 
 # # Paramètres de connexion à l'API
 # def get_auth():

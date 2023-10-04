@@ -183,8 +183,7 @@ def table_to_df(table_name: str, conn: Connection = None) -> pd.DataFrame:
         logger.error("Failed to load table: Invalidated connection")
 
 
-def insert_df_to_table(df: pd.DataFrame, table_name: str, if_exists: Literal["fail", "replace", "append"] = "append",
-                       conn: Connection = None) -> bool:
+def insert_df_to_table(df: pd.DataFrame, table_name: str, if_exists: str = "append", conn: Connection = None) -> bool:
     """
     Insert the data from a Pandas DataFrame into a database table.
 
@@ -194,7 +193,7 @@ def insert_df_to_table(df: pd.DataFrame, table_name: str, if_exists: Literal["fa
     :param df: The DataFrame containing the data to insert (pandas.DataFrame).
     :param table_name: The name of the table to insert data into.
     :param if_exists: What to do if the table already exists (optional). Default "append"
-                      Possible values are "fail", "replace", and "append".
+                      Possible values are "fail", "replace", "truncate" and "append".
     :param conn: The connection to the database containing the table (optional). Default None.
     :return: A boolean indicating whether the insertion was successful (True) or not (False).
     """
@@ -206,8 +205,11 @@ def insert_df_to_table(df: pd.DataFrame, table_name: str, if_exists: Literal["fa
 
     if conn:
         try:
+            if if_exists == "truncate":
+                execute_sql_request(f"TRUNCATE TABLE {table_name}", conn=conn)
+                if_exists = "append"
             df.to_sql(table_name, con=conn, if_exists=if_exists, index=False)
-            logger.info(f"Data successfully saved in table {table_name}")
+            logger.debug(f"Data successfully saved in table {table_name}")
             success_flag = True
         except Exception as err:
             logger.error(f"Failed to insert DataFrame to table {table_name}\n{err}")
