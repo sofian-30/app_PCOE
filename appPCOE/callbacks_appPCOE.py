@@ -7,7 +7,7 @@ from dash import ctx, html, dcc
 import datetime
 from appPCOE.src.generation_devis import remplir_devis
 from datetime import datetime
-import datetime
+import numpy as np  # Importez la bibliothèque NumPy
 
 # df = pd.read_excel(r"/mnt/c/CA_2023.xlsx", sheet_name='Maintenance SAP BusinessObjects')
 df = pd.read_excel(r"C:\Users\SofianOUASS\Desktop\PCoE\Suivi CA licences et maintenance 2023.xlsx", sheet_name='Maintenance SAP BusinessObjects')
@@ -25,7 +25,7 @@ def export_devis(n0,data_row):
     # A faire : finir de rentrer les autres informations.
     # Faire une vérification avant l'envoi du devis
     remplir_devis('acces_devis',data_row['Client'],'adresse','CP','ville','editeur','type_support',data_row['Date anniversaire'],'code_boond','conditions_facturation',
-                'conditions_paiement','condition_parc',data_row['Achat SAP Maintenance ou GBS ou NEED4VIZ'])
+                'conditions_paiement','condition_parc',data_row['Prix d\'achat actuel'])#'Prix d\'achat actuel' ou' Achat SAP Maintenance ou GBS ou NEED4VIZ'
 
     return dcc.send_file('appPCOE/impressions/devis/devis_finalise.docx')
 
@@ -56,10 +56,10 @@ def store_selected_row(selected_rows,dict_data):
     Output('input-resp-commercial', 'children'),
     Output('input-editeur', 'children'),# card "informations générales"
 
-    # Output('input-badge-generation-devis', 'children'),   #'children' or 'style' or 'color'
-    # Output('input-badge-validation-devis', 'children'),
-    # Output('input-badge-alerte-renouvellement', 'children'),
-    # Output('input-badge-resilie', 'children'), # card "Alertes" (badge)
+    # Output('input-badge-generation-devis', 'color'),   #'children' or 'style' or 'color'
+    # Output('input-badge-validation-devis', 'color'),
+    # Output('input-badge-alerte-renouvellement', 'color'),
+    # Output('input-badge-resilie', 'color'), # card "Alertes" (badge)
 
     Output('input-check-infos', 'children'),
     Output('input-validation-erronnes', 'children'),
@@ -84,11 +84,20 @@ def store_selected_row(selected_rows,dict_data):
     Output('input-adresse-client', 'value'),
     Output('input-parc-licences', 'value'), # card "Informations contractuelles"
 
+    # Input('o1_filtre_resp_com', 'value'),# filtre resp. com.
     Input('o1_store_row', 'data'),#input du layout complet
     prevent_initial_call=True,
 )
 
-
+# def update_resp_commercial(selected_values):
+#     if selected_values is None or len(selected_values) == 0:
+#         # Si aucune valeur n'est sélectionnée, affiche "Tous les responsables"
+#         return "Tous les responsables"
+#     else:
+#         # Filtrer la colonne "Resp. Commercial" en fonction des valeurs sélectionnées
+#         # et afficher les valeurs sélectionnées
+#         filtered_values = ', '.join(selected_values)
+#         return filtered_values
 
 def update_modal_pop_up(selected_row_data):
 
@@ -166,6 +175,53 @@ def update_modal_pop_up(selected_row_data):
         prix_vente_actuel = round(prix_vente_actuel, 2)
 
 
+# #Calcul Nouveau prix d'achat et de vente selon condition: type de contrat
+#     # Obtenez la date du jour
+#     today = datetime.now()
+
+#     # Calculez la différence en jours entre la date anniversaire et la date du jour
+#     df['Différence de jours'] = (df['Date anniversaire'] - today).dt.days
+
+#     # Utilisez une boucle pour parcourir chaque ligne du DataFrame
+#     for index, row in df.iterrows():
+#         if row['Différence de jours'] < 120:
+#             print("La date d'anniversaire est dans moins de 4 mois")
+#             df.at[index, 'Nouveau prix d\'achat'] = ""
+#         else:
+#             type_contrat = row['Type de contrat']
+#             if type_contrat == 'SAP PAPER':
+#                 coeff_evolution = 0.06
+#             elif type_contrat == 'SAP BOBJ':
+#                 coeff_evolution = 0.08
+#             elif type_contrat == 'N4V':
+#                 coeff_evolution = 0.05
+#             elif type_contrat in ['360', 'wiiisdom']:
+#                 coeff_evolution = 0.02
+#             else:
+#                 coeff_evolution = 0.0  # Valeur par défaut si le type de contrat n'est pas reconnu
+            
+#             prix_achat_actuel = row['Prix d\'achat actuel']
+#             print('prix_achat_actuel:',prix_achat_actuel)
+            
+#             #Vérifiez si prix_achat_actuel n'est pas nulle (None) avant de l'arrondir
+#             if prix_achat_actuel is not None:
+#                 prix_achat_actuel = round(prix_achat_actuel, 2)
+            
+#             nv_prix_achat = prix_achat_actuel + prix_achat_actuel * coeff_evolution
+#             df.at[index, 'Nouveau prix d\'achat'] = nv_prix_achat
+
+#             print("nv_prix_achat:",nv_prix_achat)
+
+#     # Supprimez la colonne 'Différence de jours' si vous n'en avez plus besoin
+#     df.drop(columns=['Différence de jours'], inplace=True)
+
+#     # Affichez le DataFrame mis à jour
+#     print(df)
+
+        
+    
+
+
     #date_anniversaire= date_anniversaire.strftime("%d/%m")
     
          
@@ -176,7 +232,6 @@ def update_modal_pop_up(selected_row_data):
             type_contrat,type_support_sap,condition_facturation,condition_paiement,adresse_client,parc_licences
                 
             )
-
 
 # ...............................
 
@@ -312,16 +367,16 @@ def update_table_data(n_btn_submit_validate, selected_row_number, data_main_tabl
 
   ###############################################################################################################  
 
-#Callback pour activer la date quand switch "on" sur accordion "status et conditions financières"
-@app.callback(
-    Output('check-infos-date', 'children'),
-    Input('input-check-infos', 'value')
-)
-def update_check_infos_date(value):
-    if value:
-        return f"{datetime.date.today().strftime('%d/%m/%Y')}"
-    else:
-        return ""
+# #Callback pour activer la date quand switch "on" sur accordion "status et conditions financières"
+# @app.callback(
+#     Output('check-infos-date', 'children'),
+#     Input('input-check-infos', 'value')
+# )
+# def update_check_infos_date(value):
+#     if value:
+#         return f"{datetime.date.today().strftime('%d/%m/%Y')}"
+#     else:
+#         return ""
     
 
 #..................................................................................................
@@ -330,6 +385,7 @@ def update_check_infos_date(value):
     Output("confirm-resiliation", "displayed"),
     Output("confirm-resiliation", "message"),
     Output("o1_btn_submit_resiliation", "disabled"),
+    Output("input-badge-resilie", "color"),  # Ajout de la sortie pour le badge
     Input("o1_btn_submit_resiliation", "n_clicks"),
     Input("confirm-resiliation", "submit_n_clicks"),
     Input("confirm-resiliation", "cancel_n_clicks"),
@@ -338,24 +394,25 @@ def update_check_infos_date(value):
 def confirm_resiliation(n_resiliation_clicks, submit_n_clicks, cancel_n_clicks):
     if n_resiliation_clicks > 0:
         if submit_n_clicks is None and cancel_n_clicks is None:
-            return True, "Souhaitez-vous réellement saisir une résiliation client?", True
+            return True, "Souhaitez-vous réellement saisir une résiliation client?", True, 'blue'  # Initialiser la couleur du badge à bleu
         elif submit_n_clicks is not None and submit_n_clicks > 0:
             # Traitement à effectuer lorsque "Oui" est cliqué
             # Vous pouvez insérer ici la logique de résiliation client
-            
-            return False, "", False
+            # Mettre à jour la couleur du badge en rouge
+            return False, "", False, 'red'
         else:
             # Traitement à effectuer lorsque "Non" est cliqué
-            return False, "", False
+            return False, "", False, 'blue'  # Réinitialiser la couleur du badge à bleu
 
-    return False, "", False
+    return False, "", False, 'blue'  # Réinitialiser la couleur du badge à bleu
+
 
 
 #...........................................................................................
 #callback carte "Alertes"
 @app.callback(
-    Output('input-badge-validation-devis', 'style'), #color
-    Output('input-badge-alerte-renouvellement', 'style'),
+    Output('input-badge-validation-devis', 'color'), #'color' ou 'style'
+    Output('input-badge-alerte-renouvellement', 'color'),
     Input('o1_btn_modif_ech', 'n_clicks'),  # Utilisez le bouton comme déclencheur
     Input('o1_store_row', 'data'),
     prevent_initial_call=True,
@@ -363,12 +420,12 @@ def confirm_resiliation(n_resiliation_clicks, submit_n_clicks, cancel_n_clicks):
 def update_badge_colors(n_clicks,selected_row_data):
     if selected_row_data is None:
         # Gérez le cas où selected_row_data est None
-        return {'color': 'gray'}, {'color': 'gray'}
+        return 'gray', 'gray'#{'color': 'gray'}, {'color': 'gray'}
    # print("Selected Row Data:", selected_row_data)
     
     # Initialisez les styles par défaut
-    validation_devis_style = {'color': 'blue'}  # Style par défaut pour "Validation devis"
-    alerte_renouvellement_style = {'color': 'blue'}  # Style par défaut pour "Renouvellement"
+    validation_devis_style = 'blue' #{'color': 'blue'}  # Style par défaut pour "Validation devis"
+    alerte_renouvellement_style = 'blue'#{'color': 'blue'}  # Style par défaut pour "Renouvellement"
 
     # Obtenez les valeurs de "Validation devis" et "Renouvellement" à partir des données de la ligne sélectionnée
     validation_devis = selected_row_data.get('Alerte validation devis', '')
@@ -383,23 +440,37 @@ def update_badge_colors(n_clicks,selected_row_data):
 
     # Mettez à jour les styles en fonction des conditions
     if validation_devis > 240:
-        validation_devis_style['color'] = 'green'
+        validation_devis_style = 'green'
     elif 90 < validation_devis <= 240:
-        validation_devis_style['color'] = 'orange'
+        validation_devis_style = 'orange'
     else:
-        validation_devis_style['color'] = 'red'
+        validation_devis_style = 'red'
 
     if alerte_renouvellement > 120:
-        alerte_renouvellement_style['color'] = 'green'
+        alerte_renouvellement_style = 'green'
     elif 45 <= alerte_renouvellement <= 120:
-        alerte_renouvellement_style['color'] = 'orange'
+        alerte_renouvellement_style = 'orange'
     else:
-        alerte_renouvellement_style['color'] = 'red'
+        alerte_renouvellement_style = 'red'
 
     # print("Validation Devis Style:", validation_devis_style)
     # print("Alerte Renouvellement Style:", alerte_renouvellement_style)
 
     return validation_devis_style, alerte_renouvellement_style
+
+
+@app.callback(
+    Output('input-badge-generation-devis', 'color'),  # Change the badge's color
+    Input('o1_btn_gener_devis', 'n_clicks'),
+    prevent_initial_call=True
+)
+def change_badge_color(n_clicks):
+    if n_clicks is not None and n_clicks > 0:
+        # If the button is clicked, change the badge color to 'success' (green)
+        return 'green'
+    else:
+        # If the button is not clicked, keep the badge color as 'blue'
+        return 'blue'
 
 
 
@@ -438,6 +509,9 @@ def update_badge_colors(n_clicks,selected_row_data):
 
 
 #C:\Users\SofianOUASS\Documents\Dev\app-pcoe\appPCOE\src\tableau_calcul_evolution_prix.xlsx
+######################################################################################################
 
+
+# ...
 
 

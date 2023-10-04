@@ -474,28 +474,36 @@ layout_PCOE = html.Div([
                     dbc.Card(
                         dbc.CardBody(
                             [
-                                html.H4('Check infos', style={'color': '#191970'}),
+                                html.H4('Responsable commercial', style={'color': '#191970'}),
                                 dbc.Row([
                                     dbc.Col([
                                         html.Div(
                                             dcc.Dropdown(
-                                                id='o1_tannerie',
+                                                id='o1_filtre_resp_com',
                                                 options=[
-                                                    {'label': 'Non réalisé', 'value': 'non-realise'},
-                                                    {'label': 'OK', 'value': 'ok'},
-                                                    {'label': 'KO', 'value': 'ko'},
+                                                    {'label': 'ACA', 'value': 'ACA'},
+                                                    {'label': 'ARE', 'value': 'ARE'},
+                                                    {'label': 'ATA', 'value': 'ATA'},
+                                                    {'label': 'ATA - ACA', 'value': 'ATA - ACA'},
+                                                    {'label': 'BDE', 'value': 'BDE'},
+                                                    {'label': 'GLE', 'value': 'GLE'},
+                                                    {'label': 'JDK', 'value': 'JDK'},
+                                                    {'label': 'JPW', 'value': 'JPW'},
+                                                    {'label': 'NBE', 'value': 'NBE'},
+                                                    {'label': 'TCH', 'value': 'TCH'},
+                                                    {'label': 'TCH - ACA', 'value': 'TCH - ACA'},
                                                 ],
                                                 multi=True,    
                                             ), style={'fontSize': '20px','font-weight': 'bold','text-align':'center'}),
                                     ],width=10),
                                     dbc.Col([    
-                                        dbc.Spinner(html.Div(id="o1_spinner_tannerie")),
+                                        dbc.Spinner(html.Div(id="o1_spinner_resp_com")),
                                     ],width=2)
                                 ],className="mb-2")
                             ]
                         )
                     ),
-                ],className="mt-4 shadow"),
+                ],className="mt-4 shadow mx-auto"),
             ],xs=4,sm=4,md=4,lg=4,xl=4,align="start"), 
             dbc.Col([
                 dbc.CardGroup([
@@ -513,27 +521,27 @@ layout_PCOE = html.Div([
                         style={"maxWidth": 75},
                     ),
                 
-                ],className="mt-4 shadow"),
+                ],className="mt-4 shadow mx-auto"),
             ],xs=4,sm=4,md=4,lg=4,xl=4,align="start"),  
-            dbc.Col([    
-                dbc.CardGroup([
-                    dbc.Card(
-                        dbc.CardBody(
-                            [
-                                html.H4('Nombre de lignes non validées', style={'color': '#191970'}),
-                                html.Div(html.H2(id='o1_nb_lignes_non_validees'), style={'fontSize': '20px','font-weight': 'bold','text-align':'center'}),
-                            ]
-                        )
-                    ),
-                    dbc.Card(
-                        html.Div(className="fa fa-floppy-o", style={'color':'white','text-align': 'center','font-size': 30,'margin': 'auto'}),
+            # dbc.Col([    
+            #     dbc.CardGroup([
+            #         dbc.Card(
+            #             dbc.CardBody(
+            #                 [
+            #                     html.H4('Nombre de lignes non validées', style={'color': '#191970'}),
+            #                     html.Div(html.H2(id='o1_nb_lignes_non_validees'), style={'fontSize': '20px','font-weight': 'bold','text-align':'center'}),
+            #                 ]
+            #             )
+            #         ),
+            #         dbc.Card(
+            #             html.Div(className="fa fa-floppy-o", style={'color':'white','text-align': 'center','font-size': 30,'margin': 'auto'}),
                     
-                        className="bg-warning",
-                        style={"maxWidth": 75},
-                    ),
+            #             className="bg-warning",
+            #             style={"maxWidth": 75},
+            #         ),
                 
-                ],className="mt-4 shadow"),
-            ],xs=4,sm=4,md=4,lg=4,xl=4,align="start"),  
+            #     ],className="mt-4 shadow"),
+            # ],xs=4,sm=4,md=4,lg=4,xl=4,align="start"),  
         ]),
     ], fluid=True),
     
@@ -614,7 +622,7 @@ dbc.Row([
     dbc.Col([
         dbc.Button('Générer Devis', id="o1_btn_gener_devis", className="me-1", n_clicks=0, color='success'),
     ], width={"size": 3}),
-], className="pb-3 justify-content-between"),
+], className="pb-3 d-flex justify-content-center"),
 
  modal_pop_up, stockage_ligne, stockage_mis_a_jour,
  modal_pop_up_evol_prix,stockage_popup_evprix
