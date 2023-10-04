@@ -188,5 +188,8 @@ CREATE TABLE boond_table (
 	type_support_sap text NULL,
 	type_contrat text NULL,
 	parc_techno text NULL,
-	resp_commercial text NULL
+	resp_commercial text NULL,
+	adresse text NULL,
+	ville text NULL,
+	code_postal text NULL
 );

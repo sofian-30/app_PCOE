@@ -20,7 +20,6 @@ from db import connect_to_db, disconnect_from_db, sql_to_df
 list_app = pd.read_csv("assets/list_app.csv", header=0, sep=';')
 n_app = 1  # numéro de l'appli
 
-
 # Charger les tables app_table et boond_table
 conn = connect_to_db()
 df_app = sql_to_df("SELECT * FROM app_table", conn=conn)
@@ -28,13 +27,63 @@ df_boond = sql_to_df("SELECT * FROM boond_table", conn=conn)
 disconnect_from_db(conn)
 df = pd.merge(df_boond, df_app, how='inner', on='code_projet_boond')
 
+print(df.columns)
+db_app_name_correspondance = {'agence': 'Agence',
+                              'client': 'Client',
+                              'num_ref_sap': 'ERP_Number_Ref_SAP',
+                              'code_projet_boond': 'Code projet Boond',
+                              'date_anniversaire': 'Date anniversaire',
+                              'alerte_renouvellement': 'Alerte renouvellement',
+                              'alerte_validation_devis': 'Alerte validation devis',
+                              'prix_achat_n': "Prix d'achat année N",
+                              'prix_vente_n': 'Prix de vente année N',
+                              'marge_n': 'Marge année N',
+                              'prix_achat_n1': "Prix d'achat année N+1",
+                              'prix_vente_n1': 'Prix de vente année N+1',
+                              'marge_n1': 'Marge année N+1',
+                              'adresse': 'Adresse',
+                              'ville': 'Ville',
+                              'code_postal': 'Code postal',
+                              # '': 'Editeur',
+                              'type_support_sap': 'Type de support SAP',
+                              'type_contrat': 'Type de contrat',
+                              'parc_techno': 'Parc/Techno',
+                              # '': 'Numéro de facture',
+                              # '': 'Date de facture',
+                              'resp_commercial': 'Responsable commercial',
+                              'proposition_sap_recue': 'Proposition SAP reçue',
+                              'date_relance_client': 'Date de relance client',
+                              'proposition_seenovate_creee': 'Proposition Seenovate créée',
+                              'date_envoi_proposition': "Date d'envoi de la proposition",
+                              'date_signature_proposition': 'Date de signature par le client',
+                              'num_commande': 'Attente N° Cde client avant facturation',
+                              'date_creation_facture': 'Date de création de la facture',
+                              'commande_faite_sap': 'Commande faite SAP',
+                              'facture_sap_recue': 'Facture SAP reçue',
+                              'remarques': 'Remarques',
+                              'devis': 'Devis',
+                              # '': 'Check infos',
+                              # '': 'Validation erronée',
+                              # '': 'Envoi devis',
+                              'accord_principe': 'Accord de principe',
+                              'signature_client': 'Signature client',
+                              'achat_editeur': 'Achat éditeur',
+                              'traitement_comptable': 'Traitement comptable',
+                              'paiement_sap': 'Paiement SAP',
+                              'renouvele': 'Renouvelé',
+                              'demande_resiliation': 'Demande de résiliation',
+                              'communication_editeur': 'Communication éditeur',
+                              'resilie': 'Résilié',
+                              'converti_extension': 'Converti ou Extension'
+                              # '': 'Condition de facturation',
+                              # '': 'Condition de paiement',
+                              # '': 'Parc de licences',
+                              }
 
-# Ajout des 4 nouvelles colonnes après colonne 'Date anniversaire'
-new_columns = []
-for col in df.columns:
-    new_columns.append({'name': col, 'id': col, 'type': 'text'})
-print(new_columns)
-
+data_table_columns = []
+for name_db, name_app in db_app_name_correspondance.items():
+    data_table_columns.append({'name': name_app, 'id': name_db, 'type': 'text'})
+print(data_table_columns)
 #############################################################################################################
 #                                          Appel API                                                        #
 #############################################################################################################

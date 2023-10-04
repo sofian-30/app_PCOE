@@ -141,7 +141,6 @@ def update_modal_pop_up(selected_row_data):
             traitement_comptable, paiement_sap,
             nv_prix_achat, nv_prix_vente, marge_pourcentage, montant_vente_annuel, montant_annuel_achat, marge_annuel,
             type_contrat, type_support_sap, condition_facturation, condition_paiement, adresse_client, parc_licences
-
             )
 
 

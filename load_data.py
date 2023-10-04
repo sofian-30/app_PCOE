@@ -173,12 +173,18 @@ def load_data_from_csv() -> None:
                                             'Type de contrat': 'type_contrat',
                                             'Parc/Techno': 'parc_techno',
                                             'Resp\nCommercial': 'resp_commercial'})
+
+        df_boond['adresse'] = None
+        df_boond['ville'] = None
+        df_boond['code_postal'] = None
+
         nb_lines = len(df_boond)
         insert_df_to_table(df_boond, boond_table_name, 'replace', conn)
         process_monitoring(conn, boond_table_name, nb_lines=nb_lines)
     except Exception as err:
         process_monitoring(conn, boond_table_name, error_message=repr(err))
     disconnect_from_db(conn)
+
 
 # load_data_from_boond() # Chargement des données via Boond en stand by
 load_data_from_csv()
