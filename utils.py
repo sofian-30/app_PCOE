@@ -106,6 +106,5 @@ def apply_calcul_sale_price(row):
 
         return pd.Series([prix_achat_n1, prix_vente_n1, marge_n1])
 
-    except (IndexError, TypeError) as err:
-        print(err)
+    except (IndexError, TypeError):
         return pd.Series([None, None, None])
