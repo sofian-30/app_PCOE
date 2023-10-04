@@ -7,6 +7,7 @@ import pandas as pd
 import dash_mantine_components as dmc
 import dash_daq as daq
 from db import connect_to_db, disconnect_from_db, sql_to_df
+from utils import apply_calcul_sale_price
 
 # Import functions
 # from index import get_auth
@@ -25,6 +26,8 @@ df_app = sql_to_df("SELECT * FROM app_table", conn=conn)
 df_boond = sql_to_df("SELECT * FROM boond_table", conn=conn)
 disconnect_from_db(conn)
 df = pd.merge(df_boond, df_app, how='inner', on='code_projet_boond')
+df[['prix_achat_n1', 'prix_vente_n1', 'marge_n1']] = df.apply(apply_calcul_sale_price, axis=1)
+print(df)
 
 db_app_name_correspondance = {'agence': 'Agence',
                               'client': 'Client',

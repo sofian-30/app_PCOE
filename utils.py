@@ -1,8 +1,10 @@
-import datetime
+from datetime import datetime
+from typing import Any
 
 from config import logger
 from db import execute_sql_request, connect_to_db, disconnect_from_db
 from sqlalchemy.engine import Connection
+import pandas as pd
 
 
 def process_monitoring(conn: Connection, table_name: str, success_flag: int = 1, nb_lines: int = 0,
@@ -63,8 +65,47 @@ def update_app_table(code_projet_boond: int,
 
 def update_app_table_resiliation(code_projet_boond: str) -> None:
     resiliation_request = f"""UPDATE app_table
-                     SET resilie = True
-                     WHERE code_projet_boond = {code_projet_boond}"""
+                              SET resilie = True
+                              WHERE code_projet_boond = {code_projet_boond}"""
     conn = connect_to_db()
     execute_sql_request(resiliation_request, conn=conn)
     disconnect_from_db(conn)
+
+
+def calcul_sale_price(type_contrat: str, prix_achat_n: float, marge_n: float) -> tuple[Any, Any, Any]:
+    try:
+        current_year = datetime.now().year
+        conn = connect_to_db()
+        coef = execute_sql_request(f"SELECT coef FROM coefficient WHERE annee = {current_year} AND type = '{type_contrat}'")[0][0]
+        coef_marge = execute_sql_request(f"SELECT coef FROM coefficient WHERE annee = {current_year} AND type = 'marge'")[0][0]
+        disconnect_from_db(conn)
+
+        prix_achat_n1 = prix_achat_n + prix_achat_n * coef
+        prix_vente_n1 = prix_achat_n1 + prix_achat_n1 * (marge_n + coef_marge)
+        marge_n1 = prix_vente_n1 / prix_achat_n1 - 1
+        return prix_achat_n1, prix_vente_n1, marge_n1
+    except (IndexError, TypeError):
+        return None, None, None
+
+
+def apply_calcul_sale_price(row):
+    type_contrat = row['type_contrat']
+    prix_achat_n = row['prix_achat_n']
+    marge_n = row['marge_n']
+
+    try:
+        current_year = datetime.now().year
+        conn = connect_to_db()
+        coef = float(execute_sql_request(f"SELECT coef FROM coefficient WHERE annee = {current_year} AND type = '{type_contrat}'")[0][0])
+        coef_marge = float(execute_sql_request(f"SELECT coef FROM coefficient WHERE annee = {current_year} AND type = 'marge'")[0][0])
+        disconnect_from_db(conn)
+
+        prix_achat_n1 = prix_achat_n + prix_achat_n * coef
+        prix_vente_n1 = prix_achat_n1 + prix_achat_n1 * (marge_n + coef_marge)
+        marge_n1 = prix_vente_n1 / prix_achat_n1 - 1
+
+        return pd.Series([prix_achat_n1, prix_vente_n1, marge_n1])
+
+    except (IndexError, TypeError) as err:
+        print(err)
+        return pd.Series([None, None, None])

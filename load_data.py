@@ -189,7 +189,3 @@ def load_data_from_csv() -> None:
     except Exception as err:
         process_monitoring(conn, boond_table_name, error_message=repr(err))
     disconnect_from_db(conn)
-
-
-# load_data_from_boond() # Chargement des données via Boond en stand by
-load_data_from_csv()
