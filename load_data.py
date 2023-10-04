@@ -146,6 +146,11 @@ def load_data_from_csv() -> None:
         df_app['prix_vente_n1'] = None
         df_app['marge_n1'] = None
 
+        df_app['check_infos'] = None
+        df_app['validation_erronee'] = None
+        df_app['envoi_devis'] = None
+        df_app['parc_licence'] = None
+
         nb_lines = len(df_app)
         insert_df_to_table(df_app, app_table_name, 'truncate', conn)
         process_monitoring(conn, app_table_name, nb_lines=nb_lines)

@@ -4,6 +4,7 @@ import pandas as pd
 import dash
 from dash import dcc
 from appPCOE.src.generation_devis import remplir_devis
+from utils import update_app_table
 
 df = pd.read_excel("./data/Suivi CA licences et maintenance 2023.xlsx", sheet_name='Maintenance SAP BusinessObjects')
 
@@ -150,10 +151,6 @@ def update_modal_pop_up(selected_row_data):
     if type_contrat is None and editeur == 'SAP':
         type_contrat = "SAP BOBJ"
 
-    # Convertion en % et arrondi à 2 chiffres après virgule
-    marge_n = round(marge_n * 100, 2)
-    marge_n1 = round(marge_n1 * 100, 2)
-
     # Vérifiez d'abord si marge_pourcentage est None avant de faire le calcul
     if marge_n is not None:
         marge_n = round(marge_n * 100, 2)
@@ -265,7 +262,7 @@ def update_modal_open_state(n_btn_modif_ech, n_btn_submit_validate, n_btn_submit
     # State('input-badge-generation-devis', 'value'),   #'children' or 'style' or 'color'
     # State('input-badge-validation-devis', 'value'),
     # State('input-badge-alerte-renouvellement', 'value'),
-    # State('input-badge-resilie', 'value'), # card "Alertes" (badge)
+    State('input-badge-resilie', 'value'),  # card "Alertes" (badge)
 
     State('input-check-infos', 'value'),
     State('input-validation-erronnes', 'value'),
@@ -295,14 +292,14 @@ def update_modal_open_state(n_btn_modif_ech, n_btn_submit_validate, n_btn_submit
 def update_table_data(n_btn_submit_validate, selected_row_number, data_main_table,
 
                       client, erp_number, date_anniversaire, code_projet_boond, resp_commercial, editeur,
-                      #  badge_generation_devis,badge_validation_devis,badge_alerte_renouvellement,badge_resilie,
+                      #  badge_generation_devis,badge_validation_devis,badge_alerte_renouvellement,
+                      badge_resilie,
                       check_infos, validation_erronnes, envoi_devis, accord_de_principe, signature_client,
                       achat_editeur, traitement_comptable, paiement_sap,
                       prix_achat_actuel, prix_vente_actuel, marge_pourcentage, nv_prix_vente, nv_prix_achat,
                       marge_annuel,
                       type_contrat, type_support_sap, condition_facturation, condition_paiement, adresse_client,
                       parc_licences
-
                       ):
     if selected_row_number is not None and selected_row_number:  # Vérifiez si une ligne a été sélectionnée
         # Validez les données ici (effectuez des vérifications si nécessaire)
@@ -330,11 +327,11 @@ def update_table_data(n_btn_submit_validate, selected_row_number, data_main_tabl
             'Traitement comptable': traitement_comptable,
             "Paiement SAP": paiement_sap,
 
-            "Prix d'achat année N": nv_prix_achat,
-            'Prix de vente année N': nv_prix_vente,
+            "Prix d'achat année N": prix_achat_actuel,
+            'Prix de vente année N': prix_vente_actuel,
             'Marge année N': marge_pourcentage,
-            "Prix d'achat année N+1": prix_achat_actuel,
-            'Prix de vente année N+1': prix_vente_actuel,
+            "Prix d'achat année N+1": nv_prix_achat,
+            'Prix de vente année N+1': nv_prix_vente,
             'Marge année N+1': marge_annuel,
 
             "Type de contrat": type_contrat,
@@ -344,13 +341,17 @@ def update_table_data(n_btn_submit_validate, selected_row_number, data_main_tabl
             'Adresse': adresse_client,
             "Parc de licences": parc_licences
         }
+        print(f"updated_data = {updated_data}")
 
         # Mettez à jour les données de la ligne sélectionnée dans data_main_table
         for key, value in updated_data.items():
             data_main_table[selected_row_number[0]][key] = value
 
         # Mettre à jour en BDD
-        # update_db_row()
+        update_app_table(data_main_table[selected_row_number[0]]['code_projet_boond'],
+                         nv_prix_achat, nv_prix_vente, marge_annuel, parc_licences, badge_resilie,
+                         check_infos, validation_erronnes, envoi_devis, accord_de_principe, signature_client,
+                         achat_editeur, traitement_comptable, paiement_sap)
 
     return data_main_table
 

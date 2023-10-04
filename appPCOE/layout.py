@@ -60,9 +60,9 @@ db_app_name_correspondance = {'agence': 'Agence',
                               'facture_sap_recue': 'Facture SAP reçue',
                               'remarques': 'Remarques',
                               'devis': 'Devis',
-                              # '': 'Check infos',
-                              # '': 'Validation erronée',
-                              # '': 'Envoi devis',
+                              'check_infos': 'Check infos',
+                              'validation_erronee': 'Validation erronée',
+                              'envoi_devis': 'Envoi devis',
                               'accord_principe': 'Accord de principe',
                               'signature_client': 'Signature client',
                               'achat_editeur': 'Achat éditeur',
@@ -72,10 +72,10 @@ db_app_name_correspondance = {'agence': 'Agence',
                               'demande_resiliation': 'Demande de résiliation',
                               'communication_editeur': 'Communication éditeur',
                               'resilie': 'Résilié',
-                              'converti_extension': 'Converti ou Extension'
+                              'converti_extension': 'Converti ou Extension',
                               # '': 'Condition de facturation',
                               # '': 'Condition de paiement',
-                              # '': 'Parc de licences',
+                              'parc_licence': 'Parc de licences'
                               }
 
 data_table_columns = []
@@ -95,7 +95,7 @@ for name_db, name_app in db_app_name_correspondance.items():
 # liste des noms de colonne: Informations contrats clients=
 # ['Client', 'ERP Number \nRéf SAP', 'Date anniversaire', 'Code projet Boond', 'Resp\nCommercial', 'Type de contrat']
 
-# #liste des noms de colonne: 
+# #liste des noms de colonne:
 # ['Agence', 'Client', 'ERP_Number_Ref_SAP', 'Code projet Boond', 'Date anniversaire',
 #   'CA maintenance facturé', 'Achat SAP Maintenance ou GBS ou NEED4VIZ', 'Marge maintenance ',
 #     'Marge %', 'Montant vente annuel N+1', 'Montant annuel Achat N+1', "Mois d'imputation",
@@ -105,8 +105,8 @@ for name_db, name_app in db_app_name_correspondance.items():
 #             'Proposition signée par le client', 'Attente  N° Cde client avant facturation',
 #               'Facture  créée', 'Commande faite SAP', 'Facture SAP reçue', 'Remarques',
 #                 'Devis', 'Accord de principe', 'Signature client', 'Achat éditeur', 'Renouvelé',
-#                   'Traitement comptable', 'Paiement SAP', 'Demande de résiliation', 
-#                   'Communication éditeur', 'Résilié', 'Converti ou Extension']             
+#                   'Traitement comptable', 'Paiement SAP', 'Demande de résiliation',
+#                   'Communication éditeur', 'Résilié', 'Converti ou Extension']
 
 # Ajout d'un composant dcc.Store pour stocker les données de la ligne sélectionnée
 stockage_ligne = dcc.Store(id='o1_store_row')
@@ -678,5 +678,4 @@ layout_PCOE = html.Div([
 
     modal_pop_up, stockage_ligne, stockage_mis_a_jour,
     modal_pop_up_evol_prix, stockage_popup_evprix
-
 ])

@@ -158,21 +158,25 @@ CREATE TABLE app_table (
 	facture_sap_recue text NULL,
 	remarques text NULL,
 	devis text NULL,
-	accord_principe text NULL,
-	signature_client text NULL,
-	achat_editeur text NULL,
-	renouvele text NULL,
-	traitement_comptable text NULL,
-	paiement_sap text NULL,
+    check_infos bool NULL,
+    validation_erronee bool NULL,
+    envoi_devis bool NULL,
+	accord_principe bool NULL,
+	signature_client bool NULL,
+	achat_editeur bool NULL,
+	renouvele bool NULL,
+	traitement_comptable bool NULL,
+	paiement_sap bool NULL,
 	demande_resiliation text NULL,
 	communication_editeur text NULL,
-	resilie text NULL,
+	resilie bool NULL,
 	converti_extension text NULL,
 	alerte_renouvellement text NULL,
 	alerte_validation_devis text NULL,
 	prix_achat_n1 float8 NULL,
 	prix_vente_n1 float8 NULL,
-	marge_n1 float8 NULL
+	marge_n1 float8 NULL,
+	parc_licence text NULL
 );
 
 

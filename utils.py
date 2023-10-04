@@ -1,7 +1,7 @@
 import datetime
 
 from config import logger
-from db import execute_sql_request
+from db import execute_sql_request, connect_to_db, disconnect_from_db
 from sqlalchemy.engine import Connection
 
 
@@ -23,36 +23,37 @@ def process_monitoring(conn: Connection, table_name: str, success_flag: int = 1,
                             conn=conn)
 
 
-def update_boond_table(code_projet_boond: int,
-                       agence: str,
-                       client: str,
-                       num_ref_sap: str,
-                       date_anniversaire: datetime.date,
-                       prix_achat_n: float,
-                       prix_vente_n: float,
-                       marge_n: float,
-                       type_support_sap: str,
-                       type_contrat: str,
-                       parc_techno: str,
-                       resp_commercial: str,
-                       adresse: str,
-                       ville: str,
-                       cope_postal: str) -> None:
-    update_request = f"""UPDATE boond_table
-                     SET agence = '{agence}',
-                         client = '{client}',
-                         num_ref_sap = '{num_ref_sap}',
-                         date_anniversaire = '{date_anniversaire}',
-                         prix_achat_n = {prix_achat_n},
-                         prix_vente_n = {prix_vente_n},
-                         marge_n = {marge_n},
-                         type_support_sap = '{type_support_sap}',
-                         type_contrat = '{type_contrat}',
-                         parc_techno = '{parc_techno}',
-                         resp_commercial = '{resp_commercial}',
-                         adresse = '{adresse}',
-                         ville = '{ville}',
-                         cope_postal = '{cope_postal}',    
+def update_app_table(code_projet_boond: int,
+                     prix_achat_n1: float,
+                     prix_vente_n1: float,
+                     marge_n1: float,
+                     parc_licence: str,
+                     resilie: bool,
+                     check_infos: bool,
+                     validation_erronee: bool,
+                     envoi_devis: bool,
+                     accord_principe: bool,
+                     signature_client: bool,
+                     achat_editeur: bool,
+                     traitement_comptable: bool,
+                     paiement_sap: bool) -> None:
+    if not resilie:
+        resilie = False
+    update_request = f"""UPDATE app_table
+                     SET prix_achat_n1 = {prix_achat_n1},
+                         prix_vente_n1 = {prix_vente_n1},
+                         marge_n1 = {marge_n1},
+                         parc_licence = '{parc_licence}',
+                         resilie = {resilie},
+                         check_infos = {check_infos},
+                         validation_erronee = {validation_erronee},
+                         envoi_devis = {envoi_devis},
+                         accord_principe = {accord_principe},
+                         signature_client = {signature_client},
+                         achat_editeur = {achat_editeur},
+                         traitement_comptable = {traitement_comptable},
+                         paiement_sap = {paiement_sap}
                      WHERE code_projet_boond = {code_projet_boond}"""
-
-    execute_sql_request(update_request)
+    conn = connect_to_db()
+    execute_sql_request(update_request, conn=conn)
+    disconnect_from_db(conn)
