@@ -163,12 +163,13 @@ def update_modal_pop_up(selected_row_data):
     # Assurez-vous que marge_annuel est initialisée en tant que chaîne de caractères
     marge_annuel = str(marge_annuel)
 
-    # Vérifiez ensuite si marge_annuel est None et non vide avant de faire le calcul
-    if marge_annuel is not None and marge_annuel.strip():
+    # Vérifiez si marge_annuel est égal à la chaîne de caractères 'None' avant de le convertir
+    if marge_annuel is not None and marge_annuel != 'None'and marge_annuel.strip():
         marge_annuel = float(marge_annuel)
         marge_annuel = round(marge_annuel * 100, 2)
     else:
         marge_annuel = 0  # Ou une autre valeur par défaut
+
     
 
     # Assurez-vous que prix_achat_actuel est initialisée en tant que chaîne de caractères
@@ -316,7 +317,7 @@ def update_modal_open_state(n_btn_modif_ech, n_btn_submit_validate, n_btn_submit
     State('input-cond-paiement', 'value'),
     State('input-adresse-client', 'value'),
     State('input-parc-licences', 'value'), # card "Informations contractuelles"
-    Input('o1_filtre_resp_com', 'value'),# Filtre Responsable commercial
+    # Input('o1_filtre_resp_com', 'value'),# Filtre "Responsable commercial"
     
         prevent_initial_call=True,
 )
@@ -329,7 +330,7 @@ def update_table_data(n_btn_submit_validate, selected_row_number, data_main_tabl
                      prix_achat_actuel,prix_vente_actuel,marge_pourcentage,nv_prix_vente,nv_prix_achat,marge_annuel,
                      type_contrat,type_support_sap,condition_facturation,condition_paiement,adresse_client,parc_licences
 
-                     ,selected_values): 
+                     ): 
                      
     
     if selected_row_number is not None and selected_row_number:  # Vérifiez si une ligne a été sélectionnée
@@ -370,8 +371,7 @@ def update_table_data(n_btn_submit_validate, selected_row_number, data_main_tabl
              "Condition de facturation": condition_facturation,
              "Condition de Paiement": condition_paiement,
              'adresse client': adresse_client,
-             "Parc de licences": parc_licences
-                                    
+             "Parc de licences": parc_licences                     
             
         }
 
@@ -381,12 +381,22 @@ def update_table_data(n_btn_submit_validate, selected_row_number, data_main_tabl
             data_main_table[selected_row_number[0]][key] = value
     # print('selected_values:',selected_values)
     # print('data_main_table',data_main_table)
-    ## FILTRER les données du DataTable en fonction de la valeur sélectionnée dans le dropdown "Resp. Commercial"
-    filtered_data = [row for row in data_main_table if row['Resp\nCommercial'] in selected_values]
-    filtered_dataframe = pd.DataFrame(filtered_data)
-    updated_data = filtered_dataframe.to_dict('records')
 
-    return updated_data
+    ## FILTRER les données du DataTable en fonction des valeurs sélectionnées dans le filtre "Responsable commercial"
+    # Filtrer les données en fonction des valeurs sélectionnées
+    # if not selected_values:  # Si rien n'est sélectionné, afficher toutes les données
+    #     filtered_data = data_main_table
+    # else:
+    #     filtered_data = [row for row in data_main_table if row['Resp\nCommercial'] in selected_values]
+
+    # filtered_dataframe = pd.DataFrame(filtered_data)
+    
+    # if not filtered_dataframe.empty:
+    #     updated_data = filtered_dataframe.to_dict('records')
+    # else:
+    #     updated_data = data_main_table  # Si le dataframe filtré est vide, affichez toutes les données
+
+    return data_main_table
 
   ###############################################################################################################  
 
