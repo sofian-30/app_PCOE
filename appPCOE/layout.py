@@ -519,6 +519,10 @@ layout_PCOE = html.Div([
     dcc.Download(id="download_devis"),
 
     # ... Le reste de votre mise en page ...
+    html.Div([
+    dcc.Store(id='prev_resp_commercial_values'),  # Définition de l'objet Store
+    # ... Vos autres composants ...
+]),
 
     # Intégration des 3 boutons de la mise en page (check infos..)
     dbc.Container([
