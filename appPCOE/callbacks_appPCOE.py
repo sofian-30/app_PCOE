@@ -356,8 +356,11 @@ def update_table_data(n_btn_submit_validate, resp_comm_list, selected_row_number
         }
 
         # Mettez à jour les données de la ligne sélectionnée dans data_main_table
-        for key, value in updated_data.items():
-            data_main_table[selected_row_number[0]][key] = value
+        try:
+            for key, value in updated_data.items():
+                data_main_table[selected_row_number[0]][key] = value
+        except IndexError:
+            pass
 
         # Mettre à jour en BDD
         update_app_table(data_main_table[selected_row_number[0]]['code_projet_boond'],
