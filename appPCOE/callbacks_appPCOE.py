@@ -1,9 +1,12 @@
-from app import app
-from dash.dependencies import Input, Output, State
-import pandas as pd
 import dash
-from dash import ctx, dcc
+import pandas as pd
+from dash import dcc
+from dash.dependencies import Input, Output, State
+
+from app import app
 from appPCOE.src.generation_devis import remplir_devis
+from db import connect_to_db, sql_to_df, disconnect_from_db
+from utils import update_app_table, update_app_table_resiliation
 
 df = pd.read_excel("./data/Suivi CA licences et maintenance 2023.xlsx", sheet_name='Maintenance SAP BusinessObjects')
 
@@ -18,8 +21,10 @@ df = pd.read_excel("./data/Suivi CA licences et maintenance 2023.xlsx", sheet_na
 def export_devis(n0, data_row):
     # A faire : finir de rentrer les autres informations.
     # Faire une vérification avant l'envoi du devis
-    remplir_devis('acces_devis',data_row['Client'],'adresse','CP','ville','editeur','type_support',data_row['Date anniversaire'],'code_boond','conditions_facturation',
-                'conditions_paiement','condition_parc',data_row['Prix d\'achat actuel'])#'Prix d\'achat actuel' ou' Achat SAP Maintenance ou GBS ou NEED4VIZ'
+    remplir_devis('acces_devis', data_row['Client'], 'adresse', 'CP', 'ville', 'editeur', 'type_support',
+                  data_row['Date anniversaire'], 'code_boond', 'conditions_facturation',
+                  'conditions_paiement', 'condition_parc', data_row[
+                      'Prix d\'achat actuel'])  # 'Prix d\'achat actuel' ou' Achat SAP Maintenance ou GBS ou NEED4VIZ'
 
     return dcc.send_file('appPCOE/impressions/devis/devis_finalise.docx')
 
@@ -31,10 +36,11 @@ def export_devis(n0, data_row):
     Input('o1_data_table', 'data'),
     prevent_initial_call=True,
 )
-def store_selected_row(selected_rows,dict_data):
-    
-    df=pd.DataFrame.from_dict(dict_data)
-    if selected_rows:
+def store_selected_row(selected_rows, dict_data):
+    df = pd.DataFrame.from_dict(dict_data)
+    if df.empty:
+        return {}
+    elif selected_rows:
         selected_row_data = df.iloc[selected_rows[0]].to_dict()
         return selected_row_data
     else:
@@ -67,9 +73,9 @@ def store_selected_row(selected_rows,dict_data):
     Output('input-prix-achat-actuel', 'value'),
     Output('input-prix-vente-actuel', 'value'),
     Output('input-Marge-pourcentage', 'value'),
-    Output('input-nv-prix-vente', 'value'),
     Output('input-nv-prix-achat', 'value'),
-    Output('input-Marge-N+1', 'value'), # card "Status et conditions financières"-cond. financières
+    Output('input-nv-prix-vente', 'value'),
+    Output('input-Marge-N+1', 'value'),  # card "Status et conditions financières"-cond. financières
 
     Output('input-type-contrat', 'value'),
     Output('input-type-support-sap', 'value'),
@@ -82,7 +88,6 @@ def store_selected_row(selected_rows,dict_data):
     Input('o1_store_row', 'data'),  # input du layout complet
     prevent_initial_call=True,
 )
-
 # def update_resp_commercial(selected_values):
 #     if selected_values is None or len(selected_values) == 0:
 #         # Si aucune valeur n'est sélectionnée, affiche "Tous les responsables"
@@ -92,13 +97,12 @@ def store_selected_row(selected_rows,dict_data):
 #         # et afficher les valeurs sélectionnées
 #         filtered_values = ', '.join(selected_values)
 #         return filtered_values
-
 def update_modal_pop_up(selected_row_data):
     client = selected_row_data.get('Client', '')  # card "informations générales"
     erp_number = selected_row_data.get('ERP_Number_Ref_SAP', '')  # 'ERP Number \nRéf SAP'
     date_anniversaire = selected_row_data.get('Date anniversaire', '')
     code_projet_boond = selected_row_data.get('Code projet Boond', '')  # via API
-    resp_commercial = selected_row_data.get('Resp\nCommercial', '')
+    resp_commercial = selected_row_data.get('Responsable commercial', '')
     editeur = selected_row_data.get('Editeur',
                                     '')  # Editeur à Cf.avec ACA pour faire le lien, je ne vois pas où il est dans xls!
 
@@ -116,21 +120,21 @@ def update_modal_pop_up(selected_row_data):
     traitement_comptable = selected_row_data.get('Traitement comptable', '')
     paiement_sap = selected_row_data.get('Paiement SAP', '')
 
-    nv_prix_achat = selected_row_data.get('Nouveau prix d\'achat',
-                                          '')  # card "Status et conditions financières"-cond. financières
-    nv_prix_vente = selected_row_data.get('Nouveau prix de vente', '')
-    marge_pourcentage = selected_row_data.get('Marge %', '')
-    montant_vente_annuel = selected_row_data.get('Montant vente annuel N+1', '')
-    montant_annuel_achat = selected_row_data.get('Montant annuel Achat N+1', '')
-    marge_annuel = selected_row_data.get('Marge N+1 (%)', '')
+    prix_achat_n = selected_row_data.get("Prix d'achat année N",
+                                         0)  # card "Status et conditions financières"-cond. financières
+    prix_vente_n = selected_row_data.get('Prix de vente année N', 0)
+    marge_n = selected_row_data.get('Marge année N', 0)
+    prix_achat_n1 = selected_row_data.get("Prix d'achat année N+1", 0)
+    prix_vente_n1 = selected_row_data.get('Prix de vente année N+1', 0)
+    marge_n1 = selected_row_data.get('Marge année N+1', 0)
 
     type_contrat = selected_row_data.get('Type de contrat', '')  # card "Informations contractuelles"
     type_support_sap = selected_row_data.get('Type de support SAP', '')
     condition_facturation = selected_row_data.get('Condition de facturation', '')
     condition_paiement = selected_row_data.get('Condition de Paiement', '')
     adresse_client = selected_row_data.get('Adresse', '')
-    ville = selected_row_data.get('ville', '')
-    cp = selected_row_data.get('CP', '')
+    ville = selected_row_data.get('Ville', '')
+    cp = selected_row_data.get('Code postal', '')
     parc_licences = selected_row_data.get('Parc de licences', '')
 
     # Composition de l'adresse avec saut de ligne
@@ -147,86 +151,79 @@ def update_modal_pop_up(selected_row_data):
     if ville is not None:
         adresse_client += ville
 
-
     # Conditions "Type de contrat" par rapport à l'éditeur
     if type_contrat is None and editeur == 'SAP':
         type_contrat = "SAP BOBJ"
 
+    # Vérifiez d'abord si marge_pourcentage est None avant de faire le calcul
+    if marge_n is not None:
+        marge_n = round(marge_n * 100, 2)
 
-   # Vérifiez d'abord si marge_pourcentage est None avant de faire le calcul
-    if marge_pourcentage is not None:
-        marge_pourcentage = round(marge_pourcentage * 100, 2)
+    # Vérifiez si marge_annuel est None avant de faire le calcul
+    if marge_n1 is not None:
+        marge_n1 = round(marge_n1 * 100, 2)
 
-# Vérifiez si marge_annuel est None avant de faire le calcul
-    if marge_annuel is not None:
-        marge_annuel = round(marge_annuel * 100, 2)
+    # Vérifiez si prix_achat_actuel est None avant de faire le calcul
+    if prix_achat_n is not None:
+        prix_achat_n = round(prix_achat_n, 2)
 
-# Vérifiez si prix_achat_actuel est None avant de faire le calcul
-    if prix_achat_actuel is not None:
-        prix_achat_actuel = round(prix_achat_actuel, 2)
+    # Vérifiez si prix_vente_actuel est None avant de faire le calcul
+    if prix_vente_n is not None:
+        prix_vente_n = round(prix_vente_n, 2)
 
-# Vérifiez si prix_vente_actuel est None avant de faire le calcul
-    if prix_vente_actuel is not None:
-        prix_vente_actuel = round(prix_vente_actuel, 2)
+    # #Calcul Nouveau prix d'achat et de vente selon condition: type de contrat
+    #     # Obtenez la date du jour
+    #     today = datetime.now()
 
+    #     # Calculez la différence en jours entre la date anniversaire et la date du jour
+    #     df['Différence de jours'] = (df['Date anniversaire'] - today).dt.days
 
-# #Calcul Nouveau prix d'achat et de vente selon condition: type de contrat
-#     # Obtenez la date du jour
-#     today = datetime.now()
+    #     # Utilisez une boucle pour parcourir chaque ligne du DataFrame
+    #     for index, row in df.iterrows():
+    #         if row['Différence de jours'] < 120:
+    #             print("La date d'anniversaire est dans moins de 4 mois")
+    #             df.at[index, 'Nouveau prix d\'achat'] = ""
+    #         else:
+    #             type_contrat = row['Type de contrat']
+    #             if type_contrat == 'SAP PAPER':
+    #                 coeff_evolution = 0.06
+    #             elif type_contrat == 'SAP BOBJ':
+    #                 coeff_evolution = 0.08
+    #             elif type_contrat == 'N4V':
+    #                 coeff_evolution = 0.05
+    #             elif type_contrat in ['360', 'wiiisdom']:
+    #                 coeff_evolution = 0.02
+    #             else:
+    #                 coeff_evolution = 0.0  # Valeur par défaut si le type de contrat n'est pas reconnu
 
-#     # Calculez la différence en jours entre la date anniversaire et la date du jour
-#     df['Différence de jours'] = (df['Date anniversaire'] - today).dt.days
+    #             prix_achat_actuel = row['Prix d\'achat actuel']
+    #             print('prix_achat_actuel:',prix_achat_actuel)
 
-#     # Utilisez une boucle pour parcourir chaque ligne du DataFrame
-#     for index, row in df.iterrows():
-#         if row['Différence de jours'] < 120:
-#             print("La date d'anniversaire est dans moins de 4 mois")
-#             df.at[index, 'Nouveau prix d\'achat'] = ""
-#         else:
-#             type_contrat = row['Type de contrat']
-#             if type_contrat == 'SAP PAPER':
-#                 coeff_evolution = 0.06
-#             elif type_contrat == 'SAP BOBJ':
-#                 coeff_evolution = 0.08
-#             elif type_contrat == 'N4V':
-#                 coeff_evolution = 0.05
-#             elif type_contrat in ['360', 'wiiisdom']:
-#                 coeff_evolution = 0.02
-#             else:
-#                 coeff_evolution = 0.0  # Valeur par défaut si le type de contrat n'est pas reconnu
-            
-#             prix_achat_actuel = row['Prix d\'achat actuel']
-#             print('prix_achat_actuel:',prix_achat_actuel)
-            
-#             #Vérifiez si prix_achat_actuel n'est pas nulle (None) avant de l'arrondir
-#             if prix_achat_actuel is not None:
-#                 prix_achat_actuel = round(prix_achat_actuel, 2)
-            
-#             nv_prix_achat = prix_achat_actuel + prix_achat_actuel * coeff_evolution
-#             df.at[index, 'Nouveau prix d\'achat'] = nv_prix_achat
+    #             #Vérifiez si prix_achat_actuel n'est pas nulle (None) avant de l'arrondir
+    #             if prix_achat_actuel is not None:
+    #                 prix_achat_actuel = round(prix_achat_actuel, 2)
 
-#             print("nv_prix_achat:",nv_prix_achat)
+    #             nv_prix_achat = prix_achat_actuel + prix_achat_actuel * coeff_evolution
+    #             df.at[index, 'Nouveau prix d\'achat'] = nv_prix_achat
 
-#     # Supprimez la colonne 'Différence de jours' si vous n'en avez plus besoin
-#     df.drop(columns=['Différence de jours'], inplace=True)
+    #             print("nv_prix_achat:",nv_prix_achat)
 
-#     # Affichez le DataFrame mis à jour
-#     print(df)
+    #     # Supprimez la colonne 'Différence de jours' si vous n'en avez plus besoin
+    #     df.drop(columns=['Différence de jours'], inplace=True)
 
-        
-    
+    #     # Affichez le DataFrame mis à jour
+    #     print(df)
 
+    # date_anniversaire= date_anniversaire.strftime("%d/%m")
 
-    #date_anniversaire= date_anniversaire.strftime("%d/%m")
-    
-         
-    return (client, erp_number, date_anniversaire, code_projet_boond,resp_commercial, editeur,
+    return (client, erp_number, date_anniversaire, code_projet_boond, resp_commercial, editeur,
             # badge_generation_devis,badge_validation_devis,badge_alerte_renouvellement,badge_resilie,
-            check_infos,validation_erronees,envoi_devis,accord_principe,signature_client,achat_editeur,traitement_comptable,paiement_sap,
-            prix_achat_actuel,prix_vente_actuel,marge_pourcentage,nv_prix_vente,nv_prix_achat,marge_annuel,
-            type_contrat,type_support_sap,condition_facturation,condition_paiement,adresse_client,parc_licences
-                
+            check_infos, validation_erronees, envoi_devis, accord_principe, signature_client, achat_editeur,
+            traitement_comptable, paiement_sap,
+            prix_achat_n, prix_vente_n, marge_n, prix_achat_n1, prix_vente_n1, marge_n1,
+            type_contrat, type_support_sap, condition_facturation, condition_paiement, adresse_client, parc_licences
             )
+
 
 # ...............................
 
@@ -251,12 +248,12 @@ def update_modal_open_state(n_btn_modif_ech, n_btn_submit_validate, n_btn_submit
     return is_open
 
 
-
 ##########################################################################################################
 # callback pour mettre à jour les données du tableau
 @app.callback(
     Output("o1_data_table", "data"),  # Mettez à jour les données du tableau
     Input("o1_btn_submit_validate", "n_clicks"),
+    Input('o1_filtre_resp_com', 'value'),
     State('o1_data_table', 'selected_rows'),
     State("o1_data_table", "data"),
 
@@ -270,7 +267,7 @@ def update_modal_open_state(n_btn_modif_ech, n_btn_submit_validate, n_btn_submit
     # State('input-badge-generation-devis', 'value'),   #'children' or 'style' or 'color'
     # State('input-badge-validation-devis', 'value'),
     # State('input-badge-alerte-renouvellement', 'value'),
-    # State('input-badge-resilie', 'value'), # card "Alertes" (badge)
+    # State('input-badge-resilie', 'value'),  # card "Alertes" (badge)
 
     State('input-check-infos', 'value'),
     State('input-validation-erronnes', 'value'),
@@ -286,7 +283,7 @@ def update_modal_open_state(n_btn_modif_ech, n_btn_submit_validate, n_btn_submit
     State('input-Marge-pourcentage', 'value'),
     State('input-nv-prix-vente', 'value'),
     State('input-nv-prix-achat', 'value'),
-    State('input-Marge-N+1', 'value'), # card "Status et conditions financières"-cond. financières
+    State('input-Marge-N+1', 'value'),  # card "Status et conditions financières"-cond. financières
 
     State('input-type-contrat', 'value'),
     State('input-type-support-sap', 'value'),
@@ -297,18 +294,26 @@ def update_modal_open_state(n_btn_modif_ech, n_btn_submit_validate, n_btn_submit
 
     prevent_initial_call=True,
 )
+def update_table_data(n_btn_submit_validate, resp_comm_list, selected_row_number, data_main_table,
+                      client, erp_number, date_anniversaire, code_projet_boond, resp_commercial, editeur,
+                      #  badge_generation_devis,badge_validation_devis,badge_alerte_renouvellement, badge_resilie,
+                      check_infos, validation_erronnes, envoi_devis, accord_de_principe, signature_client,
+                      achat_editeur, traitement_comptable, paiement_sap,
+                      prix_achat_actuel, prix_vente_actuel, marge_pourcentage, nv_prix_vente, nv_prix_achat,
+                      marge_annuel,
+                      type_contrat, type_support_sap, condition_facturation, condition_paiement, adresse_client,
+                      parc_licences
+                      ):
+    conn = connect_to_db()
+    df_app = sql_to_df("SELECT * FROM app_table", conn=conn)
+    df_boond = sql_to_df("SELECT * FROM boond_table", conn=conn)
+    disconnect_from_db(conn)
+    df = pd.merge(df_boond, df_app, how='inner', on='code_projet_boond')
+    df = df[df['resp_commercial'].isin(resp_comm_list)]
+    data_main_table = df.to_dict('records')
+    if df.empty:
+        return data_main_table
 
-def update_table_data(n_btn_submit_validate, selected_row_number, data_main_table, 
-                      
-                     client, erp_number,date_anniversaire, code_projet_boond, resp_commercial, editeur,
-                    #  badge_generation_devis,badge_validation_devis,badge_alerte_renouvellement,badge_resilie,
-                     check_infos,validation_erronnes,envoi_devis,accord_de_principe,signature_client,achat_editeur,traitement_comptable,paiement_sap,
-                     prix_achat_actuel,prix_vente_actuel,marge_pourcentage,nv_prix_vente,nv_prix_achat,marge_annuel,
-                     type_contrat,type_support_sap,condition_facturation,condition_paiement,adresse_client,parc_licences
-
-                     ): 
-                     
-    
     if selected_row_number is not None and selected_row_number:  # Vérifiez si une ligne a été sélectionnée
         # Validez les données ici (effectuez des vérifications si nécessaire)
 
@@ -318,8 +323,8 @@ def update_table_data(n_btn_submit_validate, selected_row_number, data_main_tabl
             "ERP_Number_Ref_SAP": erp_number,
             "Date anniversaire": date_anniversaire,
             "Code projet Boond": code_projet_boond,
-            "Resp\nCommercial": resp_commercial,
-            "Editeur": editeur, #"Type de contrat"
+            "Responsable commercial": resp_commercial,
+            "Editeur": editeur,
 
             # "Génération devis": badge_generation_devis,
             # "Validation devis": badge_validation_devis,
@@ -335,24 +340,30 @@ def update_table_data(n_btn_submit_validate, selected_row_number, data_main_tabl
             'Traitement comptable': traitement_comptable,
             "Paiement SAP": paiement_sap,
 
-            'Prix d\'achat actuel': prix_achat_actuel,
-            'Prix de vente actuel':prix_vente_actuel,
-            "Marge %" : marge_pourcentage,
-            "Nouveau prix de vente": nv_prix_vente,
-            "Nouveau prix d'achat": nv_prix_achat,
-            "Marge N+1 (%)": marge_annuel,
+            "Prix d'achat année N": prix_achat_actuel,
+            'Prix de vente année N': prix_vente_actuel,
+            'Marge année N': marge_pourcentage,
+            "Prix d'achat année N+1": nv_prix_achat,
+            'Prix de vente année N+1': nv_prix_vente,
+            'Marge année N+1': marge_annuel,
 
             "Type de contrat": type_contrat,
             "Type de Support SAP": type_support_sap,
             "Condition de facturation": condition_facturation,
             "Condition de Paiement": condition_paiement,
-            'adresse client': adresse_client,
+            'Adresse': adresse_client,
             "Parc de licences": parc_licences
         }
 
         # Mettez à jour les données de la ligne sélectionnée dans data_main_table
         for key, value in updated_data.items():
             data_main_table[selected_row_number[0]][key] = value
+
+        # Mettre à jour en BDD
+        update_app_table(data_main_table[selected_row_number[0]]['code_projet_boond'],
+                         nv_prix_achat, nv_prix_vente, marge_annuel, parc_licences,
+                         check_infos, validation_erronnes, envoi_devis, accord_de_principe, signature_client,
+                         achat_editeur, traitement_comptable, paiement_sap)
 
     return data_main_table
 
@@ -369,10 +380,10 @@ def update_table_data(n_btn_submit_validate, selected_row_number, data_main_tabl
 #         return f"{datetime.date.today().strftime('%d/%m/%Y')}"
 #     else:
 #         return ""
-    
 
-#..................................................................................................
-#callback pour gérer l'ouverture du pop-up "résilier" et la gestion des boutons "Oui" et "Non"
+
+# ..................................................................................................
+# callback pour gérer l'ouverture du pop-up "résilier" et la gestion des boutons "Oui" et "Non"
 @app.callback(
     Output("confirm-resiliation", "displayed"),
     Output("confirm-resiliation", "message"),
@@ -381,9 +392,11 @@ def update_table_data(n_btn_submit_validate, selected_row_number, data_main_tabl
     Input("o1_btn_submit_resiliation", "n_clicks"),
     Input("confirm-resiliation", "submit_n_clicks"),
     Input("confirm-resiliation", "cancel_n_clicks"),
+    State('o1_data_table', 'selected_rows'),
+    State("o1_data_table", "data"),
     prevent_initial_call=True,
 )
-def confirm_resiliation(n_resiliation_clicks, submit_n_clicks, cancel_n_clicks):
+def confirm_resiliation(n_resiliation_clicks, submit_n_clicks, cancel_n_clicks, selected_row_number, data_main_table):
     if n_resiliation_clicks > 0:
         if submit_n_clicks is None and cancel_n_clicks is None:
             return True, "Souhaitez-vous réellement saisir une résiliation client?", True, 'blue'  # Initialiser la couleur du badge à bleu
@@ -391,6 +404,7 @@ def confirm_resiliation(n_resiliation_clicks, submit_n_clicks, cancel_n_clicks):
             # Traitement à effectuer lorsque "Oui" est cliqué
             # Vous pouvez insérer ici la logique de résiliation client
             # Mettre à jour la couleur du badge en rouge
+            update_app_table_resiliation(data_main_table[selected_row_number[0]]['code_projet_boond'])
             return False, "", False, 'red'
         else:
             # Traitement à effectuer lorsque "Non" est cliqué
@@ -399,32 +413,31 @@ def confirm_resiliation(n_resiliation_clicks, submit_n_clicks, cancel_n_clicks):
     return False, "", False, 'blue'  # Réinitialiser la couleur du badge à bleu
 
 
-
-#...........................................................................................
-#callback carte "Alertes"
+# ...........................................................................................
+# callback carte "Alertes"
 @app.callback(
-    Output('input-badge-validation-devis', 'color'), #'color' ou 'style'
+    Output('input-badge-validation-devis', 'color'),  # 'color' ou 'style'
     Output('input-badge-alerte-renouvellement', 'color'),
     Input('o1_btn_modif_ech', 'n_clicks'),  # Utilisez le bouton comme déclencheur
     Input('o1_store_row', 'data'),
     prevent_initial_call=True,
 )
-def update_badge_colors(n_clicks,selected_row_data):
+def update_badge_colors(n_clicks, selected_row_data):
     if selected_row_data is None:
         # Gérez le cas où selected_row_data est None
-        return 'gray', 'gray'#{'color': 'gray'}, {'color': 'gray'}
-   # print("Selected Row Data:", selected_row_data)
-    
+        return 'gray', 'gray'  # {'color': 'gray'}, {'color': 'gray'}
+    # print("Selected Row Data:", selected_row_data)
+
     # Initialisez les styles par défaut
-    validation_devis_style = 'blue' #{'color': 'blue'}  # Style par défaut pour "Validation devis"
-    alerte_renouvellement_style = 'blue'#{'color': 'blue'}  # Style par défaut pour "Renouvellement"
+    validation_devis_style = 'blue'  # {'color': 'blue'}  # Style par défaut pour "Validation devis"
+    alerte_renouvellement_style = 'blue'  # {'color': 'blue'}  # Style par défaut pour "Renouvellement"
 
     # Obtenez les valeurs de "Validation devis" et "Renouvellement" à partir des données de la ligne sélectionnée
     validation_devis = selected_row_data.get('Alerte validation devis', '')
-    #print('Validation Devis:', validation_devis)
+    # print('Validation Devis:', validation_devis)
 
     alerte_renouvellement = selected_row_data.get('Alerte renouvellement', '')
-    #print('Alerte Renouvellement:', alerte_renouvellement)
+    # print('Alerte Renouvellement:', alerte_renouvellement)
 
     # Convertissez en float pour permettre la comparaison avec les entiers
     validation_devis = float(validation_devis) if validation_devis else 0.0
@@ -464,9 +477,7 @@ def change_badge_color(n_clicks):
         # If the button is not clicked, keep the badge color as 'blue'
         return 'blue'
 
-
-
-#..................................................................................
+# ..................................................................................
 
 # # Callback pour ouvrir/fermer le modal_pop_up_evol_prix lorsque le bouton est cliqué
 # @app.callback(
@@ -489,7 +500,7 @@ def change_badge_color(n_clicks):
 #     if btn_click:
 #         # Chargez votre fichier Excel et convertissez-le en un DataFrame Pandas
 #         excel_file_path = r'appPCOE\src\tableau_calcul_evolution_prix.xlsx'
-        
+
 #         try:
 #             df = pd.read_excel(excel_file_path)
 #             columns = [{"name": str(col), "id": str(col)} for col in df.columns]
@@ -500,10 +511,8 @@ def change_badge_color(n_clicks):
 #             return [], []  # Retourne une liste vide pour les données et les colonnes en cas d'erreur
 
 
-#C:\Users\SofianOUASS\Documents\Dev\app-pcoe\appPCOE\src\tableau_calcul_evolution_prix.xlsx
+# C:\Users\SofianOUASS\Documents\Dev\app-pcoe\appPCOE\src\tableau_calcul_evolution_prix.xlsx
 ######################################################################################################
 
 
 # ...
-
-
