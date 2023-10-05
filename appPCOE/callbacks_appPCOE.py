@@ -31,13 +31,14 @@ def export_devis(n0,data_row):
 
 
 # Callback pour stocker les données de la ligne sélectionnée dans le dcc.Store
-@app.callback(
+@app.callback( 
     Output('o1_store_row', 'data'),
     Input('o1_data_table', 'selected_rows'),
     Input('o1_data_table','data'),
+     
     prevent_initial_call=True,
 )
-def store_selected_row(selected_rows,dict_data):
+def store_selected_row(selected_rows,dict_data): #selected_value
     
     df=pd.DataFrame.from_dict(dict_data)
     if selected_rows:
@@ -45,7 +46,7 @@ def store_selected_row(selected_rows,dict_data):
         return selected_row_data
     else:
         return {}
-    
+
 
 # Callback pour remplir les champs du modal pop-up "modifier la saisie" avec les données de la ligne sélectionnée dans la table
 @app.callback(
@@ -84,20 +85,10 @@ def store_selected_row(selected_rows,dict_data):
     Output('input-adresse-client', 'value'),
     Output('input-parc-licences', 'value'), # card "Informations contractuelles"
 
-    # Input('o1_filtre_resp_com', 'value'),# filtre resp. com.
     Input('o1_store_row', 'data'),#input du layout complet
     prevent_initial_call=True,
 )
 
-# def update_resp_commercial(selected_values):
-#     if selected_values is None or len(selected_values) == 0:
-#         # Si aucune valeur n'est sélectionnée, affiche "Tous les responsables"
-#         return "Tous les responsables"
-#     else:
-#         # Filtrer la colonne "Resp. Commercial" en fonction des valeurs sélectionnées
-#         # et afficher les valeurs sélectionnées
-#         filtered_values = ', '.join(selected_values)
-#         return filtered_values
 
 def update_modal_pop_up(selected_row_data):
 
@@ -158,21 +149,50 @@ def update_modal_pop_up(selected_row_data):
         type_contrat = "SAP BOBJ"
 
 
-   # Vérifiez d'abord si marge_pourcentage est None avant de faire le calcul
-    if marge_pourcentage is not None:
+   # Assurez-vous que marge_pourcentage est initialisée en tant que chaîne de caractères
+    marge_pourcentage = str(marge_pourcentage)
+
+    # Vérifiez ensuite si marge_pourcentage est None et non vide avant de faire le calcul
+    if marge_pourcentage is not None and marge_pourcentage.strip():
+        marge_pourcentage = float(marge_pourcentage)
         marge_pourcentage = round(marge_pourcentage * 100, 2)
+    else:
+        marge_pourcentage = 0  # Ou une autre valeur par défaut
 
-# Vérifiez si marge_annuel est None avant de faire le calcul
-    if marge_annuel is not None:
+
+    # Assurez-vous que marge_annuel est initialisée en tant que chaîne de caractères
+    marge_annuel = str(marge_annuel)
+
+    # Vérifiez ensuite si marge_annuel est None et non vide avant de faire le calcul
+    if marge_annuel is not None and marge_annuel.strip():
+        marge_annuel = float(marge_annuel)
         marge_annuel = round(marge_annuel * 100, 2)
+    else:
+        marge_annuel = 0  # Ou une autre valeur par défaut
+    
 
-# Vérifiez si prix_achat_actuel est None avant de faire le calcul
-    if prix_achat_actuel is not None:
+    # Assurez-vous que prix_achat_actuel est initialisée en tant que chaîne de caractères
+    prix_achat_actuel = str(prix_achat_actuel)
+
+    # Vérifiez ensuite si prix_achat_actuel est None et non vide avant de faire le calcul
+    if prix_achat_actuel is not None and prix_achat_actuel.strip():
+        prix_achat_actuel = float(prix_achat_actuel)
         prix_achat_actuel = round(prix_achat_actuel, 2)
+    else:
+        prix_achat_actuel = 0  # Ou une autre valeur par défaut
 
-# Vérifiez si prix_vente_actuel est None avant de faire le calcul
-    if prix_vente_actuel is not None:
+
+    # Assurez-vous que prix_vente_actuel est initialisée en tant que chaîne de caractères
+    prix_vente_actuel = str(prix_vente_actuel)
+
+    # Vérifiez ensuite si prix_vente_actuel est None et non vide avant de faire le calcul
+    if prix_vente_actuel is not None and prix_vente_actuel.strip():
+        prix_vente_actuel = float(prix_vente_actuel)
         prix_vente_actuel = round(prix_vente_actuel, 2)
+    else:
+        prix_vente_actuel = 0  # Ou une autre valeur par défaut
+
+
 
 
 # #Calcul Nouveau prix d'achat et de vente selon condition: type de contrat
@@ -219,11 +239,8 @@ def update_modal_pop_up(selected_row_data):
 #     print(df)
 
         
-    
-
-
     #date_anniversaire= date_anniversaire.strftime("%d/%m")
-    
+
          
     return (client, erp_number, date_anniversaire, code_projet_boond,resp_commercial, editeur,
             # badge_generation_devis,badge_validation_devis,badge_alerte_renouvellement,badge_resilie,
@@ -260,7 +277,7 @@ def update_modal_open_state(n_btn_modif_ech, n_btn_submit_validate, n_btn_submit
 ##########################################################################################################
 #callback pour mettre à jour les données du tableau (callback retour)
 @app.callback(
-    Output("o1_data_table", "data"),  # Mettez à jour les données du tableau
+    Output("o1_data_table", "data"),  # Mettez à jour les données du tableau 
     Input("o1_btn_submit_validate", "n_clicks"),
     State('o1_data_table', 'selected_rows'),
     State("o1_data_table", "data"),
@@ -299,7 +316,7 @@ def update_modal_open_state(n_btn_modif_ech, n_btn_submit_validate, n_btn_submit
     State('input-cond-paiement', 'value'),
     State('input-adresse-client', 'value'),
     State('input-parc-licences', 'value'), # card "Informations contractuelles"
-
+    Input('o1_filtre_resp_com', 'value'),# Filtre Responsable commercial
     
         prevent_initial_call=True,
 )
@@ -312,7 +329,7 @@ def update_table_data(n_btn_submit_validate, selected_row_number, data_main_tabl
                      prix_achat_actuel,prix_vente_actuel,marge_pourcentage,nv_prix_vente,nv_prix_achat,marge_annuel,
                      type_contrat,type_support_sap,condition_facturation,condition_paiement,adresse_client,parc_licences
 
-                     ): 
+                     ,selected_values): 
                      
     
     if selected_row_number is not None and selected_row_number:  # Vérifiez si une ligne a été sélectionnée
@@ -362,8 +379,14 @@ def update_table_data(n_btn_submit_validate, selected_row_number, data_main_tabl
         # Mettez à jour les données de la ligne sélectionnée dans data_main_table
         for key, value in updated_data.items():
             data_main_table[selected_row_number[0]][key] = value
+    # print('selected_values:',selected_values)
+    # print('data_main_table',data_main_table)
+    ## FILTRER les données du DataTable en fonction de la valeur sélectionnée dans le dropdown "Resp. Commercial"
+    filtered_data = [row for row in data_main_table if row['Resp\nCommercial'] in selected_values]
+    filtered_dataframe = pd.DataFrame(filtered_data)
+    updated_data = filtered_dataframe.to_dict('records')
 
-    return data_main_table
+    return updated_data
 
   ###############################################################################################################  
 
@@ -511,7 +534,15 @@ def change_badge_color(n_clicks):
 #C:\Users\SofianOUASS\Documents\Dev\app-pcoe\appPCOE\src\tableau_calcul_evolution_prix.xlsx
 ######################################################################################################
 
-
-# ...
-
+## FILTRER les données du DataTable en fonction de la valeur sélectionnée dans le dropdown "Resp. Commercial"
+# @app.callback(
+#     Output('o1_data_table', 'data'),
+#     Input('o1_filtre_resp_com', 'value')
+# )
+# def update_table(selected_values):
+#     # Filtrer le DataFrame en fonction des valeurs sélectionnées dans le dropdown
+#     filtered_data = df[df['Resp. Commercial'].isin(selected_values)]
+#     updated_data = filtered_data.to_dict('records')
+    
+#     return updated_data
 
