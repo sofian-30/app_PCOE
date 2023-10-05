@@ -518,7 +518,6 @@ layout_PCOE = html.Div([
     # gestion du téléchargement
     dcc.Download(id="download_devis"),
 
-    # ... Le reste de votre mise en page ...
 
     # Intégration des 3 boutons de la mise en page (check infos..)
     dbc.Container([
