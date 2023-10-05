@@ -109,3 +109,10 @@ def apply_calcul_sale_price(row):
 
     except (IndexError, TypeError):
         return pd.Series([None, None, None])
+
+
+def get_resp_commercial() -> list[str]:
+    conn = connect_to_db()
+    list_resp_commercial = execute_sql_request("select distinct resp_commercial from boond_table", conn=conn)
+    disconnect_from_db(conn)
+    return [resp[0] for resp in list_resp_commercial]

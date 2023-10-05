@@ -5,6 +5,7 @@ from dash.dependencies import Input, Output, State
 
 from app import app
 from appPCOE.src.generation_devis import remplir_devis
+from db import connect_to_db, sql_to_df, disconnect_from_db
 from utils import update_app_table, update_app_table_resiliation
 
 df = pd.read_excel("./data/Suivi CA licences et maintenance 2023.xlsx", sheet_name='Maintenance SAP BusinessObjects')
@@ -37,7 +38,9 @@ def export_devis(n0, data_row):
 )
 def store_selected_row(selected_rows, dict_data):
     df = pd.DataFrame.from_dict(dict_data)
-    if selected_rows:
+    if df.empty:
+        return {}
+    elif selected_rows:
         selected_row_data = df.iloc[selected_rows[0]].to_dict()
         return selected_row_data
     else:
@@ -250,6 +253,7 @@ def update_modal_open_state(n_btn_modif_ech, n_btn_submit_validate, n_btn_submit
 @app.callback(
     Output("o1_data_table", "data"),  # Mettez à jour les données du tableau
     Input("o1_btn_submit_validate", "n_clicks"),
+    Input('o1_filtre_resp_com', 'value'),
     State('o1_data_table', 'selected_rows'),
     State("o1_data_table", "data"),
 
@@ -290,8 +294,7 @@ def update_modal_open_state(n_btn_modif_ech, n_btn_submit_validate, n_btn_submit
 
     prevent_initial_call=True,
 )
-def update_table_data(n_btn_submit_validate, selected_row_number, data_main_table,
-
+def update_table_data(n_btn_submit_validate, resp_comm_list, selected_row_number, data_main_table,
                       client, erp_number, date_anniversaire, code_projet_boond, resp_commercial, editeur,
                       #  badge_generation_devis,badge_validation_devis,badge_alerte_renouvellement, badge_resilie,
                       check_infos, validation_erronnes, envoi_devis, accord_de_principe, signature_client,
@@ -301,6 +304,16 @@ def update_table_data(n_btn_submit_validate, selected_row_number, data_main_tabl
                       type_contrat, type_support_sap, condition_facturation, condition_paiement, adresse_client,
                       parc_licences
                       ):
+    conn = connect_to_db()
+    df_app = sql_to_df("SELECT * FROM app_table", conn=conn)
+    df_boond = sql_to_df("SELECT * FROM boond_table", conn=conn)
+    disconnect_from_db(conn)
+    df = pd.merge(df_boond, df_app, how='inner', on='code_projet_boond')
+    df = df[df['resp_commercial'].isin(resp_comm_list)]
+    data_main_table = df.to_dict('records')
+    if df.empty:
+        return data_main_table
+
     if selected_row_number is not None and selected_row_number:  # Vérifiez si une ligne a été sélectionnée
         # Validez les données ici (effectuez des vérifications si nécessaire)
 

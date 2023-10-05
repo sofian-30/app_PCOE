@@ -6,7 +6,7 @@ from dash import dash_table, dcc, html
 
 from app import app
 from db import connect_to_db, disconnect_from_db, sql_to_df
-from utils import apply_calcul_sale_price
+from utils import apply_calcul_sale_price, get_resp_commercial
 
 # Import functions
 # from index import get_auth
@@ -82,6 +82,9 @@ db_app_name_correspondance = {'agence': 'Agence',
 data_table_columns = []
 for name_db, name_app in db_app_name_correspondance.items():
     data_table_columns.append({'name': name_app, 'id': name_db, 'type': 'text'})
+
+value_resp_commercial = get_resp_commercial()
+options_resp_commercial = [{'label': resp, 'value': resp} for resp in value_resp_commercial]
 
 #############################################################################################################
 #                                          Appel API                                                        #
@@ -531,19 +534,8 @@ layout_PCOE = html.Div([
                                         html.Div(
                                             dcc.Dropdown(
                                                 id='o1_filtre_resp_com',
-                                                options=[
-                                                    {'label': 'ACA', 'value': 'ACA'},
-                                                    {'label': 'ARE', 'value': 'ARE'},
-                                                    {'label': 'ATA', 'value': 'ATA'},
-                                                    {'label': 'ATA - ACA', 'value': 'ATA - ACA'},
-                                                    {'label': 'BDE', 'value': 'BDE'},
-                                                    {'label': 'GLE', 'value': 'GLE'},
-                                                    {'label': 'JDK', 'value': 'JDK'},
-                                                    {'label': 'JPW', 'value': 'JPW'},
-                                                    {'label': 'NBE', 'value': 'NBE'},
-                                                    {'label': 'TCH', 'value': 'TCH'},
-                                                    {'label': 'TCH - ACA', 'value': 'TCH - ACA'},
-                                                ],
+                                                options=options_resp_commercial,
+                                                value=value_resp_commercial,
                                                 multi=True,
                                             ),
                                             style={'fontSize': '20px', 'font-weight': 'bold', 'text-align': 'center'}),
