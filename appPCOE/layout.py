@@ -616,37 +616,37 @@ layout_PCOE = html.Div([
         },  # Alerte renouvellement(feux tricolores)
             {'if': {
                 'filter_query': '{Alerte renouvellement}>120',
-                'column_id': 'Alerte renouvellement'
+                'column_id': 'alerte_renouvellement'
             },
                 'backgroundColor': 'green'
             },
             {'if': {
                 'filter_query': '{Alerte renouvellement}<120',
-                'column_id': 'Alerte renouvellement'
+                'column_id': 'alerte_renouvellement'
             },
                 'backgroundColor': 'orange'
             },
             {'if': {
                 'filter_query': '{Alerte renouvellement}<45',
-                'column_id': 'Alerte renouvellement'
+                'column_id': 'alerte_renouvellement'
             },
                 'backgroundColor': 'red'
             },  # Alerte validation devis (feux tricolores)
             {'if': {
                 'filter_query': '{Alerte validation devis}>240',
-                'column_id': 'Alerte validation devis'
+                'column_id': 'alerte_validation_devis'
             },
                 'backgroundColor': 'green'
             },
             {'if': {
                 'filter_query': '{Alerte validation devis}<240',
-                'column_id': 'Alerte validation devis'
+                'column_id': 'alerte_validation_devis'
             },
                 'backgroundColor': 'orange'
             },
             {'if': {
                 'filter_query': '{Alerte validation devis}<90',
-                'column_id': 'Alerte validation devis'
+                'column_id': 'alerte_validation_devis'
             },
                 'backgroundColor': 'red'
             },

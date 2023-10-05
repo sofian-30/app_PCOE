@@ -160,7 +160,7 @@ def load_data_from_csv() -> None:
     disconnect_from_db(conn)
 
     # COMPUTE BOOND TABLE
-    logger.info(f"Compute table {app_table_name}")
+    logger.info(f"Compute table {boond_table_name}")
     conn = connect_to_db()
     try:
         boond_columns = ['Code projet Boond', 'Agence', 'Client', 'ERP_Number_Ref_SAP', 'Date anniversaire',
