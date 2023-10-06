@@ -3,6 +3,7 @@ import dash_daq as daq
 import dash_mantine_components as dmc
 import pandas as pd
 from dash import dash_table, dcc, html
+from dash.dash_table.Format import Format, Symbol, Scheme
 
 from app import app
 from db import connect_to_db, disconnect_from_db, sql_to_df
@@ -81,7 +82,12 @@ db_app_name_correspondance = {'agence': 'Agence',
 
 data_table_columns = []
 for name_db, name_app in db_app_name_correspondance.items():
-    data_table_columns.append({'name': name_app, 'id': name_db, 'type': 'text'})
+    if name_db in ['prix_achat_n', 'prix_vente_n', 'marge_n', 'prix_achat_n1', 'prix_vente_n1', 'marge_n1']:
+        data_table_columns.append({'name': name_app, 'id': name_db, 'type': 'numeric', 'format': Format(scheme=Scheme.fixed, precision=2, symbol=Symbol.yes, symbol_suffix='€')})
+    elif name_db in ['alerte_renouvellement', 'alerte_validation_devis']:
+        data_table_columns.append({'name': name_app, 'id': name_db, 'type': 'numeric', 'format': {'specifier': '.0'}})
+    else:
+        data_table_columns.append({'name': name_app, 'id': name_db, 'type': 'text'})
 
 value_resp_commercial = get_resp_commercial()
 options_resp_commercial = [{'label': resp, 'value': resp} for resp in value_resp_commercial]
