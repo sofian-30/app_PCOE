@@ -8,7 +8,7 @@ from appPCOE.src.generation_devis import remplir_devis
 from db import connect_to_db, sql_to_df, disconnect_from_db
 from utils import update_app_table, update_app_table_resiliation
 
-df = pd.read_excel("./data/Suivi CA licences et maintenance 2023.xlsx", sheet_name='Maintenance SAP BusinessObjects')
+# df = pd.read_excel("./data/Suivi CA licences et maintenance 2023.xlsx", sheet_name='Maintenance SAP BusinessObjects')
 
 
 # Callback de génération de devis.
@@ -88,54 +88,46 @@ def store_selected_row(selected_rows, dict_data):
     Input('o1_store_row', 'data'),  # input du layout complet
     prevent_initial_call=True,
 )
-# def update_resp_commercial(selected_values):
-#     if selected_values is None or len(selected_values) == 0:
-#         # Si aucune valeur n'est sélectionnée, affiche "Tous les responsables"
-#         return "Tous les responsables"
-#     else:
-#         # Filtrer la colonne "Resp. Commercial" en fonction des valeurs sélectionnées
-#         # et afficher les valeurs sélectionnées
-#         filtered_values = ', '.join(selected_values)
-#         return filtered_values
+
 def update_modal_pop_up(selected_row_data):
-    client = selected_row_data.get('Client', '')  # card "informations générales"
-    erp_number = selected_row_data.get('ERP_Number_Ref_SAP', '')  # 'ERP Number \nRéf SAP'
-    date_anniversaire = selected_row_data.get('Date anniversaire', '')
-    code_projet_boond = selected_row_data.get('Code projet Boond', '')  # via API
-    resp_commercial = selected_row_data.get('Responsable commercial', '')
-    editeur = selected_row_data.get('Editeur',
-                                    '')  # Editeur à Cf.avec ACA pour faire le lien, je ne vois pas où il est dans xls!
+    # print(f"selected_row_data {selected_row_data}")
+    client = selected_row_data.get('client', '')  # card "informations générales"
+    erp_number = selected_row_data.get('num_ref_sap', '')  # 'ERP Number \nRéf SAP'
+    date_anniversaire = selected_row_data.get('date_anniversaire', '')
+    code_projet_boond = selected_row_data.get('code_projet_boond', '')  # via API
+    resp_commercial = selected_row_data.get('resp_commercial', '')
+    editeur = selected_row_data.get('Editeur', '')  # Editeur à Cf.avec ACA pour faire le lien, je ne vois pas où il est dans xls!
 
     # badge_generation_devis = selected_row_data.get('Génération devis', '') # card "Alertes" (badge)
     # badge_validation_devis = selected_row_data.get('Validation devis', '')
     # badge_alerte_renouvellement = selected_row_data.get('Renouvellement', '')
     # badge_resilie = selected_row_data.get('Résilié', '')
 
-    check_infos = selected_row_data.get('Check Infos', '')  # card "Status et conditions financières"-status
-    validation_erronees = selected_row_data.get('Validation erronées', '')
-    envoi_devis = selected_row_data.get('Envoi devis', '')
-    accord_principe = selected_row_data.get('Accord de principe', '')
-    signature_client = selected_row_data.get('Signature client', '')
-    achat_editeur = selected_row_data.get('Achat éditeur', '')
-    traitement_comptable = selected_row_data.get('Traitement comptable', '')
-    paiement_sap = selected_row_data.get('Paiement SAP', '')
+    check_infos = selected_row_data.get('check_infos', '')  # card "Status et conditions financières"-status
+    validation_erronees = selected_row_data.get('validation_erronee', '')
+    envoi_devis = selected_row_data.get('envoi_devis', '')
+    accord_principe = selected_row_data.get('accord_principe', '')
+    signature_client = selected_row_data.get('signature_client', '')
+    achat_editeur = selected_row_data.get('achat_editeur', '')
+    traitement_comptable = selected_row_data.get('traitement_comptable', '')
+    paiement_sap = selected_row_data.get('paiement_sap', '')
 
-    prix_achat_n = selected_row_data.get("Prix d'achat année N",
+    prix_achat_n = selected_row_data.get('prix_achat_n',
                                          0)  # card "Status et conditions financières"-cond. financières
-    prix_vente_n = selected_row_data.get('Prix de vente année N', 0)
-    marge_n = selected_row_data.get('Marge année N', 0)
-    prix_achat_n1 = selected_row_data.get("Prix d'achat année N+1", 0)
-    prix_vente_n1 = selected_row_data.get('Prix de vente année N+1', 0)
-    marge_n1 = selected_row_data.get('Marge année N+1', 0)
+    prix_vente_n = selected_row_data.get('prix_vente_n', 0)
+    marge_n = selected_row_data.get('marge_n', 0)
+    prix_achat_n1 = selected_row_data.get('prix_achat_n1', 0)
+    prix_vente_n1 = selected_row_data.get('prix_vente_n1', 0)
+    marge_n1 = selected_row_data.get('marge_n1', 0)
 
-    type_contrat = selected_row_data.get('Type de contrat', '')  # card "Informations contractuelles"
-    type_support_sap = selected_row_data.get('Type de support SAP', '')
+    type_contrat = selected_row_data.get('type_contrat', '')  # card "Informations contractuelles"
+    type_support_sap = selected_row_data.get('type_support_sap', '')
     condition_facturation = selected_row_data.get('Condition de facturation', '')
     condition_paiement = selected_row_data.get('Condition de Paiement', '')
-    adresse_client = selected_row_data.get('Adresse', '')
-    ville = selected_row_data.get('Ville', '')
-    cp = selected_row_data.get('Code postal', '')
-    parc_licences = selected_row_data.get('Parc de licences', '')
+    adresse_client = selected_row_data.get('adresse', '')
+    ville = selected_row_data.get('ville', '')
+    cp = selected_row_data.get('code_postal', '')
+    parc_licences = selected_row_data.get('parc_licence', '')
 
     # Composition de l'adresse avec saut de ligne
     # adresse_client = adresse_client +"\n " + str(cp) + "\n " + ville
@@ -171,49 +163,7 @@ def update_modal_pop_up(selected_row_data):
     if prix_vente_n is not None:
         prix_vente_n = round(prix_vente_n, 2)
 
-    # #Calcul Nouveau prix d'achat et de vente selon condition: type de contrat
-    #     # Obtenez la date du jour
-    #     today = datetime.now()
-
-    #     # Calculez la différence en jours entre la date anniversaire et la date du jour
-    #     df['Différence de jours'] = (df['Date anniversaire'] - today).dt.days
-
-    #     # Utilisez une boucle pour parcourir chaque ligne du DataFrame
-    #     for index, row in df.iterrows():
-    #         if row['Différence de jours'] < 120:
-    #             print("La date d'anniversaire est dans moins de 4 mois")
-    #             df.at[index, 'Nouveau prix d\'achat'] = ""
-    #         else:
-    #             type_contrat = row['Type de contrat']
-    #             if type_contrat == 'SAP PAPER':
-    #                 coeff_evolution = 0.06
-    #             elif type_contrat == 'SAP BOBJ':
-    #                 coeff_evolution = 0.08
-    #             elif type_contrat == 'N4V':
-    #                 coeff_evolution = 0.05
-    #             elif type_contrat in ['360', 'wiiisdom']:
-    #                 coeff_evolution = 0.02
-    #             else:
-    #                 coeff_evolution = 0.0  # Valeur par défaut si le type de contrat n'est pas reconnu
-
-    #             prix_achat_actuel = row['Prix d\'achat actuel']
-    #             print('prix_achat_actuel:',prix_achat_actuel)
-
-    #             #Vérifiez si prix_achat_actuel n'est pas nulle (None) avant de l'arrondir
-    #             if prix_achat_actuel is not None:
-    #                 prix_achat_actuel = round(prix_achat_actuel, 2)
-
-    #             nv_prix_achat = prix_achat_actuel + prix_achat_actuel * coeff_evolution
-    #             df.at[index, 'Nouveau prix d\'achat'] = nv_prix_achat
-
-    #             print("nv_prix_achat:",nv_prix_achat)
-
-    #     # Supprimez la colonne 'Différence de jours' si vous n'en avez plus besoin
-    #     df.drop(columns=['Différence de jours'], inplace=True)
-
-    #     # Affichez le DataFrame mis à jour
-    #     print(df)
-
+    
     # date_anniversaire= date_anniversaire.strftime("%d/%m")
 
     return (client, erp_number, date_anniversaire, code_projet_boond, resp_commercial, editeur,
@@ -368,6 +318,17 @@ def update_table_data(n_btn_submit_validate, resp_comm_list, selected_row_number
                          check_infos, validation_erronnes, envoi_devis, accord_de_principe, signature_client,
                          achat_editeur, traitement_comptable, paiement_sap)
 
+        #une fois la modification effectué, cela sert à recharger la data_main_table
+        conn = connect_to_db()
+        df_app = sql_to_df("SELECT * FROM app_table", conn=conn)
+        df_boond = sql_to_df("SELECT * FROM boond_table", conn=conn)
+        disconnect_from_db(conn)
+        df = pd.merge(df_boond, df_app, how='inner', on='code_projet_boond')
+        df = df[df['resp_commercial'].isin(resp_comm_list)]
+        data_main_table = df.to_dict('records')
+
+
+
     return data_main_table
 
 
@@ -436,11 +397,11 @@ def update_badge_colors(n_clicks, selected_row_data):
     alerte_renouvellement_style = 'blue'  # {'color': 'blue'}  # Style par défaut pour "Renouvellement"
 
     # Obtenez les valeurs de "Validation devis" et "Renouvellement" à partir des données de la ligne sélectionnée
-    validation_devis = selected_row_data.get('Alerte validation devis', '')
-    # print('Validation Devis:', validation_devis)
+    validation_devis = selected_row_data.get('alerte_validation_devis', '')
+    # print('Validation Devis:', alerte_validation_devis)
 
-    alerte_renouvellement = selected_row_data.get('Alerte renouvellement', '')
-    # print('Alerte Renouvellement:', alerte_renouvellement)
+    alerte_renouvellement = selected_row_data.get('alerte_renouvellement', '')
+    # print('alerte_renouvellement', alerte_renouvellement)
 
     # Convertissez en float pour permettre la comparaison avec les entiers
     validation_devis = float(validation_devis) if validation_devis else 0.0
@@ -480,42 +441,23 @@ def change_badge_color(n_clicks):
         # If the button is not clicked, keep the badge color as 'blue'
         return 'blue'
 
-# ..................................................................................
-
-# # Callback pour ouvrir/fermer le modal_pop_up_evol_prix lorsque le bouton est cliqué
-# @app.callback(
-#     Output("excel_modal", "is_open"),
-#     [Input("o1_btn_evol_prix", "n_clicks"),
-#      Input("close_excel_modal", "n_clicks")],
-#     [State("excel_modal", "is_open")]
-# )
-# def toggle_excel_modal(btn_click, close_click, is_open):
-#     if btn_click or close_click:
-#         return not is_open
-#     return is_open
-
-# # Callback pour charger et afficher le tableau Excel dans le modal_pop_up_evol_prix
-# @app.callback(
-#     [Output("excel_table", "data"), Output("excel_table", "columns")],
-#     [Input("o1_btn_evol_prix", "n_clicks")]
-# )
-# def load_excel_table(btn_click):
-#     if btn_click:
-#         # Chargez votre fichier Excel et convertissez-le en un DataFrame Pandas
-#         excel_file_path = r'appPCOE\src\tableau_calcul_evolution_prix.xlsx'
-
-#         try:
-#             df = pd.read_excel(excel_file_path)
-#             columns = [{"name": str(col), "id": str(col)} for col in df.columns]
-#             data = df.to_dict('records')
-
-#             return data, columns
-#         except Exception as e:
-#             return [], []  # Retourne une liste vide pour les données et les colonnes en cas d'erreur
-
-
-# C:\Users\SofianOUASS\Documents\Dev\app-pcoe\appPCOE\src\tableau_calcul_evolution_prix.xlsx
 ######################################################################################################
+
+# Callback pour mettre à jour le nombre de lignes validées - 'check_infos' depuis la data_table et affichage sur la carte
+@app.callback(
+    Output('o1_nb_lignes_validees', 'children'),  # Utilisez 'children' pour modifier le texte
+    Input('o1_data_table', 'data')
+)
+
+def update_valid_check_infos_count(data):
+    # Convertissez la liste de dictionnaires en un DataFrame pandas
+    df = pd.DataFrame(data)
+    
+    # Comptez les lignes valides dans la colonne 'check_infos' du DataFrame
+    count = len(df[df['check_infos'] == True])
+
+    return count
 
 
 # ...
+ 

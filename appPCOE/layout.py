@@ -553,7 +553,7 @@ layout_PCOE = html.Div([
                     dbc.Card(
                         dbc.CardBody(
                             [
-                                html.H4('Nombre de lignes validées', style={'color': '#191970'}),
+                                html.H4('Nombre de lignes validées - check infos', style={'color': '#191970'}),
                                 html.Div(html.H2(id='o1_nb_lignes_validees'),
                                          style={'fontSize': '20px', 'font-weight': 'bold', 'text-align': 'center'}),
                             ]
