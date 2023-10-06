@@ -615,38 +615,38 @@ layout_PCOE = html.Div([
             "border": "1px solid black",
         },  # Alerte renouvellement(feux tricolores)
             {'if': {
-                'filter_query': '{Alerte renouvellement}>120',
-                'column_id': 'Alerte renouvellement'
+                'filter_query': '{alerte_renouvellement}>120',
+                'column_id': 'alerte_renouvellement'
             },
                 'backgroundColor': 'green'
             },
             {'if': {
-                'filter_query': '{Alerte renouvellement}<120',
-                'column_id': 'Alerte renouvellement'
+                'filter_query': '{alerte_renouvellement}<120',
+                'column_id': 'alerte_renouvellement'
             },
                 'backgroundColor': 'orange'
             },
             {'if': {
-                'filter_query': '{Alerte renouvellement}<45',
-                'column_id': 'Alerte renouvellement'
+                'filter_query': '{alerte_renouvellement}<45',
+                'column_id': 'alerte_renouvellement'
             },
                 'backgroundColor': 'red'
             },  # Alerte validation devis (feux tricolores)
             {'if': {
-                'filter_query': '{Alerte validation devis}>240',
-                'column_id': 'Alerte validation devis'
+                'filter_query': '{alerte_validation_devis}>240',
+                'column_id': 'alerte_validation_devis'
             },
                 'backgroundColor': 'green'
             },
             {'if': {
-                'filter_query': '{Alerte validation devis}<240',
-                'column_id': 'Alerte validation devis'
+                'filter_query': '{alerte_validation_devis}<240',
+                'column_id': 'alerte_validation_devis'
             },
                 'backgroundColor': 'orange'
             },
             {'if': {
-                'filter_query': '{Alerte validation devis}<90',
-                'column_id': 'Alerte validation devis'
+                'filter_query': '{alerte_validation_devis}<90',
+                'column_id': 'alerte_validation_devis'
             },
                 'backgroundColor': 'red'
             },

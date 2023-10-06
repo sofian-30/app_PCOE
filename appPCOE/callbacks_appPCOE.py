@@ -42,6 +42,7 @@ def store_selected_row(selected_rows, dict_data):
         return {}
     elif selected_rows:
         selected_row_data = df.iloc[selected_rows[0]].to_dict()
+        print(f"selected_row_data = {selected_row_data}")
         return selected_row_data
     else:
         return {}
@@ -98,44 +99,42 @@ def store_selected_row(selected_rows, dict_data):
 #         filtered_values = ', '.join(selected_values)
 #         return filtered_values
 def update_modal_pop_up(selected_row_data):
-    client = selected_row_data.get('Client', '')  # card "informations générales"
-    erp_number = selected_row_data.get('ERP_Number_Ref_SAP', '')  # 'ERP Number \nRéf SAP'
-    date_anniversaire = selected_row_data.get('Date anniversaire', '')
-    code_projet_boond = selected_row_data.get('Code projet Boond', '')  # via API
-    resp_commercial = selected_row_data.get('Responsable commercial', '')
-    editeur = selected_row_data.get('Editeur',
-                                    '')  # Editeur à Cf.avec ACA pour faire le lien, je ne vois pas où il est dans xls!
+    client = selected_row_data.get('client', '')  # card "informations générales"
+    erp_number = selected_row_data.get('num_ref_sap', '')  # 'ERP Number \nRéf SAP'
+    date_anniversaire = selected_row_data.get('date_anniversaire', '')
+    code_projet_boond = selected_row_data.get('code_projet_boond', '')  # via API
+    resp_commercial = selected_row_data.get('resp_commercial', '')
+    editeur = selected_row_data.get('Editeur', '')  # Editeur à Cf.avec ACA pour faire le lien, je ne vois pas où il est dans xls!
 
     # badge_generation_devis = selected_row_data.get('Génération devis', '') # card "Alertes" (badge)
     # badge_validation_devis = selected_row_data.get('Validation devis', '')
     # badge_alerte_renouvellement = selected_row_data.get('Renouvellement', '')
     # badge_resilie = selected_row_data.get('Résilié', '')
 
-    check_infos = selected_row_data.get('Check Infos', '')  # card "Status et conditions financières"-status
-    validation_erronees = selected_row_data.get('Validation erronées', '')
-    envoi_devis = selected_row_data.get('Envoi devis', '')
-    accord_principe = selected_row_data.get('Accord de principe', '')
-    signature_client = selected_row_data.get('Signature client', '')
-    achat_editeur = selected_row_data.get('Achat éditeur', '')
-    traitement_comptable = selected_row_data.get('Traitement comptable', '')
-    paiement_sap = selected_row_data.get('Paiement SAP', '')
+    check_infos = selected_row_data.get('check_infos', '')  # card "Status et conditions financières"-status
+    validation_erronees = selected_row_data.get('validation_erronee', '')
+    envoi_devis = selected_row_data.get('envoi_devis', '')
+    accord_principe = selected_row_data.get('accord_principe', '')
+    signature_client = selected_row_data.get('signature_client', '')
+    achat_editeur = selected_row_data.get('achat_editeur', '')
+    traitement_comptable = selected_row_data.get('traitement_comptable', '')
+    paiement_sap = selected_row_data.get('paiement_sap', '')
 
-    prix_achat_n = selected_row_data.get("Prix d'achat année N",
-                                         0)  # card "Status et conditions financières"-cond. financières
-    prix_vente_n = selected_row_data.get('Prix de vente année N', 0)
-    marge_n = selected_row_data.get('Marge année N', 0)
-    prix_achat_n1 = selected_row_data.get("Prix d'achat année N+1", 0)
-    prix_vente_n1 = selected_row_data.get('Prix de vente année N+1', 0)
-    marge_n1 = selected_row_data.get('Marge année N+1', 0)
+    prix_achat_n = selected_row_data.get("prix_achat_n", 0)  # card "Status et conditions financières"-cond. financières
+    prix_vente_n = selected_row_data.get('prix_vente_n', 0)
+    marge_n = selected_row_data.get('marge_n', 0)
+    prix_achat_n1 = selected_row_data.get("prix_achat_n1", 0)
+    prix_vente_n1 = selected_row_data.get('prix_vente_n1', 0)
+    marge_n1 = selected_row_data.get('marge_n1', 0)
 
-    type_contrat = selected_row_data.get('Type de contrat', '')  # card "Informations contractuelles"
-    type_support_sap = selected_row_data.get('Type de support SAP', '')
+    type_contrat = selected_row_data.get('type_contrat', '')  # card "Informations contractuelles"
+    type_support_sap = selected_row_data.get('type_support_sap', '')
     condition_facturation = selected_row_data.get('Condition de facturation', '')
     condition_paiement = selected_row_data.get('Condition de Paiement', '')
-    adresse_client = selected_row_data.get('Adresse', '')
-    ville = selected_row_data.get('Ville', '')
-    cp = selected_row_data.get('Code postal', '')
-    parc_licences = selected_row_data.get('Parc de licences', '')
+    adresse_client = selected_row_data.get('adresse', '')
+    ville = selected_row_data.get('ville', '')
+    cp = selected_row_data.get('code_postal', '')
+    parc_licences = selected_row_data.get('parc_licence', '')
 
     # Composition de l'adresse avec saut de ligne
     # adresse_client = adresse_client +"\n " + str(cp) + "\n " + ville
@@ -436,10 +435,10 @@ def update_badge_colors(n_clicks, selected_row_data):
     alerte_renouvellement_style = 'blue'  # {'color': 'blue'}  # Style par défaut pour "Renouvellement"
 
     # Obtenez les valeurs de "Validation devis" et "Renouvellement" à partir des données de la ligne sélectionnée
-    validation_devis = selected_row_data.get('Alerte validation devis', '')
+    validation_devis = selected_row_data.get('alerte_validation_devis', '')
     # print('Validation Devis:', validation_devis)
 
-    alerte_renouvellement = selected_row_data.get('Alerte renouvellement', '')
+    alerte_renouvellement = selected_row_data.get('alerte_renouvellement', '')
     # print('Alerte Renouvellement:', alerte_renouvellement)
 
     # Convertissez en float pour permettre la comparaison avec les entiers
