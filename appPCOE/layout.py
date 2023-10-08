@@ -285,7 +285,7 @@ modal_pop_up = dbc.Modal(
                                             ),
                                                 dbc.Col([
                                                     html.Div(id='check-infos-date',
-                                                             style={'padding-top': '10px', 'text-align': 'left',
+                                                            style={'padding-top': '10px', 'text-align': 'left',
                                                                     'font-weight': 'bold'}), ], width={"size": 6}
                                                 )]),
                                             dbc.Col([html.Label("Validation erronées")], width={"size": 6}),
@@ -355,9 +355,9 @@ modal_pop_up = dbc.Modal(
                                                     dbc.Label('Prix d\'achat actuel')], width={"size": 6}),
                                                 dbc.Col([
                                                     dcc.Input(id='input-prix-achat-actuel', type='number',
-                                                              value='Valeur non modifiable',
-                                                              style={'border': 'none', 'pointer-events': 'none'},
-                                                              placeholder='Entrez prix d\'achat N'),
+                                                            value='Valeur non modifiable',
+                                                            style={'border': 'none', 'pointer-events': 'none'},
+                                                            placeholder='Entrez prix d\'achat N'),
                                                     html.Span('€', style={'margin-left': '5px'})
                                                     # Ajoutez le symbole "€" après la case d'entrée
                                                 ], width={"size": 6})]),
@@ -366,9 +366,9 @@ modal_pop_up = dbc.Modal(
                                                     dbc.Label('Prix de vente actuel')], width={"size": 6}),
                                                 dbc.Col([
                                                     dcc.Input(id='input-prix-vente-actuel', type='number',
-                                                              value='Valeur non modifiable',
-                                                              style={'border': 'none', 'pointer-events': 'none'},
-                                                              placeholder='Entrez prix de vente N '),
+                                                            value='Valeur non modifiable',
+                                                            style={'border': 'none', 'pointer-events': 'none'},
+                                                            placeholder='Entrez prix de vente N '),
                                                     html.Span('€', style={'margin-left': '5px'})
                                                 ], width={"size": 6})]),
                                             dbc.Row([
@@ -376,9 +376,9 @@ modal_pop_up = dbc.Modal(
                                                     dbc.Label("Marge %")], width={"size": 6}),
                                                 dbc.Col([
                                                     dcc.Input(id='input-Marge-pourcentage', type='number',
-                                                              value='Valeur non modifiable',
-                                                              style={'border': 'none', 'pointer-events': 'none'},
-                                                              placeholder='Entrez la Marge %'),
+                                                            value='Valeur non modifiable',
+                                                            style={'border': 'none', 'pointer-events': 'none'},
+                                                            placeholder='Entrez la Marge %'),
                                                     html.Span('%', style={'margin-left': '5px'})
                                                 ], width={"size": 6})]),
                                             dbc.Row([
@@ -386,7 +386,7 @@ modal_pop_up = dbc.Modal(
                                                     dbc.Label("Nouveau prix d'achat")], width={"size": 6}),
                                                 dbc.Col([
                                                     dcc.Input(id='input-nv-prix-achat', type='number',
-                                                              placeholder='Entrez prix achat N+1'),
+                                                            placeholder='Entrez prix achat N+1'),
                                                     html.Span('€', style={'margin-left': '5px'})
                                                 ], width={"size": 6})]),
                                             dbc.Row([
@@ -394,7 +394,7 @@ modal_pop_up = dbc.Modal(
                                                     dbc.Label("Nouveau prix de vente")], width={"size": 6}),
                                                 dbc.Col([
                                                     dcc.Input(id='input-nv-prix-vente', type='number',
-                                                              placeholder='Entrez prix vente N+1'),
+                                                            placeholder='Entrez prix vente N+1'),
                                                     html.Span('€', style={'margin-left': '5px'})
                                                 ], width={"size": 6})]),
                                             dbc.Row([
@@ -402,7 +402,7 @@ modal_pop_up = dbc.Modal(
                                                     dbc.Label("Marge N+1 (%)")], width={"size": 6}),
                                                 dbc.Col([
                                                     dcc.Input(id='input-Marge-N+1', type='number',
-                                                              placeholder='Entrez Marge N+1'),
+                                                            placeholder='Entrez Marge N+1'),
                                                     html.Span('%', style={'margin-left': '5px'})
                                                 ], width={"size": 6})]),
                                             # Ajoutez d'autres éléments de contenu ici
@@ -506,14 +506,14 @@ layout_PCOE = html.Div([
         dbc.Col([
             dbc.Navbar([
                 dbc.Col([dcc.Link(dbc.Button(html.Img(src=app.get_asset_url("accueil.png"), style={"height": "30px"}),
-                                             id="bouton_accueil",
-                                             style={'border': '2px solid white', 'margin-left': '-1vw'}, color='white'),
-                                  href='/'),
-                         html.Img(src=app.get_asset_url("logo_seenovate.png"), height="30px",
-                                  style={'margin-left': '1vw'})], xs=2, sm=2, md=2, lg=2, xl=2),
+                                            id="bouton_accueil",
+                                            style={'border': '2px solid white', 'margin-left': '-1vw'}, color='white'),
+                                href='/'),
+                        html.Img(src=app.get_asset_url("logo_seenovate.png"), height="30px",
+                                style={'margin-left': '1vw'})], xs=2, sm=2, md=2, lg=2, xl=2),
                 dbc.Col([html.Div(dbc.NavbarBrand(list_app["name"].loc[list_app["ind"] == n_app].iloc[0], id="titre",
-                                                  className="text-white"), style={"textAlign": "center"})
-                         ], xs=9, sm=9, md=9, lg=9, xl=9, align="center"),
+                                                className="text-white"), style={"textAlign": "center"})
+                        ], xs=9, sm=9, md=9, lg=9, xl=9, align="center"),
                 dbc.Col([html.Div(html.Img(src=app.get_asset_url("user.png"), height="30px"))])
             ], color="dark")
         ], xs=12, sm=12, md=12, lg=12, xl=12)
@@ -561,13 +561,13 @@ layout_PCOE = html.Div([
                             [
                                 html.H4('Nombre de lignes validées', style={'color': '#191970'}),
                                 html.Div(html.H2(id='o1_nb_lignes_validees'),
-                                         style={'fontSize': '20px', 'font-weight': 'bold', 'text-align': 'center'}),
+                                        style={'fontSize': '20px', 'font-weight': 'bold', 'text-align': 'center'}),
                             ]
                         )
                     ),
                     dbc.Card(
                         html.Div(className="fa fa-check-square",
-                                 style={'color': 'white', 'text-align': 'center', 'font-size': 30, 'margin': 'auto'}),
+                                style={'color': 'white', 'text-align': 'center', 'font-size': 30, 'margin': 'auto'}),
                         className="bg-success",
                         style={"maxWidth": 75},
                     ),
@@ -604,11 +604,11 @@ layout_PCOE = html.Div([
         data=df.to_dict('records'),
         id='o1_data_table',
         style_table={'height': '60vh',
-                     'overflowX': 'auto',
-                     'overflowY': 'auto',
-                     'margin-left': '20px',
-                     'margin-top': '20px',
-                     'margin-right': '20px'},
+                    'overflowX': 'auto',
+                    'overflowY': 'auto',
+                    'margin-left': '20px',
+                    'margin-top': '20px',
+                    'margin-right': '20px'},
         style_cell={'font_family': 'calibri',
                     'height': 'auto',
                     'textAlign': 'center',
@@ -661,16 +661,16 @@ layout_PCOE = html.Div([
         sort_action='native',
         sort_mode='single',
         filter_action='native',
-        row_selectable='single'
+        row_selectable='multi'
     ),
 
     # Boutons: "Modifier une saisie", "Générer Devis"
     dbc.Row([
         dbc.Col([
-            dbc.Button('Modifier une saisie', id="o1_btn_modif_ech", className="me-1", n_clicks=0, color='warning'),
+            dbc.Button('Modifier une saisie', id="o1_btn_modif_ech", className="me-1", color='secondary',disabled=True,size='xl'),
         ], width={"size": 3}),
         dbc.Col([
-            dbc.Button('Générer Devis', id="o1_btn_gener_devis", className="me-1", n_clicks=0, color='success'),
+            dbc.Button('Générer Devis', id="o1_btn_gener_devis", className="me-1",  color='secondary',disabled=True,size='xl'),
         ], width={"size": 3}),
     ], className="pb-3 d-flex justify-content-center"),
 

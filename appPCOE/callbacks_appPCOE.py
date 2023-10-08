@@ -2,6 +2,9 @@ import dash
 import pandas as pd
 from dash import dcc
 from dash.dependencies import Input, Output, State
+import numpy as np
+import zipfile
+import os
 
 from app import app
 from appPCOE.src.generation_devis import remplir_devis
@@ -11,22 +14,61 @@ from utils import update_app_table, update_app_table_resiliation
 df = pd.read_excel("./data/Suivi CA licences et maintenance 2023.xlsx", sheet_name='Maintenance SAP BusinessObjects')
 
 
+@app.callback(
+    Output('o1_btn_modif_ech', 'disabled'),
+    Output('o1_btn_modif_ech', 'color'),
+    Input('o1_data_table', 'selected_rows'),
+    prevent_initial_call=True# Déclencheur du callback (clics sur le bouton)
+)
+def rendre_bouton_incliquable(n_row):
+    if np.size(n_row)==1:
+        return [False,'success']  
+    else:
+        return [True,'secondary']  
+    
+@app.callback(
+    Output('o1_btn_gener_devis', 'disabled'),
+    Output('o1_btn_gener_devis', 'color'),
+    Input('o1_data_table', 'selected_rows'),
+    prevent_initial_call=True# Déclencheur du callback (clics sur le bouton)
+)
+def rendre_bouton_incliquable(n_row):
+    if np.size(n_row)>=1:
+        return [False,'warning']
+    else:
+        return [True,'secondary']
+
 # Callback de génération de devis.
 @app.callback(
     Output('download_devis', 'data'),
     Input('o1_btn_gener_devis', 'n_clicks'),
-    State('o1_store_row', 'data'),
+    State('o1_data_table', 'selected_rows'),
+    State('o1_data_table', 'data'),
     prevent_initial_call=True
 )
-def export_devis(n0, data_row):
-    # A faire : finir de rentrer les autres informations.
-    # Faire une vérification avant l'envoi du devis
-    remplir_devis('acces_devis', data_row['Client'], 'adresse', 'CP', 'ville', 'editeur', 'type_support',
-                  data_row['Date anniversaire'], 'code_boond', 'conditions_facturation',
-                  'conditions_paiement', 'condition_parc', data_row[
-                      'Prix d\'achat actuel'])  # 'Prix d\'achat actuel' ou' Achat SAP Maintenance ou GBS ou NEED4VIZ'
+def export_devis(n0, n_row,dict_data):
+    df=pd.DataFrame.from_dict(dict_data)
+    
+    nom_archive = 'appPCOE/impressions/devis/devis_archive.zip'
+    
+    # Vérifier si le fichier ZIP existe déjà, et si c'est le cas, supprimez-le.
+    if os.path.exists(nom_archive):
+        os.remove(nom_archive)
+    
+    with zipfile.ZipFile(nom_archive, 'w') as myzip:
+    # Ajoutez des fichiers à l'archive en utilisant la méthode `write`.
+        for i in n_row :
+            data_row=df.iloc[i].to_dict()
+            print(data_row)
+            nom_devis='devis'+str(data_row['code_projet_boond'])
+            # A faire : finir de rentrer les autres informations.
+            # Faire une vérification avant l'envoi du devis
+            remplir_devis(nom_devis, data_row['client'], data_row['adresse'], data_row['code_postal'], data_row['ville'], 'editeur', 'type_support',
+                data_row['date_anniversaire'], data_row['code_projet_boond'], 'conditions_facturation',
+                'conditions_paiement', data_row['parc_licence'], data_row['prix_vente_n1'],np.round(data_row['prix_vente_n1']*1.2,2))  # 'Prix d\'achat actuel' ou' Achat SAP Maintenance ou GBS ou NEED4VIZ'
+            myzip.write('appPCOE/impressions/devis/'+nom_devis+'.docx',nom_devis+'.docx')
 
-    return dcc.send_file('appPCOE/impressions/devis/devis_finalise.docx')
+    return dcc.send_file('appPCOE/impressions/devis/devis_archive.zip')
 
 
 # Callback pour stocker les données de la ligne sélectionnée dans le dcc.Store
