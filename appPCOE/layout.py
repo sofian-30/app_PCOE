@@ -26,7 +26,10 @@ df_app = sql_to_df("SELECT * FROM app_table", conn=conn)
 df_boond = sql_to_df("SELECT * FROM boond_table", conn=conn)
 disconnect_from_db(conn)
 df = pd.merge(df_boond, df_app, how='inner', on='code_projet_boond')
+
 df[['prix_achat_n1', 'prix_vente_n1', 'marge_n1']] = df.apply(apply_calcul_sale_price, axis=1)
+
+df["date_anniversaire"] = df["date_anniversaire"].dt.date
 
 db_app_name_correspondance = {'agence': 'Agence',
                               'client': 'Client',
@@ -51,16 +54,16 @@ db_app_name_correspondance = {'agence': 'Agence',
                               # '': 'Numéro de facture',
                               # '': 'Date de facture',
                               'resp_commercial': 'Responsable commercial',
-                              'proposition_sap_recue': 'Proposition SAP reçue',
-                              'date_relance_client': 'Date de relance client',
-                              'proposition_seenovate_creee': 'Proposition Seenovate créée',
-                              'date_envoi_proposition': "Date d'envoi de la proposition",
-                              'date_signature_proposition': 'Date de signature par le client',
-                              'num_commande': 'Attente N° Cde client avant facturation',
-                              'date_creation_facture': 'Date de création de la facture',
-                              'commande_faite_sap': 'Commande faite SAP',
-                              'facture_sap_recue': 'Facture SAP reçue',
-                              'remarques': 'Remarques',
+                              #'proposition_sap_recue': 'Proposition SAP reçue',
+                              #'date_relance_client': 'Date de relance client',
+                              #'proposition_seenovate_creee': 'Proposition Seenovate créée',
+                              #'date_envoi_proposition': "Date d'envoi de la proposition",
+                              #'date_signature_proposition': 'Date de signature par le client',
+                              #'num_commande': 'Attente N° Cde client avant facturation',
+                              #'date_creation_facture': 'Date de création de la facture',
+                              #'commande_faite_sap': 'Commande faite SAP',
+                              #'facture_sap_recue': 'Facture SAP reçue',
+                              #'remarques': 'Remarques',
                               'devis': 'Devis',
                               'check_infos': 'Check infos',
                               'validation_erronee': 'Validation erronée',
@@ -70,11 +73,11 @@ db_app_name_correspondance = {'agence': 'Agence',
                               'achat_editeur': 'Achat éditeur',
                               'traitement_comptable': 'Traitement comptable',
                               'paiement_sap': 'Paiement SAP',
-                              'renouvele': 'Renouvelé',
-                              'demande_resiliation': 'Demande de résiliation',
-                              'communication_editeur': 'Communication éditeur',
+                              #'renouvele': 'Renouvelé',
+                              #'demande_resiliation': 'Demande de résiliation',
+                              #'communication_editeur': 'Communication éditeur',
                               'resilie': 'Résilié',
-                              'converti_extension': 'Converti ou Extension',
+                              #'converti_extension': 'Converti ou Extension',
                               # '': 'Condition de facturation',
                               # '': 'Condition de paiement',
                               'parc_licence': 'Parc de licences'
@@ -85,9 +88,13 @@ for name_db, name_app in db_app_name_correspondance.items():
     if name_db in ['prix_achat_n', 'prix_vente_n', 'marge_n', 'prix_achat_n1', 'prix_vente_n1', 'marge_n1']:
         data_table_columns.append({'name': name_app, 'id': name_db, 'type': 'numeric', 'format': Format(scheme=Scheme.fixed, precision=2, symbol=Symbol.yes, symbol_suffix='€')})
     elif name_db in ['alerte_renouvellement', 'alerte_validation_devis']:
-        data_table_columns.append({'name': name_app, 'id': name_db, 'type': 'numeric', 'format': {'specifier': '.0'}})
+        data_table_columns.append({'name': name_app, 'id': name_db, 'type': 'numeric', 'format':Format(precision=2, scheme=Scheme.decimal_integer)})
     else:
         data_table_columns.append({'name': name_app, 'id': name_db, 'type': 'text'})
+        
+# Obligé de forcer le str pour le conditionnal formatiing du datatable...
+df['envoi_devis']=df['envoi_devis'].astype(str)
+df['accord_principe']=df['accord_principe'].astype(str)
 
 value_resp_commercial = get_resp_commercial()
 options_resp_commercial = [{'label': resp, 'value': resp} for resp in value_resp_commercial]
@@ -276,12 +283,12 @@ modal_pop_up = dbc.Modal(
                                         # Contenu de la section 'Status'
                                         dbc.Row([
                                             dbc.Col([html.Label("Check Infos")], width={"size": 6}),
-                                            dbc.Col([daq.ToggleSwitch(
+                                            dbc.Col([dmc.Switch(
                                                 id='input-check-infos',
                                                 color="green",  # Couleur du bouton ON
                                                 # label=['Non', 'Oui'],  # Texte pour les positions OFF et ON
-                                                size=40,  # Taille du bouton
-                                                value=False,  # Par défaut, OFF
+                                                size=20,  # Taille du bouton
+                                                checked=False,  # Par défaut, OFF
                                             ),
                                                 dbc.Col([
                                                     html.Div(id='check-infos-date',
@@ -289,59 +296,59 @@ modal_pop_up = dbc.Modal(
                                                                     'font-weight': 'bold'}), ], width={"size": 6}
                                                 )]),
                                             dbc.Col([html.Label("Validation erronées")], width={"size": 6}),
-                                            dbc.Col([daq.ToggleSwitch(
+                                            dbc.Col([dmc.Switch(
                                                 id='input-validation-erronnes',
                                                 color="red",  # Couleur du bouton ON
-                                                size=40,  # Taille du bouton
-                                                value=False  # Par défaut, OFF
+                                                size=20,  # Taille du bouton
+                                                checked=False  # Par défaut, OFF
                                             )], width={"size": 6}
                                             ),
                                             dbc.Col([html.Label("Envoi devis")], width={"size": 6}),
-                                            dbc.Col([daq.ToggleSwitch(
+                                            dbc.Col([dmc.Switch(
                                                 id='input-envoi-devis',
                                                 color="green",  # Couleur du bouton ON
-                                                size=40,  # Taille du bouton
-                                                value=False  # Par défaut, OFF
+                                                size=20,  # Taille du bouton
+                                                checked=False  # Par défaut, OFF
                                             )], width={"size": 6}
                                             ),
                                             dbc.Col([html.Label("Accord de principe")], width={"size": 6}),
-                                            dbc.Col([daq.ToggleSwitch(
+                                            dbc.Col([dmc.Switch(
                                                 id='input-accord-de-principe',
                                                 color="green",  # Couleur du bouton ON
-                                                size=40,  # Taille du bouton
-                                                value=False  # Par défaut, OFF
+                                                size=20,  # Taille du bouton
+                                                checked=False  # Par défaut, OFF
                                             )], width={"size": 6}
                                             ),
                                             dbc.Col([html.Label("Signature client")], width={"size": 6}),
-                                            dbc.Col([daq.ToggleSwitch(
+                                            dbc.Col([dmc.Switch(
                                                 id='input-signature-client',
                                                 color="green",
-                                                size=40,
-                                                value=False
+                                                size=20,
+                                                checked=False
                                             )], width={"size": 6}
                                             ),
                                             dbc.Col([html.Label("Achat éditeur")], width={"size": 6}),
-                                            dbc.Col([daq.ToggleSwitch(
+                                            dbc.Col([dmc.Switch(
                                                 id='input-achat-editeur',
                                                 color="green",
-                                                size=40,
-                                                value=False
+                                                size=20,
+                                                checked=False
                                             )], width={"size": 6}
                                             ),
                                             dbc.Col([html.Label("Traitement comptable")], width={"size": 6}),
-                                            dbc.Col([daq.ToggleSwitch(
+                                            dbc.Col([dmc.Switch(
                                                 id='input-traitement-comptable',
                                                 color="green",
-                                                size=40,
-                                                value=False
+                                                size=20,
+                                                checked=False
                                             )], width={"size": 6}
                                             ),
                                             dbc.Col([html.Label("Paiement SAP")], width={"size": 6}),
-                                            dbc.Col([daq.ToggleSwitch(
+                                            dbc.Col([dmc.Switch(
                                                 id='input-paiement-sap',
                                                 color="green",
-                                                size=40,
-                                                value=False
+                                                size=20,
+                                                checked=False
                                             )], width={"size": 6}
                                             )]
                                         ),
@@ -516,7 +523,7 @@ layout_PCOE = html.Div([
                         ], xs=9, sm=9, md=9, lg=9, xl=9, align="center"),
                 dbc.Col([html.Div(html.Img(src=app.get_asset_url("user.png"), height="30px"))])
             ], color="dark")
-        ], xs=12, sm=12, md=12, lg=12, xl=12)
+        ], xs=12, sm=12, md=12, lg=12, xl=12, className="justify-content-center")
     ]),
 
     # Ajoutez un dcc.Store pour stocker les données du tableau
@@ -553,7 +560,7 @@ layout_PCOE = html.Div([
                         )
                     ),
                 ], className="mt-4 shadow mx-auto"),
-            ], xs=4, sm=4, md=4, lg=4, xl=4, align="start"),
+            ]),
             dbc.Col([
                 dbc.CardGroup([
                     dbc.Card(
@@ -573,7 +580,7 @@ layout_PCOE = html.Div([
                     ),
 
                 ], className="mt-4 shadow mx-auto"),
-            ], xs=4, sm=4, md=4, lg=4, xl=4, align="start"),
+            ]),
             # dbc.Col([
             #     dbc.CardGroup([
             #         dbc.Card(
@@ -611,50 +618,50 @@ layout_PCOE = html.Div([
                     'margin-right': '20px'},
         style_cell={'font_family': 'calibri',
                     'height': 'auto',
-                    'textAlign': 'center',
-                    'minWidth': 50,
-                    'maxWidth': 150},
-        style_data={'font-family': 'Bahnschrift Light'},
+                    'textAlign': 'center'},
+        style_data={'font-family': 'Bahnschrift Light',
+                    'height':'auto',
+                    'whiteSpace': 'normal'},
         style_data_conditional=[{
             "if": {"state": "selected"},
             "backgroundColor": "rgba(0, 116, 217, .03)",
             "border": "1px solid black",
         },  # Alerte renouvellement(feux tricolores)
             {'if': {
-                'filter_query': '{alerte_renouvellement}>120',
-                'column_id': 'alerte_renouvellement'
-            },
-                'backgroundColor': 'green'
-            },
-            {'if': {
-                'filter_query': '{alerte_renouvellement}<120',
+                'filter_query': '{alerte_renouvellement}<=120',
                 'column_id': 'alerte_renouvellement'
             },
                 'backgroundColor': 'orange'
             },
             {'if': {
-                'filter_query': '{alerte_renouvellement}<45',
+                'filter_query': '{alerte_renouvellement}<=45',
                 'column_id': 'alerte_renouvellement'
             },
                 'backgroundColor': 'red'
             },  # Alerte validation devis (feux tricolores)
             {'if': {
-                'filter_query': '{alerte_validation_devis}>240',
-                'column_id': 'alerte_validation_devis'
+                'filter_query': '{alerte_renouvellement}>120 || {envoi_devis} eq True' ,
+                'column_id': 'alerte_renouvellement'
             },
                 'backgroundColor': 'green'
             },
             {'if': {
-                'filter_query': '{alerte_validation_devis}<240',
+                'filter_query': '{alerte_validation_devis}<=56',
                 'column_id': 'alerte_validation_devis'
             },
                 'backgroundColor': 'orange'
             },
             {'if': {
-                'filter_query': '{alerte_validation_devis}<90',
+                'filter_query': '{alerte_validation_devis}<=21',
                 'column_id': 'alerte_validation_devis'
             },
                 'backgroundColor': 'red'
+            },
+            {'if': {
+                'filter_query': '{alerte_validation_devis}>56 || {accord_principe} eq True',
+                'column_id': 'alerte_validation_devis'
+            },
+                'backgroundColor': 'green'
             },
 
         ],

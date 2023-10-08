@@ -5,6 +5,7 @@ import pandas as pd
 from sqlalchemy.engine import Connection
 
 from config import logger
+import numpy as np
 from db import connect_to_db, disconnect_from_db, execute_sql_request
 
 
@@ -73,7 +74,7 @@ def update_app_table_resiliation(code_projet_boond: str) -> None:
     disconnect_from_db(conn)
 
 
-def calcul_sale_price(type_contrat: str, prix_achat_n: float, marge_n: float) -> tuple[Any, Any, Any]:
+def calcul_sale_price(type_contrat: str, prix_achat_n: float, marge_n: float,prix_achat_n1:float,prix_vent_n1:float,marge_n1:float) -> tuple[Any, Any, Any]:
     try:
         current_year = datetime.now().year
         conn = connect_to_db()
@@ -81,9 +82,12 @@ def calcul_sale_price(type_contrat: str, prix_achat_n: float, marge_n: float) ->
         coef_marge = execute_sql_request(f"SELECT coef FROM coefficient WHERE annee = {current_year} AND type = 'marge'")[0][0]
         disconnect_from_db(conn)
 
-        prix_achat_n1 = prix_achat_n + prix_achat_n * coef
-        prix_vente_n1 = prix_achat_n1 + prix_achat_n1 * (marge_n + coef_marge)
+        if prix_achat_n1 is None :
+            prix_achat_n1 = prix_achat_n + prix_achat_n * coef
+        if prix_vente_n1 is None:
+            prix_vente_n1 = prix_achat_n1 + prix_achat_n1 * (marge_n + coef_marge)
         marge_n1 = prix_vente_n1 / prix_achat_n1 - 1
+        
         return prix_achat_n1, prix_vente_n1, marge_n1
     except (IndexError, TypeError):
         return None, None, None
@@ -93,7 +97,8 @@ def apply_calcul_sale_price(row):
     type_contrat = row['type_contrat']
     prix_achat_n = row['prix_achat_n']
     marge_n = row['marge_n']
-
+    prix_achat_n1=row['prix_achat_n1']
+    prix_vente_n1=row['prix_vente_n1']
     try:
         current_year = datetime.now().year
         conn = connect_to_db()
@@ -101,8 +106,10 @@ def apply_calcul_sale_price(row):
         coef_marge = float(execute_sql_request(f"SELECT coef FROM coefficient WHERE annee = {current_year} AND type = 'marge'")[0][0])
         disconnect_from_db(conn)
 
-        prix_achat_n1 = prix_achat_n + prix_achat_n * coef
-        prix_vente_n1 = prix_achat_n1 + prix_achat_n1 * (marge_n + coef_marge)
+        if np.isnan(prix_achat_n1) :
+            prix_achat_n1 = prix_achat_n + prix_achat_n * coef
+        if np.isnan(prix_vente_n1) :
+            prix_vente_n1 = prix_achat_n1 + prix_achat_n1 * (marge_n + coef_marge)
         marge_n1 = prix_vente_n1 / prix_achat_n1 - 1
 
         return pd.Series([prix_achat_n1, prix_vente_n1, marge_n1])

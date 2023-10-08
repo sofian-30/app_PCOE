@@ -19,7 +19,7 @@ def remplir_devis(nom_devis, client, adresse, CP, ville, editeur, type_support, 
                         conditions_facturation, conditions_paiement, prix_vente, prix_vente_tax):
     doc = Document("appPCOE/impressions/template_devis.docx")
     
-    date_obj = datetime.datetime.strptime(date_anniversaire, "%Y-%m-%dT%H:%M:%S")
+    date_obj = datetime.datetime.strptime(date_anniversaire, "%Y-%m-%d")
     date_formatee = date_obj.strftime('%d/%m/%Y')
     
     # Ajoutez un jour
