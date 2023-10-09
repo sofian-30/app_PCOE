@@ -435,11 +435,7 @@ modal_pop_up = dbc.Modal(
                                             dmc.AccordionPanel(
                                                 [
                                                     dbc.Row([
-                                                        # dbc.Col([
-                                                        #     dbc.Label("Parc de licences")],
-                                                        #     # width={"size": 2, "offset": 1}
-                                                        #     ),
-                                                        dbc.Col([
+                                                         dbc.Col([
                                                             dcc.Textarea(
                                                                 id='input-parc-licences',
                                                                 style={
@@ -566,7 +562,7 @@ layout_PCOE = html.Div([
                     dbc.Card(
                         dbc.CardBody(
                             [
-                                html.H4('Nombre de lignes validées', style={'color': '#191970'}),
+                                html.H4('Nombre de lignes validées - check infos', style={'color': '#191970'}),
                                 html.Div(html.H2(id='o1_nb_lignes_validees'),
                                         style={'fontSize': '20px', 'font-weight': 'bold', 'text-align': 'center'}),
                             ]

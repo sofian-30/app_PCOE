@@ -11,7 +11,7 @@ from appPCOE.src.generation_devis import remplir_devis
 from db import connect_to_db, sql_to_df, disconnect_from_db
 from utils import update_app_table, update_app_table_resiliation, apply_calcul_sale_price
 
-df = pd.read_excel("./data/Suivi CA licences et maintenance 2023.xlsx", sheet_name='Maintenance SAP BusinessObjects')
+# df = pd.read_excel("./data/Suivi CA licences et maintenance 2023.xlsx", sheet_name='Maintenance SAP BusinessObjects')
 
 
 @app.callback(
@@ -129,15 +129,7 @@ def store_selected_row(selected_rows, dict_data):
     Input('o1_store_row', 'data'),  # input du layout complet
     prevent_initial_call=True,
 )
-# def update_resp_commercial(selected_values):
-#     if selected_values is None or len(selected_values) == 0:
-#         # Si aucune valeur n'est sélectionnée, affiche "Tous les responsables"
-#         return "Tous les responsables"
-#     else:
-#         # Filtrer la colonne "Resp. Commercial" en fonction des valeurs sélectionnées
-#         # et afficher les valeurs sélectionnées
-#         filtered_values = ', '.join(selected_values)
-#         return filtered_values
+
 def update_modal_pop_up(selected_row_data):
     client = selected_row_data.get('client', '')  # card "informations générales"
     erp_number = selected_row_data.get('num_ref_sap', '')  # 'ERP Number \nRéf SAP'
@@ -373,7 +365,18 @@ def update_table_data(n_btn_submit_validate, resp_comm_list, selected_row_number
                          achat_editeur, traitement_comptable, paiement_sap)
         
 
-    return data_main_table,style_data_conditional
+        #une fois la modification effectué, cela sert à recharger la data_main_table
+        conn = connect_to_db()
+        df_app = sql_to_df("SELECT * FROM app_table", conn=conn)
+        df_boond = sql_to_df("SELECT * FROM boond_table", conn=conn)
+        disconnect_from_db(conn)
+        df = pd.merge(df_boond, df_app, how='inner', on='code_projet_boond')
+        df = df[df['resp_commercial'].isin(resp_comm_list)]
+        data_main_table = df.to_dict('records')
+
+
+
+    return data_main_table
 
 
 ###############################################################################################################
@@ -479,42 +482,33 @@ def change_badge_color(n_clicks):
         # If the button is not clicked, keep the badge color as 'blue'
         return 'blue'
 
-# ..................................................................................
-
-# # Callback pour ouvrir/fermer le modal_pop_up_evol_prix lorsque le bouton est cliqué
-# @app.callback(
-#     Output("excel_modal", "is_open"),
-#     [Input("o1_btn_evol_prix", "n_clicks"),
-#      Input("close_excel_modal", "n_clicks")],
-#     [State("excel_modal", "is_open")]
-# )
-# def toggle_excel_modal(btn_click, close_click, is_open):
-#     if btn_click or close_click:
-#         return not is_open
-#     return is_open
-
-# # Callback pour charger et afficher le tableau Excel dans le modal_pop_up_evol_prix
-# @app.callback(
-#     [Output("excel_table", "data"), Output("excel_table", "columns")],
-#     [Input("o1_btn_evol_prix", "n_clicks")]
-# )
-# def load_excel_table(btn_click):
-#     if btn_click:
-#         # Chargez votre fichier Excel et convertissez-le en un DataFrame Pandas
-#         excel_file_path = r'appPCOE\src\tableau_calcul_evolution_prix.xlsx'
-
-#         try:
-#             df = pd.read_excel(excel_file_path)
-#             columns = [{"name": str(col), "id": str(col)} for col in df.columns]
-#             data = df.to_dict('records')
-
-#             return data, columns
-#         except Exception as e:
-#             return [], []  # Retourne une liste vide pour les données et les colonnes en cas d'erreur
-
-
-# C:\Users\SofianOUASS\Documents\Dev\app-pcoe\appPCOE\src\tableau_calcul_evolution_prix.xlsx
 ######################################################################################################
 
+# Callback pour mettre à jour le nombre de lignes validées - 'check_infos' depuis la data_table et affichage sur la carte
+@app.callback(
+    Output('o1_nb_lignes_validees', 'children'),  # Utilisez 'children' pour modifier le texte
+    Input('o1_data_table', 'data')
+)
+
+def update_valid_check_infos_count(data):
+    # Convertissez la liste de dictionnaires en un DataFrame pandas
+    df = pd.DataFrame(data)
+    
+    # Comptez les lignes valides dans la colonne 'check_infos' du DataFrame
+    count = len(df[df['check_infos'] == True])
+
+    return count
+
+
+#     # Charger les données depuis la base de données
+#     query = "SELECT COUNT(*) FROM app_table WHERE check_infos = 'Valide'"
+#     conn = connect_to_db()
+#     df_app_table = pd.read_sql(query, conn)
+#     disconnect_from_db(conn)
+
+   
+
+    
 
 # ...
+ 
