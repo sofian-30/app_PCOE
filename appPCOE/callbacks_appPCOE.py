@@ -2,31 +2,72 @@ import dash
 import pandas as pd
 from dash import dcc
 from dash.dependencies import Input, Output, State
+import numpy as np
+import zipfile
+import os
 
 from app import app
 from appPCOE.src.generation_devis import remplir_devis
 from db import connect_to_db, sql_to_df, disconnect_from_db
-from utils import update_app_table, update_app_table_resiliation
+from utils import update_app_table, update_app_table_resiliation, apply_calcul_sale_price
 
 # df = pd.read_excel("./data/Suivi CA licences et maintenance 2023.xlsx", sheet_name='Maintenance SAP BusinessObjects')
 
+
+@app.callback(
+    Output('o1_btn_modif_ech', 'disabled'),
+    Output('o1_btn_modif_ech', 'color'),
+    Input('o1_data_table', 'selected_rows'),
+    prevent_initial_call=True# Déclencheur du callback (clics sur le bouton)
+)
+def rendre_bouton_incliquable(n_row):
+    if np.size(n_row)==1:
+        return [False,'success']  
+    else:
+        return [True,'secondary']  
+    
+@app.callback(
+    Output('o1_btn_gener_devis', 'disabled'),
+    Output('o1_btn_gener_devis', 'color'),
+    Input('o1_data_table', 'selected_rows'),
+    prevent_initial_call=True# Déclencheur du callback (clics sur le bouton)
+)
+def rendre_bouton_incliquable(n_row):
+    if np.size(n_row)>=1:
+        return [False,'warning']
+    else:
+        return [True,'secondary']
 
 # Callback de génération de devis.
 @app.callback(
     Output('download_devis', 'data'),
     Input('o1_btn_gener_devis', 'n_clicks'),
-    State('o1_store_row', 'data'),
+    State('o1_data_table', 'selected_rows'),
+    State('o1_data_table', 'data'),
     prevent_initial_call=True
 )
-def export_devis(n0, data_row):
-    # A faire : finir de rentrer les autres informations.
-    # Faire une vérification avant l'envoi du devis
-    remplir_devis('acces_devis', data_row['Client'], 'adresse', 'CP', 'ville', 'editeur', 'type_support',
-                  data_row['Date anniversaire'], 'code_boond', 'conditions_facturation',
-                  'conditions_paiement', 'condition_parc', data_row[
-                      'Prix d\'achat actuel'])  # 'Prix d\'achat actuel' ou' Achat SAP Maintenance ou GBS ou NEED4VIZ'
+def export_devis(n0, n_row,dict_data):
+    df=pd.DataFrame.from_dict(dict_data)
+    
+    nom_archive = 'appPCOE/impressions/devis/devis_archive.zip'
+    
+    # Vérifier si le fichier ZIP existe déjà, et si c'est le cas, supprimez-le.
+    if os.path.exists(nom_archive):
+        os.remove(nom_archive)
+    
+    with zipfile.ZipFile(nom_archive, 'w') as myzip:
+    # Ajoutez des fichiers à l'archive en utilisant la méthode `write`.
+        for i in n_row :
+            data_row=df.iloc[i].to_dict()
+            nom_devis='devis'+str(data_row['code_projet_boond'])
+            # A faire : finir de rentrer les autres informations.
+            # Faire une vérification avant l'envoi du devis
+            remplir_devis(nom_devis, data_row['client'], data_row['adresse'], data_row['code_postal'], data_row['ville'], 'editeur', 'type_support',
+                data_row['date_anniversaire'], data_row['code_projet_boond'], data_row['parc_licence'], 'conditions_facturation',
+                'conditions_paiement', data_row['prix_vente_n1'],np.round(data_row['prix_vente_n1']*1.2,2))  # 'Prix d\'achat actuel' ou' Achat SAP Maintenance ou GBS ou NEED4VIZ'
+            myzip.write('appPCOE/impressions/devis/'+nom_devis+'.docx',nom_devis+'.docx')
 
-    return dcc.send_file('appPCOE/impressions/devis/devis_finalise.docx')
+    return dcc.send_file('appPCOE/impressions/devis/devis_archive.zip')
 
 
 # Callback pour stocker les données de la ligne sélectionnée dans le dcc.Store
@@ -61,14 +102,14 @@ def store_selected_row(selected_rows, dict_data):
     # Output('input-badge-alerte-renouvellement', 'color'),
     # Output('input-badge-resilie', 'color'), # card "Alertes" (badge)
 
-    Output('input-check-infos', 'children'),
-    Output('input-validation-erronnes', 'children'),
-    Output('input-envoi-devis', 'children'),
-    Output('input-accord-de-principe', 'children'),
-    Output('input-signature-client', 'children'),
-    Output('input-achat-editeur', 'children'),
-    Output('input-traitement-comptable', 'children'),
-    Output('input-paiement-sap', 'children'),  # card "Status et conditions financières"-status
+    Output('input-check-infos', 'checked'),
+    Output('input-validation-erronnes', 'checked'),
+    Output('input-envoi-devis', 'checked'),
+    Output('input-accord-de-principe', 'checked'),
+    Output('input-signature-client', 'checked'),
+    Output('input-achat-editeur', 'checked'),
+    Output('input-traitement-comptable', 'checked'),
+    Output('input-paiement-sap', 'checked'),  # card "Status et conditions financières"-status
 
     Output('input-prix-achat-actuel', 'value'),
     Output('input-prix-vente-actuel', 'value'),
@@ -90,7 +131,6 @@ def store_selected_row(selected_rows, dict_data):
 )
 
 def update_modal_pop_up(selected_row_data):
-    # print(f"selected_row_data {selected_row_data}")
     client = selected_row_data.get('client', '')  # card "informations générales"
     erp_number = selected_row_data.get('num_ref_sap', '')  # 'ERP Number \nRéf SAP'
     date_anniversaire = selected_row_data.get('date_anniversaire', '')
@@ -112,11 +152,10 @@ def update_modal_pop_up(selected_row_data):
     traitement_comptable = selected_row_data.get('traitement_comptable', '')
     paiement_sap = selected_row_data.get('paiement_sap', '')
 
-    prix_achat_n = selected_row_data.get('prix_achat_n',
-                                         0)  # card "Status et conditions financières"-cond. financières
+    prix_achat_n = selected_row_data.get("prix_achat_n", 0)  # card "Status et conditions financières"-cond. financières
     prix_vente_n = selected_row_data.get('prix_vente_n', 0)
     marge_n = selected_row_data.get('marge_n', 0)
-    prix_achat_n1 = selected_row_data.get('prix_achat_n1', 0)
+    prix_achat_n1 = selected_row_data.get("prix_achat_n1", 0)
     prix_vente_n1 = selected_row_data.get('prix_vente_n1', 0)
     marge_n1 = selected_row_data.get('marge_n1', 0)
 
@@ -163,9 +202,6 @@ def update_modal_pop_up(selected_row_data):
     if prix_vente_n is not None:
         prix_vente_n = round(prix_vente_n, 2)
 
-    
-    # date_anniversaire= date_anniversaire.strftime("%d/%m")
-
     return (client, erp_number, date_anniversaire, code_projet_boond, resp_commercial, editeur,
             # badge_generation_devis,badge_validation_devis,badge_alerte_renouvellement,badge_resilie,
             check_infos, validation_erronees, envoi_devis, accord_principe, signature_client, achat_editeur,
@@ -201,7 +237,8 @@ def update_modal_open_state(n_btn_modif_ech, n_btn_submit_validate, n_btn_submit
 ##########################################################################################################
 # callback pour mettre à jour les données du tableau
 @app.callback(
-    Output("o1_data_table", "data"),  # Mettez à jour les données du tableau
+    Output("o1_data_table", "data"), 
+    Output("o1_data_table",'style_data_conditional'),# Mettez à jour les données du tableau
     Input("o1_btn_submit_validate", "n_clicks"),
     Input('o1_filtre_resp_com', 'value'),
     State('o1_data_table', 'selected_rows'),
@@ -219,14 +256,14 @@ def update_modal_open_state(n_btn_modif_ech, n_btn_submit_validate, n_btn_submit
     # State('input-badge-alerte-renouvellement', 'value'),
     # State('input-badge-resilie', 'value'),  # card "Alertes" (badge)
 
-    State('input-check-infos', 'value'),
-    State('input-validation-erronnes', 'value'),
-    State('input-envoi-devis', 'value'),
-    State('input-accord-de-principe', 'value'),
-    State('input-signature-client', 'value'),
-    State('input-achat-editeur', 'value'),
-    State('input-traitement-comptable', 'value'),
-    State('input-paiement-sap', 'value'),  # card "Status et conditions financières"-status
+    State('input-check-infos', 'checked'),
+    State('input-validation-erronnes', 'checked'),
+    State('input-envoi-devis', 'checked'),
+    State('input-accord-de-principe', 'checked'),
+    State('input-signature-client', 'checked'),
+    State('input-achat-editeur', 'checked'),
+    State('input-traitement-comptable', 'checked'),
+    State('input-paiement-sap', 'checked'),  # card "Status et conditions financières"-status
 
     State('input-prix-achat-actuel', 'value'),
     State('input-prix-vente-actuel', 'value'),
@@ -242,7 +279,8 @@ def update_modal_open_state(n_btn_modif_ech, n_btn_submit_validate, n_btn_submit
     State('input-adresse-client', 'value'),
     State('input-parc-licences', 'value'),  # card "Informations contractuelles"
 
-    prevent_initial_call=True,
+    State("o1_data_table",'style_data_conditional'),
+    prevent_initial_call=False
 )
 def update_table_data(n_btn_submit_validate, resp_comm_list, selected_row_number, data_main_table,
                       client, erp_number, date_anniversaire, code_projet_boond, resp_commercial, editeur,
@@ -252,7 +290,7 @@ def update_table_data(n_btn_submit_validate, resp_comm_list, selected_row_number
                       prix_achat_actuel, prix_vente_actuel, marge_pourcentage, nv_prix_vente, nv_prix_achat,
                       marge_annuel,
                       type_contrat, type_support_sap, condition_facturation, condition_paiement, adresse_client,
-                      parc_licences
+                      parc_licences,style_data_conditional
                       ):
     conn = connect_to_db()
     df_app = sql_to_df("SELECT * FROM app_table", conn=conn)
@@ -260,6 +298,14 @@ def update_table_data(n_btn_submit_validate, resp_comm_list, selected_row_number
     disconnect_from_db(conn)
     df = pd.merge(df_boond, df_app, how='inner', on='code_projet_boond')
     df = df[df['resp_commercial'].isin(resp_comm_list)]
+    df["date_anniversaire"] = df["date_anniversaire"].dt.date
+    
+    df[['prix_achat_n1', 'prix_vente_n1', 'marge_n1']] = df.apply(apply_calcul_sale_price, axis=1)
+    
+    # Obligé de forcer le str pour le conditionnal formatiing du datatable...
+    df['envoi_devis']=df['envoi_devis'].astype(str)
+    df['accord_principe']=df['accord_principe'].astype(str)
+    
     data_main_table = df.to_dict('records')
     if df.empty:
         return data_main_table
@@ -317,6 +363,7 @@ def update_table_data(n_btn_submit_validate, resp_comm_list, selected_row_number
                          nv_prix_achat, nv_prix_vente, marge_annuel, parc_licences,
                          check_infos, validation_erronnes, envoi_devis, accord_de_principe, signature_client,
                          achat_editeur, traitement_comptable, paiement_sap)
+        
 
         #une fois la modification effectué, cela sert à recharger la data_main_table
         conn = connect_to_db()
@@ -390,41 +437,35 @@ def update_badge_colors(n_clicks, selected_row_data):
     if selected_row_data is None:
         # Gérez le cas où selected_row_data est None
         return 'gray', 'gray'  # {'color': 'gray'}, {'color': 'gray'}
-    # print("Selected Row Data:", selected_row_data)
 
     # Initialisez les styles par défaut
     validation_devis_style = 'blue'  # {'color': 'blue'}  # Style par défaut pour "Validation devis"
     alerte_renouvellement_style = 'blue'  # {'color': 'blue'}  # Style par défaut pour "Renouvellement"
 
-    # Obtenez les valeurs de "Validation devis" et "Renouvellement" à partir des données de la ligne sélectionnée
+    # Valeurs de "Validation devis" et "Renouvellement" à partir des données de la ligne sélectionnée
     validation_devis = selected_row_data.get('alerte_validation_devis', '')
-    # print('Validation Devis:', alerte_validation_devis)
-
     alerte_renouvellement = selected_row_data.get('alerte_renouvellement', '')
-    # print('alerte_renouvellement', alerte_renouvellement)
+    etat_envoi_devis=selected_row_data.get('envoi_devis', '')
+    etat_accord_principe=selected_row_data.get('accord_principe', '')
 
-    # Convertissez en float pour permettre la comparaison avec les entiers
+    # Convertir en float pour permettre la comparaison avec les entiers
     validation_devis = float(validation_devis) if validation_devis else 0.0
     alerte_renouvellement = float(alerte_renouvellement) if alerte_renouvellement else 0.0
 
-    # Mettez à jour les styles en fonction des conditions
-    if validation_devis > 240:
+    # Mettre à jour les styles en fonction des conditions
+    if validation_devis > 56 or etat_envoi_devis=='True':
         validation_devis_style = 'green'
-    elif 90 < validation_devis <= 240:
+    elif 21 < validation_devis <= 56:
         validation_devis_style = 'orange'
     else:
         validation_devis_style = 'red'
 
-    if alerte_renouvellement > 120:
+    if alerte_renouvellement > 120 or etat_accord_principe=='True':
         alerte_renouvellement_style = 'green'
     elif 45 <= alerte_renouvellement <= 120:
         alerte_renouvellement_style = 'orange'
     else:
         alerte_renouvellement_style = 'red'
-
-    # print("Validation Devis Style:", validation_devis_style)
-    # print("Alerte Renouvellement Style:", alerte_renouvellement_style)
-
     return validation_devis_style, alerte_renouvellement_style
 
 
