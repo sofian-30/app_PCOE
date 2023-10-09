@@ -422,11 +422,7 @@ modal_pop_up = dbc.Modal(
                                             dmc.AccordionPanel(
                                                 [
                                                     dbc.Row([
-                                                        # dbc.Col([
-                                                        #     dbc.Label("Parc de licences")],
-                                                        #     # width={"size": 2, "offset": 1}
-                                                        #     ),
-                                                        dbc.Col([
+                                                         dbc.Col([
                                                             dcc.Textarea(
                                                                 id='input-parc-licences',
                                                                 style={
