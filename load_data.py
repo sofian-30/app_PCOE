@@ -164,7 +164,7 @@ def load_data_from_csv() -> None:
     conn = connect_to_db()
     try:
         boond_columns = ['Code projet Boond', 'Agence', 'Client', 'ERP_Number_Ref_SAP', 'Date anniversaire',
-                         'Achat SAP Maintenance ou GBS ou NEED4VIZ', 'CA maintenance facturé', 'Marge maintenance ',
+                         'Achat SAP Maintenance ou GBS ou NEED4VIZ', 'CA maintenance facturé', 'Marge %',
                          'Type de support SAP', 'Type de contrat', 'Parc/Techno', 'Resp\nCommercial']
         df_boond = df[boond_columns]
         df_boond = df_boond.rename(columns={'Code projet Boond': 'code_projet_boond',
@@ -174,7 +174,7 @@ def load_data_from_csv() -> None:
                                             'Date anniversaire': 'date_anniversaire',
                                             'Achat SAP Maintenance ou GBS ou NEED4VIZ': 'prix_achat_n',
                                             'CA maintenance facturé': 'prix_vente_n',
-                                            'Marge maintenance ': 'marge_n',
+                                            'Marge %': 'marge_n',
                                             'Type de support SAP': 'type_support_sap',
                                             'Type de contrat': 'type_contrat',
                                             'Parc/Techno': 'parc_techno',
