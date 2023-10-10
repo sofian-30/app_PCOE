@@ -238,7 +238,6 @@ def update_modal_open_state(n_btn_modif_ech, n_btn_submit_validate, n_btn_submit
 # callback pour mettre à jour les données du tableau
 @app.callback(
     Output("o1_data_table", "data"), 
-    Output("o1_data_table",'style_data_conditional'),# Mettez à jour les données du tableau
     Input("o1_btn_submit_validate", "n_clicks"),
     Input('o1_filtre_resp_com', 'value'),
     State('o1_data_table', 'selected_rows'),
@@ -278,8 +277,6 @@ def update_modal_open_state(n_btn_modif_ech, n_btn_submit_validate, n_btn_submit
     State('input-cond-paiement', 'value'),
     State('input-adresse-client', 'value'),
     State('input-parc-licences', 'value'),  # card "Informations contractuelles"
-
-    State("o1_data_table",'style_data_conditional'),
     prevent_initial_call=False
 )
 def update_table_data(n_btn_submit_validate, resp_comm_list, selected_row_number, data_main_table,
@@ -290,8 +287,7 @@ def update_table_data(n_btn_submit_validate, resp_comm_list, selected_row_number
                       prix_achat_actuel, prix_vente_actuel, marge_pourcentage, nv_prix_vente, nv_prix_achat,
                       marge_annuel,
                       type_contrat, type_support_sap, condition_facturation, condition_paiement, adresse_client,
-                      parc_licences,style_data_conditional
-                      ):
+                      parc_licences                      ):
     conn = connect_to_db()
     df_app = sql_to_df("SELECT * FROM app_table", conn=conn)
     df_boond = sql_to_df("SELECT * FROM boond_table", conn=conn)
