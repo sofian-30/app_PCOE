@@ -496,19 +496,9 @@ def update_valid_check_infos_count(data):
     
     # Comptez les lignes valides dans la colonne 'check_infos' du DataFrame
     count = len(df[df['check_infos'] == True])
+    print('count:', count)
 
     return count
-
-
-#     # Charger les données depuis la base de données
-#     query = "SELECT COUNT(*) FROM app_table WHERE check_infos = 'Valide'"
-#     conn = connect_to_db()
-#     df_app_table = pd.read_sql(query, conn)
-#     disconnect_from_db(conn)
-
-   
-
     
-
 # ...
  
