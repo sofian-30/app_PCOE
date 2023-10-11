@@ -82,9 +82,9 @@ def calcul_sale_price(type_contrat: str, prix_achat_n: float, marge_n: float,pri
         disconnect_from_db(conn)
 
         if prix_achat_n1 is None :
-            prix_achat_n1 = prix_achat_n + prix_achat_n * coef
+            prix_achat_n1 = round(prix_achat_n + prix_achat_n * coef,2)
         if prix_vente_n1 is None:
-            prix_vente_n1 = prix_achat_n1 + prix_achat_n1 * (marge_n + coef_marge)
+            prix_vente_n1 = round(prix_achat_n1 + prix_achat_n1 * (marge_n + coef_marge),2)
         marge_n1 = (prix_vente_n1 - prix_achat_n1)/prix_achat_n1
         
         return prix_achat_n1, prix_vente_n1, marge_n1
@@ -107,9 +107,9 @@ def apply_calcul_sale_price(row):
         disconnect_from_db(conn)
 
         if np.isnan(prix_achat_n1) :
-            prix_achat_n1 = prix_achat_n + prix_achat_n * coef
+            prix_achat_n1 = round(prix_achat_n + prix_achat_n * coef,2)
         if np.isnan(prix_vente_n1) :
-            prix_vente_n1 = prix_achat_n1 * (1+marge_n + coef_marge)
+            prix_vente_n1 = round(prix_achat_n1 * (1+marge_n + coef_marge),2)
         marge_n1 = (prix_vente_n1 - prix_achat_n1)/prix_achat_n1
         return pd.Series([prix_achat_n1, prix_vente_n1, marge_n1])
 
