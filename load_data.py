@@ -165,7 +165,8 @@ def load_data_from_csv() -> None:
     try:
         boond_columns = ['Code projet Boond', 'Agence', 'Client', 'ERP_Number_Ref_SAP', 'Date anniversaire',
                          'Achat SAP Maintenance ou GBS ou NEED4VIZ', 'CA maintenance facturé', 'Marge %',
-                         'Type de support SAP', 'Type de contrat', 'Parc/Techno', 'Resp\nCommercial']
+                         'Type de support SAP', 'Type de contrat', 'Parc/Techno', 'Resp\nCommercial',
+                         'Condition de facturation', 'Condition de paiement']
         df_boond = df[boond_columns]
         df_boond = df_boond.rename(columns={'Code projet Boond': 'code_projet_boond',
                                             'Agence': 'agence',
@@ -178,12 +179,15 @@ def load_data_from_csv() -> None:
                                             'Type de support SAP': 'type_support_sap',
                                             'Type de contrat': 'type_contrat',
                                             'Parc/Techno': 'parc_techno',
-                                            'Resp\nCommercial': 'resp_commercial'})
+                                            'Resp\nCommercial': 'resp_commercial',
+                                            'Condition de facturation':'condition_paiement', 
+                                            'Condition de paiement':'condition_facturation'
+                                            })
 
         df_boond['adresse'] = None
         df_boond['ville'] = None
         df_boond['code_postal'] = None
-
+        
         nb_lines = len(df_boond)
         insert_df_to_table(df_boond, boond_table_name, 'replace', conn)
         process_monitoring(conn, boond_table_name, nb_lines=nb_lines)

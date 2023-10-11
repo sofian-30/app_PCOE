@@ -88,8 +88,8 @@ db_app_name_correspondance = {'agence': 'Agence',
                               #'communication_editeur': 'Communication éditeur',
                               'resilie': 'Résilié',
                               #'converti_extension': 'Converti ou Extension',
-                              # '': 'Condition de facturation',
-                              # '': 'Condition de paiement',
+                              'condition_facturation': 'Condition de facturation',
+                              'condition_paiement': 'Condition de paiement',
                               'parc_licence': 'Parc de licences'
                               }
 
@@ -111,29 +111,6 @@ options_resp_commercial = [{'label': resp, 'value': resp} for resp in value_resp
 #                                          Appel API                                                        #
 #############################################################################################################
 
-
-#############################################################################################################
-#                                                                                                           #
-#############################################################################################################
-
-
-# liste des noms de colonne: Informations contrats clients=
-# ['Client', 'ERP Number \nRéf SAP', 'Date anniversaire', 'Code projet Boond', 'Resp\nCommercial', 'Type de contrat']
-
-# #liste des noms de colonne:
-# ['Agence', 'Client', 'ERP_Number_Ref_SAP', 'Code projet Boond', 'Date anniversaire',
-#   'CA maintenance facturé', 'Achat SAP Maintenance ou GBS ou NEED4VIZ', 'Marge maintenance ',
-#     'Marge %', 'Montant vente annuel N+1', 'Montant annuel Achat N+1', "Mois d'imputation",
-#       'Type de support SAP', 'Type de contrat', 'Parc/Techno', 'Numéro de facture',
-#         'Date de facture', 'Resp\nCommercial', 'Proposition SAP reçue', 'Relance client**',
-#           'Proposition Seenovate créée', 'Proposition Seenovate envoyée',
-#             'Proposition signée par le client', 'Attente  N° Cde client avant facturation',
-#               'Facture  créée', 'Commande faite SAP', 'Facture SAP reçue', 'Remarques',
-#                 'Devis', 'Accord de principe', 'Signature client', 'Achat éditeur', 'Renouvelé',
-#                   'Traitement comptable', 'Paiement SAP', 'Demande de résiliation',
-#                   'Communication éditeur', 'Résilié', 'Converti ou Extension']
-
-# Ajout d'un composant dcc.Store pour stocker les données de la ligne sélectionnée
 stockage_ligne = dcc.Store(id='o1_store_row')
 stockage_mis_a_jour = dcc.Store(id='o1_store_updated_data')
 stockage_popup_evprix = dcc.Store(id='excel_data')

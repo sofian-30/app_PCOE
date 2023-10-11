@@ -104,11 +104,6 @@ def store_selected_row(selected_rows, dict_data):
     Output('input-resp-commercial', 'children'),
     Output('input-editeur', 'children'),  # card "informations générales"
 
-    # Output('input-badge-generation-devis', 'color'),   #'children' or 'style' or 'color'
-    # Output('input-badge-validation-devis', 'color'),
-    # Output('input-badge-alerte-renouvellement', 'color'),
-    # Output('input-badge-resilie', 'color'), # card "Alertes" (badge)
-
     Output('input-check-infos', 'checked'),
     Output('input-validation-erronnes', 'checked'),
     Output('input-envoi-devis', 'checked'),
@@ -130,7 +125,7 @@ def store_selected_row(selected_rows, dict_data):
     Output('input-cond-fact', 'value'),
     Output('input-cond-paiement', 'value'),
     Output('input-adresse-client', 'value'),
-    Output('input-parc-licences', 'value'),  # card "Informations contractuelles"
+    Output('input-parc-licences', 'value'), 
 
     # Input("o1_modal", 'data'), #input du modal pop-up complet
     Input('o1_store_row', 'data'),  # input du layout complet
@@ -172,13 +167,14 @@ def update_modal_pop_up(selected_row_data):
 
     type_contrat = selected_row_data.get('type_contrat', '')  # card "Informations contractuelles"
     type_support_sap = selected_row_data.get('type_support_sap', '')
-    condition_facturation = selected_row_data.get('Condition de facturation', '')
-    condition_paiement = selected_row_data.get('Condition de Paiement', '')
     adresse_client = selected_row_data.get('adresse', '')
     ville = selected_row_data.get('ville', '')
     cp = selected_row_data.get('code_postal', '')
     parc_licences = selected_row_data.get('parc_licence', '')
-
+    
+    cond_paiement= selected_row_data.get('condition_paiement', '')
+    cond_fact= selected_row_data.get('condition_facturation', '')
+    
     # Composition de l'adresse avec saut de ligne
     # adresse_client = adresse_client +"\n " + str(cp) + "\n " + ville
 
@@ -218,7 +214,7 @@ def update_modal_pop_up(selected_row_data):
             check_infos, validation_erronees, envoi_devis, accord_principe, signature_client, achat_editeur,
             traitement_comptable, paiement_sap,
             prix_achat_n, prix_vente_n, marge_n, prix_achat_n1, prix_vente_n1, marge_n1,
-            type_contrat, type_support_sap, condition_facturation, condition_paiement, adresse_client, parc_licences
+            type_contrat, type_support_sap, cond_fact, cond_paiement, adresse_client, parc_licences
             )
 
 
@@ -261,11 +257,6 @@ def update_modal_open_state(n_btn_modif_ech, n_btn_submit_validate, n_btn_submit
     State("input-resp-commercial", "value"),
     State("input-editeur", "value"),  # card "informations générales"
 
-    # State('input-badge-generation-devis', 'value'),   #'children' or 'style' or 'color'
-    # State('input-badge-validation-devis', 'value'),
-    # State('input-badge-alerte-renouvellement', 'value'),
-    # State('input-badge-resilie', 'value'),  # card "Alertes" (badge)
-
     State('input-check-infos', 'checked'),
     State('input-validation-erronnes', 'checked'),
     State('input-envoi-devis', 'checked'),
@@ -288,7 +279,7 @@ def update_modal_open_state(n_btn_modif_ech, n_btn_submit_validate, n_btn_submit
     State('input-cond-paiement', 'value'),
     State('input-adresse-client', 'value'),
     State('input-parc-licences', 'value'),  # card "Informations contractuelles"
-    prevent_initial_call=False
+    prevent_initial_call=True
 )
 def update_table_data(n_btn_submit_validate, resp_comm_list, selected_row_number, data_main_table,
                       client, erp_number, date_anniversaire, code_projet_boond, resp_commercial, editeur,
@@ -298,7 +289,7 @@ def update_table_data(n_btn_submit_validate, resp_comm_list, selected_row_number
                       prix_achat_actuel, prix_vente_actuel, marge_pourcentage, nv_prix_vente, nv_prix_achat,
                       marge_annuel,
                       type_contrat, type_support_sap, condition_facturation, condition_paiement, adresse_client,
-                      parc_licences                      ):
+                      parc_licences):
     conn = connect_to_db()
     df_app = sql_to_df("SELECT * FROM app_table", conn=conn)
     df_boond = sql_to_df("SELECT * FROM boond_table", conn=conn)
@@ -313,7 +304,7 @@ def update_table_data(n_btn_submit_validate, resp_comm_list, selected_row_number
 
     df[['prix_achat_n1', 'prix_vente_n1', 'marge_n1']] = df.apply(apply_calcul_sale_price, axis=1)
     
-    # Obligé de forcer le str pour le conditionnal formatiing du datatable...
+    # Obligé de forcer le str pour le conditionnal formating du datatable...
     columns_to_convert = ['envoi_devis', 'accord_principe']
     for column in columns_to_convert:
         df[column] = df[column].fillna(False)
@@ -377,18 +368,28 @@ def update_table_data(n_btn_submit_validate, resp_comm_list, selected_row_number
                          check_infos, validation_erronnes, envoi_devis, accord_de_principe, signature_client,
                          achat_editeur, traitement_comptable, paiement_sap)
         
-
-        #une fois la modification effectué, cela sert à recharger la data_main_table
         conn = connect_to_db()
         df_app = sql_to_df("SELECT * FROM app_table", conn=conn)
         df_boond = sql_to_df("SELECT * FROM boond_table", conn=conn)
         disconnect_from_db(conn)
         df = pd.merge(df_boond, df_app, how='inner', on='code_projet_boond')
         df = df[df['resp_commercial'].isin(resp_comm_list)]
+        df["date_anniversaire"] = df["date_anniversaire"].dt.date
+
+        columns_to_convert = ['prix_achat_n1', 'prix_vente_n1', 'marge_n1']
+        for column in columns_to_convert:
+            df[column] = df[column].astype(float)
+
+        df[['prix_achat_n1', 'prix_vente_n1', 'marge_n1']] = df.apply(apply_calcul_sale_price, axis=1)
+
+        # Obligé de forcer le str pour le conditionnal formating du datatable...
+        columns_to_convert = ['envoi_devis', 'accord_principe']
+        for column in columns_to_convert:
+            df[column] = df[column].fillna(False)
+            df[column] = df[column].astype(str)
+
         data_main_table = df.to_dict('records')
-
-
-
+        
     return data_main_table
 
 
