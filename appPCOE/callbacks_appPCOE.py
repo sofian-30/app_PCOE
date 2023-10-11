@@ -67,9 +67,9 @@ def export_devis(n0, n_row,dict_data):
             # Faire une vérification avant l'envoi du devis
             update_request=f"""UPDATE app_table SET devis=True WHERE code_projet_boond={data_row['code_projet_boond']}"""
             execute_sql_request(update_request, conn)
-            remplir_devis(nom_devis, data_row['client'], data_row['adresse'], data_row['code_postal'], data_row['ville'], 'editeur', 'type_support',
-                data_row['date_anniversaire'], data_row['code_projet_boond'], data_row['parc_licence'], 'conditions_facturation',
-                'conditions_paiement', data_row['prix_vente_n1'],np.round(data_row['prix_vente_n1']*1.2,2))  # 'Prix d\'achat actuel' ou' Achat SAP Maintenance ou GBS ou NEED4VIZ'
+            remplir_devis(nom_devis, data_row['client'], data_row['adresse'], data_row['code_postal'], data_row['ville'], data_row['type_support_sap'], data_row['type_contrat'],
+                data_row['date_anniversaire'], data_row['code_projet_boond'], data_row['parc_licence'], data_row['condition_facturation'],
+                data_row['condition_paiement'], data_row['prix_vente_n1'],np.round(data_row['prix_vente_n1']*1.2,2))  # 'Prix d\'achat actuel' ou' Achat SAP Maintenance ou GBS ou NEED4VIZ'
             myzip.write('appPCOE/impressions/devis/'+nom_devis+'.docx',nom_devis+'.docx')
 
     disconnect_from_db(conn)
