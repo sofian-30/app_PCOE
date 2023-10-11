@@ -413,7 +413,6 @@ def update_table_data(n_btn_submit_validate, resp_comm_list, selected_row_number
     Output("confirm-resiliation", "displayed"),
     Output("confirm-resiliation", "message"),
     Output("o1_btn_submit_resiliation", "disabled"),
-    Output("input-badge-resilie", "color"),  # Ajout de la sortie pour le badge
     Input("o1_btn_submit_resiliation", "n_clicks"),
     Input("confirm-resiliation", "submit_n_clicks"),
     Input("confirm-resiliation", "cancel_n_clicks"),
@@ -430,12 +429,12 @@ def confirm_resiliation(n_resiliation_clicks, submit_n_clicks, cancel_n_clicks, 
             # Vous pouvez insérer ici la logique de résiliation client
             # Mettre à jour la couleur du badge en rouge
             update_app_table_resiliation(data_main_table[selected_row_number[0]]['code_projet_boond'])
-            return False, "", False, 'red'
+            return False, "", False
         else:
             # Traitement à effectuer lorsque "Non" est cliqué
-            return False, "", False, 'blue'  # Réinitialiser la couleur du badge à bleu
+            return False, "", False # Réinitialiser la couleur du badge à bleu
 
-    return False, "", False, 'blue'  # Réinitialiser la couleur du badge à bleu
+    return False, "", False  # Réinitialiser la couleur du badge à bleu
 
 
 # ...........................................................................................
@@ -444,6 +443,7 @@ def confirm_resiliation(n_resiliation_clicks, submit_n_clicks, cancel_n_clicks, 
     Output('input-badge-validation-devis', 'color'),  # 'color' ou 'style'
     Output('input-badge-alerte-renouvellement', 'color'),
     Output('input-badge-generation-devis','color'),
+    Output("input-badge-resilie", "color"),  # Ajout de la sortie pour le badge
     Input('o1_btn_modif_ech', 'n_clicks'),  # Utilisez le bouton comme déclencheur
     Input('o1_store_row', 'data'),
     prevent_initial_call=True,
@@ -463,6 +463,12 @@ def update_badge_colors(n_clicks, selected_row_data):
     etat_envoi_devis=selected_row_data.get('envoi_devis', '')
     etat_devis=selected_row_data.get('devis', '')
     etat_accord_principe=selected_row_data.get('accord_principe', '')
+    resilie=selected_row_data.get('resilie','')
+    
+    if resilie==True:
+        resilie='red'
+    else:
+        resilie='blue'
 
     # Convertir en float pour permettre la comparaison avec les entiers
     validation_devis = float(validation_devis) if validation_devis else 0.0
@@ -488,7 +494,7 @@ def update_badge_colors(n_clicks, selected_row_data):
     else :
         alerte_generation_devis='orange'
         
-    return validation_devis_style, alerte_renouvellement_style,alerte_generation_devis
+    return validation_devis_style, alerte_renouvellement_style,alerte_generation_devis,resilie
 
 
 ######################################################################################################
