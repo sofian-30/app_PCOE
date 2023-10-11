@@ -26,7 +26,6 @@ def process_monitoring(conn: Connection, table_name: str, success_flag: int = 1,
                             f"'insert_df_to_table failed', 0)",
                             conn=conn)
 
-
 def update_app_table(code_projet_boond: int,
                      prix_achat_n1: float,
                      prix_vente_n1: float,
@@ -86,7 +85,7 @@ def calcul_sale_price(type_contrat: str, prix_achat_n: float, marge_n: float,pri
             prix_achat_n1 = prix_achat_n + prix_achat_n * coef
         if prix_vente_n1 is None:
             prix_vente_n1 = prix_achat_n1 + prix_achat_n1 * (marge_n + coef_marge)
-        marge_n1 = prix_vente_n1 / prix_achat_n1 - 1
+        marge_n1 = (prix_vente_n1 - prix_achat_n1)/prix_achat_n1
         
         return prix_achat_n1, prix_vente_n1, marge_n1
     except (IndexError, TypeError):
@@ -99,6 +98,7 @@ def apply_calcul_sale_price(row):
     marge_n = row['marge_n']
     prix_achat_n1=row['prix_achat_n1']
     prix_vente_n1=row['prix_vente_n1']
+    
     try:
         current_year = datetime.now().year
         conn = connect_to_db()
@@ -109,9 +109,8 @@ def apply_calcul_sale_price(row):
         if np.isnan(prix_achat_n1) :
             prix_achat_n1 = prix_achat_n + prix_achat_n * coef
         if np.isnan(prix_vente_n1) :
-            prix_vente_n1 = prix_achat_n1 + prix_achat_n1 * (marge_n + coef_marge)
-        marge_n1 = prix_vente_n1 / prix_achat_n1 - 1
-
+            prix_vente_n1 = prix_achat_n1 * (1+marge_n + coef_marge)
+        marge_n1 = (prix_vente_n1 - prix_achat_n1)/prix_achat_n1
         return pd.Series([prix_achat_n1, prix_vente_n1, marge_n1])
 
     except (IndexError, TypeError):

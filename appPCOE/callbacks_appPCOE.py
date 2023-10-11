@@ -10,6 +10,7 @@ from app import app
 from appPCOE.src.generation_devis import remplir_devis
 from db import connect_to_db, sql_to_df, disconnect_from_db
 from utils import update_app_table, update_app_table_resiliation, apply_calcul_sale_price
+from db import connect_to_db, disconnect_from_db, execute_sql_request
 
 # df = pd.read_excel("./data/Suivi CA licences et maintenance 2023.xlsx", sheet_name='Maintenance SAP BusinessObjects')
 
@@ -55,17 +56,23 @@ def export_devis(n0, n_row,dict_data):
     if os.path.exists(nom_archive):
         os.remove(nom_archive)
     
+    conn = connect_to_db()
+    
     with zipfile.ZipFile(nom_archive, 'w') as myzip:
     # Ajoutez des fichiers à l'archive en utilisant la méthode `write`.
         for i in n_row :
             data_row=df.iloc[i].to_dict()
-            nom_devis='devis'+str(data_row['code_projet_boond'])
+            nom_devis='devis_'+str(data_row['code_projet_boond'])+'_'+str(data_row['client'])
             # A faire : finir de rentrer les autres informations.
             # Faire une vérification avant l'envoi du devis
+            update_request=f"""UPDATE app_table SET devis=True WHERE code_projet_boond={data_row['code_projet_boond']}"""
+            execute_sql_request(update_request, conn)
             remplir_devis(nom_devis, data_row['client'], data_row['adresse'], data_row['code_postal'], data_row['ville'], 'editeur', 'type_support',
                 data_row['date_anniversaire'], data_row['code_projet_boond'], data_row['parc_licence'], 'conditions_facturation',
                 'conditions_paiement', data_row['prix_vente_n1'],np.round(data_row['prix_vente_n1']*1.2,2))  # 'Prix d\'achat actuel' ou' Achat SAP Maintenance ou GBS ou NEED4VIZ'
             myzip.write('appPCOE/impressions/devis/'+nom_devis+'.docx',nom_devis+'.docx')
+
+    disconnect_from_db(conn)
 
     return dcc.send_file('appPCOE/impressions/devis/devis_archive.zip')
 
@@ -146,7 +153,11 @@ def update_modal_pop_up(selected_row_data):
     check_infos = selected_row_data.get('check_infos', '')  # card "Status et conditions financières"-status
     validation_erronees = selected_row_data.get('validation_erronee', '')
     envoi_devis = selected_row_data.get('envoi_devis', '')
+    if envoi_devis=='False':
+        envoi_devis=False
     accord_principe = selected_row_data.get('accord_principe', '')
+    if accord_principe=='False':
+        accord_principe=False
     signature_client = selected_row_data.get('signature_client', '')
     achat_editeur = selected_row_data.get('achat_editeur', '')
     traitement_comptable = selected_row_data.get('traitement_comptable', '')
@@ -296,11 +307,17 @@ def update_table_data(n_btn_submit_validate, resp_comm_list, selected_row_number
     df = df[df['resp_commercial'].isin(resp_comm_list)]
     df["date_anniversaire"] = df["date_anniversaire"].dt.date
     
+    columns_to_convert = ['prix_achat_n1', 'prix_vente_n1', 'marge_n1']
+    for column in columns_to_convert:
+        df[column] = df[column].astype(float)
+
     df[['prix_achat_n1', 'prix_vente_n1', 'marge_n1']] = df.apply(apply_calcul_sale_price, axis=1)
     
     # Obligé de forcer le str pour le conditionnal formatiing du datatable...
-    df['envoi_devis']=df['envoi_devis'].astype(str)
-    df['accord_principe']=df['accord_principe'].astype(str)
+    columns_to_convert = ['envoi_devis', 'accord_principe']
+    for column in columns_to_convert:
+        df[column] = df[column].fillna(False)
+        df[column] = df[column].astype(str)
     
     data_main_table = df.to_dict('records')
     if df.empty:
@@ -425,6 +442,7 @@ def confirm_resiliation(n_resiliation_clicks, submit_n_clicks, cancel_n_clicks, 
 @app.callback(
     Output('input-badge-validation-devis', 'color'),  # 'color' ou 'style'
     Output('input-badge-alerte-renouvellement', 'color'),
+    Output('input-badge-generation-devis','color'),
     Input('o1_btn_modif_ech', 'n_clicks'),  # Utilisez le bouton comme déclencheur
     Input('o1_store_row', 'data'),
     prevent_initial_call=True,
@@ -442,6 +460,7 @@ def update_badge_colors(n_clicks, selected_row_data):
     validation_devis = selected_row_data.get('alerte_validation_devis', '')
     alerte_renouvellement = selected_row_data.get('alerte_renouvellement', '')
     etat_envoi_devis=selected_row_data.get('envoi_devis', '')
+    etat_devis=selected_row_data.get('devis', '')
     etat_accord_principe=selected_row_data.get('accord_principe', '')
 
     # Convertir en float pour permettre la comparaison avec les entiers
@@ -462,21 +481,14 @@ def update_badge_colors(n_clicks, selected_row_data):
         alerte_renouvellement_style = 'orange'
     else:
         alerte_renouvellement_style = 'red'
-    return validation_devis_style, alerte_renouvellement_style
+        
+    if etat_devis=='true':
+        alerte_generation_devis='green'
+    else :
+        alerte_generation_devis='orange'
+        
+    return validation_devis_style, alerte_renouvellement_style,alerte_generation_devis
 
-
-@app.callback(
-    Output('input-badge-generation-devis', 'color'),  # Change the badge's color
-    Input('o1_btn_gener_devis', 'n_clicks'),
-    prevent_initial_call=True
-)
-def change_badge_color(n_clicks):
-    if n_clicks is not None and n_clicks > 0:
-        # If the button is clicked, change the badge color to 'success' (green)
-        return 'green'
-    else:
-        # If the button is not clicked, keep the badge color as 'blue'
-        return 'blue'
 
 ######################################################################################################
 

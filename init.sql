@@ -9,6 +9,7 @@ CREATE TABLE monitoring (
   nb_lines INT DEFAULT NULL
 );
 
+-- Données Boond :
 --CREATE TABLE boond_table (
 --	id_projet int8 NULL,
 --	prj_etat int8 NULL,
@@ -122,27 +123,16 @@ CREATE TABLE coefficient (
 );
 
 INSERT INTO coefficient (id_coef,annee,"type",coef) VALUES
-	 ('SAP_BOBJ_2023',2023,'SAP BOBJ',0.150),
-	 ('SAP_BOBJ_2024',2024,'SAP BOBJ',0.0291),
-	 ('SAP_BOBJ_2025',2025,'SAP BOBJ',0.216),
-	 ('SAP_BOBJ_2026',2026,'SAP BOBJ',0.261),
-	 ('SAP_PAPER_2023',2023,'SAP PAPER',0.285),
-	 ('SAP_PAPER_2024',2024,'SAP PAPER',0.072),
-	 ('SAP_PAPER_2025',2025,'SAP PAPER',0.293),
-	 ('SAP_PAPER_2026',2026,'SAP PAPER',0.030),
-	 ('360_2023',2023,'360',0.027),
-	 ('360_2024',2024,'360',0.146);
-INSERT INTO coefficient (id_coef,annee,"type",coef) VALUES
-	 ('360_2025',2025,'360',0.285),
-	 ('360_2026',2026,'360',0.249),
-	 ('N4Z_2023',2023,'N4Z',0.282),
-	 ('N4Z_2024',2024,'N4Z',0.140),
-	 ('N4Z_2025',2025,'N4Z',0.147),
-	 ('N4Z_2026',2026,'N4Z',0.164),
-	 ('marge_2023',2023,'marge',0.030),
-	 ('marge_2024',2024,'marge',0.192),
-	 ('marge_2025',2025,'marge',0.240),
-	 ('marge_2026',2026,'marge',0.168);
+	 ('SAP_BOBJ_2023',2023,'SAP BOBJ',0.08),
+	 ('SAP_BOBJ_2024',2024,'SAP BOBJ',0.08),
+	 ('SAP_PAPER_2023',2023,'SAP PAPER',0.06),
+	 ('SAP_PAPER_2024',2024,'SAP PAPER',0.06),
+	 ('360_2023',2023,'360',0.02),
+	 ('360_2024',2024,'360',0.02),
+	 ('N4V_2023',2023,'N4V',0.05),
+	 ('N4V_2024',2024,'N4V',0.05),
+	 ('marge_2023',2023,'marge',0),
+	 ('marge_2024',2024,'marge',0);
 
 
 CREATE TABLE app_table (

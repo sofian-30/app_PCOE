@@ -27,9 +27,19 @@ df_boond = sql_to_df("SELECT * FROM boond_table", conn=conn)
 disconnect_from_db(conn)
 df = pd.merge(df_boond, df_app, how='inner', on='code_projet_boond')
 
+columns_to_convert = ['prix_achat_n1', 'prix_vente_n1', 'marge_n1']
+for column in columns_to_convert:
+    df[column] = df[column].astype(float)
+
 df[['prix_achat_n1', 'prix_vente_n1', 'marge_n1']] = df.apply(apply_calcul_sale_price, axis=1)
 
 df["date_anniversaire"] = df["date_anniversaire"].dt.date
+
+# Obligé de forcer le str pour le conditionnal formatiing du datatable...
+columns_to_convert = ['envoi_devis', 'accord_principe']
+for column in columns_to_convert:
+    df[column] = df[column].fillna(False)
+    df[column] = df[column].astype(str)
 
 db_app_name_correspondance = {'agence': 'Agence',
                               'client': 'Client',
@@ -50,7 +60,7 @@ db_app_name_correspondance = {'agence': 'Agence',
                               # '': 'Editeur',
                               'type_support_sap': 'Type de support SAP',
                               'type_contrat': 'Type de contrat',
-                              'parc_techno': 'Parc/Techno',
+                              #'parc_techno': 'Parc/Techno',
                               # '': 'Numéro de facture',
                               # '': 'Date de facture',
                               'resp_commercial': 'Responsable commercial',
@@ -85,17 +95,15 @@ db_app_name_correspondance = {'agence': 'Agence',
 
 data_table_columns = []
 for name_db, name_app in db_app_name_correspondance.items():
-    if name_db in ['prix_achat_n', 'prix_vente_n', 'marge_n', 'prix_achat_n1', 'prix_vente_n1', 'marge_n1']:
+    if name_db in ['prix_achat_n', 'prix_vente_n',  'prix_achat_n1', 'prix_vente_n1']:
         data_table_columns.append({'name': name_app, 'id': name_db, 'type': 'numeric', 'format': Format(scheme=Scheme.fixed, precision=2, symbol=Symbol.yes, symbol_suffix='€')})
     elif name_db in ['alerte_renouvellement', 'alerte_validation_devis']:
         data_table_columns.append({'name': name_app, 'id': name_db, 'type': 'numeric', 'format':Format(precision=2, scheme=Scheme.decimal_integer)})
+    elif name_db in ['marge_n','marge_n1']:
+        data_table_columns.append({'name': name_app, 'id': name_db, 'type': 'numeric', 'format':Format(precision=2, scheme=Scheme.percentage)})
     else:
         data_table_columns.append({'name': name_app, 'id': name_db, 'type': 'text'})
         
-# Obligé de forcer le str pour le conditionnal formatiing du datatable...
-df['envoi_devis']=df['envoi_devis'].astype(str)
-df['accord_principe']=df['accord_principe'].astype(str)
-
 value_resp_commercial = get_resp_commercial()
 options_resp_commercial = [{'label': resp, 'value': resp} for resp in value_resp_commercial]
 
