@@ -405,6 +405,8 @@ modal_pop_up = dbc.Modal(
                                                     dbc.Label("Marge N+1 (%)")], width={"size": 6}),
                                                 dbc.Col([
                                                     dcc.Input(id='input-Marge-N+1', type='number',
+                                                              value='Valeur non modifiable',
+                                                            style={'border': 'none', 'pointer-events': 'none'},
                                                             placeholder='Entrez Marge N+1'),
                                                     html.Span('%', style={'margin-left': '5px'})
                                                 ], width={"size": 6})]),
