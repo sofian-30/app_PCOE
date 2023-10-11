@@ -378,7 +378,7 @@ modal_pop_up = dbc.Modal(
                                                     dbc.Label("Nouveau prix d'achat")], width={"size": 6}),
                                                 dbc.Col([
                                                     dcc.Input(id='input-nv-prix-achat', type='number',
-                                                            placeholder='Entrez prix achat N+1'),
+                                                            placeholder='Entrez prix achat N+1',debounce=False),
                                                     html.Span('€', style={'margin-left': '5px'})
                                                 ], width={"size": 6})]),
                                             dbc.Row([
@@ -386,15 +386,14 @@ modal_pop_up = dbc.Modal(
                                                     dbc.Label("Nouveau prix de vente")], width={"size": 6}),
                                                 dbc.Col([
                                                     dcc.Input(id='input-nv-prix-vente', type='number',
-                                                            placeholder='Entrez prix vente N+1'),
+                                                            placeholder='Entrez prix vente N+1',debounce=False),
                                                     html.Span('€', style={'margin-left': '5px'})
                                                 ], width={"size": 6})]),
                                             dbc.Row([
                                                 dbc.Col([
                                                     dbc.Label("Marge N+1 (%)")], width={"size": 6}),
                                                 dbc.Col([
-                                                    dcc.Input(id='input-Marge-N+1', type='number',
-                                                            placeholder='Entrez Marge N+1'),
+                                                    dbc.Label(id='input-Marge-N+1'),
                                                     html.Span('%', style={'margin-left': '5px'})
                                                 ], width={"size": 6})]),
                                             # Ajoutez d'autres éléments de contenu ici

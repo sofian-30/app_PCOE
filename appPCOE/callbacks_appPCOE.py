@@ -93,7 +93,23 @@ def store_selected_row(selected_rows, dict_data):
         return selected_row_data
     else:
         return {}
-
+    
+# Callback pour gérer la marge N+1
+@app.callback(
+    Output('input-Marge-N+1', 'children'),
+    Input('input-nv-prix-vente', 'value'),
+    Input('input-nv-prix-achat', 'value'),
+    prevent_initial_call=True,
+)
+def store_selected_row(prix_vente, prix_achat):
+    if float(prix_achat) != 0: 
+        marge=round((float(prix_vente)-float(prix_achat))/float(prix_achat),2)
+    else :
+        marge={}
+    if isinstance(marge,float):
+        return(marge)
+    else:
+        return {}
 
 # Callback pour remplir les champs du modal pop-up "modifier la saisie" avec les données de la ligne sélectionnée dans la table
 @app.callback(
@@ -117,8 +133,7 @@ def store_selected_row(selected_rows, dict_data):
     Output('input-prix-vente-actuel', 'value'),
     Output('input-Marge-pourcentage', 'value'),
     Output('input-nv-prix-achat', 'value'),
-    Output('input-nv-prix-vente', 'value'),
-    Output('input-Marge-N+1', 'value'),  # card "Status et conditions financières"-cond. financières
+    Output('input-nv-prix-vente', 'value'), # card "Status et conditions financières"-cond. financières
 
     Output('input-type-contrat', 'value'),
     Output('input-type-support-sap', 'value'),
@@ -213,7 +228,7 @@ def update_modal_pop_up(selected_row_data):
             # badge_generation_devis,badge_validation_devis,badge_alerte_renouvellement,badge_resilie,
             check_infos, validation_erronees, envoi_devis, accord_principe, signature_client, achat_editeur,
             traitement_comptable, paiement_sap,
-            prix_achat_n, prix_vente_n, marge_n, prix_achat_n1, prix_vente_n1, marge_n1,
+            prix_achat_n, prix_vente_n, marge_n, prix_achat_n1, prix_vente_n1,
             type_contrat, type_support_sap, cond_fact, cond_paiement, adresse_client, parc_licences
             )
 
