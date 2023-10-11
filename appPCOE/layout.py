@@ -179,38 +179,26 @@ modal_pop_up = dbc.Modal(
                                 dbc.Row([
                                     dbc.Col([
                                         dbc.Label("Type de contrat")],
-                                        width={"size": 3, "offset": 0}),
+                                        width={"size": 3, "offset": -1}),
                                     dbc.Col([
-                                        dcc.Dropdown(
+                                        dcc.Input(
                                             id='input-type-contrat',
-                                            options=[
-                                                {'label': 'SAP BOBJ', 'value': 'SAP BOBJ'},
-                                                {'label': 'SAP PAPER', 'value': 'SAP PAPER'},
-                                                {'label': '', 'value': ''},
-                                            ],
-                                            placeholder='Sélectionnez le Type de contrat',
-                                            disabled=True,  # Rendre le dropdown en lecture seule
-                                            style={'border': 'none', 'width': '120px'}
-                                            # Supprimer l'encadrure de la donnée
+                                            type='text', value='Valeur non modifiable',
+                                            style={'border': 'none', 'pointer-events': 'none'},
+                                            placeholder='Type de contrat',
                                         ),
-                                    ], width={"size": 3, "offset": 0}),
+                                    ], width={"size": 3, "offset": -3}),
                                     dbc.Col([
                                         dbc.Label("Type de Support SAP")],
-                                        width={"size": 3, "offset": -4}),
+                                        width={"size": 3, "offset": -3}),
                                     dbc.Col([
-                                        dcc.Dropdown(
-                                            id='input-type-support-sap',
-                                            options=[
-                                                {'label': 'Enterprise', 'value': 'Enterprise'},
-                                                {'label': 'Standard', 'value': 'Standard'},
-                                                {'label': '', 'value': ''},
-                                            ],
-                                            placeholder='Sélectionnez le Type de support SAP',
-                                            disabled=True,  # Rendre le dropdown en lecture seule
-                                            style={'border': 'none', 'width': '120px'}
-                                            # Supprimer l'encadrure de la donnée
+                                        dcc.Input(
+                                            id='input-type-support-sap', value='Valeur non modifiable',
+                                            style={'border': 'none', 'pointer-events': 'none'},
+                                            type='text',
+                                            placeholder='Type de Support SAP',
                                         ),
-                                    ], width={"size": 3, "offset": -5}),
+                                    ], width={"size": 3, "offset": -3}),
                                 ], className="mb-2"),
                                 dbc.Row([
                                     dbc.Col([
