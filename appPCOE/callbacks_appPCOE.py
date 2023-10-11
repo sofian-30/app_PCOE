@@ -313,6 +313,24 @@ def update_table_data(n_btn_submit_validate, resp_comm_list, selected_row_number
     data_main_table = df.to_dict('records')
     if df.empty:
         return data_main_table
+    
+    if check_infos is None :
+        check_infos=False
+        
+    if validation_erronnes is None :
+        validation_erronnes=False
+        
+    if signature_client is None :
+        signature_client=False
+        
+    if achat_editeur is None :
+        achat_editeur=False
+        
+    if traitement_comptable is None:
+        traitement_comptable=False
+        
+    if paiement_sap is None:
+        paiement_sap=False
 
     if selected_row_number is not None and selected_row_number:  # Vérifiez si une ligne a été sélectionnée
         # Validez les données ici (effectuez des vérifications si nécessaire)
