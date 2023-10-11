@@ -9,6 +9,7 @@ CREATE TABLE monitoring (
   nb_lines INT DEFAULT NULL
 );
 
+-- Données Boond :
 --CREATE TABLE boond_table (
 --	id_projet int8 NULL,
 --	prj_etat int8 NULL,

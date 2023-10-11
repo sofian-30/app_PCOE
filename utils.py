@@ -6,7 +6,7 @@ from sqlalchemy.engine import Connection
 
 from config import logger
 import numpy as np
-from db import connect_to_db, disconnect_from_db, execute_sql_request,execute_many_sql_request
+from db import connect_to_db, disconnect_from_db, execute_sql_request
 
 
 def process_monitoring(conn: Connection, table_name: str, success_flag: int = 1, nb_lines: int = 0,

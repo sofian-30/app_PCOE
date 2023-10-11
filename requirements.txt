@@ -11,4 +11,5 @@ pandas==2.0.3
 psycopg2==2.9.7
 python-docx==0.8.11
 python_docx_replace==0.4.4
+gunicorn==21.2.0
 SQLAlchemy==2.0.21
