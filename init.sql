@@ -185,5 +185,7 @@ CREATE TABLE boond_table (
 	resp_commercial text NULL,
 	adresse text NULL,
 	ville text NULL,
-	code_postal text NULL
+	code_postal text NULL,
+	condition_facturation text NULL,
+	condition_paiement text NULL
 );

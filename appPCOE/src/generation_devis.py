@@ -2,6 +2,7 @@ from docx import Document
 import datetime
 from dateutil.relativedelta import relativedelta
 from python_docx_replace import docx_replace
+import numpy as np
 
 
 def replace_text_in_paragraphs(doc, data):
@@ -41,9 +42,9 @@ def remplir_devis(nom_devis, client, adresse, CP, ville, editeur, type_support, 
         'DATE_ANNIVERSAIRE': date_formatee,
         'CONDITIONS_FACTURATION': conditions_facturation,
         'CONDITIONS_PAIEMENT': conditions_paiement,
-        'PRIX_VENTE': str(prix_vente),
+        'PRIX_VENTE': str(np.round(prix_vente,2)),
         'PARC_CLIENT': str(parc_licence),
-        'PV_20': str(prix_vente_tax)
+        'PV_20': str(np.round(prix_vente_tax,2))
     }
     docx_replace(doc, **data)
     doc.save('appPCOE/impressions/devis/'+nom_devis+'.docx')

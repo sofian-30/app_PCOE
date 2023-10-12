@@ -59,6 +59,9 @@ Pour l'environnement de développement, la base de données PostgreSQL peut êtr
 
    Ouvrez un client SQL et créez une connexion avec les informations suivantes.
 
+5. Pré-charger les data :
+    Utiliser le fichier load_data.py pour précharger les données.
+
 
 * **PCOE**
 
