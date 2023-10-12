@@ -8,7 +8,7 @@ Created on Mon Feb 15 17:12:51 2021
 import dash_bootstrap_components as dbc
 import pandas as pd
 from dash import dcc, html
-
+# from index import username
 from app import app
 
 # Chargement fichier csv : pour gérer infos principales des différentes applis
@@ -21,7 +21,7 @@ layout_template = html.Div([
     # permet de stocker l'URL de la page affichée (pour le callbacks de gestion des applis)
     html.Div(id='page-content', className='content'),
     html.P(id='placeholder_index')
-])
+], style={'overflow-x':'hidden'})
 
 ######################################################################################################
 #                                    LAYOUT PAGE d'ACCUEIL                                           #
@@ -68,23 +68,39 @@ home_page = html.Div([
 
     # -------- HEADER --------- #
 
+    # dbc.Row([
+    #     dbc.Col([
+    #         dbc.Navbar([
+    #             dbc.Col([html.Img(src='/assets/logo_seenovate.png', height="40px", style={'margin-left': '1vw'})], xs=2,
+    #                     sm=2, md=2, lg=2, xl=2),
+    #             dbc.Col([html.Div(dbc.NavbarBrand("Titre page d'accueil", id="titre"),
+    #                               style={"color": "grey", "font-size": "1.65vh", "textAlign": "center"})
+    #                      # ,className="text-white"
+    #                      ], xs=8, sm=8, md=8, lg=8, xl=8, align="center"),
+    #             dbc.Col([html.Div(html.Img(src=app.get_asset_url('user2.png'), height="40px"))], xs=1, sm=1, md=1, lg=1,
+    #                     xl=1, align="right"),
+    #             dbc.Col([dbc.NavbarBrand("Logo Client")], xs=1, sm=1, md=1, lg=1, xl=1,
+    #                     style={"color": "grey", "font-size": "1.65vh"}, align="center")  # className="ml-5 text-white"
+    #         ], color = "-webkit-gradient(linear, right bottom, left top, from(#80DEEA), to(#1A77BD))")
+
+    #     ], xs=12, sm=12, md=12, lg=12, xl=12, style={"height": "100%"})
+    # ]),
     dbc.Row([
         dbc.Col([
             dbc.Navbar([
-                dbc.Col([html.Img(src='/assets/logo_seenovate.png', height="40px", style={'margin-left': '1vw'})], xs=2,
-                        sm=2, md=2, lg=2, xl=2),
-                dbc.Col([html.Div(dbc.NavbarBrand("Titre page d'accueil", id="titre"),
-                                  style={"color": "grey", "font-size": "1.65vh", "textAlign": "center"})
-                         # ,className="text-white"
-                         ], xs=8, sm=8, md=8, lg=8, xl=8, align="center"),
-                dbc.Col([html.Div(html.Img(src=app.get_asset_url('user2.png'), height="40px"))], xs=1, sm=1, md=1, lg=1,
-                        xl=1, align="right"),
-                dbc.Col([dbc.NavbarBrand("Logo Client")], xs=1, sm=1, md=1, lg=1, xl=1,
-                        style={"color": "grey", "font-size": "1.65vh"}, align="center")  # className="ml-5 text-white"
-            ], style={
-                "background-image": "-webkit-gradient(linear, right bottom, left top, from(#80DEEA), to(#1A77BD))"})
-
-        ], xs=12, sm=12, md=12, lg=12, xl=12, style={"height": "100%"})
+                dbc.Col([html.Img(src=app.get_asset_url("logo_seenovate.png"), height="30px",
+                                style={'margin-left': '1vw'})], xs=2, sm=2, md=2, lg=2, xl=2),
+                dbc.Col([html.Div(dbc.NavbarBrand("Accueil", id="titre",
+                                                className="text-white", style = {'fontSize':'1.7vh'}), style={"textAlign": "center"})
+                        ], xs=8, sm=8, md=8, lg=8, xl=8, align="center"),
+                # dbc.Col([
+                #     html.Div([
+                #         html.Img(src=app.get_asset_url("user.png"), height="30px"),
+                #         dbc.Label('')
+                #     ])
+                # ])
+            ], color="primary", style={"backgroundImage":"-webkit-gradient(linear, right bottom, left top, from(#80DEEA), to(#1A77BD))"})
+        ], xs=12, sm=12, md=12, lg=12, xl=12, className="justify-content-center")
     ]),
 
     # --------- BODY --------- #

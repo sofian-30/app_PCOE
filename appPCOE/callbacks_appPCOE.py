@@ -8,9 +8,8 @@ import os
 
 from app import app
 from appPCOE.src.generation_devis import remplir_devis
-from db import connect_to_db, sql_to_df, disconnect_from_db
+from db import connect_to_db, sql_to_df, disconnect_from_db, execute_sql_request
 from utils import update_app_table, update_app_table_resiliation, apply_calcul_sale_price
-from db import connect_to_db, disconnect_from_db, execute_sql_request
 
 # df = pd.read_excel("./data/Suivi CA licences et maintenance 2023.xlsx", sheet_name='Maintenance SAP BusinessObjects')
 

@@ -151,98 +151,114 @@ modal_pop_up = dbc.Modal(
                         dbc.CardBody([
                             dbc.Row([
                                 dbc.Col([
-                                    dbc.Label("Client", width=6),
+                                    dbc.Label("Client")
+                                ], width=3),
+                                dbc.Col([
                                     dbc.Label(id='input-client')
-                                ], width={"size": 6}),
+                                ], width=3),
                                 dbc.Col([
-                                    dbc.Label("ERP Number", width=6),
+                                    dbc.Label("ERP Number")
+                                ], width=3),
+                                dbc.Col([
                                     dbc.Label(id='input-erp-number')
-                                ], width={"size": 6}),
-                                dbc.Col([
-                                    dbc.Label("Date anniversaire", width=6),
-                                    dbc.Label(id='input-date-anniversaire')
-                                    # Utilisation de dbc.Label pour afficher la date
-                                ], width={"size": 6}),
-                                dbc.Col([
-                                    dbc.Label("Code projet Boond", width=6),
-                                    dbc.Label(id='input-code-projet-boond')  # En attente de Boond
-                                ], width={"size": 6}),
-                                dbc.Col([
-                                    dbc.Label("Resp. Commercial", width=6),
-                                    dbc.Label(id='input-resp-commercial')
-                                ], width={"size": 6}),
-                                dbc.Col([
-                                    dbc.Label("Editeur", width=6),
-                                    dbc.Label(id='input-editeur')
-                                    # possibilité de faire dropdown cf. excel specs App PCoE
-                                ], width={"size": 6}),
-                                dbc.Row([
-                                    dbc.Col([
-                                        dbc.Label("Type de contrat")],
-                                        width={"size": 3, "offset": -1}),
-                                    dbc.Col([
-                                        dcc.Input(
-                                            id='input-type-contrat',
-                                            type='text', value='Valeur non modifiable',
-                                            style={'border': 'none', 'pointer-events': 'none'},
-                                            placeholder='Type de contrat',
-                                        ),
-                                    ], width={"size": 3, "offset": -3}),
-                                    dbc.Col([
-                                        dbc.Label("Type de Support SAP")],
-                                        width={"size": 3, "offset": -3}),
-                                    dbc.Col([
-                                        dcc.Input(
-                                            id='input-type-support-sap', value='Valeur non modifiable',
-                                            style={'border': 'none', 'pointer-events': 'none'},
-                                            type='text',
-                                            placeholder='Type de Support SAP',
-                                        ),
-                                    ], width={"size": 3, "offset": -3}),
-                                ], className="mb-2"),
-                                dbc.Row([
-                                    dbc.Col([
-                                        dbc.Label("Condition de facturation")],
-                                        width={"size": 3, "offset": -1}),
-                                    dbc.Col([
-                                        dcc.Input(
-                                            id='input-cond-fact',
-                                            type='text', value='Valeur non modifiable',
-                                            style={'border': 'none', 'pointer-events': 'none'},
-                                            placeholder='Conditions Facturation',
-                                        ),
-                                    ], width={"size": 3, "offset": -3}),
-                                    dbc.Col([
-                                        dbc.Label("Condition de Paiement")],
-                                        width={"size": 3, "offset": -3}),
-                                    dbc.Col([
-                                        dcc.Input(
-                                            id='input-cond-paiement', value='Valeur non modifiable',
-                                            style={'border': 'none', 'pointer-events': 'none'},
-                                            type='text',
-                                            placeholder='Conditions de paiement',
-                                        ),
-                                    ], width={"size": 3, "offset": -3}),
-                                ], className="mb-2"),
-                                dbc.Row([
-                                    dbc.Col([
-                                        dbc.Label('Adresse')],
-                                        width={"size": 3, "offset": -3}),
-                                    dbc.Col([
-                                        dcc.Textarea(
-                                            id='input-adresse-client', readOnly=True,
-                                            style={
-                                                'width': '200px',  # Largeur du champ de saisie
-                                                'height': '100px',  # Hauteur du champ de saisie
-                                                'border': 'none',  # Bordure du champ de saisie
-                                                'border-radius': '5px',  # Coins arrondis
-                                                'padding': '5px',  # Espacement intérieur
-                                            },
-                                            placeholder='adresse client'
-                                        ),
-                                    ], {"size": 2, "offset": -1}),
-                                ], className="mb-2"),
+                                ], width=3)
                             ]),
+                            dbc.Row([
+                                dbc.Col([
+                                    dbc.Label("Date anniversaire")
+                                ], width=3),
+                                dbc.Col([
+                                    dbc.Label(id='input-date-anniversaire')
+                                ], width=3),
+                                dbc.Col([
+                                    dbc.Label("Code projet Boond")
+                                ], width=3),
+                                dbc.Col([
+                                    dbc.Label(id='input-code-projet-boond')
+                                ], width=3)
+                            ]), 
+                            dbc.Row([
+                                dbc.Col([
+                                    dbc.Label("Resp. Commercial")
+                                ], width=3),
+                                dbc.Col([
+                                    dbc.Label(id='input-resp-commercial')
+                                ], width=3),
+                                dbc.Col([
+                                    dbc.Label("Editeur")
+                                ], width=3),
+                                dbc.Col([
+                                    dbc.Label(id='input-editeur')
+                                ], width=3)
+                            ]),
+                            dbc.Row([
+                                dbc.Col([
+                                    dbc.Label("Type de contrat")],
+                                    width={"size": 3}),
+                                dbc.Col([
+                                    dcc.Input(
+                                        id='input-type-contrat',
+                                        type='text', value='Valeur non modifiable',
+                                        style={'border': 'none', 'pointer-events': 'none'},
+                                        placeholder='Type de contrat',
+                                    ),
+                                ], width={"size": 3}),
+                                dbc.Col([
+                                    dbc.Label("Type de Support SAP")],
+                                    width={"size": 3}),
+                                dbc.Col([
+                                    dcc.Input(
+                                        id='input-type-support-sap', value='Valeur non modifiable',
+                                        style={'border': 'none', 'pointer-events': 'none'},
+                                        type='text',
+                                        placeholder='Type de Support SAP',
+                                    ),
+                                ], width={"size": 3}),
+                            ], className="mb-2"),
+
+                            dbc.Row([
+                                dbc.Col([
+                                    dbc.Label("Condition de facturation")],
+                                    width={"size": 3}),
+                                dbc.Col([
+                                    dcc.Input(
+                                        id='input-cond-fact',
+                                        type='text', value='Valeur non modifiable',
+                                        style={'border': 'none', 'pointer-events': 'none'},
+                                        placeholder='Conditions Facturation',
+                                    ),
+                                ], width={"size": 3}),
+                                dbc.Col([
+                                    dbc.Label("Condition de Paiement")],
+                                    width={"size": 3}),
+                                dbc.Col([
+                                    dcc.Input(
+                                        id='input-cond-paiement', value='Valeur non modifiable',
+                                        style={'border': 'none', 'pointer-events': 'none'},
+                                        type='text',
+                                        placeholder='Conditions de paiement',
+                                    ),
+                                ], width={"size": 3}),
+                            ], className="mb-2"),
+
+                            dbc.Row([
+                                dbc.Col([
+                                    dbc.Label('Adresse')],
+                                    width={"size": 3}),
+                                dbc.Col([
+                                    dcc.Textarea(
+                                        id='input-adresse-client', readOnly=True,
+                                        style={
+                                            'width': '200px',  # Largeur du champ de saisie
+                                            'height': '100px',  # Hauteur du champ de saisie
+                                            'border': 'none',  # Bordure du champ de saisie
+                                            'border-radius': '5px',  # Coins arrondis
+                                            'padding': '5px',  # Espacement intérieur
+                                        },
+                                        placeholder='adresse client'
+                                    ),
+                                ], {"size": 2}),
+                            ], className="mb-2"),
                         ])
                     ]),
                 ], width={"size": 9}),
@@ -506,16 +522,19 @@ layout_PCOE = html.Div([
     dbc.Row([
         dbc.Col([
             dbc.Navbar([
-                dbc.Col([dcc.Link(dbc.Button(html.Img(src=app.get_asset_url("accueil.png"), style={"height": "30px"}),
+                dbc.Col([dcc.Link(dbc.Button(html.Img(src=app.get_asset_url("accueil_white.png"), style={"height": "30px"}),
                                             id="bouton_accueil",
-                                            style={'border': '2px solid white', 'margin-left': '-1vw'}, color='white'),
+                                            style={'border': '2px solid white', 'margin-left': '1%'}, color='white'),
                                 href='/'),
-                        html.Img(src=app.get_asset_url("logo_seenovate.png"), height="30px",
-                                style={'margin-left': '1vw'})], xs=2, sm=2, md=2, lg=2, xl=2),
+                        # html.Img(src=app.get_asset_url("logo_seenovate.png"), height="30px",
+                        #         style={'margin-left': '1vw'})
+                        ], xs=2, sm=2, md=2, lg=2, xl=2),
                 dbc.Col([html.Div(dbc.NavbarBrand(list_app["name"].loc[list_app["ind"] == n_app].iloc[0], id="titre",
-                                                className="text-white"), style={"textAlign": "center"})
-                        ], xs=9, sm=9, md=9, lg=9, xl=9, align="center"),
-                dbc.Col([html.Div(html.Img(src=app.get_asset_url("user.png"), height="30px"))])
+                                                className="text-white", style = {'fontSize':'1.5vh'}), style={"textAlign": "center"})
+                        ], xs=8, sm=8, md=8, lg=8, xl=8, align="center"),
+                dbc.Col([html.Img(src=app.get_asset_url("logo_seenovate.png"), height="30px",
+                                style={'margin-left': '70%'})], width={'size':'1','offset':'1'})
+                # dbc.Col([html.Div(html.Img(src=app.get_asset_url("user.png"), height="30px"))])
             ], color="dark")
         ], xs=12, sm=12, md=12, lg=12, xl=12, className="justify-content-center")
     ]),
@@ -530,50 +549,48 @@ layout_PCOE = html.Div([
     dbc.Container([
         dbc.Row([
             dbc.Col([
-                dbc.CardGroup([
-                    dbc.Card(
-                        dbc.CardBody(
-                            [
-                                html.H4('Responsable commercial', style={'color': '#191970'}),
-                                dbc.Row([
-                                    dbc.Col([
-                                        html.Div(
-                                            dcc.Dropdown(
-                                                id='o1_filtre_resp_com',
-                                                options=options_resp_commercial,
-                                                value=value_resp_commercial,
-                                                multi=True,
-                                            ),
-                                            style={'fontSize': '20px', 'font-weight': 'bold', 'text-align': 'center'}),
-                                    ], width=10),
-                                    dbc.Col([
-                                        dbc.Spinner(html.Div(id="o1_spinner_resp_com")),
-                                    ], width=2)
-                                ], className="mb-2")
-                            ]
-                        )
-                    ),
-                ], className="mt-4 shadow mx-auto"),
+                dbc.Card(
+                    dbc.CardBody(
+                        [
+                            html.H3('Responsable commercial', style={'color': '#191970'}),
+                            dbc.Row([
+                                dbc.Col([
+                                    html.Div(
+                                        dcc.Dropdown(
+                                            id='o1_filtre_resp_com',
+                                            options=options_resp_commercial,
+                                            value=value_resp_commercial,
+                                            multi=True,
+                                        ),
+                                        style={'fontSize': '20px', 'font-weight': 'bold', 'text-align': 'center'}),
+                                ], width=10),
+                                dbc.Col([
+                                    dbc.Spinner(html.Div(id="o1_spinner_resp_com")),
+                                ], width=2)
+                            ], className="mb-2")
+                        ]
+                    ), className="mt-4 shadow mx-auto", style = {"height":'10vh'}
+                ),
             ]),
             dbc.Col([
                 dbc.CardGroup([
                     dbc.Card(
                         dbc.CardBody(
                             [
-                                html.H4('Nombre de lignes validées - check infos', style={'color': '#191970'}),
+                                html.H3('Nombre de lignes validées - check infos', style={'color': '#191970'}),
                                 html.Div(html.H2(id='o1_nb_lignes_validees'),
                                         style={'fontSize': '20px', 'font-weight': 'bold', 'text-align': 'center'}),
                             ]
-                        )
+                        ), className="shadow mx-auto"
                     ),
                     dbc.Card(
                         html.Div(className="fa fa-check-square",
                                 style={'color': 'white', 'text-align': 'center', 'font-size': 30, 'margin': 'auto'}),
-                        className="bg-success",
+                        className="bg-success shadow mx-auto",
                         style={"maxWidth": 75},
                     ),
 
-                ], className="mt-4 shadow mx-auto"),
+                ], className="mt-4",  style = {"height":'10vh'}),
             ]),
             # dbc.Col([
             #     dbc.CardGroup([
@@ -594,7 +611,7 @@ layout_PCOE = html.Div([
 
             #     ],className="mt-4 shadow"),
             # ],xs=4,sm=4,md=4,lg=4,xl=4,align="start"),
-        ]),
+        ], style = {"height":'12vh','marginTop':"1vh"}),
     ], fluid=True),
 
     # Le reste de votre mise en page...
@@ -604,58 +621,68 @@ layout_PCOE = html.Div([
         columns=data_table_columns,
         data=df.to_dict('records'),
         id='o1_data_table',
+        style_header={
+            'backgroundColor': '#555',
+            'color': 'white'
+        },
         style_table={'height': '60vh',
                     'overflowX': 'auto',
                     'overflowY': 'auto',
                     'margin-left': '20px',
-                    'margin-top': '20px',
-                    'margin-right': '20px'},
+                    'margin-top': '4vh',
+                    'margin-right': '20px',
+                    'width':'98.5%'},
         style_cell={'font_family': 'calibri',
                     'height': 'auto',
                     'textAlign': 'center'},
         style_data={'font-family': 'Bahnschrift Light',
                     'height':'auto',
                     'whiteSpace': 'normal'},
-        style_data_conditional=[{
+        style_data_conditional=[
+            {
+            'if': {'row_index': 'odd'},
+            'backgroundColor': 'rgb(220, 220, 220)',
+            },
+            {
             "if": {"state": "selected"},
             "backgroundColor": "rgba(0, 116, 217, .03)",
             "border": "1px solid black",
-        },  # Alerte renouvellement(feux tricolores)
+            },  # Alerte renouvellement(feux tricolores)
             {'if': {
                 'filter_query': '{alerte_renouvellement}<=120',
                 'column_id': 'alerte_renouvellement'
             },
-                'backgroundColor': 'orange'
+                'backgroundColor': '#fd7e14'
             },
             {'if': {
                 'filter_query': '{alerte_renouvellement}<=45',
                 'column_id': 'alerte_renouvellement'
             },
-                'backgroundColor': 'red'
+                'backgroundColor': '#ff4136'
             },  # Alerte validation devis (feux tricolores)
             {'if': {
                 'filter_query': '{alerte_renouvellement}>120 || {envoi_devis} eq True' ,
                 'column_id': 'alerte_renouvellement'
             },
-                'backgroundColor': 'green'
+                'backgroundColor': '#28b62c'
             },
             {'if': {
                 'filter_query': '{alerte_validation_devis}<=56',
                 'column_id': 'alerte_validation_devis'
             },
-                'backgroundColor': 'orange'
+                'backgroundColor': '#fd7e14'
             },
             {'if': {
                 'filter_query': '{alerte_validation_devis}<=21',
                 'column_id': 'alerte_validation_devis'
             },
-                'backgroundColor': 'red'
+                'backgroundColor': '#ff4136'
             },
             {'if': {
                 'filter_query': '{alerte_validation_devis}>56 || {accord_principe} eq True',
                 'column_id': 'alerte_validation_devis'
             },
-                'backgroundColor': 'green'
+                'backgroundColor': '#28b62c'
             },
 
         ],
@@ -668,13 +695,13 @@ layout_PCOE = html.Div([
     # Boutons: "Modifier une saisie", "Générer Devis"
     dbc.Row([
         dbc.Col([
-            dbc.Button('Modifier une saisie', id="o1_btn_modif_ech", className="me-1", color='secondary',disabled=True,size='xl'),
-        ], width={"size": 3}),
+            dbc.Button('Modifier une saisie', id="o1_btn_modif_ech", className="me-1", color='secondary',disabled=True,style={'fontSize':'1.5vh','height':'4vh'}),
+        ], width={"size": 3,"offset":2}),
         dbc.Col([
-            dbc.Button('Générer Devis', id="o1_btn_gener_devis", className="me-1",  color='secondary',disabled=True,size='xl'),
-        ], width={"size": 3}),
-    ], className="pb-3 d-flex justify-content-center"),
+            dbc.Button('Générer Devis', id="o1_btn_gener_devis", className="me-1",  color='secondary',disabled=True,style={'fontSize':'1.5vh','height':'4vh'}),
+        ], width={"size": 3,"offset":2}),
+    ], className="pb-3 d-flex justify-content-center", style = {"marginTop":'5vh'}),
 
     modal_pop_up, stockage_ligne, stockage_mis_a_jour,
     modal_pop_up_evol_prix, stockage_popup_evprix
-])
+], style = {"overflox-x":'hidden'})
