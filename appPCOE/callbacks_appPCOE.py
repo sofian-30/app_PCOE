@@ -8,9 +8,8 @@ import os
 
 from app import app
 from appPCOE.src.generation_devis import remplir_devis
-from db import connect_to_db, sql_to_df, disconnect_from_db
+from db import connect_to_db, sql_to_df, disconnect_from_db, execute_sql_request
 from utils import update_app_table, update_app_table_resiliation, apply_calcul_sale_price
-from db import connect_to_db, disconnect_from_db, execute_sql_request
 
 # df = pd.read_excel("./data/Suivi CA licences et maintenance 2023.xlsx", sheet_name='Maintenance SAP BusinessObjects')
 
@@ -322,7 +321,7 @@ def update_table_data(n_btn_submit_validate, resp_comm_list, selected_row_number
     # Obligé de forcer le str pour le conditionnal formating du datatable...
     columns_to_convert = ['envoi_devis', 'accord_principe']
     for column in columns_to_convert:
-        df[column] = df[column].fillna(False)
+        df[column] = df[column].fillna('')
         df[column] = df[column].astype(str)
     
     data_main_table = df.to_dict('records')
@@ -392,8 +391,8 @@ def update_table_data(n_btn_submit_validate, resp_comm_list, selected_row_number
         try:
             for key, value in updated_data.items():
                 data_main_table[selected_row_number[0]][key] = value
-        except IndexError:
-            pass
+        except IndexError as indexerror:
+            print('indexerror:',indexerror)
 
         # Mettre à jour en BDD
         update_app_table(data_main_table[selected_row_number[0]]['code_projet_boond'],
@@ -544,19 +543,9 @@ def update_valid_check_infos_count(data):
     
     # Comptez les lignes valides dans la colonne 'check_infos' du DataFrame
     count = len(df[df['check_infos'] == True])
+    print('count:', count)
 
     return count
-
-
-#     # Charger les données depuis la base de données
-#     query = "SELECT COUNT(*) FROM app_table WHERE check_infos = 'Valide'"
-#     conn = connect_to_db()
-#     df_app_table = pd.read_sql(query, conn)
-#     disconnect_from_db(conn)
-
-   
-
     
-
 # ...
  

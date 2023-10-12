@@ -45,6 +45,26 @@ def update_app_table(code_projet_boond: int,
         prix_achat_n1 = 'NULL'
     if not marge_n1:
         marge_n1 = 'NULL'
+    if check_infos is None:
+        check_infos =  False
+    if validation_erronee is None:
+        validation_erronee =  False
+    if envoi_devis is None:
+       envoi_devis =  False
+    if accord_principe is None:
+       accord_principe =  False
+    if signature_client is None:
+       signature_client =  False
+    if achat_editeur is None:
+      achat_editeur  =  False
+    if traitement_comptable is None:
+      traitement_comptable  =  False
+    if paiement_sap is None:
+         paiement_sap=  False
+    if parc_licence == 'None':
+        parc_licence = ''
+
+              
     update_request = f"""UPDATE app_table
                      SET prix_achat_n1 = {prix_achat_n1},
                          prix_vente_n1 = {prix_vente_n1},

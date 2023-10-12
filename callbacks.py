@@ -11,7 +11,6 @@ from app import app
 from appPCOE.layout import layout_PCOE
 from layout import home_page
 
-
 @app.callback(
     Output('page-content', 'children'),
     [Input('url2', 'pathname')],

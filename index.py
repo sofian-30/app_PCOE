@@ -8,7 +8,7 @@ Created on Mon Feb  8 10:52:41 2021
 import os
 
 import dash_auth
-
+# from flask import request
 import callbacks
 from app import app
 from appPCOE import callbacks_appPCOE
@@ -29,7 +29,8 @@ port = int(os.environ.get('PORT', 3000))
 # Authentification par ID / Mdp, que l'on liste ici :
 VALID_USERNAME_PASSWORD_PAIRS = {
     'template': 'Seenovate1234',
-    '': ''
+    'Administrateur': '',
+    '':''
 }
 
 auth = dash_auth.BasicAuth(
@@ -41,6 +42,6 @@ app.layout = layout_template
 
 if __name__ == '__main__':
     #if sys.platform.startswith('win32'): ?
-    app.run_server(debug=True)
+    app.run_server(debug=False)
     #else:
      #   app.run_server(host='0.0.0.0', port=port)
