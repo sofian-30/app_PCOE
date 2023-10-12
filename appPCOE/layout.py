@@ -38,7 +38,7 @@ df["date_anniversaire"] = df["date_anniversaire"].dt.date
 # Obligé de forcer le str pour le conditionnal formatiing du datatable...
 columns_to_convert = ['envoi_devis', 'accord_principe']
 for column in columns_to_convert:
-    df[column] = df[column].fillna(False)
+    df[column] = df[column].fillna('')
     df[column] = df[column].astype(str)
 
 db_app_name_correspondance = {'agence': 'Agence',

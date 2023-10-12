@@ -316,7 +316,7 @@ def update_table_data(n_btn_submit_validate, resp_comm_list, selected_row_number
     # Obligé de forcer le str pour le conditionnal formatiing du datatable...
     columns_to_convert = ['envoi_devis', 'accord_principe']
     for column in columns_to_convert:
-        df[column] = df[column].fillna(False)
+        df[column] = df[column].fillna('')
         df[column] = df[column].astype(str)
     
     data_main_table = df.to_dict('records')
@@ -368,8 +368,8 @@ def update_table_data(n_btn_submit_validate, resp_comm_list, selected_row_number
         try:
             for key, value in updated_data.items():
                 data_main_table[selected_row_number[0]][key] = value
-        except IndexError:
-            pass
+        except IndexError as indexerror:
+            print('indexerror:',indexerror)
 
         # Mettre à jour en BDD
         update_app_table(data_main_table[selected_row_number[0]]['code_projet_boond'],
