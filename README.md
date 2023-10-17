@@ -205,3 +205,72 @@ Dans cette application, nous avons ajouté un *dbc.Modal* permettant de faire af
 
 Si vous travaillez avec plusieurs objets voués à effectuer la même action (ex : des Dropdowns que l'on souhaite tous afficher selon une même condition, ou un indicateur rouge ou vert à faire afficher pour chaque input), il est utile d'utiliser les composantes MATCH et ALL de Dash. Celles-ci permettent d'affecter un type d'id à chacun de nos objets (ex : dbc.Dropdown,dbc.Input, etc) et de contrôler l'affichage de tous les objets d'un même type dans le même callbacks.
 Ces aspects sont détaillés sur le lien suivant : https://dash.plotly.com/pattern-matching-callbacks
+
+### Lancement et utilisation de l’Application appPCOE
+Cette application Dash, nommée **appPCOE**, est conçue pour la gestion de données liées aux contrats clients et aux projets. Elle permet de visualiser, saisir, modifier et générer des devis pour les contrats.
+
+## Table des matières
+- [Lancement de l'application](#lancement-de-lapplication)
+- [Chargement des Données Initiales](#Chargement-des-Donnees-Initiales)
+- [Mise en page](#mise-en-page)
+- [Callbacks](#callbacks)
+
+## Lancement de l'application
+Pour lancer l'application appPCOE, suivez ces étapes :
+1.	Assurez-vous que votre base de données est correctement configurée avec les données nécessaires.
+2.	Exécutez l'application en utilisant la commande suivante :
+```python
+
+python index.py 
+
+```
+L'application sera accessible à l'adresse http://localhost:8050 depuis votre navigateur.
+
+## Chargement des Données Initiales
+Pour que l'application fonctionne correctement, vous devez charger des données initiales. Ces données sont stockées dans une base de données. Voici comment les charger :
+1.	Prérequis
+Les fichiers CSV nécessaires pour le chargement des données doivent être présents dans le répertoire de l'application.
+2.	Étapes pour Charger les Données Initiales
+Ouvrez un terminal ou une ligne de commande.
+Accédez au répertoire de l'application :
+```python
+
+cd chemin/vers/votre/projet/AppPCOE 
+
+```
+Exécutez le script load_data.py en utilisant la commande Python :
+```python
+
+python load_data.py 
+
+```
+Le script extraira les données des fichiers CSV, les traitera, puis les chargera dans la base de données de l'application.
+Une fois que le script a terminé son exécution, les données initiales sont prêtes à être utilisées dans l'application.
+C'est tout ! Vous avez maintenant chargé avec succès les données initiales pour votre application.
+Note : Assurez-vous que les fichiers CSV requis pour le chargement des données sont présents dans le répertoire de l'application avant d'exécuter le script load_data.py.
+
+## Mise en page (« Layout »)
+L'application appPCOE est composée de plusieurs composants interactifs, organisés en onglets et sous-onglets, pour faciliter la gestion des données clients et projets. Voici un aperçu de la mise en page :
+Tableau de données clients
+Filtres
+Boutons d'action (saisie, génération de devis, résiliation)
+Tableau de données projets
+Informations détaillées sur le projet
+Carte "Alertes"
+Carte "Données calculées"
+Boutons et formulaires de génération de devis
+Pop-up Modifier la saisie
+Formulaire pour la mise à jour des informations contractuelles
+Pop-up Résilier
+Confirmation pour la résiliation client
+## Callbacks
+L'application appPCOE utilise plusieurs callbacks pour répondre aux interactions de l'utilisateur. Voici quelques-uns des principaux callbacks :
+Callback pour rendre les boutons de saisie et de génération de devis cliquables.
+Callback pour exporter des devis au format ZIP.
+Callback pour stocker les données de la ligne sélectionnée.
+Callback pour remplir les champs du modal pop-up "Modifier la saisie".
+Callback pour mettre à jour les données du tableau.
+Callback pour gérer l'ouverture du pop-up "Résilier".
+Callback pour mettre à jour les couleurs des badges d'alerte.
+Callback pour afficher le nombre de lignes validées.
+
