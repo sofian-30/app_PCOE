@@ -211,8 +211,8 @@ Cette application Dash, nommée **appPCOE**, est conçue pour la gestion de donn
 
 ## Table des matières
 - [Lancement de l'application](#lancement-de-lapplication)
-- [Chargement des Données Initiales](#Chargement-des-Donnees-Initiales)
-- [Mise en page](#mise-en-page)
+- [Chargement des Données Initiales](#Chargement-des-Données-Initiales)
+- [Mise en page](#Mise-en-page)
 - [Callbacks](#callbacks)
 
 ## Lancement de l'application
@@ -249,7 +249,7 @@ Une fois que le script a terminé son exécution, les données initiales sont pr
 C'est tout ! Vous avez maintenant chargé avec succès les données initiales pour votre application.
 Note : Assurez-vous que les fichiers CSV requis pour le chargement des données sont présents dans le répertoire de l'application avant d'exécuter le script load_data.py.
 
-## Mise en page (« Layout »)
+## Mise en page
 L'application appPCOE est composée de plusieurs composants interactifs, organisés en onglets et sous-onglets, pour faciliter la gestion des données clients et projets. Voici un aperçu de la mise en page :
 Tableau de données clients
 Filtres
